@@ -1,0 +1,1385 @@
+yata@sdmdev2:~$ ssh mspdev@100.65.202.85
+mspdev@100.65.202.85's password: 
+Last login: Thu Apr 17 23:13:12 2025 from 172.16.0.76
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ mount | grep ' on / '
+/dev/nvme0n1p1 on / type ext4 (ro,relatime)
+main:~$ mount
+proc on /proc type proc (rw,relatime)
+sysfs on /sys type sysfs (rw,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=201616k,nr_inodes=12601,mode=755)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+/dev/nvme0n1p2 on /var type ext4 (rw,relatime)
+/dev/nvme0n1p1 on / type ext4 (ro,relatime)
+/dev/nvme0n1p2 on /etc/machine-id type ext4 (rw,relatime)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+xenfs on /proc/xen type xenfs (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,size=248480k,nr_inodes=1048576)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+nfsd on /proc/fs/nfsd type nfsd (rw,relatime)
+tmpfs on /var/volatile type tmpfs (rw,relatime)
+overlay on /srv type overlay (rw,relatime,lowerdir=/srv,upperdir=/var/volatile/srv,workdir=/var/volatile/.srv-work,uuid=on)
+/dev/mapper/aosvg-workdirs on /var/aos/workdirs type ext4 (rw,noatime)
+/dev/mapper/aosvg-downloads on /var/aos/downloads type ext4 (rw,noatime)
+/dev/mapper/aosvg-storages on /var/aos/storages type ext4 (rw,noatime,quota,usrquota,grpquota)
+/dev/mapper/aosvg-states on /var/aos/states type ext4 (rw,noatime,quota,usrquota,grpquota)
+nsfs on /run/netns/da2efc88-1946-4070-a714-27dc427b5f30 type nsfs (rw)
+overlay on /run/aos/runtime/da2efc88-1946-4070-a714-27dc427b5f30/rootfs type overlay (ro,relatime,lowerdir=/run/aos/runtime/da2efc88-1946-4070-a714-27dc427b5f30/mounts:/var/aos/workdirs/sm/services/4274507511/blobs/sha256/430ee6d53c475ea67333ef06f4f52d6be275cd70e00dda74dbfc1617c76cc070:/var/aos/workdirs/sm/hostfs/whiteouts:/,redirect_dir=on)
+main:~$ mount | grep rw
+proc on /proc type proc (rw,relatime)
+sysfs on /sys type sysfs (rw,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=201616k,nr_inodes=12601,mode=755)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+/dev/nvme0n1p2 on /var type ext4 (rw,relatime)
+/dev/nvme0n1p2 on /etc/machine-id type ext4 (rw,relatime)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+xenfs on /proc/xen type xenfs (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev,size=248480k,nr_inodes=1048576)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+nfsd on /proc/fs/nfsd type nfsd (rw,relatime)
+tmpfs on /var/volatile type tmpfs (rw,relatime)
+overlay on /srv type overlay (rw,relatime,lowerdir=/srv,upperdir=/var/volatile/srv,workdir=/var/volatile/.srv-work,uuid=on)
+/dev/mapper/aosvg-workdirs on /var/aos/workdirs type ext4 (rw,noatime)
+/dev/mapper/aosvg-downloads on /var/aos/downloads type ext4 (rw,noatime)
+/dev/mapper/aosvg-storages on /var/aos/storages type ext4 (rw,noatime,quota,usrquota,grpquota)
+/dev/mapper/aosvg-states on /var/aos/states type ext4 (rw,noatime,quota,usrquota,grpquota)
+nsfs on /run/netns/da2efc88-1946-4070-a714-27dc427b5f30 type nsfs (rw)
+main:~$ df -h
+Filesystem                   Size  Used Avail Use% Mounted on
+devtmpfs                     197M     0  197M   0% /dev
+tmpfs                        243M  2.1M  241M   1% /run
+/dev/nvme0n1p2               488M  192M  260M  43% /var
+/dev/nvme0n1p1               636M  414M  173M  71% /
+tmpfs                        243M     0  243M   0% /dev/shm
+tmpfs                        243M     0  243M   0% /tmp
+tmpfs                        243M     0  243M   0% /var/volatile
+overlay                      243M     0  243M   0% /srv
+/dev/mapper/aosvg-workdirs   1.2G  5.3M  1.1G   1% /var/aos/workdirs
+/dev/mapper/aosvg-downloads  1.6G  436K  1.5G   1% /var/aos/downloads
+/dev/mapper/aosvg-storages   782M  244K  725M   1% /var/aos/storages
+/dev/mapper/aosvg-states     369M  128K  345M   1% /var/aos/states
+overlay                      243M  2.1M  241M   1% /run/aos/runtime/da2efc88-1946-4070-a714-27dc427b5f30/rootfs
+main:~$ which awk sed sh bash
+/usr/bin/awk
+/usr/bin/sed
+/usr/bin/sh
+/usr/bin/bash
+main:~$ ls /dev | grep gpiochip
+gpiochip0
+main:~$ ls /sys/class/gpio
+export	gpiochip512  unexport
+main:~$ ls /dev | grep i2c
+main:~$ ls /dev | grep spidev
+main:~$ ls /dev/
+aosvg		 mqueue     stderr    tty33  tty63
+autofs		 ng0n1	    stdin     tty34  tty7
+block		 null	    stdout    tty35  tty8
+cachefiles	 nvme0	    tee0      tty36  tty9
+char		 nvme0n1    teepriv0  tty37  ttyAMA0
+console		 nvme0n1p1  tty       tty38  ttyprintk
+cpu_dma_latency  nvme0n1p2  tty0      tty39  ubi_ctrl
+disk		 nvme0n1p3  tty1      tty4   urandom
+dm-0		 port	    tty10     tty40  vc-mem
+dm-1		 pps0	    tty11     tty41  vcs
+dm-2		 ptmx	    tty12     tty42  vcs1
+dm-3		 ptp0	    tty13     tty43  vcs2
+dm-4		 pts	    tty14     tty44  vcs3
+dma_heap	 ram0	    tty15     tty45  vcs4
+fd		 ram1	    tty16     tty46  vcs5
+full		 ram10	    tty17     tty47  vcs6
+gpiochip0	 ram11	    tty18     tty48  vcsa
+hwrng		 ram12	    tty19     tty49  vcsa1
+initctl		 ram13	    tty2      tty5   vcsa2
+input		 ram14	    tty20     tty50  vcsa3
+kmsg		 ram15	    tty21     tty51  vcsa4
+log		 ram2	    tty22     tty52  vcsa5
+loop-control	 ram3	    tty23     tty53  vcsa6
+loop0		 ram4	    tty24     tty54  vcsu
+loop1		 ram5	    tty25     tty55  vcsu1
+loop2		 ram6	    tty26     tty56  vcsu2
+loop3		 ram7	    tty27     tty57  vcsu3
+loop4		 ram8	    tty28     tty58  vcsu4
+loop5		 ram9	    tty29     tty59  vcsu5
+loop6		 random     tty3      tty6   vcsu6
+loop7		 shm	    tty30     tty60  vga_arbiter
+mapper		 snapshot   tty31     tty61  xen
+mem		 snd	    tty32     tty62  zero
+main:~$ find /proc/device-tree -name "*gpio*"
+main:~$ find /proc/device-tree -name "*i2c*"
+main:~$ find /proc/device-tree -name "*spi*"
+main:~$ lsusb
+-sh: lsusb: command not found
+main:~$ ls /sys
+block  class  devices	fs	    kernel  power
+bus    dev    firmware	hypervisor  module
+main:~$ ls /sys/bus/
+amba	      gpio	       pci	    tee
+cec	      hid	       pci_express  usb
+clockevents   i2c	       platform     workqueue
+clocksource   iscsi_flashnode  scsi	    xen
+container     mdio_bus	       sdio	    xen-backend
+cpu	      mipi-dsi	       serial	    xen_memory
+event_source  mmc	       serial-base
+gadget	      mmc_rpmb	       soc
+genpd	      nvmem	       spi
+main:~$ ls /sys/bus/usb
+devices  drivers  drivers_autoprobe  drivers_probe  uevent
+main:~$ cat /sys/kernel/debug/usb
+cat: /sys/kernel/debug/usb: Permission denied
+main:~$ cat /sys/kernel/debug/usbdevices
+cat: /sys/kernel/debug/usbdevices: Permission denied
+main:~$ cat /sys/kernel/debug/usb/devices
+cat: /sys/kernel/debug/usb/devices: Permission denied
+main:~$ ls /sys/kernel
+address_bits   iommu_groups  rcu_expedited   sunrpc
+cgroup	       irq	     rcu_normal      tracing
+config	       mm	     reboot	     uevent_helper
+cpu_byteorder  notes	     security	     uevent_seqnum
+debug	       oops_count    slab	     warn_count
+fscaps	       profiling     software_nodes
+main:~$ ls /sys/kernel/debug
+ls: cannot open directory '/sys/kernel/debug': Permission denied
+main:~$ ls /proc/      
+1     28    427   6    737	  crypto	 mounts
+11    29    428   613  738	  device-tree	 mtd
+12    3     4281  614  739	  devices	 net
+13    30    429   616  740	  diskstats	 pagetypeinfo
+14    31    43	  634  741	  driver	 partitions
+15    32    430   635  742	  execdomains	 schedstat
+16    34    4300  636  743	  fb		 self
+17    35    4329  637  748	  filesystems	 slabinfo
+1726  358   44	  640  776	  fs		 softirqs
+1755  359   45	  652  780	  interrupts	 stat
+1756  36    46	  653  797	  iomem		 swaps
+18    368   4660  666  8	  ioports	 sys
+19    369   4661  667  809	  irq		 sysrq-trigger
+2     37    47	  670  810	  kallsyms	 sysvipc
+20    38    472   671  811	  key-users	 thread-self
+2046  39    473   672  812	  keys		 timer_list
+21    3966  48	  674  9	  kmsg		 tty
+23    399   49	  675  976	  kpagecgroup	 uptime
+24    4     493   680  asound	  kpagecount	 version
+25    40    5	  684  buddyinfo  kpageflags	 vmallocinfo
+2558  4067  50	  685  bus	  latency_stats  vmstat
+26    409   520   7    cgroups	  loadavg	 xen
+27    410   521   712  cmdline	  locks		 zoneinfo
+2752  411   549   714  config.gz  meminfo
+2766  4165  550   725  consoles   misc
+2773  42    587   736  cpuinfo	  modules
+main:~$ ls /proc/asound
+cards  devices	oss  pcm  seq  timers  version
+main:~$ ls /proc/asound/cards
+/proc/asound/cards
+main:~$ cat /proc/asound/cards
+--- no soundcards ---
+main:~$ cat /proc/asound/pcm  
+main:~$ ls /dev/snd
+timer
+main:~$ ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel qlen 1000
+    link/ether 2c:cf:67:28:f3:e9 brd ff:ff:ff:ff:ff:ff
+3: xenbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue qlen 1000
+    link/ether 36:64:13:c9:0f:d6 brd ff:ff:ff:ff:ff:ff
+4: br-sp8b2ebc9f: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue qlen 1000
+    link/ether 12:d1:55:9e:f4:3f brd ff:ff:ff:ff:ff:ff
+5: vlan-171a63d7@eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-sp8b2ebc9f 
+    link/ether 2c:cf:67:28:f3:e9 brd ff:ff:ff:ff:ff:ff
+6: vethb2968c72@eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master br-sp8b2ebc9f 
+    link/ether 1e:06:6a:f7:bb:1f brd ff:ff:ff:ff:ff:ff
+main:~$ ls /sys/class/net
+br-sp8b2ebc9f  eth0  lo  vethb2968c72  vlan-171a63d7  xenbr0
+main:~$ ls/sys/class/
+-sh: ls/sys/class/: No such file or directory
+main:~$ ls /sys/class/
+bdi	     iommu	       nvme	       sound
+block	     iscsi_connection  nvme-generic    spi_master
+bsg	     iscsi_endpoint    nvme-subsystem  spi_slave
+devcoredump  iscsi_host        pci_bus	       tee
+devlink      iscsi_iface       phy	       thermal
+dma	     iscsi_session     power_supply    tty
+dma_heap     iscsi_transport   pps	       ubi
+drm	     leds	       ptp	       udc
+extcon	     lirc	       pwm	       usb_role
+gpio	     mdio_bus	       rc	       usbmisc
+graphics     mem	       regulator       vc
+hidraw	     misc	       rtc	       vc-mem
+hwmon	     mmc_host	       scsi_device     vtconsole
+i2c-adapter  mtd	       scsi_disk       wakeup
+input	     net	       scsi_host       watchdog
+main:~$ ls /sys/class/net/wlan0
+ls: cannot access '/sys/class/net/wlan0': No such file or directory
+main:~$ ls /sys/class/bluetooth
+ls: cannot access '/sys/class/bluetooth': No such file or directory
+main:~$ hciconfig -a
+-sh: hciconfig: command not found
+main:~$ ls /sys/class/leds
+default-on  mmc0
+main:~$ ls /sys/class/leds/default-on
+brightness  max_brightness  power  subsystem  trigger  uevent
+main:~$ lsmod
+Module                  Size  Used by
+xt_conntrack           49152  1
+xt_MASQUERADE          49152  1
+xt_comment             49152  3
+iptable_nat            49152  1
+nf_nat                 98304  2 iptable_nat,xt_MASQUERADE
+nf_conntrack          196608  3 xt_conntrack,nf_nat,xt_MASQUERADE
+nf_defrag_ipv6         49152  1 nf_conntrack
+nf_defrag_ipv4         49152  1 nf_conntrack
+veth                   81920  0
+8021q                  49152  0
+garp                   49152  1 8021q
+xt_tcpudp              49152  11
+quota_v2               49152  4
+quota_tree             49152  1 quota_v2
+bridge                245760  0
+stp                    49152  2 bridge,garp
+llc                    49152  3 bridge,stp,garp
+iptable_filter         49152  1
+sch_fq_codel           49152  2
+nfsd                  688128  3
+nfnetlink              49152  2
+ip_tables              65536  2 iptable_filter,iptable_nat
+x_tables               81920  7 xt_conntrack,iptable_filter,xt_tcpudp,xt_comment,ip_tables,iptable_nat,xt_MASQUERADE
+ipv6                  622592  113 bridge
+aes_generic            65536  2
+libaes                 49152  1 aes_generic
+dm_crypt               65536  1
+dm_mod                180224  18 dm_crypt
+main:~$ ps-ef | grep udev
+-sh: ps-ef: command not found
+main:~$ ps -ef | grep udev
+ps: invalid option -- 'e'
+BusyBox v1.36.1 () multi-call binary.
+
+Usage: ps
+main:~$ ps -f | grep udev
+ps: invalid option -- 'f'
+BusyBox v1.36.1 () multi-call binary.
+
+Usage: ps
+main:~$ ps | grep udev
+  587 root     26864 S    /usr/lib/systemd/systemd-udevd
+ 5953 mspdev    3632 S    grep udev
+main:~$ cat /sur/lib/systemd/systemd-udevd
+cat: /sur/lib/systemd/systemd-udevd: No such file or directory
+main:~$ cat /usr/lib/systemd/systemd-udevd
+ELF��k@�	@8
+main:~$ uname -a
+Linux main 6.6.22-v8-16k #1 SMP PREEMPT Tue Mar 19 17:41:59 UTC 2024 aarch64 GNU/Linux
+main:~$ cat /proc/version
+Linux version 6.6.22-v8-16k (oe-user@oe-host) (aarch64-poky-linux-gcc (GCC) 13.3.0, GNU ld (GNU Binutils) 2.42.0.20240723) #1 SMP PREEMPT Tue Mar 19 17:41:59 UTC 2024
+main:~$ ls /proc/device-tree
+'#address-cells'		   memory@50000000
+'#size-cells'			   name
+ chosen				   passthrough
+ cpus				   psci
+ firmware			   sbsa-uart@107d001000
+ hypervisor			   timer
+ interrupt-controller@107fff9000
+main:~$ which gpioinfo aplay lsusb iw iwconfig hcitool bluetoothctl
+main:~$ dmesg | tail -n 100
+[ 2119.867889] audit: type=1334 audit(1745192519.171:1246): prog-id=608 op=UNLOAD
+[ 2121.010178] audit: type=1334 audit(1745192520.311:1247): prog-id=609 op=LOAD
+[ 2121.010432] audit: type=1300 audit(1745192520.311:1247): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7ffff0ec4098 a2=90 a3=7ffff0ec40b0 items=0 ppid=1 pid=6496 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2121.010438] audit: type=1327 audit(1745192520.311:1247): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2123.519194] audit: type=1334 audit(1745192522.823:1248): prog-id=609 op=UNLOAD
+[ 2124.761816] audit: type=1334 audit(1745192524.063:1249): prog-id=610 op=LOAD
+[ 2124.762069] audit: type=1300 audit(1745192524.063:1249): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffdb2edfc8 a2=90 a3=7fffdb2edfe0 items=0 ppid=1 pid=6505 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2124.762090] audit: type=1327 audit(1745192524.063:1249): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2127.275271] audit: type=1334 audit(1745192526.579:1250): prog-id=610 op=UNLOAD
+[ 2128.509437] audit: type=1334 audit(1745192527.811:1251): prog-id=611 op=LOAD
+[ 2128.509579] audit: type=1300 audit(1745192527.811:1251): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffc2cdd358 a2=90 a3=7fffc2cdd370 items=0 ppid=1 pid=6514 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2128.509674] audit: type=1327 audit(1745192527.811:1251): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2130.879275] audit: type=1334 audit(1745192530.183:1252): prog-id=611 op=UNLOAD
+[ 2132.009642] audit: type=1334 audit(1745192531.311:1253): prog-id=612 op=LOAD
+[ 2132.009786] audit: type=1300 audit(1745192531.311:1253): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffd4050278 a2=90 a3=7fffd4050290 items=0 ppid=1 pid=6523 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2132.009911] audit: type=1327 audit(1745192531.311:1253): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2134.499191] audit: type=1334 audit(1745192533.803:1254): prog-id=612 op=UNLOAD
+[ 2135.757598] audit: type=1334 audit(1745192535.059:1255): prog-id=613 op=LOAD
+[ 2135.757739] audit: type=1300 audit(1745192535.059:1255): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffe9326648 a2=90 a3=7fffe9326660 items=0 ppid=1 pid=6532 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2135.757952] audit: type=1327 audit(1745192535.059:1255): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2138.179179] audit: type=1334 audit(1745192537.483:1256): prog-id=613 op=UNLOAD
+[ 2139.257566] audit: type=1334 audit(1745192538.559:1257): prog-id=614 op=LOAD
+[ 2139.257706] audit: type=1300 audit(1745192538.559:1257): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffd267d1d8 a2=90 a3=7fffd267d1f0 items=0 ppid=1 pid=6541 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2139.257801] audit: type=1327 audit(1745192538.559:1257): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2141.703194] audit: type=1334 audit(1745192541.007:1258): prog-id=614 op=UNLOAD
+[ 2142.757352] audit: type=1334 audit(1745192542.059:1259): prog-id=615 op=LOAD
+[ 2142.757494] audit: type=1300 audit(1745192542.059:1259): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffefad7e98 a2=90 a3=7fffefad7eb0 items=0 ppid=1 pid=6550 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2142.757589] audit: type=1327 audit(1745192542.059:1259): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2145.267192] audit: type=1334 audit(1745192544.571:1260): prog-id=615 op=UNLOAD
+[ 2146.509192] audit: type=1334 audit(1745192545.811:1261): prog-id=616 op=LOAD
+[ 2146.509365] audit: type=1300 audit(1745192545.811:1261): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7ffffc5f7f48 a2=90 a3=7ffffc5f7f60 items=0 ppid=1 pid=6559 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2146.509558] audit: type=1327 audit(1745192545.811:1261): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2148.879922] audit: type=1334 audit(1745192548.183:1262): prog-id=616 op=UNLOAD
+[ 2150.009285] audit: type=1334 audit(1745192549.311:1263): prog-id=617 op=LOAD
+[ 2150.009429] audit: type=1300 audit(1745192549.311:1263): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7ffff50b8d68 a2=90 a3=7ffff50b8d80 items=0 ppid=1 pid=6568 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2150.009535] audit: type=1327 audit(1745192549.311:1263): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2152.395268] audit: type=1334 audit(1745192551.699:1264): prog-id=617 op=UNLOAD
+[ 2153.502220] audit: type=1334 audit(1745192552.803:1265): prog-id=618 op=LOAD
+[ 2153.502400] audit: type=1300 audit(1745192552.803:1265): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffe8c9b768 a2=90 a3=7fffe8c9b780 items=0 ppid=1 pid=6577 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2153.502515] audit: type=1327 audit(1745192552.803:1265): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2156.023200] audit: type=1334 audit(1745192555.327:1266): prog-id=618 op=UNLOAD
+[ 2157.095800] audit: type=1334 audit(1745192556.399:1267): prog-id=619 op=LOAD
+[ 2157.095964] audit: type=1300 audit(1745192556.399:1267): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffde07a598 a2=90 a3=7fffde07a5b0 items=0 ppid=1 pid=6586 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2157.096066] audit: type=1327 audit(1745192556.399:1267): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2159.487175] audit: type=1334 audit(1745192558.791:1268): prog-id=619 op=UNLOAD
+[ 2160.757121] audit: type=1334 audit(1745192560.059:1269): prog-id=620 op=LOAD
+[ 2160.757298] audit: type=1300 audit(1745192560.059:1269): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffe3550ef8 a2=90 a3=7fffe3550f10 items=0 ppid=1 pid=6595 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2160.757394] audit: type=1327 audit(1745192560.059:1269): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2163.171184] audit: type=1334 audit(1745192562.475:1270): prog-id=620 op=UNLOAD
+[ 2164.257330] audit: type=1334 audit(1745192563.559:1271): prog-id=621 op=LOAD
+[ 2164.257495] audit: type=1300 audit(1745192563.559:1271): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffe1b16948 a2=90 a3=7fffe1b16960 items=0 ppid=1 pid=6604 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2164.257594] audit: type=1327 audit(1745192563.559:1271): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2166.751162] audit: type=1334 audit(1745192566.055:1272): prog-id=621 op=UNLOAD
+[ 2168.009768] audit: type=1334 audit(1745192567.311:1273): prog-id=622 op=LOAD
+[ 2168.009948] audit: type=1300 audit(1745192567.311:1273): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffff57a638 a2=90 a3=7fffff57a650 items=0 ppid=1 pid=6613 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2168.010050] audit: type=1327 audit(1745192567.311:1273): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2170.531163] audit: type=1334 audit(1745192569.835:1274): prog-id=622 op=UNLOAD
+[ 2171.753376] audit: type=1334 audit(1745192571.055:1275): prog-id=623 op=LOAD
+[ 2171.753517] audit: type=1300 audit(1745192571.055:1275): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffd8686d58 a2=90 a3=7fffd8686d70 items=0 ppid=1 pid=6622 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2171.753611] audit: type=1327 audit(1745192571.055:1275): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2174.339088] audit: type=1334 audit(1745192573.643:1276): prog-id=623 op=UNLOAD
+[ 2175.510163] audit: type=1334 audit(1745192574.811:1277): prog-id=624 op=LOAD
+[ 2175.510315] audit: type=1300 audit(1745192574.811:1277): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffd5f2cfa8 a2=90 a3=7fffd5f2cfc0 items=0 ppid=1 pid=6631 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2175.510409] audit: type=1327 audit(1745192574.811:1277): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2177.967161] audit: type=1334 audit(1745192577.271:1278): prog-id=624 op=UNLOAD
+[ 2179.006233] audit: type=1334 audit(1745192578.307:1279): prog-id=625 op=LOAD
+[ 2179.006380] audit: type=1300 audit(1745192578.307:1279): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffc8f5fe98 a2=90 a3=7fffc8f5feb0 items=0 ppid=1 pid=6641 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2179.006471] audit: type=1327 audit(1745192578.307:1279): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2181.463146] audit: type=1334 audit(1745192580.767:1280): prog-id=625 op=UNLOAD
+[ 2182.510210] audit: type=1334 audit(1745192581.811:1281): prog-id=626 op=LOAD
+[ 2182.510384] audit: type=1300 audit(1745192581.811:1281): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffc78ebe58 a2=90 a3=7fffc78ebe70 items=0 ppid=1 pid=6650 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2182.510488] audit: type=1327 audit(1745192581.811:1281): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2185.111312] audit: type=1334 audit(1745192584.415:1282): prog-id=626 op=UNLOAD
+[ 2186.255458] audit: type=1334 audit(1745192585.555:1283): prog-id=627 op=LOAD
+[ 2186.255619] audit: type=1300 audit(1745192585.555:1283): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffe4c9e4a8 a2=90 a3=7fffe4c9e4c0 items=0 ppid=1 pid=6660 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2186.255721] audit: type=1327 audit(1745192585.555:1283): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2188.759138] audit: type=1334 audit(1745192588.063:1284): prog-id=627 op=UNLOAD
+[ 2190.009201] audit: type=1334 audit(1745192589.311:1285): prog-id=628 op=LOAD
+[ 2190.009370] audit: type=1300 audit(1745192589.311:1285): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7ffff04e9b08 a2=90 a3=7ffff04e9b20 items=0 ppid=1 pid=6669 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2190.009471] audit: type=1327 audit(1745192589.311:1285): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2192.483815] audit: type=1334 audit(1745192591.787:1286): prog-id=628 op=UNLOAD
+[ 2193.757374] audit: type=1334 audit(1745192593.059:1287): prog-id=629 op=LOAD
+[ 2193.757514] audit: type=1300 audit(1745192593.059:1287): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffda886b78 a2=90 a3=7fffda886b90 items=0 ppid=1 pid=6678 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2193.757607] audit: type=1327 audit(1745192593.059:1287): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2196.279130] audit: type=1334 audit(1745192595.583:1288): prog-id=629 op=UNLOAD
+[ 2197.509135] audit: type=1334 audit(1745192596.811:1289): prog-id=630 op=LOAD
+[ 2197.509317] audit: type=1300 audit(1745192596.811:1289): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7ffffafef6f8 a2=90 a3=7ffffafef710 items=0 ppid=1 pid=6687 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2197.509414] audit: type=1327 audit(1745192596.811:1289): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2199.963234] audit: type=1334 audit(1745192599.267:1290): prog-id=630 op=UNLOAD
+[ 2201.006276] audit: type=1334 audit(1745192600.307:1291): prog-id=631 op=LOAD
+[ 2201.006415] audit: type=1300 audit(1745192600.307:1291): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffedc74b28 a2=90 a3=7fffedc74b40 items=0 ppid=1 pid=6696 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2201.006510] audit: type=1327 audit(1745192600.307:1291): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2203.451091] audit: type=1334 audit(1745192602.755:1292): prog-id=631 op=UNLOAD
+[ 2204.506079] audit: type=1334 audit(1745192603.807:1293): prog-id=632 op=LOAD
+[ 2204.506233] audit: type=1300 audit(1745192603.807:1293): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffd0fd1d78 a2=90 a3=7fffd0fd1d90 items=0 ppid=1 pid=6705 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2204.506365] audit: type=1327 audit(1745192603.807:1293): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+[ 2207.079117] audit: type=1334 audit(1745192606.383:1294): prog-id=632 op=UNLOAD
+[ 2208.147454] audit: type=1334 audit(1745192607.447:1295): prog-id=633 op=LOAD
+[ 2208.147589] audit: type=1300 audit(1745192607.447:1295): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffc795ebf8 a2=90 a3=7fffc795ec10 items=0 ppid=1 pid=6714 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+[ 2208.147682] audit: type=1327 audit(1745192607.447:1295): proctitle=2F7573722F62696E2F6372756E0072756E002D64002D2D7069642D66696C65002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037302D613731342D3237646334323762356633302F2E706964002D62002F72756E2F616F732F72756E74696D652F64613265666338382D313934362D343037
+main:~$ 
+main:~$ ls /tmp
+gpiodetect.o
+gpioget.o
+gpioinfo.o
+gpiomon.o
+gpionotify.o
+gpioset.o
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-logind.service-mKVBP9
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-resolved.service-xOrROJ
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-timesyncd.service-89Mnxn
+main:~$ cd /tmp
+main:/tmp$ ./gpioinfo
+./gpioinfo: unable to open chip '/dev/gpiochip0': Permission denied
+main:/tmp$ sudo ./gpioinfo
+Password: 
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	input
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+main:/tmp$ sudo -i
+root@main:~# ./gpioset GPIO17=1
+-sh: ./gpioset: No such file or directory
+root@main:~# cd /tmp
+root@main:/tmp# ls
+gpio-tools-test.bash
+gpiodetect
+gpiodetect.c
+gpiodetect.o
+gpioget
+gpioget.c
+gpioget.o
+gpioinfo
+gpioinfo.c
+gpioinfo.o
+gpiomon
+gpiomon.c
+gpiomon.o
+gpionotify
+gpionotify.c
+gpionotify.o
+gpioset
+gpioset.c
+gpioset.o
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-logind.service-mKVBP9
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-resolved.service-xOrROJ
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-timesyncd.service-89Mnxn
+root@main:/tmp# ./gpioset GPIO17=1
+^C
+root@main:/tmp# ./gpioget GPIO17  
+"GPIO17"=inactive
+root@main:/tmp# ./gpioinfo GPIO17
+gpiochip0 17	"GPIO17"        	input
+root@main:/tmp# ./gpioinfo GPIO17=0
+./gpioinfo: cannot find line 'GPIO17=0'
+root@main:/tmp# ./gpioset GPIO17=0
+^C
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# 
+root@main:/tmp# ls 
+gpio-tools-test.bash
+gpiodetect
+gpiodetect.c
+gpiodetect.o
+gpioget
+gpioget.c
+gpioget.o
+gpioinfo
+gpioinfo.c
+gpioinfo.o
+gpiomon
+gpiomon.c
+gpiomon.o
+gpionotify
+gpionotify.c
+gpionotify.o
+gpioset
+gpioset.c
+gpioset.o
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-logind.service-mKVBP9
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-resolved.service-xOrROJ
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-timesyncd.service-89Mnxn
+root@main:/tmp# mv gpio* /var/
+root@main:/tmp# ls /var/
+aos		      gpioinfo.o	     local
+backups		      gpiomon		     lock
+cache		      gpiomon.c		     log
+gpio-tools-test.bash  gpiomon.o		     lost+found
+gpiodetect	      gpionotify	     lvm
+gpiodetect.c	      gpionotify.c	     machine-id
+gpiodetect.o	      gpionotify.o	     run
+gpioget		      gpioset		     spool
+gpioget.c	      gpioset.c		     ssh
+gpioget.o	      gpioset.o		     tailscale
+gpioinfo	      lib		     tmp
+gpioinfo.c	      libgpiod-arm64-static  volatile
+root@main:/tmp# ls /var/libgpiod-arm64-static
+gpiodetect  gpioget  gpioinfo  gpiomon	gpionotify  gpioset
+root@main:/tmp# ls
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-logind.service-mKVBP9
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-resolved.service-xOrROJ
+systemd-private-bee06e6455994326b8cb3e7c7eea8f54-systemd-timesyncd.service-89Mnxn
+root@main:/tmp# cd /var/
+root@main:/var# mv gpio* libgpiod-arm64-static
+root@main:/var# ls
+aos	 libgpiod-arm64-static	lost+found  spool      volatile
+backups  local			lvm	    ssh
+cache	 lock			machine-id  tailscale
+lib	 log			run	    tmp
+root@main:/var# mv tailscale tailscale-static
+root@main:/var# ls
+aos		       local	   machine-id	     tmp
+backups		       lock	   run		     volatile
+cache		       log	   spool
+lib		       lost+found  ssh
+libgpiod-arm64-static  lvm	   tailscale-static
+root@main:/var# cat machine-id
+1d0ff6f5889941afa60625b0a2ca965d
+root@main:/var# ls /lib
+coreutils
+credstore
+cryptsetup
+depmod.d
+device-mapper
+e2initrd_helper
+engines-3
+environment.d
+gio
+ld-linux-aarch64.so.1
+libBrokenLocale.so.1
+libPocoCrypto.so.95
+libPocoData.so.95
+libPocoDataSQLite.so.95
+libPocoFoundation.so.95
+libPocoJSON.so.95
+libPocoNet.so.95
+libPocoNetSSL.so.95
+libPocoUtil.so.95
+libPocoXML.so.95
+libabsl_base.so.2401.0.0
+libabsl_city.so.2401.0.0
+libabsl_cord.so.2401.0.0
+libabsl_cord_internal.so.2401.0.0
+libabsl_cordz_functions.so.2401.0.0
+libabsl_cordz_handle.so.2401.0.0
+libabsl_cordz_info.so.2401.0.0
+libabsl_crc32c.so.2401.0.0
+libabsl_crc_cord_state.so.2401.0.0
+libabsl_crc_internal.so.2401.0.0
+libabsl_debugging_internal.so.2401.0.0
+libabsl_demangle_internal.so.2401.0.0
+libabsl_die_if_null.so.2401.0.0
+libabsl_examine_stack.so.2401.0.0
+libabsl_exponential_biased.so.2401.0.0
+libabsl_flags_commandlineflag.so.2401.0.0
+libabsl_flags_commandlineflag_internal.so.2401.0.0
+libabsl_flags_config.so.2401.0.0
+libabsl_flags_internal.so.2401.0.0
+libabsl_flags_marshalling.so.2401.0.0
+libabsl_flags_private_handle_accessor.so.2401.0.0
+libabsl_flags_program_name.so.2401.0.0
+libabsl_flags_reflection.so.2401.0.0
+libabsl_graphcycles_internal.so.2401.0.0
+libabsl_hash.so.2401.0.0
+libabsl_int128.so.2401.0.0
+libabsl_kernel_timeout_internal.so.2401.0.0
+libabsl_log_globals.so.2401.0.0
+libabsl_log_internal_check_op.so.2401.0.0
+libabsl_log_internal_conditions.so.2401.0.0
+libabsl_log_internal_format.so.2401.0.0
+libabsl_log_internal_globals.so.2401.0.0
+libabsl_log_internal_log_sink_set.so.2401.0.0
+libabsl_log_internal_message.so.2401.0.0
+libabsl_log_internal_nullguard.so.2401.0.0
+libabsl_log_internal_proto.so.2401.0.0
+libabsl_log_sink.so.2401.0.0
+libabsl_low_level_hash.so.2401.0.0
+libabsl_malloc_internal.so.2401.0.0
+libabsl_random_internal_platform.so.2401.0.0
+libabsl_random_internal_pool_urbg.so.2401.0.0
+libabsl_random_internal_randen.so.2401.0.0
+libabsl_random_internal_randen_hwaes.so.2401.0.0
+libabsl_random_internal_randen_hwaes_impl.so.2401.0.0
+libabsl_random_internal_randen_slow.so.2401.0.0
+libabsl_random_internal_seed_material.so.2401.0.0
+libabsl_random_seed_gen_exception.so.2401.0.0
+libabsl_raw_hash_set.so.2401.0.0
+libabsl_raw_logging_internal.so.2401.0.0
+libabsl_spinlock_wait.so.2401.0.0
+libabsl_stacktrace.so.2401.0.0
+libabsl_status.so.2401.0.0
+libabsl_statusor.so.2401.0.0
+libabsl_str_format_internal.so.2401.0.0
+libabsl_strerror.so.2401.0.0
+libabsl_strings.so.2401.0.0
+libabsl_strings_internal.so.2401.0.0
+libabsl_symbolize.so.2401.0.0
+libabsl_synchronization.so.2401.0.0
+libabsl_throw_delegate.so.2401.0.0
+libabsl_time.so.2401.0.0
+libabsl_time_zone.so.2401.0.0
+libaddress_sorting.so.37
+libaddress_sorting.so.37.0.0
+libaio.so.1
+libaio.so.1.0.2
+libanl.so.1
+libassuan.so.0
+libassuan.so.0.8.6
+libattr.so.1
+libattr.so.1.1.2501
+libblkid.so.1
+libblkid.so.1.1.0
+libbz2.so.1
+libbz2.so.1.0.8
+libc.so.6
+libcap.so.2
+libcap.so.2.69
+libcares.so.2
+libcares.so.2.12.0
+libckteec.so.0
+libckteec.so.0.1.0
+libcom_err.so.2
+libcom_err.so.2.1
+libcomps.so.0
+libcrypt.so.2
+libcrypt.so.2.0.0
+libcrypto.so.3
+libcryptsetup.so.12
+libcryptsetup.so.12.10.0
+libcurl.so.4
+libcurl.so.4.8.0
+libdbus-1.so.3
+libdbus-1.so.3.32.4
+libdevmapper-event-lvm2.so.2.03
+libdevmapper-event.so.1.02
+libdevmapper.so.1.02
+libdl.so.2
+libdnf
+libdnf.so.2
+libdw-0.191.so
+libdw.so.1
+libe2p.so.2
+libe2p.so.2.3
+libedit.so.0
+libedit.so.0.0.72
+libelf-0.191.so
+libelf.so.1
+libevent-2.1.so.7
+libevent-2.1.so.7.0.1
+libexpat.so.1
+libexpat.so.1.9.3
+libext2fs.so.2
+libext2fs.so.2.4
+libfdt.so.1
+libfdt.so.1.6.0
+libffi.so.8
+libffi.so.8.1.4
+libgcc_s.so.1
+libgcrypt.so.20
+libgcrypt.so.20.4.3
+libgdbm.so.6
+libgdbm.so.6.0.0
+libgdbm_compat.so.4
+libgdbm_compat.so.4.0.0
+libgio-2.0.so.0
+libgio-2.0.so.0.7800.6
+libglib-2.0.so.0
+libglib-2.0.so.0.7800.6
+libgmodule-2.0.so.0
+libgmodule-2.0.so.0.7800.6
+libgmp.so.10
+libgmp.so.10.5.0
+libgnutls.so.30
+libgnutls.so.30.38.0
+libgobject-2.0.so.0
+libgobject-2.0.so.0.7800.6
+libgomp.so.1
+libgomp.so.1.0.0
+libgpg-error.so.0
+libgpg-error.so.0.35.0
+libgpgme.so.11
+libgpgme.so.11.32.1
+libgpr.so.37
+libgpr.so.37.0.0
+libgrpc++.so.1.60
+libgrpc++.so.1.60.1
+libgrpc++_alts.so.1.60
+libgrpc++_alts.so.1.60.1
+libgrpc++_error_details.so.1.60
+libgrpc++_error_details.so.1.60.1
+libgrpc++_reflection.so.1.60
+libgrpc++_reflection.so.1.60.1
+libgrpc++_unsecure.so.1.60
+libgrpc++_unsecure.so.1.60.1
+libgrpc.so.37
+libgrpc.so.37.0.0
+libgrpc_authorization_provider.so.1.60
+libgrpc_authorization_provider.so.1.60.1
+libgrpc_unsecure.so.37
+libgrpc_unsecure.so.37.0.0
+libgrpcpp_channelz.so.1.60
+libgrpcpp_channelz.so.1.60.1
+libgthread-2.0.so.0
+libgthread-2.0.so.0.7800.6
+libhistory.so.8
+libhistory.so.8.2
+libhogweed.so.6
+libhogweed.so.6.8
+libidn2.so.0
+libidn2.so.0.4.0
+libip4tc.so.2
+libip4tc.so.2.0.0
+libip6tc.so.2
+libip6tc.so.2.0.0
+libjq.so.1
+libjq.so.1.0.4
+libjson-c.so.5
+libjson-c.so.5.3.0
+libkmod.so.2
+libkmod.so.2.4.1
+libksba.so.8
+libksba.so.8.14.6
+liblvm2cmd.so.2.03
+liblz.so.1
+liblz.so.1.14
+liblzma.so.5
+liblzma.so.5.4.6
+libm.so.6
+libmagic.so.1
+libmagic.so.1.0.0
+libmnl.so.0
+libmnl.so.0.2.0
+libmodulemd.so.2
+libmodulemd.so.2.15.0
+libmount.so.1
+libmount.so.1.1.0
+libmvec.so.1
+libncurses.so.5
+libncurses.so.5.9
+libncursesw.so.5
+libncursesw.so.5.9
+libnettle.so.8
+libnettle.so.8.8
+libnl-3.so.200
+libnl-3.so.200.26.0
+libnl-genl-3.so.200
+libnl-genl-3.so.200.26.0
+libnl-route-3.so.200
+libnl-route-3.so.200.26.0
+libnpth.so.0
+libnpth.so.0.1.2
+libnsl.so.1
+libnsl.so.3
+libnsl.so.3.0.0
+libnss_compat.so.2
+libnss_dns.so.2
+libnss_files.so.2
+libnss_myhostname.so.2
+libnss_systemd.so.2
+libonig.so.5
+libonig.so.5.4.0
+libopensc.so.11
+libopensc.so.11.0.2
+libp11.so.3
+libp11.so.3.5.0
+libpam.so.0
+libpam.so.0.85.1
+libpam_misc.so.0
+libpam_misc.so.0.82.1
+libpamc.so.0
+libpamc.so.0.82.1
+libpanelw.so.5
+libpanelw.so.5.9
+libpcre2-8.so.0
+libpcre2-8.so.0.12.0
+libpcre2-posix.so.3
+libpcre2-posix.so.3.0.5
+libpcsclite.so.1
+libpcsclite.so.1.0.0
+libperl.so.5
+libperl.so.5.38.0
+libpopt.so.0
+libpopt.so.0.0.2
+libprotobuf.so.25.3.0
+libpsx.so.2
+libpsx.so.2.69
+libpthread.so.0
+libpython3.12.so.1.0
+libre2.so
+libre2.so.11
+libre2.so.11.0.0
+libreadline.so.8
+libreadline.so.8.2
+librepo.so.0
+libresolv.so.2
+librpm.so.10
+librpm.so.10.0.2
+librpmbuild.so.10
+librpmbuild.so.10.0.2
+librpmio.so.10
+librpmio.so.10.0.2
+librpmsign.so.10
+librpmsign.so.10.0.2
+librt.so.1
+libseccomp.so.2
+libseccomp.so.2.5.5
+libseteec.so.0
+libseteec.so.0.1.0
+libsmartcols.so.1
+libsmartcols.so.1.1.0
+libsmm-local.so.11
+libsmm-local.so.11.0.2
+libsolv.so.1
+libsolvext.so.1
+libsqlite3.so.0
+libsqlite3.so.0.8.6
+libss.so.2
+libss.so.2.0
+libssh.so.4
+libssh.so.4.9.6
+libssl.so.3
+libstdc++.so.6
+libstdc++.so.6.0.32
+libsystemd.so.0
+libsystemd.so.0.38.0
+libtasn1.so.6
+libtasn1.so.6.6.3
+libteeacl.so.0
+libteeacl.so.0.1.0
+libteec.so.2
+libteec.so.2.0.0
+libtinfo.so.5
+libtinfo.so.5.9
+libtirpc.so.3
+libtirpc.so.3.0.0
+libudev.so.1
+libudev.so.1.7.8
+libunistring.so.5
+libunistring.so.5.1.0
+libupb.so.37
+libupb.so.37.0.0
+libupb_collections_lib.so.37
+libupb_collections_lib.so.37.0.0
+libupb_json_lib.so.37
+libupb_json_lib.so.37.0.0
+libupb_textformat_lib.so.37
+libupb_textformat_lib.so.37.0.0
+libusb-1.0.so.0
+libusb-1.0.so.0.4.0
+libutf8_range_lib.so.37
+libutf8_range_lib.so.37.0.0
+libutil.so.1
+libuuid.so.1
+libuuid.so.1.3.0
+libwrap.so.0
+libwrap.so.0.7.6
+libxencall.so.1
+libxencall.so.1.3
+libxenctrl.so.4.19
+libxenctrl.so.4.19.0
+libxendevicemodel.so.1
+libxendevicemodel.so.1.4
+libxenevtchn.so.1
+libxenevtchn.so.1.2
+libxenforeignmemory.so.1
+libxenforeignmemory.so.1.4
+libxengnttab.so.1
+libxengnttab.so.1.2
+libxenguest.so.4.19
+libxenguest.so.4.19.0
+libxenhypfs.so.1
+libxenhypfs.so.1.0
+libxenlight.so.4.19
+libxenlight.so.4.19.0
+libxenstore.so.4
+libxenstore.so.4.0
+libxentoolcore.so.1
+libxentoolcore.so.1.0
+libxentoollog.so.1
+libxentoollog.so.1.0
+libxenvchan.so.4.19
+libxenvchan.so.4.19.0
+libxlutil.so.4.19
+libxlutil.so.4.19.0
+libxml2.so.2
+libxml2.so.2.12.8
+libxtables.so.12
+libxtables.so.12.7.0
+libyajl.so.2
+libyajl.so.2.1.0
+libyaml-0.so.2
+libyaml-0.so.2.0.9
+libz.so.1
+libz.so.1.3.1
+libzstd.so.1
+libzstd.so.1.5.5
+modprobe.d
+modules
+modules-load.d
+opensc-pkcs11.so
+optee_armtz
+os-release
+ossl-modules
+pam.d
+pcsc
+perl5
+pkcs11-spy.so
+python3.12
+rpm
+security
+ssl-3
+sudo
+sysctl.d
+systemd
+sysusers.d
+tmpfiles.d
+udev
+xen
+xtables
+root@main:/var# ls /usr/lib
+coreutils
+credstore
+cryptsetup
+depmod.d
+device-mapper
+e2initrd_helper
+engines-3
+environment.d
+gio
+ld-linux-aarch64.so.1
+libBrokenLocale.so.1
+libPocoCrypto.so.95
+libPocoData.so.95
+libPocoDataSQLite.so.95
+libPocoFoundation.so.95
+libPocoJSON.so.95
+libPocoNet.so.95
+libPocoNetSSL.so.95
+libPocoUtil.so.95
+libPocoXML.so.95
+libabsl_base.so.2401.0.0
+libabsl_city.so.2401.0.0
+libabsl_cord.so.2401.0.0
+libabsl_cord_internal.so.2401.0.0
+libabsl_cordz_functions.so.2401.0.0
+libabsl_cordz_handle.so.2401.0.0
+libabsl_cordz_info.so.2401.0.0
+libabsl_crc32c.so.2401.0.0
+libabsl_crc_cord_state.so.2401.0.0
+libabsl_crc_internal.so.2401.0.0
+libabsl_debugging_internal.so.2401.0.0
+libabsl_demangle_internal.so.2401.0.0
+libabsl_die_if_null.so.2401.0.0
+libabsl_examine_stack.so.2401.0.0
+libabsl_exponential_biased.so.2401.0.0
+libabsl_flags_commandlineflag.so.2401.0.0
+libabsl_flags_commandlineflag_internal.so.2401.0.0
+libabsl_flags_config.so.2401.0.0
+libabsl_flags_internal.so.2401.0.0
+libabsl_flags_marshalling.so.2401.0.0
+libabsl_flags_private_handle_accessor.so.2401.0.0
+libabsl_flags_program_name.so.2401.0.0
+libabsl_flags_reflection.so.2401.0.0
+libabsl_graphcycles_internal.so.2401.0.0
+libabsl_hash.so.2401.0.0
+libabsl_int128.so.2401.0.0
+libabsl_kernel_timeout_internal.so.2401.0.0
+libabsl_log_globals.so.2401.0.0
+libabsl_log_internal_check_op.so.2401.0.0
+libabsl_log_internal_conditions.so.2401.0.0
+libabsl_log_internal_format.so.2401.0.0
+libabsl_log_internal_globals.so.2401.0.0
+libabsl_log_internal_log_sink_set.so.2401.0.0
+libabsl_log_internal_message.so.2401.0.0
+libabsl_log_internal_nullguard.so.2401.0.0
+libabsl_log_internal_proto.so.2401.0.0
+libabsl_log_sink.so.2401.0.0
+libabsl_low_level_hash.so.2401.0.0
+libabsl_malloc_internal.so.2401.0.0
+libabsl_random_internal_platform.so.2401.0.0
+libabsl_random_internal_pool_urbg.so.2401.0.0
+libabsl_random_internal_randen.so.2401.0.0
+libabsl_random_internal_randen_hwaes.so.2401.0.0
+libabsl_random_internal_randen_hwaes_impl.so.2401.0.0
+libabsl_random_internal_randen_slow.so.2401.0.0
+libabsl_random_internal_seed_material.so.2401.0.0
+libabsl_random_seed_gen_exception.so.2401.0.0
+libabsl_raw_hash_set.so.2401.0.0
+libabsl_raw_logging_internal.so.2401.0.0
+libabsl_spinlock_wait.so.2401.0.0
+libabsl_stacktrace.so.2401.0.0
+libabsl_status.so.2401.0.0
+libabsl_statusor.so.2401.0.0
+libabsl_str_format_internal.so.2401.0.0
+libabsl_strerror.so.2401.0.0
+libabsl_strings.so.2401.0.0
+libabsl_strings_internal.so.2401.0.0
+libabsl_symbolize.so.2401.0.0
+libabsl_synchronization.so.2401.0.0
+libabsl_throw_delegate.so.2401.0.0
+libabsl_time.so.2401.0.0
+libabsl_time_zone.so.2401.0.0
+libaddress_sorting.so.37
+libaddress_sorting.so.37.0.0
+libaio.so.1
+libaio.so.1.0.2
+libanl.so.1
+libassuan.so.0
+libassuan.so.0.8.6
+libattr.so.1
+libattr.so.1.1.2501
+libblkid.so.1
+libblkid.so.1.1.0
+libbz2.so.1
+libbz2.so.1.0.8
+libc.so.6
+libcap.so.2
+libcap.so.2.69
+libcares.so.2
+libcares.so.2.12.0
+libckteec.so.0
+libckteec.so.0.1.0
+libcom_err.so.2
+libcom_err.so.2.1
+libcomps.so.0
+libcrypt.so.2
+libcrypt.so.2.0.0
+libcrypto.so.3
+libcryptsetup.so.12
+libcryptsetup.so.12.10.0
+libcurl.so.4
+libcurl.so.4.8.0
+libdbus-1.so.3
+libdbus-1.so.3.32.4
+libdevmapper-event-lvm2.so.2.03
+libdevmapper-event.so.1.02
+libdevmapper.so.1.02
+libdl.so.2
+libdnf
+libdnf.so.2
+libdw-0.191.so
+libdw.so.1
+libe2p.so.2
+libe2p.so.2.3
+libedit.so.0
+libedit.so.0.0.72
+libelf-0.191.so
+libelf.so.1
+libevent-2.1.so.7
+libevent-2.1.so.7.0.1
+libexpat.so.1
+libexpat.so.1.9.3
+libext2fs.so.2
+libext2fs.so.2.4
+libfdt.so.1
+libfdt.so.1.6.0
+libffi.so.8
+libffi.so.8.1.4
+libgcc_s.so.1
+libgcrypt.so.20
+libgcrypt.so.20.4.3
+libgdbm.so.6
+libgdbm.so.6.0.0
+libgdbm_compat.so.4
+libgdbm_compat.so.4.0.0
+libgio-2.0.so.0
+libgio-2.0.so.0.7800.6
+libglib-2.0.so.0
+libglib-2.0.so.0.7800.6
+libgmodule-2.0.so.0
+libgmodule-2.0.so.0.7800.6
+libgmp.so.10
+libgmp.so.10.5.0
+libgnutls.so.30
+libgnutls.so.30.38.0
+libgobject-2.0.so.0
+libgobject-2.0.so.0.7800.6
+libgomp.so.1
+libgomp.so.1.0.0
+libgpg-error.so.0
+libgpg-error.so.0.35.0
+libgpgme.so.11
+libgpgme.so.11.32.1
+libgpr.so.37
+libgpr.so.37.0.0
+libgrpc++.so.1.60
+libgrpc++.so.1.60.1
+libgrpc++_alts.so.1.60
+libgrpc++_alts.so.1.60.1
+libgrpc++_error_details.so.1.60
+libgrpc++_error_details.so.1.60.1
+libgrpc++_reflection.so.1.60
+libgrpc++_reflection.so.1.60.1
+libgrpc++_unsecure.so.1.60
+libgrpc++_unsecure.so.1.60.1
+libgrpc.so.37
+libgrpc.so.37.0.0
+libgrpc_authorization_provider.so.1.60
+libgrpc_authorization_provider.so.1.60.1
+libgrpc_unsecure.so.37
+libgrpc_unsecure.so.37.0.0
+libgrpcpp_channelz.so.1.60
+libgrpcpp_channelz.so.1.60.1
+libgthread-2.0.so.0
+libgthread-2.0.so.0.7800.6
+libhistory.so.8
+libhistory.so.8.2
+libhogweed.so.6
+libhogweed.so.6.8
+libidn2.so.0
+libidn2.so.0.4.0
+libip4tc.so.2
+libip4tc.so.2.0.0
+libip6tc.so.2
+libip6tc.so.2.0.0
+libjq.so.1
+libjq.so.1.0.4
+libjson-c.so.5
+libjson-c.so.5.3.0
+libkmod.so.2
+libkmod.so.2.4.1
+libksba.so.8
+libksba.so.8.14.6
+liblvm2cmd.so.2.03
+liblz.so.1
+liblz.so.1.14
+liblzma.so.5
+liblzma.so.5.4.6
+libm.so.6
+libmagic.so.1
+libmagic.so.1.0.0
+libmnl.so.0
+libmnl.so.0.2.0
+libmodulemd.so.2
+libmodulemd.so.2.15.0
+libmount.so.1
+libmount.so.1.1.0
+libmvec.so.1
+libncurses.so.5
+libncurses.so.5.9
+libncursesw.so.5
+libncursesw.so.5.9
+libnettle.so.8
+libnettle.so.8.8
+libnl-3.so.200
+libnl-3.so.200.26.0
+libnl-genl-3.so.200
+libnl-genl-3.so.200.26.0
+libnl-route-3.so.200
+libnl-route-3.so.200.26.0
+libnpth.so.0
+libnpth.so.0.1.2
+libnsl.so.1
+libnsl.so.3
+libnsl.so.3.0.0
+libnss_compat.so.2
+libnss_dns.so.2
+libnss_files.so.2
+libnss_myhostname.so.2
+libnss_systemd.so.2
+libonig.so.5
+libonig.so.5.4.0
+libopensc.so.11
+libopensc.so.11.0.2
+libp11.so.3
+libp11.so.3.5.0
+libpam.so.0
+libpam.so.0.85.1
+libpam_misc.so.0
+libpam_misc.so.0.82.1
+libpamc.so.0
+libpamc.so.0.82.1
+libpanelw.so.5
+libpanelw.so.5.9
+libpcre2-8.so.0
+libpcre2-8.so.0.12.0
+libpcre2-posix.so.3
+libpcre2-posix.so.3.0.5
+libpcsclite.so.1
+libpcsclite.so.1.0.0
+libperl.so.5
+libperl.so.5.38.0
+libpopt.so.0
+libpopt.so.0.0.2
+libprotobuf.so.25.3.0
+libpsx.so.2
+libpsx.so.2.69
+libpthread.so.0
+libpython3.12.so.1.0
+libre2.so
+libre2.so.11
+libre2.so.11.0.0
+libreadline.so.8
+libreadline.so.8.2
+librepo.so.0
+libresolv.so.2
+librpm.so.10
+librpm.so.10.0.2
+librpmbuild.so.10
+librpmbuild.so.10.0.2
+librpmio.so.10
+librpmio.so.10.0.2
+librpmsign.so.10
+librpmsign.so.10.0.2
+librt.so.1
+libseccomp.so.2
+libseccomp.so.2.5.5
+libseteec.so.0
+libseteec.so.0.1.0
+libsmartcols.so.1
+libsmartcols.so.1.1.0
+libsmm-local.so.11
+libsmm-local.so.11.0.2
+libsolv.so.1
+libsolvext.so.1
+libsqlite3.so.0
+libsqlite3.so.0.8.6
+libss.so.2
+libss.so.2.0
+libssh.so.4
+libssh.so.4.9.6
+libssl.so.3
+libstdc++.so.6
+libstdc++.so.6.0.32
+libsystemd.so.0
+libsystemd.so.0.38.0
+libtasn1.so.6
+libtasn1.so.6.6.3
+libteeacl.so.0
+libteeacl.so.0.1.0
+libteec.so.2
+libteec.so.2.0.0
+libtinfo.so.5
+libtinfo.so.5.9
+libtirpc.so.3
+libtirpc.so.3.0.0
+libudev.so.1
+libudev.so.1.7.8
+libunistring.so.5
+libunistring.so.5.1.0
+libupb.so.37
+libupb.so.37.0.0
+libupb_collections_lib.so.37
+libupb_collections_lib.so.37.0.0
+libupb_json_lib.so.37
+libupb_json_lib.so.37.0.0
+libupb_textformat_lib.so.37
+libupb_textformat_lib.so.37.0.0
+libusb-1.0.so.0
+libusb-1.0.so.0.4.0
+libutf8_range_lib.so.37
+libutf8_range_lib.so.37.0.0
+libutil.so.1
+libuuid.so.1
+libuuid.so.1.3.0
+libwrap.so.0
+libwrap.so.0.7.6
+libxencall.so.1
+libxencall.so.1.3
+libxenctrl.so.4.19
+libxenctrl.so.4.19.0
+libxendevicemodel.so.1
+libxendevicemodel.so.1.4
+libxenevtchn.so.1
+libxenevtchn.so.1.2
+libxenforeignmemory.so.1
+libxenforeignmemory.so.1.4
+libxengnttab.so.1
+libxengnttab.so.1.2
+libxenguest.so.4.19
+libxenguest.so.4.19.0
+libxenhypfs.so.1
+libxenhypfs.so.1.0
+libxenlight.so.4.19
+libxenlight.so.4.19.0
+libxenstore.so.4
+libxenstore.so.4.0
+libxentoolcore.so.1
+libxentoolcore.so.1.0
+libxentoollog.so.1
+libxentoollog.so.1.0
+libxenvchan.so.4.19
+libxenvchan.so.4.19.0
+libxlutil.so.4.19
+libxlutil.so.4.19.0
+libxml2.so.2
+libxml2.so.2.12.8
+libxtables.so.12
+libxtables.so.12.7.0
+libyajl.so.2
+libyajl.so.2.1.0
+libyaml-0.so.2
+libyaml-0.so.2.0.9
+libz.so.1
+libz.so.1.3.1
+libzstd.so.1
+libzstd.so.1.5.5
+modprobe.d
+modules
+modules-load.d
+opensc-pkcs11.so
+optee_armtz
+os-release
+ossl-modules
+pam.d
+pcsc
+perl5
+pkcs11-spy.so
+python3.12
+rpm
+security
+ssl-3
+sudo
+sysctl.d
+systemd
+sysusers.d
+tmpfiles.d
+udev
+xen
+xtables
+root@main:/var# 
+
+

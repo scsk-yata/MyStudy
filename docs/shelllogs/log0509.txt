@@ -1,0 +1,3014 @@
+yata@sdmdev2:~$ ls
+ 2025-05-02_eth0.pcap           machine-id
+ 20250504-115517_eth0.pcap      meta-aos
+ 20250505-115517_eth0.pcap      meta-aos-rpi
+ 20250506-115517_eth0.pcap      Music
+ aarch64-rootfs                 mycommands.sh
+ alsa-lib                       MyRepository
+ alsa-lib-aarch64               nohup.out
+ alsa-utils                     Pictures
+ alsa-utils-aarch64             poky
+ bin                            pt
+ capture-20250428-190146.pcap   Public
+ capture-20250506-172234.pcap   pyvenv.cfg
+ capture_eth0.pcap              snap
+ Desktop                        ssh_host_ecdsa_key
+ Documents                      ssh_host_ecdsa_key.pub
+ Downloads                      ssh_host_ed25519_key
+ gettext-0.22.5                 ssh_host_ed25519_key.pub
+ gettext-0.22.5-old             ssh_host_rsa_key
+ gettext-0.22.5.tar.gz          ssh_host_rsa_key.pub
+ GNS3                           sslkeys.log
+ handmadeOEM.pfx                tailscale-arm64-static
+ handmadeSP.pfx                 tcpdump-build
+ hello-world                    tempfiles.json
+ include                        Templates
+ kepler-kit                     thinclient_drives
+ lib                            usbutils
+ lib64                          venv
+ libgpiod                       Videos
+ libgpiod-arm64-static         'VirtualBox VMs'
+ log.txt                        yocto
+yata@sdmdev2:~$ ls -a
+ .                              meta-aos-rpi
+ ..                             .mozilla
+ 2025-05-02_eth0.pcap           Music
+ 20250504-115517_eth0.pcap      mycommands.sh
+ 20250505-115517_eth0.pcap      MyRepository
+ 20250506-115517_eth0.pcap      nohup.out
+ aarch64-rootfs                 .packettracer
+ alsa-lib                       .pcsc10
+ alsa-lib-aarch64               Pictures
+ alsa-utils                     .pki
+ alsa-utils-aarch64             poky
+ .aos                           .profile
+ .arduino15                     pt
+ .bash_history                  Public
+ .bash_logout                   .python_history
+ .bashrc                        pyvenv.cfg
+ bin                            snap
+ .cache                         .ssh
+ capture-20250428-190146.pcap   ssh_host_ecdsa_key
+ capture-20250506-172234.pcap   ssh_host_ecdsa_key.pub
+ capture_eth0.pcap              ssh_host_ed25519_key
+ .config                        ssh_host_ed25519_key.pub
+ .cortex-debug                  ssh_host_rsa_key
+ Desktop                        ssh_host_rsa_key.pub
+ Documents                      sslkeys.log
+ .dotnet                        .sudo_as_admin_successful
+ Downloads                      tailscale-arm64-static
+ gettext-0.22.5                 tcpdump-build
+ gettext-0.22.5-old             tempfiles.json
+ gettext-0.22.5.tar.gz          Templates
+ .gitconfig                     thinclient_drives
+ .gitconfig_backup_dir          usbutils
+ GNS3                           venv
+ .gnupg                         .venvs
+ handmadeOEM.pfx                Videos
+ handmadeSP.pfx                 .vim
+ hello-world                    .viminfo
+ .ICEauthority                  .vimrc
+ include                       'VirtualBox VMs'
+ kepler-kit                     .vmware
+ .lesshst                       .vscode
+ lib                            .vscode-server
+ lib64                          .wget-hsts
+ libgpiod                       .Xauthority
+ libgpiod-arm64-static          .xorgxrdp.10.log
+ .local                         .xorgxrdp.10.log.old
+ log.txt                        .xsession
+ machine-id                     .xsession-errors
+ meta-aos                       yocto
+yata@sdmdev2:~$ ls ~/.aos/security/
+aos-user-oem.p12  aos-user-oem.pem  aos-user-sp.p12  aos-user-sp.pem
+yata@sdmdev2:~$ rm ~/.aos/security/*
+yata@sdmdev2:~$ cd ~/.aos/security/
+yata@sdmdev2:~/.aos/security$ ls
+aos-user-oem.pem  aos-user-sp.pem
+yata@sdmdev2:~/.aos/security$ ls
+aos-user-oem.pem  aos-user-sp.pem
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export \
+  -out aos-user-oem.p12 \
+  -inkey aos-key-oem.pem \
+  -in aos-user-oem.pem
+Enter Export Password:
+Verifying - Enter Export Password:
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export   -out aos-user-sp.p12   -inkey aos-key-sp.pem   -in aos-user-sp.pem
+Enter Export Password:
+Verifying - Enter Export Password:
+yata@sdmdev2:~/.aos/security$ ls
+aos-key-oem.pem  aos-key-sp.pem  aos-user-oem.p12  aos-user-oem.pem  aos-user-sp.p12  aos-user-sp.pem
+yata@sdmdev2:~/.aos/security$ cp ~/hand* ./
+yata@sdmdev2:~/.aos/security$ ls
+aos-key-oem.pem  aos-user-oem.p12  aos-user-sp.p12  handmadeOEM.pfx
+aos-key-sp.pem   aos-user-oem.pem  aos-user-sp.pem  handmadeSP.pfx
+yata@sdmdev2:~/.aos/security$ ls ~/.aos/ -al
+total 24
+drwxrwxr-x  6 yata docker 4096 May  2 11:20 .
+drwxr-x--- 55 yata docker 4096 May  8 13:43 ..
+drwxrwxr-x  2 yata yata   4096 May  8 13:50 downloads
+drwxrwxr-x  2 yata docker 4096 Apr 15 13:12 scripts
+drwxrwxr-x  2 yata docker 4096 May  8 14:08 security
+drwxrwxr-x  5 yata docker 4096 Apr 15 12:36 venv
+yata@sdmdev2:~/.aos/security$ ls ~/.aos/downloads -al
+total 1215760
+drwxrwxr-x 2 yata yata        4096 May  8 13:50 .
+drwxrwxr-x 6 yata docker      4096 May  2 11:20 ..
+-rw-r--r-- 1 yata yata   639172608 Apr  3 17:11 aos-vm-main-genericx86-64.wic.vmdk
+-rw-r--r-- 1 yata yata   605749248 Apr  3 17:11 aos-vm-secondary-genericx86-64.wic.vmdk
+yata@sdmdev2:~/.aos/security$ ls ~/.aos/scripts -al
+total 12
+drwxrwxr-x 2 yata docker 4096 Apr 15 13:12 .
+drwxrwxr-x 6 yata docker 4096 May  2 11:20 ..
+-rwxrwxr-x 1 yata docker  333 May  8 13:34 install_aos_root_ca.sh
+yata@sdmdev2:~/.aos/security$ ls ~/.aos/venv -al
+total 24
+drwxrwxr-x 5 yata docker 4096 Apr 15 12:36 .
+drwxrwxr-x 6 yata docker 4096 May  2 11:20 ..
+drwxrwxr-x 2 yata docker 4096 Apr 15 13:00 bin
+drwxrwxr-x 3 yata docker 4096 Apr 15 12:36 include
+drwxrwxr-x 3 yata docker 4096 Apr 15 12:36 lib
+lrwxrwxrwx 1 yata docker    3 Apr 15 12:36 lib64 -> lib
+-rw-rw-r-- 1 yata docker  165 May  8 13:33 pyvenv.cfg
+yata@sdmdev2:~/.aos/security$ ls -al
+total 48
+drwxrwxr-x 2 yata docker 4096 May  8 14:08 .
+drwxrwxr-x 6 yata docker 4096 May  2 11:20 ..
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw------- 1 yata yata   2531 May  8 13:46 aos-user-oem.p12
+-rw------- 1 yata yata   1416 May  8 13:23 aos-user-oem.pem
+-rw------- 1 yata yata   2531 May  8 13:46 aos-user-sp.p12
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+yata@sdmdev2:~/.aos/security$ file aos-user-oem.p12
+aos-user-oem.p12: data
+yata@sdmdev2:~/.aos/security$ ^C
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -in aos-user-sp.p12 -text
+pkcs12: Unknown cipher: text
+pkcs12: Use -help for summary.
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -in aos-user-sp.p12
+Enter Import Password:
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+subject=CN = "sp-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "SP goro.kikuchi+oem2@gmail.com"
+issuer=CN = Aos SP Issuing CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIDDDCCArGgAwIBAgIIaBQhRgAGcoswCgYIKoZIzj0EAwIwOTEaMBgGA1UEAwwR
+QW9zIFNQIElzc3VpbmcgQ0ExDTALBgNVBAoMBEVQQU0xDDAKBgNVBAsMA0FvczAe
+Fw0yNTA1MDIwMTM1MDJaFw0zNTA0MzAwMTM1MDJaMIGUMScwJQYDVQQDDB5zcC1n
+b3JvLmtpa3VjaGkrb2VtMkBnbWFpbC5jb20xKjAoBgkqhkiG9w0BCQEWG2dvcm8u
+a2lrdWNoaStvZW0yQGdtYWlsLmNvbTEUMBIGA1UECgwLYW9zY2xvdWQuaW8xJzAl
+BgNVBAsMHlNQIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBAJP6mHZ8lYyIgalpFnaaakXmNgq4hIsAf+n5
+vw4Q1t/g0jix0IbtsoPwz+eHXHprjQYTo53CpNQVuDRWiAXQY4Db3YIrQA11bcwe
+qauELEU9+V6CRqGT9tDqt1psHGdZSNFBG0u9a89G40/pJRISyIb92hPeQWGfLtFw
+ZIM+1igPemLJzG0byhq8mRGT2BArfsaN7ftoBmrXXIbkpVBqF/9DlQwX/fcD2Rqx
+yoXwBwlMhI5lm7/b37NFXg/2Gwatla5d/kVdgZsNumrui04jzJJFUZl/yFFh2d2/
+WouAAC7Rv2XTZ8W4vMdd1sJWjJgcviHdJa33f2pi6ZsT6X7erDMCAwEAAaN8MHow
+DAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFD2YYLNSHeaiTFj/
+FEVKfdYdiwTmMB8GA1UdIwQYMBaAFNFHd8a7zMK9cr0K8kiFxJ+u8p5tMB0GA1Ud
+JQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEAzo7H
+0+xOH7zbDEJy4ZrFDOnERE0gnvSeQDiGE8UrZusCIQC/7j5zBY+yxgBLUnCQFXfA
+bPdau1uQ3UisG10ZT8SBeA==
+-----END CERTIFICATE-----
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+Key Attributes: <No Attributes>
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIFLTBXBgkqhkiG9w0BBQ0wSjApBgkqhkiG9w0BBQwwHAQIDPepkaoB4QwCAggA
+MAwGCCqGSIb3DQIJBQAwHQYJYIZIAWUDBAEqBBAJb1yVew4ANjihfVXwy3tlBIIE
+0ACtjwAEIHycYIexZn1E7GiZNAnqN0lcxXFGWFRndnegGi/Fn1+EXbAT/EHwyz3x
+UStT6w27AGtzsFL7a/UdhW4eQxquoHeorEiOeH7EH6xqQ1V1SgDH5lCYNPvhSl27
+XeC+UebO053iUZU0M0sSBZDG56cM8eo3Z2XrC9LQh/7Fz8kpSrUuKslor575DIWy
+yFgZWFQncnOdidv6WlYL9iMDeVldxqAmS793CEDaE9UIxQvdB9Nc+ClqM9KuZFcV
+fRD6qMr5vTd+hqS4zWrsUGaP8llhVGZ/P/S13d50os3C8nARbtW9rsHALWN2/dwr
+OddjgjEtskmfBqyXtplruB7u/KpN5pyyGpL1yjDseGBCnRYTiwMsgUCZlgH/PTpx
+el2CvtdwsyoXXpIDgfrdEsiZmUPWvZCrH05xi26HA7K9MkK4oq0gkT9gf9eS5i7O
+OeWpQq8k2GlbMgAuG+/BLQ0SSCq1GFyDNcjL8uaoaELo6/Gj5ZWnpCw++lCsxQeO
+yyDUnfw4/YGp7Q3dk6qGunm+cQbP4kHPjharqHnG4R55hO26Y7XTnaDtJZjKN5k2
+S0qDX46ZcnXpSj9rov8BavlGCRIi2grejkkhoAxkAD3o+9n/P3gPbNAN8PiXHJj0
+8DJhZbxuTXy2ZsZNw7luViLJmLSGAAtam2kuOZfFoGVys8oL04SiMe14cQm/HzRc
+0bd/y5NtIAp5K/KvomyyrYDMB71vM2NL8AoHml1hooP6/g/+BGoSHYzxkSikcFAq
+qJf76z7q67tbsUZg6akiXfLBt5Gg1fd3ySQ6BoA3RunZBad/1r11pTllTFbevLC+
+ym9Qm1l2ph1QxeLYNP5DUD5ZuYaGJO1XoKZiG8vIN919sYHR7PztxqZZ3/El4xp8
+5K+aT5xmsraZEZBdLK2zBP7mm+pMAHXGEJml67U0NONvDoJ02waH1uIR1T1RWzm0
+pZl97MBeZm6D6jrOYQZH8llDEaLFeFKzAUCOF/vnA/vukS6SzDgd2S9v1U78pxo0
+oLRzvyL/UdOqMAmSI6fjpTvt0/3RAWJPOqILn9bwzjaxiFy9+DhR9Okgai8PbGFA
+1P1z1a0p6iD4wylyBpjDpXRL7lDw99y5Hr9sAYfip0WKRhk2ZqiMEVR99p6vvhmV
+6nTCljwn2GUb2XlSuE4mlS6c/xx4HQBvNko2e8vJRZlf4zyOuW+NjrwTk1PR8RVa
+csVTPGRpWniFadukuiZEfhWHxwAld8rmyy72WvoyUo7gqvznduJqjRhHExZLuTOO
+KmDWDk5iuJWlLqw7o8oIV11iDGbZVcTE32XixeUB0xWpb4NJR3yxCZxBl3EhZkhG
+gAqlHjUXl/6iK0NG19HJrtoyIpykNsHn+rEP8Nrjj3wAM36pFPEqW+ZvHG29XJFe
+GbChv9hZDkz2iFqRtcy3B/vqLFMkepP5PLMafjZFE8F3H4zceTGReHVdlDyIC7J7
+6JriXzXX3NoQ/DBn/U4P3oM59NrMHkibWc/qh5I+BOB/l7pwlbCo784MB4Q3/Y7z
+QJoVpUH28XTNf/nLNq/ddmVFmZpwhoWk/q+wnXQTIpLOWvLRUP8bqA/saydaOvGu
+D9dR2fZizzBlvsttIMYW/RqwKC+DEuCo+e/X/+CYSkOu
+-----END ENCRYPTED PRIVATE KEY-----
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -in aos-user-sp.p12
+Enter Import Password:
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+subject=CN = "sp-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "SP goro.kikuchi+oem2@gmail.com"
+issuer=CN = Aos SP Issuing CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIDDDCCArGgAwIBAgIIaBQhRgAGcoswCgYIKoZIzj0EAwIwOTEaMBgGA1UEAwwR
+QW9zIFNQIElzc3VpbmcgQ0ExDTALBgNVBAoMBEVQQU0xDDAKBgNVBAsMA0FvczAe
+Fw0yNTA1MDIwMTM1MDJaFw0zNTA0MzAwMTM1MDJaMIGUMScwJQYDVQQDDB5zcC1n
+b3JvLmtpa3VjaGkrb2VtMkBnbWFpbC5jb20xKjAoBgkqhkiG9w0BCQEWG2dvcm8u
+a2lrdWNoaStvZW0yQGdtYWlsLmNvbTEUMBIGA1UECgwLYW9zY2xvdWQuaW8xJzAl
+BgNVBAsMHlNQIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBAJP6mHZ8lYyIgalpFnaaakXmNgq4hIsAf+n5
+vw4Q1t/g0jix0IbtsoPwz+eHXHprjQYTo53CpNQVuDRWiAXQY4Db3YIrQA11bcwe
+qauELEU9+V6CRqGT9tDqt1psHGdZSNFBG0u9a89G40/pJRISyIb92hPeQWGfLtFw
+ZIM+1igPemLJzG0byhq8mRGT2BArfsaN7ftoBmrXXIbkpVBqF/9DlQwX/fcD2Rqx
+yoXwBwlMhI5lm7/b37NFXg/2Gwatla5d/kVdgZsNumrui04jzJJFUZl/yFFh2d2/
+WouAAC7Rv2XTZ8W4vMdd1sJWjJgcviHdJa33f2pi6ZsT6X7erDMCAwEAAaN8MHow
+DAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFD2YYLNSHeaiTFj/
+FEVKfdYdiwTmMB8GA1UdIwQYMBaAFNFHd8a7zMK9cr0K8kiFxJ+u8p5tMB0GA1Ud
+JQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEAzo7H
+0+xOH7zbDEJy4ZrFDOnERE0gnvSeQDiGE8UrZusCIQC/7j5zBY+yxgBLUnCQFXfA
+bPdau1uQ3UisG10ZT8SBeA==
+-----END CERTIFICATE-----
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+Key Attributes: <No Attributes>
+Enter PEM pass phrase:
+Error outputting keys and certificates
+4047F324527A0000:error:14000065:UI routines:UI_set_result_ex:result too small:../crypto/ui/ui_lib.c:888:You must type in 4 to 1024 characters
+4047F324527A0000:error:1400006B:UI routines:UI_process:processing error:../crypto/ui/ui_lib.c:548:while reading strings
+4047F324527A0000:error:0480006D:PEM routines:PEM_def_callback:problems getting password:../crypto/pem/pem_lib.c:62:
+4047F324527A0000:error:07880109:common libcrypto routines:do_ui_passphrase:interrupted or cancelled:../crypto/passphrase.c:184:
+4047F324527A0000:error:1C80009F:Provider routines:p8info_to_encp8:unable to get passphrase:../providers/implementations/encode_decode/encode_key2any.c:116:
+yata@sdmdev2:~/.aos/security$ ls
+aos-key-oem.pem  aos-user-oem.p12  aos-user-sp.p12  handmadeOEM.pfx
+aos-key-sp.pem   aos-user-oem.pem  aos-user-sp.pem  handmadeSP.pfx
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -in aos-user-sp.p12
+Enter Import Password:
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+subject=CN = "sp-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "SP goro.kikuchi+oem2@gmail.com"
+issuer=CN = Aos SP Issuing CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIDDDCCArGgAwIBAgIIaBQhRgAGcoswCgYIKoZIzj0EAwIwOTEaMBgGA1UEAwwR
+QW9zIFNQIElzc3VpbmcgQ0ExDTALBgNVBAoMBEVQQU0xDDAKBgNVBAsMA0FvczAe
+Fw0yNTA1MDIwMTM1MDJaFw0zNTA0MzAwMTM1MDJaMIGUMScwJQYDVQQDDB5zcC1n
+b3JvLmtpa3VjaGkrb2VtMkBnbWFpbC5jb20xKjAoBgkqhkiG9w0BCQEWG2dvcm8u
+a2lrdWNoaStvZW0yQGdtYWlsLmNvbTEUMBIGA1UECgwLYW9zY2xvdWQuaW8xJzAl
+BgNVBAsMHlNQIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBAJP6mHZ8lYyIgalpFnaaakXmNgq4hIsAf+n5
+vw4Q1t/g0jix0IbtsoPwz+eHXHprjQYTo53CpNQVuDRWiAXQY4Db3YIrQA11bcwe
+qauELEU9+V6CRqGT9tDqt1psHGdZSNFBG0u9a89G40/pJRISyIb92hPeQWGfLtFw
+ZIM+1igPemLJzG0byhq8mRGT2BArfsaN7ftoBmrXXIbkpVBqF/9DlQwX/fcD2Rqx
+yoXwBwlMhI5lm7/b37NFXg/2Gwatla5d/kVdgZsNumrui04jzJJFUZl/yFFh2d2/
+WouAAC7Rv2XTZ8W4vMdd1sJWjJgcviHdJa33f2pi6ZsT6X7erDMCAwEAAaN8MHow
+DAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFD2YYLNSHeaiTFj/
+FEVKfdYdiwTmMB8GA1UdIwQYMBaAFNFHd8a7zMK9cr0K8kiFxJ+u8p5tMB0GA1Ud
+JQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEAzo7H
+0+xOH7zbDEJy4ZrFDOnERE0gnvSeQDiGE8UrZusCIQC/7j5zBY+yxgBLUnCQFXfA
+bPdau1uQ3UisG10ZT8SBeA==
+-----END CERTIFICATE-----
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+Key Attributes: <No Attributes>
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIFLTBXBgkqhkiG9w0BBQ0wSjApBgkqhkiG9w0BBQwwHAQI3uObBRx9wRICAggA
+MAwGCCqGSIb3DQIJBQAwHQYJYIZIAWUDBAEqBBDXRCeL4RYxjMssjbfRSeg8BIIE
+0DVXhuYCXitzJAh9e6x1NqPvCyl9sn6Brmyg9CRfd2RET78rwU6FtjMGPzA+cEF3
+2kukJDR4eJjvnc92RrtArlqhZfEsJ/hdARM27iBTmhb/9NOqcsyUSAyRtrneKFNt
+k1cmxKtnAp8LT9KO9BAV7Ft0KgpVQ0I8dD/7xsjmS+RdEJhPJ91pP9GWG27SZEKY
+jpcZjqaTzteU8TkMhl3arn6tzxvxtabdMXyrJYLKhoLSY3RXcinnzYLkxBs6Q6/S
+7JU3o+ISC/o7mKqme2oFpPa8VuVQOqjPXtdmq/BIqp/vwtTxEv/vehB5+9s1AuH8
+iPD1PyiFAorjRJm7RuWWUXw7TYwt2YZMqsZMexsrkA7nRmxE7f5UXna7debva5TR
+gcRKjIpIxhawgnqjDqtppuBr+a6nOacX+FaXhDumsQDpg1LQmu2brZ1MMuh/SMoE
+46KvOkGR98mK1z1JYz0KMZcyKKRybiRguGptQDkOy0pHvPTJD93RCgt51j/HC8x9
+lGQ6jvgBQAGn8WQiTwT3WQjcnVZmAOb/+UUXMzZWmXeQHXVjchy1AJS++7YFhwqC
+qfhShZ2z71kn/VButDizXnYnrvbdHHXOpqc4BM72yZoGeet1GZEVqt8qZe3fitkt
+5qhBkbthvzo4eAKVX3H8IzkmoQkgigmRl4gpEgRtaA+DbN2+0i6b8PZeLKwEL4XD
+O3d3tB1J/LlixiX4udnOu6YlnH5A5xoEooWYhzmx+l/bPW6bO6gYEGGN/+RbE2Mr
+71o0FCIH7QAqC7QTKFzst3xYkRTwmceLN0rspIwYOSe92qN0GZHTECn9kwxClIdL
+ljGmXO7GrhrdTsO+O3CAMjbIMKnkHK15BI17AbVwRGVmedCcUWoYdQafyZnllqKK
+DhORqQZiWK/2pyIDmqVIoytoQYWsfkV05lmq607Vre6YQEeTqD0cXBBDS1esos4P
+GJ2S7Wav45cEvrgCN9f93wBiCNRz4r4lkzooKC7N/KHpPlHlmPt6Bf/5T04rGCxK
+LAJDg6e0Ur0Qw0yMYPApTBcOKbTuA9odyIjOGzfpVmlbZZ4NU69L+1Lk6FL7oumK
+DsWH7gQo+WqfMWgvBCbEeVgBd8oS0dcsNM4c9KJ8LgTWwVqTXS1ZYD8CscntYrHa
+NMgvZCGUZJe0xdYBF5btgWaxLShbpljxGHsPpaTKiyensnsGhlT0WLXYfhj0008W
+HC6O1Y7AjeHR2p9+mS/BuGC0gatsmZhyEcqcqPX/B9sBZ1E6vnLHt0CSm0IQWudC
+ItdNiyqBlqgYLDntEdsKmabn3RZP6Z3UyOzSESkfq1XAsO3UN9+A4Kq68NBQ6tHb
+fTHq3izr0qaFgjtfb71MOC8DGn6t/j58Vx5Bni74Gn8dReezsNrALTyd6OPCYVBw
+BZfK12mb4wg8yS7XFnEygYAnB2c4ZhoX8cw7cbekHVu45mDq8TApwOylpd9VnS2M
+OGUZpM9E9mBv8OqPT+wpRgYidmozB4Yqa6MFZxvUzwcVUOlYBj4SaQZipdD9IcXq
+SmzssohVjDbR75E7VIisjAlwi/07DOh7TsrOoKsylSlCt1hzsJ6pgdyYwz3MG1d4
+DN4jZv35aY1akVl71OfbDMl2QqFn+hd/+pDLNeKklN7S
+-----END ENCRYPTED PRIVATE KEY-----
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -in aos-user-oem.p12
+Enter Import Password:
+Bag Attributes
+    localKeyID: 02 3C 85 1C AC 39 33 AE 21 5E B6 61 5F 85 15 43 4E 90 2C 1A 
+subject=CN = "oem-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "OEM goro.kikuchi+oem2@gmail.com"
+issuer=CN = Aos OEM Issuing CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIDDzCCArSgAwIBAgIIaBMCCgAJXPYwCgYIKoZIzj0EAwIwOjEbMBkGA1UEAwwS
+QW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+HhcNMjUwNTAxMDUwOTMwWhcNMzUwNDI5MDUwOTMwWjCBljEoMCYGA1UEAwwfb2Vt
+LWdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTEqMCgGCSqGSIb3DQEJARYbZ29y
+by5raWt1Y2hpK29lbTJAZ21haWwuY29tMRQwEgYDVQQKDAthb3NjbG91ZC5pbzEo
+MCYGA1UECwwfT0VNIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDeTiADYoZOfdC6gvvVdFuV36CWlG4h
+LXSMxkuOhyWpIWhf10FR8Teodx3bBmiRadYza5h8wSHV3UOht6X3sxvNxcUU/s32
+b7g91Qgo2f7D/qNoLJsj5OOQQR63fkzaAbTF1L/25fVZOLBUzx74q8LEOGgSxw5D
+KY6IvQOAFR5RNuI6alksouC42thlQ3Y8PlshahAksnhJQnjMJwN+KQzSwLtd9E2w
+n0pA5RdUKxwcQp1F+FHLfnA4QMsSO3hxWuHjS9GrhQj4uI9WGlgPqGIA/m3INqzq
+CmtFahlENKex3DeCD9bFibUCNbu0k6E7/pE8FOz9ney40v9XTn7dip8CAwEAAaN8
+MHowDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFJXH3LR53l8P
+hLl8HHM8rADeA2D+MB8GA1UdIwQYMBaAFE2mHWjrpCCpT6VPGZTHwQLE5C4dMB0G
+A1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEA
+2OvfKyeLpbAhqa5ycBSXpolrZX6jvEYnpRSpjvX7KAsCIQCh8sOBoibvyMh7uaeQ
+RPjSSaw7+xiXN2TmTj65ZfDCjg==
+-----END CERTIFICATE-----
+Bag Attributes
+    localKeyID: 02 3C 85 1C AC 39 33 AE 21 5E B6 61 5F 85 15 43 4E 90 2C 1A 
+Key Attributes: <No Attributes>
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIFLTBXBgkqhkiG9w0BBQ0wSjApBgkqhkiG9w0BBQwwHAQICSTCQXJL/Q4CAggA
+MAwGCCqGSIb3DQIJBQAwHQYJYIZIAWUDBAEqBBANLQ8WTTguKMDQLKYiHG3iBIIE
+0EXHTBbunthgOEm8O5fpB5cRBuGkpk2ZcEgWHBVMdjuhRsAR85Ejji/XGYXxcNu0
+jul35Wm+AKQGfzMd5RFGSEnRmkHsV3adZfyvKXWxPegUhKC8upA2J42XIlG194pd
+EFgoZSkOLq4DQG7oIQ1QL9dmptTRWNb8geJmcEI2MhdPQO04VtF6QRg39jiHRfEh
+9RxLwsOjuKq8NpcVeLwg9DvVZaa5SjB6dp2b7JFOcUt/zdAVWI7FC95bVv3eok4H
+R35sYSE2g2hubWF1LD2Ti+09VHqgPEBZ0WNkg2tQLMgMZzYCkmPLOWDsLM2PgC9J
+u59LQbuhq2tgIOg2Ru1t6DEeD37xM2NO5Wvu1+r0XD6+m7YGUQsQKb4ABM+TUNqA
+0f7eLEvHup3Jyz6hconmx9SgF3mdhIAfipt5EXIv/+ZjfLW34rkV3Wy9blRDHNmV
+j/0VJRWsqQoCpTzNp1z5tjcH4O/K7/cpAWiiSczJoQv8Bq4zawr0h6nXA4AqffSg
+iGdCfbNTTYxEiIbw4rBezpBEVd01c1XNKOI9mdHm3GvpEFaDgKr8XHIC9RHLE0w1
+FUSXPLtQ1+WR+7ouEhg+88maMmxl6+bgMHq7tJzX6356BbEztJlbF3ZGmTjoLXDK
+H4pivi8I4c8FjZKJo4AZHGDwUVXOKyGVO/Mhp2FYbaBU5of40hR+hOwH8Mz1Y/LZ
+GAhLUmmbJGI90cUtfZ3Cu+RTA2lZ/YFIJXDkkkdj13j0A8o+5S/FWoAd1nlO5Uto
+uPE4ywDbIFbtc4QmVqAjjyxMD63lV447nOhO55QeaPiueaDCPhLOoT+ZAtQkJtu8
+P7tSTtjHd+/jRvmjCf483xAgKr7QOJhIRRBmG136hV8sga3Fie19t1d+zbvuk8vF
+GDs+Xh2OkCeJshY/KX5p+aLAHZDq0/hYqVqIvghkqv/i0SpdElN73/bqAY4Lw8yH
+je0MMmS0FMJ225iVRmml2+fz8oyxKk0FowDOkLUPerzYGyBSoARbsGDAQbb5VhkR
+L5BRs1K7U9eButeAg2SNyPc5QMIhwcu8rx0E85Q/Nn87IOqV+KA76seYQFhZxKbI
+98dUMvQioLhpbNUR7UTZeZ7eYCfXdKA5fhl1wc/HzYDhLaqUvILUbGomgQiqTtlC
+L/lFYfe24wXEM4jBxwinceHh6PyJEKKodj+fgHRCgfKTuJ41IcdAx81FFm4fQ3Oh
+Ktmewk/rA2sZ2i8mn/9MbTtjhy8j4Bz2t/24Thha8i1Ot4qf/n5g3hxVyPGOB3w4
+AueT17j1RdubU/Bge8gDq8c+dOe8WOb/julBMbxLjH0oy7nLYu/PBhh5dOxiYSmC
+zuXpMMEMj4ZWesf2+hErORiwMTTkrKH+ARy32uRVJJ2CiI4NHjkmjpMU7pD3cMSb
+34ak29SqX6Q6w0McQOtADFiSpnXmJWVdn8iTCd4xVOn01xodJspd0i9pVMNeB6F/
+m4ultcdaXnNmeoimCoBDawXFGmR5iWrXh7+rn9WaKz3GkkzQUgr1j1zpsoa+bJyc
+11cZeL1MtMHZ6lr+BqgXanOg3d0WxKbK+xx/D7WljivpahBnXa7CJglDcrCv7vLC
+LURqLym/zoEVa7Obfsxp/FMaghyph2tH72BS2DBfaDfU
+-----END ENCRYPTED PRIVATE KEY-----
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_keys info --oem
+                       Certificate info                       
+┌──────────────────┬─────────────────────────────────────────┐
+│File:             │/home/yata/.aos/security/aos-user-oem.p12│
+│Aos base domain:  │aoscloud.io                              │
+│Serial number:    │6813020A00095CF6                         │
+│User:             │oem-goro.kikuchi+oem2@gmail.com          │
+│e-mail:           │goro.kikuchi+oem2@gmail.com              │
+│Company name:     │OEM goro.kikuchi+oem2@gmail.com          │
+│Valid not before: │2025-05-01 14:09:30+09:00                │
+│Valid not after:  │2035-04-29 14:09:30+09:00                │
+└──────────────────┴─────────────────────────────────────────┘
+Process failed with error: 
+HTTPSConnectionPool(host='aoscloud.io', port=10000): Max retries exceeded with url: 
+/api/v10/users/me/ (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_UNKNOWN_CA] tlsv1 
+alert unknown ca (_ssl.c:2559)')))
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos-prov provision -u 172.16.1.47
+/home/yata/.aos/venv/bin/python3: No module named aos-prov
+yata@sdmdev2:~/.aos/security$ ls -al
+total 116
+drwxrwxr-x 2 yata docker 4096 May  9 11:32 .
+drwxrwxr-x 6 yata docker 4096 May  9 11:12 ..
+-rw-rw-r-- 1 yata yata   2901 May  9 11:07 aos-ca-chain.pem
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw-rw-r-- 1 yata yata   4414 May  9 09:09 Aos-Intermediate-CA-chain.pem
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 Aos-Intermediate-CA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata   4414 May  9 09:09 Aos-OEM-Issuring-CA-chain.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw-rw-r-- 1 yata docker 2193 Apr 24 13:46 aos-root-certificate.pem
+-rw------- 1 yata yata   4675 May  9 11:19 aos-user-oem.p12
+-rw------- 1 yata yata   5687 May  9 11:21 aos-user-oem.pem
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4414 May  9 09:09 Fusion-Root-CA-chain.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   4414 May  9 09:08 oem-goro-kikuchioem2gmail-com-chain.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+yata@sdmdev2:~/.aos/security$ mv aos-root-certificate.pem ~/
+yata@sdmdev2:~/.aos/security$ rm aos-ca-chain.pem 
+yata@sdmdev2:~/.aos/security$ mv Aos-Intermediate-CA.pem oem-Aos-Intermediate-CA.pem
+yata@sdmdev2:~/.aos/security$ mv Aos-Intermediate-CA-chain.pem oem-Aos-Intermediate-CA-chain.pem
+yata@sdmdev2:~/.aos/security$ ls -al
+total 108
+drwxrwxr-x 2 yata docker 4096 May  9 11:38 .
+drwxrwxr-x 6 yata docker 4096 May  9 11:12 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata   4414 May  9 09:09 Aos-OEM-Issuring-CA-chain.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw------- 1 yata yata   4675 May  9 11:19 aos-user-oem.p12
+-rw------- 1 yata yata   5687 May  9 11:21 aos-user-oem.pem
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4414 May  9 09:09 Fusion-Root-CA-chain.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   4414 May  9 09:09 oem-Aos-Intermediate-CA-chain.pem
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   4414 May  9 09:08 oem-goro-kikuchioem2gmail-com-chain.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+yata@sdmdev2:~/.aos/security$ rm aos-user-oem.p12
+yata@sdmdev2:~/.aos/security$ mv Fusion-Root-CA.pem oem-Fusion-Root-CA.pem
+yata@sdmdev2:~/.aos/security$ mv Fusion-Root-CA-chain.pem oem-Fusion-Root-CA-chain.pem
+yata@sdmdev2:~/.aos/security$ mv *chain* ..
+yata@sdmdev2:~/.aos/security$ ls ..
+Aos-OEM-Issuring-CA-chain.pem  downloads                                scripts
+aos-user-oem.p12               oem-Aos-Intermediate-CA-chain.pem        security
+aos-user-sp.p12                oem-Fusion-Root-CA-chain.pem             venv
+config.json                    oem-goro-kikuchioem2gmail-com-chain.pem
+yata@sdmdev2:~/.aos/security$ cat oem-Aos-Intermediate-CA.pem oem-Fusion-Root-CA.pem > oem-Intermediate-Fusion-chain.pem
+yata@sdmdev2:~/.aos/security$ cat oem-Aos-Intermediate-CA.pem AosRootCA.pem > oem-Intermediate-Root-chain.pem
+yata@sdmdev2:~/.aos/security$ ls -al
+total 76
+drwxrwxr-x 2 yata docker 4096 May  9 11:45 .
+drwxrwxr-x 6 yata docker 4096 May  9 11:41 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw------- 1 yata yata   5687 May  9 11:21 aos-user-oem.pem
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 oem-Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+-rw-rw-r-- 1 yata yata   2564 May  9 11:45 oem-Intermediate-Fusion-chain.pem
+-rw-rw-r-- 1 yata yata   2540 May  9 11:45 oem-Intermediate-Root-chain.pem
+yata@sdmdev2:~/.aos/security$ openssl x509 -in Aos-OEM-Issuring-CA.pem 
+-----BEGIN CERTIFICATE-----
+MIIB1TCCAXqgAwIBAgIUYn7HRlXFzeIWcIUV2Xp3EiIdUlgwCgYIKoZIzj0EAwIw
+OzEcMBoGA1UEAwwTQW9zIEludGVybWVkaWF0ZSBDQTENMAsGA1UECgwERVBBTTEM
+MAoGA1UECwwDQW9zMB4XDTIyMDMyNTEyMzEwMloXDTI4MDMyMzEyMzEwMlowOjEb
+MBkGA1UEAwwSQW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYD
+VQQLDANBb3MwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARKoP/h0FJHZz3gFBWo
+6zfHyRpWxLEIe5qxLtRmzxY3bX2+TXYMyzQs1JY0tZm6IAhVFx2nJ5sdwZHOpGUq
+Euhgo10wWzAMBgNVHRMEBTADAQH/MB0GA1UdDgQWBBRNph1o66QgqU+lTxmUx8EC
+xOQuHTAfBgNVHSMEGDAWgBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDALBgNVHQ8EBAMC
+AYYwCgYIKoZIzj0EAwIDSQAwRgIhAP0sW4OmMjKqHWvzd1VvT3YkMM/hR9EuW8fN
+QuCZNsMRAiEAiuUa5Ths+9pfCwHJQVgIOqbdDrV7xMBVFo9140sXjVw=
+-----END CERTIFICATE-----
+yata@sdmdev2:~/.aos/security$ diff oem-Aos-Intermediate-CA.pem Aos-OEM-Issuring-CA.pem 
+2,17c2,11
+< MIIC6TCCAdGgAwIBAgIUCnhqqnj+Gr4tUP4hJA0ZIrkQ/yUwDQYJKoZIhvcNAQEL
+< BQAwgY0xFzAVBgNVBAMMDkZ1c2lvbiBSb290IENBMSkwJwYJKoZIhvcNAQkBFhp2
+< b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTENMAsGA1UECgwERVBBTTEcMBoGA1UE
+< CwwTTm92dXMgT3JkbyBTZWNsb3J1bTENMAsGA1UEBwwES3lpdjELMAkGA1UEBhMC
+< VUEwHhcNMjIwMzI1MTIyNjM1WhcNNDIwMzIwMTIyNjM1WjA7MRwwGgYDVQQDDBNB
+< b3MgSW50ZXJtZWRpYXRlIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+< WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATK6R/cdTXa15EOaZ3kk+EN4LDb6ZOp
+< N2nEwbK+HHQHZcq/m43L+GUK3FAFTkjm9iliqFImRshA69GEI2ougr6eo10wWzAM
+< BgNVHRMEBTADAQH/MB0GA1UdDgQWBBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDAfBgNV
+< HSMEGDAWgBR0ShhzOuM95BhD0mWxC1j+KrE6UjALBgNVHQ8EBAMCAYYwDQYJKoZI
+< hvcNAQELBQADggEBAHIpw+8PzvhhCIsvNjXX1GHPO9R6kYhqJT96AbZrPR9Id9nW
+< pNz13Jd5SP6kUkOru8o5gZToHXhv85nzHa92EtoZPAL0TvHDxTNEiyO3BzkLkFUB
+< 3SCSHhtLX2HJkQWVtTWKQFBnC99OYV1mJNYPXv4dyKH3Ckmmcw1OHk0sa/JgMirg
+< LAukRziSJ//LIBNDF0X2nMN0+NnxLWRUUyk2wLiSfBbYf1T/3Dtn8rxnsGtACrJR
+< JEU9G/xx+tmSZH4GXXxfLcFQO3VlA5oSgEWYZUFE3krd8j50iriZmei9fuo2s0Mn
+< KzYiI3VrvdMv/+yMS6ZxVJSmFlSlnjmpsrSYJJM=
+---
+> MIIB1TCCAXqgAwIBAgIUYn7HRlXFzeIWcIUV2Xp3EiIdUlgwCgYIKoZIzj0EAwIw
+> OzEcMBoGA1UEAwwTQW9zIEludGVybWVkaWF0ZSBDQTENMAsGA1UECgwERVBBTTEM
+> MAoGA1UECwwDQW9zMB4XDTIyMDMyNTEyMzEwMloXDTI4MDMyMzEyMzEwMlowOjEb
+> MBkGA1UEAwwSQW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYD
+> VQQLDANBb3MwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARKoP/h0FJHZz3gFBWo
+> 6zfHyRpWxLEIe5qxLtRmzxY3bX2+TXYMyzQs1JY0tZm6IAhVFx2nJ5sdwZHOpGUq
+> Euhgo10wWzAMBgNVHRMEBTADAQH/MB0GA1UdDgQWBBRNph1o66QgqU+lTxmUx8EC
+> xOQuHTAfBgNVHSMEGDAWgBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDALBgNVHQ8EBAMC
+> AYYwCgYIKoZIzj0EAwIDSQAwRgIhAP0sW4OmMjKqHWvzd1VvT3YkMM/hR9EuW8fN
+> QuCZNsMRAiEAiuUa5Ths+9pfCwHJQVgIOqbdDrV7xMBVFo9140sXjVw=
+yata@sdmdev2:~/.aos/security$ ls -la
+total 76
+drwxrwxr-x 2 yata docker 4096 May  9 11:45 .
+drwxrwxr-x 6 yata docker 4096 May  9 11:41 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw------- 1 yata yata   5687 May  9 11:21 aos-user-oem.pem
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 oem-Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+-rw-rw-r-- 1 yata yata   2564 May  9 11:45 oem-Intermediate-Fusion-chain.pem
+-rw-rw-r-- 1 yata yata   2540 May  9 11:45 oem-Intermediate-Root-chain.pem
+yata@sdmdev2:~/.aos/security$ rm oem-Intermediate-Fusion-chain.pem 
+yata@sdmdev2:~/.aos/security$ rm oem-Intermediate-Root-chain.pem 
+yata@sdmdev2:~/.aos/security$ diff aos-key-oem.pem oem-goro-kikuchioem2gmail-com.pem 
+1,31c1,19
+< Bag Attributes
+<     localKeyID: 02 3C 85 1C AC 39 33 AE 21 5E B6 61 5F 85 15 43 4E 90 2C 1A 
+< Key Attributes: <No Attributes>
+< -----BEGIN PRIVATE KEY-----
+< MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDA3k4gA2KGTn3Q
+< uoL71XRbld+glpRuIS10jMZLjoclqSFoX9dBUfE3qHcd2wZokWnWM2uYfMEh1d1D
+< obel97MbzcXFFP7N9m+4PdUIKNn+w/6jaCybI+TjkEEet35M2gG0xdS/9uX1WTiw
+< VM8e+KvCxDhoEscOQymOiL0DgBUeUTbiOmpZLKLguNrYZUN2PD5bIWoQJLJ4SUJ4
+< zCcDfikM0sC7XfRNsJ9KQOUXVCscHEKdRfhRy35wOEDLEjt4cVrh40vRq4UI+LiP
+< VhpYD6hiAP5tyDas6gprRWoZRDSnsdw3gg/WxYm1AjW7tJOhO/6RPBTs/Z3suNL/
+< V05+3YqfAgMBAAECggEAFqeGIbiEECaUHLprvEz8V+2o0OIfGTiIcFJA0IszULcn
+< F216iU+ot9Lv+u/JNusttV1g3A57WRAX52PNgI8x2Kg4/MdUjrjNsqSAq26w/H3l
+< ISiRZL+4mQpOu97t1PUeki9SqCHGLSWHxR6RHaAz/LKztXXPL9uvu/BP02NuF5ta
+< Km1XYkdZacQWjvVwcDCcqHR0j/XVHXZv11mckktecIrdZ7q2J9LDkiRvyJvnExIK
+< DNx+Di5mUFKpE4lTMo9gPoZgeR3U2VzgVlaQWf4kEHztus3a7EaJFX5rdUleB/My
+< F+Yf/A6VYW1nmvNa1nRnYlwMRlvsKwmiiwYe7lt+IQKBgQDwym05FRgErzzw4Eev
+< ueomH5y+cOosL8r5HppEexsHuZuLLQ3KHkkIhJ0TpPZ5n5zst0SES0K1MOPZDqvV
+< JUwfNRn8DBK1a2I5qWqa7URTWHHhzuIbarf+Qrai35lmWY5A1bpZZg6IRoNr2n92
+< VjJ2LDQk1BIvcee+cs1gWJfWWQKBgQDNDPoG6UTZN8Cs4KMmmpCWKx6b6WAAOIut
+< qFz8iqaMNflbHV+7bUussMFZ9WcU9D8MgdKIWvzlwaiPs86H+6opUj6aevYxes/W
+< hNnIbXA1465uXw/zag2v+TfzMtsMg/jWzmKNusn62MDdsCg351zgS+ioHn//xh0M
+< rcWokDW5twKBgEOeVPXGuqv2GgL6uKbcaqiyD+5a/yfRdAppUaERgRG2SbvXtxuf
+< TZsawpGVrbGR5RuEi7Uq/Vyskg+OUyrUAoBxBQ8GxOo1cawHq2w+XQWavMBQvKY+
+< XdUFHwy2Bfn8BDqoyl/4jPQv+Q/8l/a/VgRhfXMqKsEwF4gf7RS1TE5hAoGARUcD
+< Gl6pkjIR+NaUiLBj9ThwSQDaHHj+SBfAAtrdVjXOH4iXFX3huWCmkrwkraGvw4wB
+< E2yaUQ3S42o+dxcB8KAG4q50i1cQ7UtJQTwoUyyvfD7F5tmH8lJjItmlxF66Lejg
+< xz26i/O7harEi86xRF6hJlvXpxTKL8RuKXs/i5UCgYAJulRaarrJ7XrfKVCBm/Zg
+< iAv4vbXNNcZE2gb4Fw0WEUceQZM84hJL7Nb94J0b1YirK4+sit+2ovjlZrwGL5Fl
+< 7FYxVh9wMSmOf8AKX1bIKkF5O5Kg+oMMVNKHg9ov7o1/weuNT/TnXwJDOLeVxvCy
+< EYzihZM1xsSaQnK3fO/D+A==
+< -----END PRIVATE KEY-----
+---
+> -----BEGIN CERTIFICATE-----
+> MIIDDzCCArSgAwIBAgIIaBMCCgAJXPYwCgYIKoZIzj0EAwIwOjEbMBkGA1UEAwwS
+> QW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+> HhcNMjUwNTAxMDUwOTMwWhcNMzUwNDI5MDUwOTMwWjCBljEoMCYGA1UEAwwfb2Vt
+> LWdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTEqMCgGCSqGSIb3DQEJARYbZ29y
+> by5raWt1Y2hpK29lbTJAZ21haWwuY29tMRQwEgYDVQQKDAthb3NjbG91ZC5pbzEo
+> MCYGA1UECwwfT0VNIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJ
+> KoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDeTiADYoZOfdC6gvvVdFuV36CWlG4h
+> LXSMxkuOhyWpIWhf10FR8Teodx3bBmiRadYza5h8wSHV3UOht6X3sxvNxcUU/s32
+> b7g91Qgo2f7D/qNoLJsj5OOQQR63fkzaAbTF1L/25fVZOLBUzx74q8LEOGgSxw5D
+> KY6IvQOAFR5RNuI6alksouC42thlQ3Y8PlshahAksnhJQnjMJwN+KQzSwLtd9E2w
+> n0pA5RdUKxwcQp1F+FHLfnA4QMsSO3hxWuHjS9GrhQj4uI9WGlgPqGIA/m3INqzq
+> CmtFahlENKex3DeCD9bFibUCNbu0k6E7/pE8FOz9ney40v9XTn7dip8CAwEAAaN8
+> MHowDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFJXH3LR53l8P
+> hLl8HHM8rADeA2D+MB8GA1UdIwQYMBaAFE2mHWjrpCCpT6VPGZTHwQLE5C4dMB0G
+> A1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEA
+> 2OvfKyeLpbAhqa5ycBSXpolrZX6jvEYnpRSpjvX7KAsCIQCh8sOBoibvyMh7uaeQ
+> RPjSSaw7+xiXN2TmTj65ZfDCjg==
+> -----END CERTIFICATE-----
+yata@sdmdev2:~/.aos/security$ ls -al
+total 68
+drwxrwxr-x 2 yata docker 4096 May  9 11:59 .
+drwxrwxr-x 6 yata docker 4096 May  9 11:41 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw------- 1 yata yata   5687 May  9 11:21 aos-user-oem.pem
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 oem-Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+yata@sdmdev2:~/.aos/security$ cat Aos-OEM-Issuring-CA.pem oem-Aos-Intermediate-CA.pem oem-Fusion_Root_CA.pem > oem-ca-chain.pem
+cat: oem-Fusion_Root_CA.pem: No such file or directory
+yata@sdmdev2:~/.aos/security$ cat Aos-OEM-Issuring-CA.pem oem-Aos-Intermediate-CA.pem oem-Fusion-Root-CA.pem > oem-ca-chain.pem
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -inkey aos-key-oem.pem -in oem-goro-kikuchioem2gmail-com.pem -certfile oem-ca-chain.pem -out aos-user-oem.p12 -passout pass:
+yata@sdmdev2:~/.aos/security$ ls -al
+total 80
+drwxrwxr-x 2 yata docker 4096 May  9 12:12 .
+drwxrwxr-x 6 yata docker 4096 May  9 11:41 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw------- 1 yata yata   4915 May  9 12:12 aos-user-oem.p12
+-rw------- 1 yata yata   5687 May  9 11:21 aos-user-oem.pem
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   3272 May  9 12:10 oem-ca-chain.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 oem-Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -in aos-user-oem.pem -info -nodes
+40475DE3E3710000:error:068000A8:asn1 encoding routines:asn1_check_tlen:wrong tag:../crypto/asn1/tasn_dec.c:1188:
+40475DE3E3710000:error:0688010A:asn1 encoding routines:asn1_item_embed_d2i:nested asn1 error:../crypto/asn1/tasn_dec.c:349:Type=PKCS12
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -in aos-user-oem.p12 -info -nodes
+Enter Import Password:
+MAC: sha256, Iteration 2048
+MAC length: 32, salt length: 8
+PKCS7 Encrypted data: PBES2, PBKDF2, AES-256-CBC, Iteration 2048, PRF hmacWithSHA256
+Certificate bag
+Bag Attributes
+    localKeyID: 02 3C 85 1C AC 39 33 AE 21 5E B6 61 5F 85 15 43 4E 90 2C 1A 
+subject=CN = "oem-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "OEM goro.kikuchi+oem2@gmail.com"
+issuer=CN = Aos OEM Issuing CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIDDzCCArSgAwIBAgIIaBMCCgAJXPYwCgYIKoZIzj0EAwIwOjEbMBkGA1UEAwwS
+QW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+HhcNMjUwNTAxMDUwOTMwWhcNMzUwNDI5MDUwOTMwWjCBljEoMCYGA1UEAwwfb2Vt
+LWdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTEqMCgGCSqGSIb3DQEJARYbZ29y
+by5raWt1Y2hpK29lbTJAZ21haWwuY29tMRQwEgYDVQQKDAthb3NjbG91ZC5pbzEo
+MCYGA1UECwwfT0VNIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDeTiADYoZOfdC6gvvVdFuV36CWlG4h
+LXSMxkuOhyWpIWhf10FR8Teodx3bBmiRadYza5h8wSHV3UOht6X3sxvNxcUU/s32
+b7g91Qgo2f7D/qNoLJsj5OOQQR63fkzaAbTF1L/25fVZOLBUzx74q8LEOGgSxw5D
+KY6IvQOAFR5RNuI6alksouC42thlQ3Y8PlshahAksnhJQnjMJwN+KQzSwLtd9E2w
+n0pA5RdUKxwcQp1F+FHLfnA4QMsSO3hxWuHjS9GrhQj4uI9WGlgPqGIA/m3INqzq
+CmtFahlENKex3DeCD9bFibUCNbu0k6E7/pE8FOz9ney40v9XTn7dip8CAwEAAaN8
+MHowDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFJXH3LR53l8P
+hLl8HHM8rADeA2D+MB8GA1UdIwQYMBaAFE2mHWjrpCCpT6VPGZTHwQLE5C4dMB0G
+A1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEA
+2OvfKyeLpbAhqa5ycBSXpolrZX6jvEYnpRSpjvX7KAsCIQCh8sOBoibvyMh7uaeQ
+RPjSSaw7+xiXN2TmTj65ZfDCjg==
+-----END CERTIFICATE-----
+Certificate bag
+Bag Attributes: <No Attributes>
+subject=CN = Aos OEM Issuing CA, O = EPAM, OU = Aos
+issuer=CN = Aos Intermediate CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIB1TCCAXqgAwIBAgIUYn7HRlXFzeIWcIUV2Xp3EiIdUlgwCgYIKoZIzj0EAwIw
+OzEcMBoGA1UEAwwTQW9zIEludGVybWVkaWF0ZSBDQTENMAsGA1UECgwERVBBTTEM
+MAoGA1UECwwDQW9zMB4XDTIyMDMyNTEyMzEwMloXDTI4MDMyMzEyMzEwMlowOjEb
+MBkGA1UEAwwSQW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYD
+VQQLDANBb3MwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARKoP/h0FJHZz3gFBWo
+6zfHyRpWxLEIe5qxLtRmzxY3bX2+TXYMyzQs1JY0tZm6IAhVFx2nJ5sdwZHOpGUq
+Euhgo10wWzAMBgNVHRMEBTADAQH/MB0GA1UdDgQWBBRNph1o66QgqU+lTxmUx8EC
+xOQuHTAfBgNVHSMEGDAWgBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDALBgNVHQ8EBAMC
+AYYwCgYIKoZIzj0EAwIDSQAwRgIhAP0sW4OmMjKqHWvzd1VvT3YkMM/hR9EuW8fN
+QuCZNsMRAiEAiuUa5Ths+9pfCwHJQVgIOqbdDrV7xMBVFo9140sXjVw=
+-----END CERTIFICATE-----
+Certificate bag
+Bag Attributes: <No Attributes>
+subject=CN = Aos Intermediate CA, O = EPAM, OU = Aos
+issuer=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+-----BEGIN CERTIFICATE-----
+MIIC6TCCAdGgAwIBAgIUCnhqqnj+Gr4tUP4hJA0ZIrkQ/yUwDQYJKoZIhvcNAQEL
+BQAwgY0xFzAVBgNVBAMMDkZ1c2lvbiBSb290IENBMSkwJwYJKoZIhvcNAQkBFhp2
+b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTENMAsGA1UECgwERVBBTTEcMBoGA1UE
+CwwTTm92dXMgT3JkbyBTZWNsb3J1bTENMAsGA1UEBwwES3lpdjELMAkGA1UEBhMC
+VUEwHhcNMjIwMzI1MTIyNjM1WhcNNDIwMzIwMTIyNjM1WjA7MRwwGgYDVQQDDBNB
+b3MgSW50ZXJtZWRpYXRlIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATK6R/cdTXa15EOaZ3kk+EN4LDb6ZOp
+N2nEwbK+HHQHZcq/m43L+GUK3FAFTkjm9iliqFImRshA69GEI2ougr6eo10wWzAM
+BgNVHRMEBTADAQH/MB0GA1UdDgQWBBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDAfBgNV
+HSMEGDAWgBR0ShhzOuM95BhD0mWxC1j+KrE6UjALBgNVHQ8EBAMCAYYwDQYJKoZI
+hvcNAQELBQADggEBAHIpw+8PzvhhCIsvNjXX1GHPO9R6kYhqJT96AbZrPR9Id9nW
+pNz13Jd5SP6kUkOru8o5gZToHXhv85nzHa92EtoZPAL0TvHDxTNEiyO3BzkLkFUB
+3SCSHhtLX2HJkQWVtTWKQFBnC99OYV1mJNYPXv4dyKH3Ckmmcw1OHk0sa/JgMirg
+LAukRziSJ//LIBNDF0X2nMN0+NnxLWRUUyk2wLiSfBbYf1T/3Dtn8rxnsGtACrJR
+JEU9G/xx+tmSZH4GXXxfLcFQO3VlA5oSgEWYZUFE3krd8j50iriZmei9fuo2s0Mn
+KzYiI3VrvdMv/+yMS6ZxVJSmFlSlnjmpsrSYJJM=
+-----END CERTIFICATE-----
+Certificate bag
+Bag Attributes: <No Attributes>
+subject=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+issuer=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+-----BEGIN CERTIFICATE-----
+MIIEAjCCAuqgAwIBAgIJAPwk2NFfSDPjMA0GCSqGSIb3DQEBCwUAMIGNMRcwFQYD
+VQQDDA5GdXNpb24gUm9vdCBDQTEpMCcGCSqGSIb3DQEJARYadm9sb2R5bXlyX2Jh
+YmNodWtAZXBhbS5jb20xDTALBgNVBAoMBEVQQU0xHDAaBgNVBAsME05vdnVzIE9y
+ZG8gU2VjbG9ydW0xDTALBgNVBAcMBEt5aXYxCzAJBgNVBAYTAlVBMB4XDTE4MDQx
+MDExMzMwMFoXDTI2MDYyNzExMzMwMFowgY0xFzAVBgNVBAMMDkZ1c2lvbiBSb290
+IENBMSkwJwYJKoZIhvcNAQkBFhp2b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTEN
+MAsGA1UECgwERVBBTTEcMBoGA1UECwwTTm92dXMgT3JkbyBTZWNsb3J1bTENMAsG
+A1UEBwwES3lpdjELMAkGA1UEBhMCVUEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQC+K2ow2HO7+SUVfOq5tTtmHj4LQijHJ803mLk9pkPef+Glmeyp9HXe
+jDlQC04MeovMBeNTaq0wibf7qas9niXbeXRVzheZIFziMXqRuwLqc0KXdDxIDPTb
+TW3K0HE6M/eAtTfn9+Z/LnkWt4zMXasc02hvufsmIVEuNbc1VhrsJJg5uk88ldPM
+LSF7nff9eYZTHYgCyBkt9aL+fwoXO6eSDSAhjopX3lhdidkM+ni7EOhlN7STmgDM
+WKh9nMjXD5f28PGhtW/dZvn4SzasRE5MeaExIlBmhkWEUgVCyP7LvuQGRUPK+NYz
+FE2CLRuirLCWy1HIt9lLziPjlZ4361mNAgMBAAGjYzBhMB0GA1UdDgQWBBR0Shhz
+OuM95BhD0mWxC1j+KrE6UjAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwIBBjAlBgNV
+HREEHjAcgRp2b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTANBgkqhkiG9w0BAQsF
+AAOCAQEAl8bv1HTYe3l4Y+g0TVZR7bYL5BNsnGgqy0qS5fu991khXWf+Zwa2MLVn
+YakMnLkjvdHqUpWMJ/S82o2zWGmmuxca56ehjxCiP/nkm4M74yXz2R8cu52WxYnF
+yMvgawzQ6c1yhvZiv/gEE7KdbYRVKLHPgBzfyup21i5ngSlTcMRRS7oOBmoye4qc
+6adq6HtY6X/OnZ9I5xoRN1GcvaLUgUE6igTiVa1pF8kedWhHY7wzTXBxzSvIZkCU
+VHEOzvaGk9miP6nBrDfNv7mIkgEKARrjjSpmJasIEU+mNtzeOIEiMtW1EMRc457o
+0PdFI3jseyLVPVhEzUkuC7mwjb7CeQ==
+-----END CERTIFICATE-----
+PKCS7 Data
+Shrouded Keybag: PBES2, PBKDF2, AES-256-CBC, Iteration 2048, PRF hmacWithSHA256
+Bag Attributes
+    localKeyID: 02 3C 85 1C AC 39 33 AE 21 5E B6 61 5F 85 15 43 4E 90 2C 1A 
+Key Attributes: <No Attributes>
+-----BEGIN PRIVATE KEY-----
+MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDA3k4gA2KGTn3Q
+uoL71XRbld+glpRuIS10jMZLjoclqSFoX9dBUfE3qHcd2wZokWnWM2uYfMEh1d1D
+obel97MbzcXFFP7N9m+4PdUIKNn+w/6jaCybI+TjkEEet35M2gG0xdS/9uX1WTiw
+VM8e+KvCxDhoEscOQymOiL0DgBUeUTbiOmpZLKLguNrYZUN2PD5bIWoQJLJ4SUJ4
+zCcDfikM0sC7XfRNsJ9KQOUXVCscHEKdRfhRy35wOEDLEjt4cVrh40vRq4UI+LiP
+VhpYD6hiAP5tyDas6gprRWoZRDSnsdw3gg/WxYm1AjW7tJOhO/6RPBTs/Z3suNL/
+V05+3YqfAgMBAAECggEAFqeGIbiEECaUHLprvEz8V+2o0OIfGTiIcFJA0IszULcn
+F216iU+ot9Lv+u/JNusttV1g3A57WRAX52PNgI8x2Kg4/MdUjrjNsqSAq26w/H3l
+ISiRZL+4mQpOu97t1PUeki9SqCHGLSWHxR6RHaAz/LKztXXPL9uvu/BP02NuF5ta
+Km1XYkdZacQWjvVwcDCcqHR0j/XVHXZv11mckktecIrdZ7q2J9LDkiRvyJvnExIK
+DNx+Di5mUFKpE4lTMo9gPoZgeR3U2VzgVlaQWf4kEHztus3a7EaJFX5rdUleB/My
+F+Yf/A6VYW1nmvNa1nRnYlwMRlvsKwmiiwYe7lt+IQKBgQDwym05FRgErzzw4Eev
+ueomH5y+cOosL8r5HppEexsHuZuLLQ3KHkkIhJ0TpPZ5n5zst0SES0K1MOPZDqvV
+JUwfNRn8DBK1a2I5qWqa7URTWHHhzuIbarf+Qrai35lmWY5A1bpZZg6IRoNr2n92
+VjJ2LDQk1BIvcee+cs1gWJfWWQKBgQDNDPoG6UTZN8Cs4KMmmpCWKx6b6WAAOIut
+qFz8iqaMNflbHV+7bUussMFZ9WcU9D8MgdKIWvzlwaiPs86H+6opUj6aevYxes/W
+hNnIbXA1465uXw/zag2v+TfzMtsMg/jWzmKNusn62MDdsCg351zgS+ioHn//xh0M
+rcWokDW5twKBgEOeVPXGuqv2GgL6uKbcaqiyD+5a/yfRdAppUaERgRG2SbvXtxuf
+TZsawpGVrbGR5RuEi7Uq/Vyskg+OUyrUAoBxBQ8GxOo1cawHq2w+XQWavMBQvKY+
+XdUFHwy2Bfn8BDqoyl/4jPQv+Q/8l/a/VgRhfXMqKsEwF4gf7RS1TE5hAoGARUcD
+Gl6pkjIR+NaUiLBj9ThwSQDaHHj+SBfAAtrdVjXOH4iXFX3huWCmkrwkraGvw4wB
+E2yaUQ3S42o+dxcB8KAG4q50i1cQ7UtJQTwoUyyvfD7F5tmH8lJjItmlxF66Lejg
+xz26i/O7harEi86xRF6hJlvXpxTKL8RuKXs/i5UCgYAJulRaarrJ7XrfKVCBm/Zg
+iAv4vbXNNcZE2gb4Fw0WEUceQZM84hJL7Nb94J0b1YirK4+sit+2ovjlZrwGL5Fl
+7FYxVh9wMSmOf8AKX1bIKkF5O5Kg+oMMVNKHg9ov7o1/weuNT/TnXwJDOLeVxvCy
+EYzihZM1xsSaQnK3fO/D+A==
+-----END PRIVATE KEY-----
+yata@sdmdev2:~/.aos/security$ vim ../config.json 
+yata@sdmdev2:~/.aos/security$ cat ~/Downloads/sp-goro-kikuchioem2gmail-com(1).pem ~/Downloads/sp-goro-kikuchioem2gmail-com(2).pem ~/Downloads/sp-goro-kikuchioem2gmail-com(3) > sp-ca-chain.pem
+bash: syntax error near unexpected token `('
+yata@sdmdev2:~/.aos/security$ cat ~/Downloads/sp-goro-kikuchioem2gmail-com(1).pem ~/Downloads/sp-goro-kikuchioem2gmail-com(2).pem ~/Downloads/sp-goro-kikuchioem2gmail-com(3).pem > sp-ca-chain.pem
+bash: syntax error near unexpected token `('
+yata@sdmdev2:~/.aos/security$ cd ~/Downloads/ && cat Aos-SP-Issuring-CA.pem Aos-Intermediate-CA.pem Fusion-Root-CA.pem > sp-ca-chain.pem
+yata@sdmdev2:~/Downloads$ ls | grep sp*
+yata@sdmdev2:~/Downloads$ ls
+ alpine-virt-3.21.3-x86_64.iso
+ aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+ Aos-Intermediate-CA-chain.pem
+ Aos-Intermediate-CA.pem
+ Aos-SP-Issuring-CA.pem
+ aos-user-oem.p12
+ aos-user-sp.p12
+ aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+ arduino-cli_latest_Linux_64bit.tar.gz
+ demo-services
+ demo-services_
+ demo-services-dd5862ccc127c5f5f85b783a8156ea6c0f63966d.zip
+ Fusion-Root-CA.pem
+ GNS3.VM.VMware.Workstation.2.2.54.zip
+ hello_world
+ LICENSE.txt
+ main.cpp
+ Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+ Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+ Packet_Tracer822_amd64_signed.deb
+ postman-linux-x64
+ postman-linux-x64.tar.gz
+ RaspberryPi5-step
+ RaspberryPi5-step.zip
+ sp-ca-chain.pem
+'sp-goro-kikuchioem2gmail-com-chain(1).pem'
+'sp-goro-kikuchioem2gmail-com-chain(3).pem'
+ sp-goro-kikuchioem2gmail-com-chain.pem
+ sp-goro-kikuchioem2gmail-com.pem
+ tailscale-1.82.0
+ tailscale-1.82.0.tar.gz
+ tailscale-1.82.0.zip
+ test-vm.vdi
+ thunderbird.tmp
+ VBoxGuestAdditions_7.1.8.iso
+ VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+ virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+ VMware-player-full-16.2.2-19200509.exe
+ VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:~/Downloads$ mv Aos-SP-Issuring-CA.pem sp-ca-chain.pem ~/.aos/security && cd ~/.aos/security/
+yata@sdmdev2:~/.aos/security$ ls -la
+total 88
+drwxrwxr-x 2 yata docker 4096 May  9 12:38 .
+drwxrwxr-x 6 yata docker 4096 May  9 12:19 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw-rw-r-- 1 yata yata    704 May  9 11:57 Aos-SP-Issuring-CA.pem
+-rw------- 1 yata yata   4915 May  9 12:12 aos-user-oem.p12
+-rw------- 1 yata yata   6016 May  9 12:20 aos-user-oem.pem
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   3272 May  9 12:10 oem-ca-chain.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 oem-Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+-rw-rw-r-- 1 yata yata   3268 May  9 12:36 sp-ca-chain.pem
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -inkey aos-key-sp.pem -in sp-goro-kikuchioem2gmail-com.pem -certfile sp-ca-chain.pem -out aos-user-sp.p12 -passout pass:
+Could not open file or uri for loading certs of certificates from -in file from sp-goro-kikuchioem2gmail-com.pem
+40070AB9707F0000:error:16000069:STORE routines:ossl_store_get0_loader_int:unregistered scheme:../crypto/store/store_register.c:237:scheme=file
+40070AB9707F0000:error:80000002:system library:file_open:No such file or directory:../providers/implementations/storemgmt/file_store.c:267:calling stat(sp-goro-kikuchioem2gmail-com.pem)
+yata@sdmdev2:~/.aos/security$ mv ~/Downloads/sp-goro-kikuchioem2gmail-com ./
+mv: cannot stat '/home/yata/Downloads/sp-goro-kikuchioem2gmail-com': No such file or directory
+yata@sdmdev2:~/.aos/security$ mv ~/Downloads/sp-goro-kikuchioem2gmail-com.pem ./
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -inkey aos-key-sp.pem -in sp-goro-kikuchioem2gmail-com.pem -certfile sp-ca-chain.pem -out aos-user-sp.p12 -passout pass:
+yata@sdmdev2:~/.aos/security$ ls -la
+total 100
+drwxrwxr-x 2 yata docker 4096 May  9 12:40 .
+drwxrwxr-x 6 yata docker 4096 May  9 12:19 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw-rw-r-- 1 yata yata    704 May  9 11:57 Aos-SP-Issuring-CA.pem
+-rw------- 1 yata yata   4915 May  9 12:12 aos-user-oem.p12
+-rw------- 1 yata yata   6016 May  9 12:20 aos-user-oem.pem
+-rw------- 1 yata yata   4915 May  9 12:40 aos-user-sp.p12
+-rw------- 1 yata yata   1409 May  8 13:25 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   3272 May  9 12:10 oem-ca-chain.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 oem-Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+-rw-rw-r-- 1 yata yata   3268 May  9 12:36 sp-ca-chain.pem
+-rw-rw-r-- 1 yata yata   1138 May  9 11:56 sp-goro-kikuchioem2gmail-com.pem
+yata@sdmdev2:~/.aos/security$ cp ./* ~/Desktop/
+yata@sdmdev2:~/.aos/security$ cd
+yata@sdmdev2:~$ ls
+ aarch64-rootfs             handmadeOEM.pfx         Pictures
+ alsa-lib                   handmadeSP.pfx          poky
+ alsa-lib-aarch64           hello-world             pt
+ alsa-utils                 include                 Public
+ alsa-utils-aarch64         kepler-kit              pyvenv.cfg
+ aos-cert-oem.pem           lib                     snap
+ aos-cert-sp.pem            lib64                   sslkeys.log
+ aos-root-certificate.pem   libgpiod                tailscale-arm64-static
+ bin                        libgpiod-arm64-static   tcpdump-build
+ Desktop                    log.txt                 Templates
+ Documents                  machine-id              thinclient_drives
+ Downloads                  meta-aos                usbutils
+ gettext-0.22.5             meta-aos-rpi            venv
+ gettext-0.22.5-old         Music                   Videos
+ gettext-0.22.5.tar.gz      mycommands.sh          'VirtualBox VMs'
+ GNS3                       MyRepository            yocto
+yata@sdmdev2:~$ rm *.pfx 
+yata@sdmdev2:~$ cd Downloads
+yata@sdmdev2:~/Downloads$ ls
+ alpine-virt-3.21.3-x86_64.iso
+ aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+ Aos-Intermediate-CA-chain.pem
+ Aos-Intermediate-CA.pem
+ aos-user-oem.p12
+ aos-user-sp.p12
+ aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+ arduino-cli_latest_Linux_64bit.tar.gz
+ demo-services
+ demo-services_
+ demo-services-dd5862ccc127c5f5f85b783a8156ea6c0f63966d.zip
+ Fusion-Root-CA.pem
+ GNS3.VM.VMware.Workstation.2.2.54.zip
+ hello_world
+ LICENSE.txt
+ main.cpp
+ Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+ Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+ Packet_Tracer822_amd64_signed.deb
+ postman-linux-x64
+ postman-linux-x64.tar.gz
+ RaspberryPi5-step
+ RaspberryPi5-step.zip
+'sp-goro-kikuchioem2gmail-com-chain(1).pem'
+'sp-goro-kikuchioem2gmail-com-chain(3).pem'
+ sp-goro-kikuchioem2gmail-com-chain.pem
+ tailscale-1.82.0
+ tailscale-1.82.0.tar.gz
+ tailscale-1.82.0.zip
+ test-vm.vdi
+ thunderbird.tmp
+ VBoxGuestAdditions_7.1.8.iso
+ VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+ virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+ VMware-player-full-16.2.2-19200509.exe
+ VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:~/Downloads$ rm *.pem test-vm.vdi 
+yata@sdmdev2:~/Downloads$ git clone https://github.com/aosedge/hello-world.git
+Cloning into 'hello-world'...
+remote: Enumerating objects: 59, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 59 (delta 2), reused 12 (delta 2), pack-reused 44 (from 1)
+Receiving objects: 100% (59/59), 15.80 KiB | 351.00 KiB/s, done.
+Resolving deltas: 100% (19/19), done.
+yata@sdmdev2:~/Downloads$ cd hello-world
+yata@sdmdev2:~/Downloads/hello-world$ ls
+LICENSE  meta  README.md  src
+yata@sdmdev2:~/Downloads/hello-world$ vim src/webhook_example.py 
+yata@sdmdev2:~/Downloads/hello-world$ vim meta/config.yaml 
+yata@sdmdev2:~/Downloads/hello-world$ vim meta/config.yaml 
+yata@sdmdev2:~/Downloads/hello-world$ vim meta/config.yaml 
+yata@sdmdev2:~/Downloads/hello-world$ ~/.aos/venv/bin/python3 -m aos_signer sign
+Starting SERVICE SIGNING process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Copying application...         DONE
+Copying configuration...       DONE
+Copying default state...       Not required by config
+Creating archive...            DONE
+Sing package...       DONE
+Creating service package...            DONE
+Service package created: /home/yata/Downloads/hello-world/service.tar.gz
+yata@sdmdev2:~/Downloads/hello-world$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Uploading...                   DONE
+Service successfully uploaded!
+yata@sdmdev2:~/Downloads/hello-world$ vim src/webhook_example.py 
+yata@sdmdev2:~/Downloads/hello-world$ vim meta/config.yaml 
+yata@sdmdev2:~/Downloads/hello-world$ ~/.aos/venv/bin/python3 -m aos_signer sign
+Starting SERVICE SIGNING process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Copying application...         DONE
+Copying configuration...       DONE
+Copying default state...       Not required by config
+Creating archive...            DONE
+Sing package...       DONE
+Creating service package...            DONE
+Service package created: /home/yata/Downloads/hello-world/service.tar.gz
+yata@sdmdev2:~/Downloads/hello-world$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Uploading...                   DONE
+Service successfully uploaded!
+yata@sdmdev2:~/Downloads/hello-world$ 
+
+yata@sdmdev2:~$ cd Downloads/
+yata@sdmdev2:~/Downloads$ git clone https://github.com/aosedge/demo-services.git
+Cloning into 'demo-services'...
+remote: Enumerating objects: 195, done.
+remote: Counting objects: 100% (195/195), done.
+remote: Compressing objects: 100% (103/103), done.
+remote: Total 195 (delta 71), reused 177 (delta 58), pack-reused 0 (from 0)
+Receiving objects: 100% (195/195), 1.16 MiB | 11.67 MiB/s, done.
+Resolving deltas: 100% (71/71), done.
+yata@sdmdev2:~/Downloads$ ls
+alpine-virt-3.21.3-x86_64.iso
+aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+aos-root-certificate.pem
+aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+arduino-cli_latest_Linux_64bit.tar.gz
+demo-services
+GNS3.VM.VMware.Workstation.2.2.54.zip
+hello_world
+LICENSE.txt
+main.cpp
+Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+Packet_Tracer822_amd64_signed.deb
+postman-linux-x64
+postman-linux-x64.tar.gz
+RaspberryPi5-step
+RaspberryPi5-step.zip
+tailscale-1.82.0
+tailscale-1.82.0.tar.gz
+tailscale-1.82.0.zip
+test-vm.vdi
+thunderbird.tmp
+VBoxGuestAdditions_7.1.8.iso
+VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+VMware-player-full-16.2.2-19200509.exe
+VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:~/Downloads$ cd demo-services
+yata@sdmdev2:~/Downloads/demo-services$ ls
+cpu_load        kuksa-test-client  ram_consumer  unikernel_pvcalls
+demo_insurance  monkey_zephyr      README.md
+yata@sdmdev2:~/Downloads/demo-services$ ls -al
+total 44
+drwxrwxr-x 9 yata yata   4096 May  8 15:19 .
+drwxr-xr-x 7 yata docker 4096 May  8 15:19 ..
+drwxrwxr-x 4 yata yata   4096 May  8 15:19 cpu_load
+drwxrwxr-x 4 yata yata   4096 May  8 15:19 demo_insurance
+drwxrwxr-x 8 yata yata   4096 May  8 15:19 .git
+-rw-rw-r-- 1 yata yata    688 May  8 15:19 .gitlab-ci.yml
+drwxrwxr-x 4 yata yata   4096 May  8 15:19 kuksa-test-client
+drwxrwxr-x 4 yata yata   4096 May  8 15:19 monkey_zephyr
+drwxrwxr-x 4 yata yata   4096 May  8 15:19 ram_consumer
+-rw-rw-r-- 1 yata yata     17 May  8 15:19 README.md
+drwxrwxr-x 4 yata yata   4096 May  8 15:19 unikernel_pvcalls
+yata@sdmdev2:~/Downloads/demo-services$ cd ..
+yata@sdmdev2:~/Downloads$ ls
+ alpine-virt-3.21.3-x86_64.iso
+ aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+ aos-root-certificate.pem
+ aos-user-oem.p12
+ aos-user-sp.p12
+ aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+ arduino-cli_latest_Linux_64bit.tar.gz
+ demo-services
+ demo-services_
+ demo-services-dd5862ccc127c5f5f85b783a8156ea6c0f63966d.zip
+ GNS3.VM.VMware.Workstation.2.2.54.zip
+ hello_world
+ LICENSE.txt
+ main.cpp
+'oem-goro-kikuchioem2gmail-com(1).pem'
+'oem-goro-kikuchioem2gmail-com(2).pem'
+'oem-goro-kikuchioem2gmail-com(3).pem'
+'oem-goro-kikuchioem2gmail-com-chain(1).pem'
+'oem-goro-kikuchioem2gmail-com-chain(2).pem'
+'oem-goro-kikuchioem2gmail-com-chain(3).pem'
+ oem-goro-kikuchioem2gmail-com-chain.pem
+ oem-goro-kikuchioem2gmail-com.pem
+ Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+ Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+ Packet_Tracer822_amd64_signed.deb
+ postman-linux-x64
+ postman-linux-x64.tar.gz
+ RaspberryPi5-step
+ RaspberryPi5-step.zip
+ tailscale-1.82.0
+ tailscale-1.82.0.tar.gz
+ tailscale-1.82.0.zip
+ test-vm.vdi
+ thunderbird.tmp
+ VBoxGuestAdditions_7.1.8.iso
+ VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+ virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+ VMware-player-full-16.2.2-19200509.exe
+ VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:~/Downloads$ mv *.pem ~/.aos/security/
+yata@sdmdev2:~/Downloads$ cd ~/.aos/security/
+yata@sdmdev2:~/.aos/security$ ls
+Aos-Intermediate-CA-chain.pem  aos-user-sp.p12
+Aos-Intermediate-CA.pem        aos-user-sp.pem
+aos-key-oem.pem                Fusion-Root-CA-chain.pem
+aos-key-sp.pem                 Fusion-Root-CA.pem
+Aos-OEM-Issuing-CA.pem         handmadeOEM.pfx
+Aos-OEM-Issuring-CA-chain.pem  handmadeSP.pfx
+aos-root-certificate.pem       oem-goro-kikuchioem2gmail-com-chain.pem
+aos-user-oem.p12               oem-goro-kikuchioem2gmail-com.pem
+aos-user-oem.pem
+yata@sdmdev2:~/.aos/security$ openssl x509 -in aos-user-oem.pem -noout -subject
+subject=CN = "oem-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "OEM goro.kikuchi+oem2@gmail.com"
+yata@sdmdev2:~/.aos/security$ openssl x509 -in oem-goro-kikuchioem2gmail-com.pem -noout -subject
+subject=CN = "oem-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "OEM goro.kikuchi+oem2@gmail.com"
+yata@sdmdev2:~/.aos/security$ mv Aos-OEM-Issuing-CA.pem Aos-OEM-Issuring-CA.pem
+yata@sdmdev2:~/.aos/security$ ls
+Aos-Intermediate-CA-chain.pem  aos-user-sp.p12
+Aos-Intermediate-CA.pem        aos-user-sp.pem
+aos-key-oem.pem                Fusion-Root-CA-chain.pem
+aos-key-sp.pem                 Fusion-Root-CA.pem
+Aos-OEM-Issuring-CA-chain.pem  handmadeOEM.pfx
+Aos-OEM-Issuring-CA.pem        handmadeSP.pfx
+aos-root-certificate.pem       oem-goro-kikuchioem2gmail-com-chain.pem
+aos-user-oem.p12               oem-goro-kikuchioem2gmail-com.pem
+aos-user-oem.pem
+yata@sdmdev2:~/.aos/security$ cat Aos-OEM-Issuring-CA.pem aos-root-certificate.pem > aos-cachain.pem
+yata@sdmdev2:~/.aos/security$ mv aos-cachain.pem aos-ca-chain.pem
+yata@sdmdev2:~/.aos/security$ vim aos-ca-chain.pem
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -inkey aos-key-oem.pem -in oem-goro-kikuchioem2gmail-com.pem -certifile aos-ca-chain.pem -out aos-user-oem.p12
+pkcs12: Use -help for summary.
+yata@sdmdev2:~/.aos/security$ mv *.p12 ..
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -inkey aos-key-oem.pem -in oem-goro-kikuchioem2gmail-com.pem -certfile aos-ca-chain.pem -out aos-user-oem.p12
+Enter Export Password:
+Can't read Password
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -inkey aos-key-oem.pem -in oem-goro-kikuchioem2gmail-com.pem -certfile aos-ca-chain.pem -out aos-user-oem.p12 -passout pass:
+yata@sdmdev2:~/.aos/security$ openssl x509 -in aos-user-oem.p12
+-----BEGIN CERTIFICATE-----
+MIIDDzCCArSgAwIBAgIIaBMCCgAJXPYwCgYIKoZIzj0EAwIwOjEbMBkGA1UEAwwS
+QW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+HhcNMjUwNTAxMDUwOTMwWhcNMzUwNDI5MDUwOTMwWjCBljEoMCYGA1UEAwwfb2Vt
+LWdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTEqMCgGCSqGSIb3DQEJARYbZ29y
+by5raWt1Y2hpK29lbTJAZ21haWwuY29tMRQwEgYDVQQKDAthb3NjbG91ZC5pbzEo
+MCYGA1UECwwfT0VNIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDeTiADYoZOfdC6gvvVdFuV36CWlG4h
+LXSMxkuOhyWpIWhf10FR8Teodx3bBmiRadYza5h8wSHV3UOht6X3sxvNxcUU/s32
+b7g91Qgo2f7D/qNoLJsj5OOQQR63fkzaAbTF1L/25fVZOLBUzx74q8LEOGgSxw5D
+KY6IvQOAFR5RNuI6alksouC42thlQ3Y8PlshahAksnhJQnjMJwN+KQzSwLtd9E2w
+n0pA5RdUKxwcQp1F+FHLfnA4QMsSO3hxWuHjS9GrhQj4uI9WGlgPqGIA/m3INqzq
+CmtFahlENKex3DeCD9bFibUCNbu0k6E7/pE8FOz9ney40v9XTn7dip8CAwEAAaN8
+MHowDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFJXH3LR53l8P
+hLl8HHM8rADeA2D+MB8GA1UdIwQYMBaAFE2mHWjrpCCpT6VPGZTHwQLE5C4dMB0G
+A1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEA
+2OvfKyeLpbAhqa5ycBSXpolrZX6jvEYnpRSpjvX7KAsCIQCh8sOBoibvyMh7uaeQ
+RPjSSaw7+xiXN2TmTj65ZfDCjg==
+-----END CERTIFICATE-----
+yata@sdmdev2:~/.aos/security$ cd
+yata@sdmdev2:~$ ls
+ aarch64-rootfs             handmadeOEM.pfx         Pictures
+ alsa-lib                   handmadeSP.pfx          poky
+ alsa-lib-aarch64           hello-world             pt
+ alsa-utils                 include                 Public
+ alsa-utils-aarch64         kepler-kit              pyvenv.cfg
+ aos-cert-oem.pem           lib                     snap
+ aos-cert-sp.pem            lib64                   sslkeys.log
+ aos-root-certificate.pem   libgpiod                tailscale-arm64-static
+ bin                        libgpiod-arm64-static   tcpdump-build
+ Desktop                    log.txt                 Templates
+ Documents                  machine-id              thinclient_drives
+ Downloads                  meta-aos                usbutils
+ gettext-0.22.5             meta-aos-rpi            venv
+ gettext-0.22.5-old         Music                   Videos
+ gettext-0.22.5.tar.gz      mycommands.sh          'VirtualBox VMs'
+ GNS3                       MyRepository            yocto
+yata@sdmdev2:~$ cd hello-world/
+yata@sdmdev2:~/hello-world$ ls
+LICENSE  meta  README.md  service.tar.gz  src
+yata@sdmdev2:~/hello-world$ cd src
+yata@sdmdev2:~/hello-world/src$ ls
+webhook_example.py
+yata@sdmdev2:~/hello-world/src$ vim webhook_example.py
+yata@sdmdev2:~/hello-world/src$ 
+
+
+
+yata@sdmdev2:~$ mv *.pcap Desktop/
+yata@sdmdev2:~$ wget https://github.com/aosedge/meta-aos-vm/releases/download/v5.2.0-beta.5/aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+--2025-05-08 14:41:22--  https://github.com/aosedge/meta-aos-vm/releases/download/v5.2.0-beta.5/aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+Resolving github.com (github.com)... 20.27.177.113
+Connecting to github.com (github.com)|20.27.177.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/216025224/fb96cfc5-fc28-4711-b1f3-afb3f9bf1695?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250508T054122Z&X-Amz-Expires=300&X-Amz-Signature=5cf71a5f76ccb5f7b066e694d6aff26f14501005b901b4ae1d1aac2dea1ae923&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Daos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh&response-content-type=application%2Foctet-stream [following]
+--2025-05-08 14:41:22--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/216025224/fb96cfc5-fc28-4711-b1f3-afb3f9bf1695?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250508%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250508T054122Z&X-Amz-Expires=300&X-Amz-Signature=5cf71a5f76ccb5f7b066e694d6aff26f14501005b901b4ae1d1aac2dea1ae923&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Daos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.110.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1195121728 (1.1G) [application/octet-stream]
+Saving to: ‘aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh’
+
+aos-vm-dev-glibc-x86_6 100%[===========================>]   1.11G  11.2MB/s    in 2m 3s   
+
+2025-05-08 14:43:26 (9.29 MB/s) - ‘aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh’ saved [1195121728/1195121728]
+
+yata@sdmdev2:~$ wget https://github.com/aosedge/meta-aos-rpi/releases/latest/download/poky-glibc-x86_64-aos-image-rpi-cortexa76-raspberrypi5-toolchain-5.0.9.sh
+--2025-05-08 14:43:45--  https://github.com/aosedge/meta-aos-rpi/releases/latest/download/poky-glibc-x86_64-aos-image-rpi-cortexa76-raspberrypi5-toolchain-5.0.9.sh
+Resolving github.com (github.com)... 20.27.177.113
+Connecting to github.com (github.com)|20.27.177.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://github.com/aosedge/meta-aos-rpi/releases/download/v1.0.6/poky-glibc-x86_64-aos-image-rpi-cortexa76-raspberrypi5-toolchain-5.0.9.sh [following]
+--2025-05-08 14:43:45--  https://github.com/aosedge/meta-aos-rpi/releases/download/v1.0.6/poky-glibc-x86_64-aos-image-rpi-cortexa76-raspberrypi5-toolchain-5.0.9.sh
+Reusing existing connection to github.com:443.
+HTTP request sent, awaiting response... 404 Not Found
+2025-05-08 14:43:45 ERROR 404: Not Found.
+
+yata@sdmdev2:~$ ls -al
+total 1196572
+drwxr-x--- 55 yata docker       4096 May  8 14:41  .
+drwxr-xr-x 10 root root         4096 Apr 10 11:50  ..
+drwxrwxr-x  3 yata docker       4096 Apr 18 21:33  aarch64-rootfs
+drwxrwxr-x 13 yata docker       4096 Apr 19 23:16  alsa-lib
+drwxr-xr-x  6 yata docker       4096 Apr 19 23:18  alsa-lib-aarch64
+drwxrwxr-x 25 yata docker       4096 Apr 20 18:01  alsa-utils
+drwxr-xr-x  8 yata docker       4096 Apr 21 17:38  alsa-utils-aarch64
+drwxrwxr-x  6 yata docker       4096 May  2 11:20  .aos
+-rw-rw-r--  1 yata yata   1195121728 Apr 24 22:05  aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+drwxr-xr-x  2 yata yata         4096 May  5 22:47  .arduino15
+-rw-------  1 yata docker      65212 May  8 12:24  .bash_history
+-rw-r--r--  1 yata docker        220 Apr  9 13:26  .bash_logout
+-rw-r--r--  1 yata docker       3835 May  6 22:08  .bashrc
+drwxrwxr-x  2 yata yata         4096 May  6 20:33  bin
+drwx------ 24 yata docker       4096 May  7 10:51  .cache
+drwx------ 24 yata docker       4096 May  7 10:52  .config
+-rw-rw-r--  1 yata yata           47 May  4 08:16  .cortex-debug
+drwxr-xr-x  2 yata docker       4096 May  8 14:41  Desktop
+drwxr-xr-x  2 yata docker       4096 Apr 27 09:14  Documents
+drwxrwxr-x  3 yata docker       4096 Apr 26 06:11  .dotnet
+drwxr-xr-x  6 yata docker       4096 May  8 14:45  Downloads
+drwxrwxr-x 11 yata docker       4096 Apr 19 23:33  gettext-0.22.5
+drwxr-xr-x  6 yata docker       4096 Apr 18 21:24  gettext-0.22.5-old
+-rw-rw-r--  1 yata docker   26861674 Feb 22  2024  gettext-0.22.5.tar.gz
+-rw-rw-r--  1 yata docker         53 Apr 25 20:51  .gitconfig
+drwxr-xr-x  2 yata docker       4096 Apr 23 04:33  .gitconfig_backup_dir
+drwxrwxr-x  7 yata yata         4096 Apr 26 08:58  GNS3
+drwx------  3 yata docker       4096 Apr 26 08:04  .gnupg
+-rw-rw-r--  1 yata yata         4915 May  8 13:13  handmadeOEM.pfx
+-rw-rw-r--  1 yata yata         4915 May  8 13:13  handmadeSP.pfx
+drwxrwxr-x  5 yata yata         4096 May  6 21:26  hello-world
+-rw-------  1 yata yata            0 Apr 26 08:04  .ICEauthority
+drwxrwxr-x  3 yata yata         4096 May  6 20:33  include
+drwxrwxr-x  8 yata yata         4096 May  5 21:00  kepler-kit
+-rw-------  1 yata yata           20 May  6 22:06  .lesshst
+drwxrwxr-x  3 yata yata         4096 May  6 20:33  lib
+lrwxrwxrwx  1 yata yata            3 May  6 20:33  lib64 -> lib
+drwxrwxr-x 17 yata docker       4096 Apr 18 14:58  libgpiod
+drwxrwxr-x  5 yata docker       4096 Apr 18 14:58  libgpiod-arm64-static
+drwx------  4 yata docker       4096 Apr 10 11:44  .local
+-rw-rw-r--  1 yata yata        23234 May  8 12:42  log.txt
+-rw-r--r--  1 yata yata           33 May  7 20:01  machine-id
+drwxrwxr-x 17 yata docker       4096 Apr 10 14:16  meta-aos
+drwxrwxr-x 10 yata docker       4096 Apr 10 13:29  meta-aos-rpi
+drwx------  4 yata yata         4096 May  2 17:14  .mozilla
+drwxr-xr-x  2 yata docker       4096 Apr 10 11:44  Music
+-rwxr-xr-x  1 yata yata          761 May  7 20:01  mycommands.sh
+drwxrwxr-x 12 yata docker       4096 May  5 21:44  MyRepository
+-rw-------  1 root root            0 May  6 17:13  nohup.out
+-rw-rw-r--  1 yata yata           52 May  4 18:06  .packettracer
+drwx------  2 yata yata         4096 May  6 17:10  .pcsc10
+drwxr-xr-x  3 yata docker       4096 Apr 17 10:45  Pictures
+drwxrwxr-x  3 yata docker       4096 Apr 15 13:12  .pki
+drwxrwxr-x 16 yata docker       4096 Apr 27 12:12  poky
+-rw-r--r--  1 yata docker        807 Apr  9 13:26  .profile
+drwxrwxr-x  6 yata yata         4096 May  5 16:39  pt
+drwxr-xr-x  2 yata docker       4096 Apr 10 11:44  Public
+-rw-------  1 yata docker          5 Apr 15 12:36  .python_history
+-rw-rw-r--  1 yata yata          149 May  6 20:33  pyvenv.cfg
+drwx------  5 yata docker       4096 May  5 22:38  snap
+drwx------  2 yata docker       4096 May  8 13:02  .ssh
+-rw-------  1 yata yata          505 May  7 20:06  ssh_host_ecdsa_key
+-rw-r--r--  1 yata yata          171 May  7 20:06  ssh_host_ecdsa_key.pub
+-rw-------  1 yata yata          399 May  7 20:06  ssh_host_ed25519_key
+-rw-r--r--  1 yata yata           91 May  7 20:06  ssh_host_ed25519_key.pub
+-rw-------  1 yata yata         2590 May  7 20:06  ssh_host_rsa_key
+-rw-r--r--  1 yata yata          563 May  7 20:06  ssh_host_rsa_key.pub
+-rw-rw-r--  1 yata yata       458231 May  7 12:09  sslkeys.log
+-rw-r--r--  1 yata docker          0 Apr 10 11:50  .sudo_as_admin_successful
+drwxrwxr-x  3 yata docker       4096 Apr 21 17:32  tailscale-arm64-static
+drwxrwxr-x  4 yata yata         4096 Apr 29 03:12  tcpdump-build
+-rw-r--r--  1 yata yata            2 May  7 20:09  tempfiles.json
+drwxr-xr-x  2 yata docker       4096 Apr 10 11:44  Templates
+drwxrwxr-t  2 yata yata         4096 Apr 26 08:04  thinclient_drives
+drwxrwxr-x  9 yata docker       4096 Apr 21 20:24  usbutils
+drwxrwxr-x  3 yata docker       4096 Apr 23 04:13  venv
+drwxrwxr-x  3 yata yata         4096 May  5 22:28  .venvs
+drwxr-xr-x  2 yata docker       4096 Apr 10 11:44  Videos
+drwxr-xr-x  2 yata docker       4096 Apr 25 20:46  .vim
+-rw-------  1 yata docker      12852 May  8 12:42  .viminfo
+-rw-rw-r--  1 yata yata           72 May  4 10:01  .vimrc
+drwxrwxr-x  4 yata yata         4096 May  6 21:04 'VirtualBox VMs'
+drwxr-xr-x  2 yata yata         4096 May  1 19:54  .vmware
+drwxrwxr-x  2 yata yata         4096 May  5 23:58  .vscode
+drwxr-x---  5 yata docker       4096 May  7 02:28  .vscode-server
+-rw-rw-r--  1 yata docker       1332 May  8 14:43  .wget-hsts
+-rw-------  1 yata yata           53 May  2 05:58  .Xauthority
+-rw-r--r--  1 yata yata        50618 May  6 22:09  .xorgxrdp.10.log
+-rw-r--r--  1 yata yata        23772 Apr 29 04:43  .xorgxrdp.10.log.old
+-rw-rw-r--  1 yata docker         14 Apr 25 19:00  .xsession
+-rw-------  1 yata yata      2308149 May  8 12:23  .xsession-errors
+drwxr-xr-x 10 yata docker       4096 Apr 26 09:59  yocto
+yata@sdmdev2:~$ mv aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh ./Downloads/
+yata@sdmdev2:~$ cd Downloads/
+yata@sdmdev2:~/Downloads$ ./aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+bash: ./aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh: Permission denied
+yata@sdmdev2:~/Downloads$ sudo ./aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+[sudo] password for yata: 
+sudo: ./aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh: command not found
+yata@sdmdev2:~/Downloads$ ls 
+alpine-virt-3.21.3-x86_64.iso
+aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+aos-root-certificate.pem
+aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+arduino-cli_latest_Linux_64bit.tar.gz
+GNS3.VM.VMware.Workstation.2.2.54.zip
+LICENSE.txt
+Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+Packet_Tracer822_amd64_signed.deb
+postman-linux-x64
+postman-linux-x64.tar.gz
+RaspberryPi5-step
+RaspberryPi5-step.zip
+tailscale-1.82.0
+tailscale-1.82.0.tar.gz
+tailscale-1.82.0.zip
+test-vm.vdi
+thunderbird.tmp
+VBoxGuestAdditions_7.1.8.iso
+VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+VMware-player-full-16.2.2-19200509.exe
+VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:~/Downloads$ chmod +x aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+yata@sdmdev2:~/Downloads$ ./aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+AosCore SDK installer version 1.0.6
+===================================
+Enter target directory for SDK (default: /opt/aos-core-sdk/raspberrypi5/1.0.6): 
+You are about to install the SDK to "/opt/aos-core-sdk/raspberrypi5/1.0.6". Proceed [Y/n]? Y
+Extracting SDK...................................................................................................................................................done
+Setting it up...done
+SDK has been successfully set up and is ready to be used.
+Each time you wish to use the SDK in a new shell session, you need to source the environment setup script e.g.
+ $ . /opt/aos-core-sdk/raspberrypi5/1.0.6/environment-setup-cortexa76-aos-linux
+yata@sdmdev2:~/Downloads$ . /opt/aos-core-sdk/raspberrypi5/1.0.6/environment-setup-cortexa76-aos-linux
+yata@sdmdev2:~/Downloads$ aarch64-poky-linux-g++ --sysroot=/opt/poky/5.0.9/sysroots/cortexa76-poky-linux main.cpp -o hello_world
+bash: aarch64-poky-linux-g++: command not found
+yata@sdmdev2:~/Downloads$ ls /opt/poky/5.0.9/sysroots/cortexa76-poky-linux
+ls: cannot access '/opt/poky/5.0.9/sysroots/cortexa76-poky-linux': No such file or directory
+yata@sdmdev2:~/Downloads$ . /opt/poky/5.0.9/environment-setup-cortexa76-poky-linux
+bash: /opt/poky/5.0.9/environment-setup-cortexa76-poky-linux: No such file or directory
+yata@sdmdev2:~/Downloads$ cd /opt/aos-core-sdk/raspberrypi5/1.0.6/
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6$ ls
+environment-setup-cortexa76-aos-linux  sysroots
+site-config-cortexa76-aos-linux        version-cortexa76-aos-linux
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6$ cd sysroots
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots$ ls
+cortexa76-aos-linux  x86_64-aossdk-linux
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots$ cd cortexa76-aos-linux/
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ ls
+bin  boot  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ cd bin
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/bin$ ls
+2to3                                hostnamectl           piv-tool
+2to3-3.12                           iasecc-tool           pkcs11-register
+aos_communicationmanager            iconv                 pkcs11-tool
+aos_iamanager                       idiag-socket-details  pkcs15-crypt
+aos_messageproxy                    idle3                 pkcs15-init
+aos_servicemanager                  idle3.12              pkcs15-tool
+aos_updatemanager                   iptables-xml          pldd
+aos_vis                             journalctl            psfaddtable
+bootctl                             jq                    psfgettable
+busctl                              kbdinfo               psfstriptable
+cardos-tool                         kbd_mode              psfxtable
+chage                               kbdrate               pydoc3
+chattr                              kbxutil               pydoc3.12
+chattr.e2fsprogs                    kmod                  python3
+chfn                                ksba-config           python3.12
+chfn.shadow                         libassuan-config      python3.12-config
+chsh                                libgcrypt-config      python3.12-config-lib
+chsh.shadow                         loadkeys              python3-config
+chvt                                loadunimap            quota
+chvt.kbd                            locale                quotasync
+compile_et                          localectl             resolvectl
+crun                                login                 rpcinfo
+cryptoflex-tool                     loginctl              rpcinfo.rpcbind
+curl-config                         login.shadow          rpm
+cvtsudoers                          lsattr                rpm2cpio
+dbus-cleanup-sockets                lsattr.e2fsprogs      rpmbuild
+dbus-daemon                         lsblk                 rpmdb
+dbus-launch                         lsmod                 rpmgraph
+dbus-monitor                        lsmod.kmod            rpmkeys
+dbus-run-session                    make                  rpmlua
+dbus-send                           makedb                rpmquery
+dbus-test-tool                      mapscrn               rpmsign
+dbus-update-activation-environment  mk_cmds               rpmsort
+dbus-uuidgen                        modulemd-validator    rpmspec
+deallocvt                           mount                 rpmverify
+deallocvt.kbd                       mount.util-linux      sc-hsm-tool
+debugedit                           mpicalc               scmp_sys_resolver
+dhcp_lease_time                     ncurses5-config       scp
+dhcp_release                        ncurses6-config       scp.openssh
+dhcp_release6                       ncursesw5-config      sepdebugcrcfix
+dirmngr                             ncursesw6-config      setfont
+dirmngr-client                      netkey-tool           setkeycodes
+diskencryption.sh                   networkctl            setleds
+dnf                                 newgidmap             setmetamode
+dnf-3                               newgrp                setvtrgb
+dnf-automatic                       newgrp.shadow         sg
+dnf-automatic-3                     newuidmap             showconsolefont
+dnie-tool                           nf-ct-add             showkey
+dnsmasq                             nf-ct-events          showkey.kbd
+dtc                                 nf-ct-list            sprof
+dtrust-tool                         nf-exp-add            ssh
+dumpkeys                            nf-exp-delete         ssh-keygen
+dumpsexp                            nf-exp-list           ssh.openssh
+egk-tool                            nf-log                su
+eidenv                              nf-monitor            sudo
+eu-addr2line                        nf-queue              sudoedit
+eu-nm                               nl-addr-add           sudoreplay
+eu-readelf                          nl-addr-delete        su.shadow
+eu-size                             nl-addr-list          systemctl
+eu-strip                            nl-class-add          systemd-ac-power
+expiry                              nl-class-delete       systemd-ask-password
+faillog                             nl-classid-lookup     systemd-cat
+fcntl-lock                          nl-class-list         systemd-cgls
+fdtdump                             nl-cls-add            systemd-cgtop
+fdtget                              nl-cls-delete         systemd-creds
+fdtoverlay                          nl-cls-list           systemd-delta
+fdtput                              nl-fib-lookup         systemd-detect-virt
+fgconsole                           nl-link-enslave       systemd-dissect
+fgconsole.kbd                       nl-link-ifindex2name  systemd-escape
+file                                nl-link-list          systemd-hwdb
+file.file                           nl-link-name2ifindex  systemd-id128
+find-debuginfo                      nl-link-release       systemd-inhibit
+findmnt                             nl-link-set           systemd-machine-id-setup
+gencat                              nl-link-stats         systemd-mount
+gendiff                             nl-list-caches        systemd-notify
+genl-ctrl-list                      nl-list-sockets       systemd-path
+getconf                             nl-monitor            systemd-resolve
+getent                              nl-neigh-add          systemd-run
+getkeycodes                         nl-neigh-delete       systemd-socket-activate
+getsubids                           nl-neigh-list         systemd-stdio-bridge
+gids-tool                           nl-neightbl-list      systemd-sysusers
+gnutls-cli-debug                    nl-nh-list            systemd-tmpfiles
+goid-tool                           nl-pktloc-lookup      systemd-tty-ask-password-agent
+gpasswd                             nl-qdisc-add          systemd-umount
+gpg                                 nl-qdisc-delete       timedatectl
+gpg2                                nl-qdisc-list         udevadm
+gpg-agent                           nl-route-add          umount
+gpg-card                            nl-route-delete       umount.util-linux
+gpgconf                             nl-route-get          unicode_start
+gpg-connect-agent                   nl-route-list         unicode_stop
+gpg-error                           nl-rule-list          update-alternatives
+gpg-error-config                    nl-tctree-list        update-mime-database
+gpgme-config                        nl-util-addr          userdbctl
+gpgme-json                          npth-config           varlinkctl
+gpgme-tool                          onig-config           watchgnupg
+gpgparsemail                        openpgp-tool          westcos-tool
+gpgrt-config                        opensc-asn1           xenstore
+gpgsm                               opensc-explorer       xenstore-chmod
+gpgsplit                            opensc-tool           xenstore-control
+gpgtar                              openssl               xenstore-exists
+gpgv                                openvt                xenstore-list
+gpgv2                               openvt.kbd            xenstore-ls
+gpg-wks-client                      passwd                xenstore-read
+gpg-wks-server                      passwd.shadow         xenstore-rm
+groups                              pcprofiledump         xenstore-watch
+groups.shadow                       pcre2-config          xenstore-write
+grpc_cpp_plugin                     pinentry              xml2-config
+hmac256                             pinentry-curses       yat2m
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/bin$ cd ../sbin
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/sbin$ ls
+
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/sbin$ ls /bin | grep g++
+aarch64-linux-gnu-g++
+aarch64-linux-gnu-g++-13
+avr-g++
+g++
+g++-13
+x86_64-linux-gnu-g++
+x86_64-linux-gnu-g++-13
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/sbin$ cd ..
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ ls -al
+total 64
+drwxr-xr-x 16 root root 4096 May  8 14:52 .
+drwxr-xr-x  4 root root 4096 May  8 14:52 ..
+lrwxrwxrwx  1 root root    7 May  8 14:52 bin -> usr/bin
+drwxr-xr-x  2 root root 4096 May  8 14:52 boot
+drwxr-xr-x 34 root root 4096 May  8 14:53 etc
+drwxr-xr-x  2 root root 4096 May  8 14:52 home
+lrwxrwxrwx  1 root root    7 May  8 14:52 lib -> usr/lib
+drwxr-xr-x  2 root root 4096 May  8 14:52 media
+drwxr-xr-x  2 root root 4096 May  8 14:52 mnt
+drwxr-xr-x  4 root root 4096 May  8 14:52 opt
+dr-xr-xr-x  2 root root 4096 May  8 14:52 proc
+drwx------  2 root root 4096 May  8 14:52 root
+drwxr-xr-x  2 root root 4096 May  8 14:52 run
+lrwxrwxrwx  1 root root    8 May  8 14:52 sbin -> usr/sbin
+drwxr-xr-x  2 root root 4096 May  8 14:52 srv
+dr-xr-xr-x  2 root root 4096 May  8 14:52 sys
+drwxrwxrwt  2 root root 4096 May  8 14:52 tmp
+drwxr-xr-x 10 root root 4096 May  8 14:53 usr
+drwxr-xr-x 11 root root 4096 May  8 14:53 var
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ ls home
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ cd home
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ vim main.cpp
+
+[1]+  Stopped                 vim main.cpp
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ vim ~/Downloads/main.cpp
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ ls /bin | grep aarch
+aarch64-linux-gnu-addr2line
+aarch64-linux-gnu-ar
+aarch64-linux-gnu-as
+aarch64-linux-gnu-c++filt
+aarch64-linux-gnu-cpp
+aarch64-linux-gnu-cpp-13
+aarch64-linux-gnu-dwp
+aarch64-linux-gnu-elfedit
+aarch64-linux-gnu-g++
+aarch64-linux-gnu-g++-13
+aarch64-linux-gnu-gcc
+aarch64-linux-gnu-gcc-13
+aarch64-linux-gnu-gcc-ar
+aarch64-linux-gnu-gcc-ar-13
+aarch64-linux-gnu-gcc-nm
+aarch64-linux-gnu-gcc-nm-13
+aarch64-linux-gnu-gcc-ranlib
+aarch64-linux-gnu-gcc-ranlib-13
+aarch64-linux-gnu-gcov
+aarch64-linux-gnu-gcov-13
+aarch64-linux-gnu-gcov-dump
+aarch64-linux-gnu-gcov-dump-13
+aarch64-linux-gnu-gcov-tool
+aarch64-linux-gnu-gcov-tool-13
+aarch64-linux-gnu-gold
+aarch64-linux-gnu-gprof
+aarch64-linux-gnu-ld
+aarch64-linux-gnu-ld.bfd
+aarch64-linux-gnu-ld.gold
+aarch64-linux-gnu-lto-dump
+aarch64-linux-gnu-lto-dump-13
+aarch64-linux-gnu-nm
+aarch64-linux-gnu-objcopy
+aarch64-linux-gnu-objdump
+aarch64-linux-gnu-ranlib
+aarch64-linux-gnu-readelf
+aarch64-linux-gnu-size
+aarch64-linux-gnu-strings
+aarch64-linux-gnu-strip
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ ls /bin -al | grep aarch
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ ls /bin | grep aarch -l
+(standard input)
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ ls /bin -al
+lrwxrwxrwx 1 root root 7 Apr 22  2024 /bin -> usr/bin
+ata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ aarch64-linux-gnu-g++ ~/Downloads/main.cpp -o hello_world
+/usr/lib/gcc-cross/aarch64-linux-gnu/13/../../../../aarch64-linux-gnu/bin/ld: cannot open output file hello_world: Permission denied
+collect2: error: ld returned 1 exit status
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ sudo aarch64-linux-gnu-g++ ~/Downloads/main.cpp -o hello_world
+[sudo] password for yata: 
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ ls ~/Downloads
+alpine-virt-3.21.3-x86_64.iso
+aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+aos-root-certificate.pem
+aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+arduino-cli_latest_Linux_64bit.tar.gz
+demo-services
+GNS3.VM.VMware.Workstation.2.2.54.zip
+hello_world
+LICENSE.txt
+main.cpp
+Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+Packet_Tracer822_amd64_signed.deb
+postman-linux-x64
+postman-linux-x64.tar.gz
+RaspberryPi5-step
+RaspberryPi5-step.zip
+tailscale-1.82.0
+tailscale-1.82.0.tar.gz
+tailscale-1.82.0.zip
+test-vm.vdi
+thunderbird.tmp
+VBoxGuestAdditions_7.1.8.iso
+VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+VMware-player-full-16.2.2-19200509.exe
+VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ file hello_world 
+hello_world: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=907875e249e0f6116d0307be7cf094dd6d49670d, for GNU/Linux 3.7.0, not stripped
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ ls -a
+.  ..  hello_world
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ file hello_world 
+hello_world: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=907875e249e0f6116d0307be7cf094dd6d49670d, for GNU/Linux 3.7.0, not stripped
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ ls ~/Downloads/ -a
+.
+..
+alpine-virt-3.21.3-x86_64.iso
+aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+aos-root-certificate.pem
+aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+arduino-cli_latest_Linux_64bit.tar.gz
+demo-services
+GNS3.VM.VMware.Workstation.2.2.54.zip
+hello_world
+LICENSE.txt
+main.cpp
+Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+Packet_Tracer822_amd64_signed.deb
+postman-linux-x64
+postman-linux-x64.tar.gz
+RaspberryPi5-step
+RaspberryPi5-step.zip
+tailscale-1.82.0
+tailscale-1.82.0.tar.gz
+tailscale-1.82.0.zip
+test-vm.vdi
+thunderbird.tmp
+VBoxGuestAdditions_7.1.8.iso
+VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+VMware-player-full-16.2.2-19200509.exe
+VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux/home$ cd ..
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ ls -a
+.   bin   etc   lib    mnt  proc  run   srv  tmp  var
+..  boot  home  media  opt  root  sbin  sys  usr
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ cd ~/ -a
+bash: cd: too many arguments
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ ls ~/ -a
+ .                       include                  ssh_host_ed25519_key
+ ..                      kepler-kit               ssh_host_ed25519_key.pub
+ aarch64-rootfs          .lesshst                 ssh_host_rsa_key
+ alsa-lib                lib                      ssh_host_rsa_key.pub
+ alsa-lib-aarch64        lib64                    sslkeys.log
+ alsa-utils              libgpiod                 .sudo_as_admin_successful
+ alsa-utils-aarch64      libgpiod-arm64-static    tailscale-arm64-static
+ .aos                    .local                   tcpdump-build
+ .arduino15              log.txt                  tempfiles.json
+ .bash_history           machine-id               Templates
+ .bash_logout            meta-aos                 thinclient_drives
+ .bashrc                 meta-aos-rpi             usbutils
+ bin                     .mozilla                 venv
+ .cache                  Music                    .venvs
+ .config                 mycommands.sh            Videos
+ .cortex-debug           MyRepository             .vim
+ Desktop                 nohup.out                .viminfo
+ Documents               .packettracer            .vimrc
+ .dotnet                 .pcsc10                 'VirtualBox VMs'
+ Downloads               Pictures                 .vmware
+ gettext-0.22.5          .pki                     .vscode
+ gettext-0.22.5-old      poky                     .vscode-server
+ gettext-0.22.5.tar.gz   .profile                 .wget-hsts
+ .gitconfig              pt                       .Xauthority
+ .gitconfig_backup_dir   Public                   .xorgxrdp.10.log
+ GNS3                    .python_history          .xorgxrdp.10.log.old
+ .gnupg                  pyvenv.cfg               .xsession
+ handmadeOEM.pfx         snap                     .xsession-errors
+ handmadeSP.pfx          .ssh                     yocto
+ hello-world             ssh_host_ecdsa_key
+ .ICEauthority           ssh_host_ecdsa_key.pub
+yata@sdmdev2:/opt/aos-core-sdk/raspberrypi5/1.0.6/sysroots/cortexa76-aos-linux$ cd ~/Downloads/demo-services/
+yata@sdmdev2:~/Downloads/demo-services$ ls -a
+.   cpu_load        .git            kuksa-test-client  ram_consumer  unikernel_pvcalls
+..  demo_insurance  .gitlab-ci.yml  monkey_zephyr      README.md
+yata@sdmdev2:~/Downloads/demo-services$ cd ../
+yata@sdmdev2:~/Downloads$ ls -al
+total 4503808
+drwxr-xr-x  7 yata docker       4096 May  8 15:19 .
+drwxr-x--- 55 yata docker       4096 May  8 15:11 ..
+-rw-rw-r--  1 yata yata     66060288 May  4 06:17 alpine-virt-3.21.3-x86_64.iso
+-rwxrwxr-x  1 yata yata    615912131 May  8 14:47 aos-core-x86_64-toolchain-raspberrypi5-1.0.6.sh
+-rw-rw-r--  1 yata docker       2193 Apr 24 13:46 aos-root-certificate.pem
+-rw-rw-r--  1 yata yata   1195121728 Apr 24 22:05 aos-vm-dev-glibc-x86_64-aos-image-vm-core2-64-genericx86-64-toolchain-5.0.9.sh
+-rw-rw-r--  1 yata yata     17346899 Apr 22 22:56 arduino-cli_latest_Linux_64bit.tar.gz
+drwxrwxr-x  9 yata yata         4096 May  8 15:19 demo-services
+-rw-rw-r--  1 yata yata    989462674 Apr 27 11:45 GNS3.VM.VMware.Workstation.2.2.54.zip
+-rw-rw-r--  1 yata yata        19656 May  8 15:17 hello_world
+-rw-r--r--  1 yata yata        35149 Apr 22 22:50 LICENSE.txt
+-rw-rw-r--  1 yata yata           99 May  8 15:11 main.cpp
+-rw-rw-r--  1 yata yata     22973798 May  4 06:04 Oracle_VirtualBox_Extension_Pack-7.1.8-168469.vbox-extpack
+-rw-rw-r--  1 yata yata     22973798 May  4 06:01 Oracle_VirtualBox_Extension_Pack-7.1.8.vbox-extpack
+-rw-rw-r--  1 yata yata    282817852 Apr 27 13:03 Packet_Tracer822_amd64_signed.deb
+drwxrwxr-x  3 yata docker       4096 Apr 17 16:43 postman-linux-x64
+-rw-rw-r--  1 yata docker  132708061 Apr 17 16:43 postman-linux-x64.tar.gz
+drwxrwxr-x  3 yata docker       4096 Apr 18 13:05 RaspberryPi5-step
+-rw-rw-r--  1 yata docker    1089150 Apr 18 13:05 RaspberryPi5-step.zip
+drwxrwxr-x 65 yata docker       4096 Mar 27 04:50 tailscale-1.82.0
+-rw-rw-r--  1 yata docker    3793704 Apr 16 15:54 tailscale-1.82.0.tar.gz
+-rw-rw-r--  1 yata docker    4794981 Apr 16 15:58 tailscale-1.82.0.zip
+-rw-------  1 yata yata      2097152 May  4 05:02 test-vm.vdi
+drwx------  2 yata docker       4096 Apr 24 13:47 thunderbird.tmp
+-rw-rw-r--  1 yata yata     61380608 May  4 06:03 VBoxGuestAdditions_7.1.8.iso
+-rw-rw-r--  1 yata yata    123045717 May  2 17:16 VirtualBox-7.1-7.1.8_168469_el9-1.x86_64.rpm
+-rw-rw-r--  1 yata yata    108093464 May  4 06:02 virtualbox-7.1_7.1.8-168469~Ubuntu~noble_amd64.deb
+-rw-rw-r--  1 yata yata    612615776 May  1 19:35 VMware-player-full-16.2.2-19200509.exe
+-rwxrwxr-x  1 yata yata    351495967 May  1 19:36 VMware-Workstation-Full-17.6.3-24583834.x86_64.bundle
+yata@sdmdev2:~/Downloads$ cd demo-services
+yata@sdmdev2:~/Downloads/demo-services$ cd hello_world/
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ ls -a
+.  ..  doc  main.cpp  README.md  service
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ cd .service
+bash: cd: .service: No such file or directory
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ cd .services
+bash: cd: .services: No such file or directory
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ cd services
+bash: cd: services: No such file or directory
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ cd service
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ls
+meta  src
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ cd src
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service/src$ ls
+hello_world
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service/src$ file hello_world 
+hello_world: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-x86-64.so.2, BuildID[sha1]=80199e0231ee90314480a56cacaa0718ee355591, for GNU/Linux 5.15.0, with debug_info, not stripped
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service/src$ cp hello_world ..
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service/src$ cd ..
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ls
+hello_world  meta  src
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ file ~/hello-world
+/home/yata/hello-world: directory
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ls ~/hello-world/
+.git/           LICENSE         README.md       src/            
+.gitignore      meta/           service.tar.gz  .travis.yml     
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ vim ~/Downloads/demo-services/hello_world/service/meta/config.yaml
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ cd service
+bash: cd: service: No such file or directory
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer sign
+Starting SERVICE SIGNING process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Copying application...         DONE
+Copying configuration...       DONE
+Copying default state...       Not required by config
+Creating archive...            DONE
+Sing package...       Process failed with error: 
+Invalid password or PKCS12 data
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer sign
+Starting SERVICE SIGNING process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Copying application...         DONE
+Copying configuration...       DONE
+Copying default state...       Not required by config
+Creating archive...            DONE
+Sing package...       DONE
+Creating service package...            DONE
+Service package created: 
+/home/yata/Downloads/demo-services/hello_world/service/service.tar.gz
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Uploading...                   Process failed with error: 
+Key container does not have all needed certificates
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Process failed with error: 
+ERROR: Configured publish->tls_pkcs12 file is set to aos-user-sp.p12, but file not found 
+neither in meta nor in /home/yata/.aos/security directory.
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_keys install-root
+To install system root certificate execute next command:
+sudo ~/.aos/scripts/install_aos_root_ca.sh
+
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ sudo ~/.aos/scripts/install_aos_root_ca.sh
+[sudo] password for yata: 
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ls /etc/ssl/certs/
+ 002c0b4f.0
+ 0179095f.0
+ 02265526.0
+ 062cdee6.0
+ 064e0aa9.0
+ 06dc52d5.0
+ 08063a00.0
+ 09789157.0
+ 0a775a30.0
+ 0b1b94ef.0
+ 0b9bc432.0
+ 0bf05006.0
+ 0f5dc4f3.0
+ 0f6fa695.0
+ 1001acf7.0
+ 106f3e4d.0
+ 14bc7599.0
+ 18856ac4.0
+ 1cef98f5.0
+ 1d3472b9.0
+ 1e08bfd1.0
+ 1e09d511.0
+ 228f89db.0
+ 244b5494.0
+ 2923b3f9.0
+ 2ae6433e.0
+ 2b349938.0
+ 32888f65.0
+ 3513523f.0
+ 3bde41ac.0
+ 3e359ba6.0
+ 3fb36b73.0
+ 40193066.0
+ 4042bcee.0
+ 40547a79.0
+ 406c9bb1.0
+ 48bec511.0
+ 4b718d9b.0
+ 4bfab552.0
+ 4f316efb.0
+ 4fd49c6c.0
+ 50768e5f.0
+ 5443e9e3.0
+ 54657681.0
+ 57bcb2da.0
+ 5860aaa6.0
+ 5931b5bc.0
+ 5ad8a5d6.0
+ 5cd81ad7.0
+ 5e98733a.0
+ 5f15c80c.0
+ 5f618aec.0
+ 607986c7.0
+ 626dceaf.0
+ 653b494a.0
+ 68dd7389.0
+ 6b99d060.0
+ 6d41d539.0
+ 6fa5da56.0
+ 706f604c.0
+ 749e9e03.0
+ 75d1b2ed.0
+ 76faf6c0.0
+ 7719f463.0
+ 773e07ad.0
+ 7a3adc42.0
+ 7a780d93.0
+ 7f3d5d1d.0
+ 8160b96c.0
+ 81f2d2b1.0
+ 8312c4c1.0
+ 8508e720.0
+ 865fbdf9.0
+ 8cb5ee0f.0
+ 8d86cdd1.0
+ 8d89cda1.0
+ 8f103249.0
+ 9046744a.0
+ 90c5a3c8.0
+ 930ac5d2.0
+ 93bc0acc.0
+ 9482e63a.0
+ 9846683b.0
+ 988a38cb.0
+ 9b46e03d.0
+ 9b5697b0.0
+ 9bf03295.0
+ 9c8dfbd4.0
+ 9d04f354.0
+ 9ef4a08a.0
+ 9f727ac7.0
+ a3418fda.0
+ a89d74c2.0
+ a94d09e5.0
+ ac5efdb2.0
+ ACCVRAIZ1.pem
+ AC_RAIZ_FNMT-RCM.pem
+ AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+ Actalis_Authentication_Root_CA.pem
+ aee5f10d.0
+ AffirmTrust_Commercial.pem
+ AffirmTrust_Networking.pem
+ AffirmTrust_Premium_ECC.pem
+ AffirmTrust_Premium.pem
+ Amazon_Root_CA_1.pem
+ Amazon_Root_CA_2.pem
+ Amazon_Root_CA_3.pem
+ Amazon_Root_CA_4.pem
+ ANF_Secure_Server_Root_CA.pem
+ AosECRootCA.pem
+ AosRootCA.pem
+ Atos_TrustedRoot_2011.pem
+ Atos_TrustedRoot_Root_CA_ECC_TLS_2021.pem
+ Atos_TrustedRoot_Root_CA_RSA_TLS_2021.pem
+ Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+ b0e59380.0
+ b1159c4c.0
+ b433981b.0
+ b66938e9.0
+ b727005e.0
+ b7a5b843.0
+ b81b93f0.0
+ Baltimore_CyberTrust_Root.pem
+ bf53fb88.0
+ BJCA_Global_Root_CA1.pem
+ BJCA_Global_Root_CA2.pem
+ Buypass_Class_2_Root_CA.pem
+ Buypass_Class_3_Root_CA.pem
+ c01eb047.0
+ c28a8a30.0
+ ca6e4ad9.0
+ ca-certificates.crt
+ CA_Disig_Root_R2.pem
+ cbf06781.0
+ cc450945.0
+ cd58d51e.0
+ cd8c0d63.0
+ ce5e74ef.0
+ Certainly_Root_E1.pem
+ Certainly_Root_R1.pem
+ Certigna.pem
+ Certigna_Root_CA.pem
+ certSIGN_Root_CA_G2.pem
+ certSIGN_ROOT_CA.pem
+ Certum_EC-384_CA.pem
+ Certum_Trusted_Network_CA_2.pem
+ Certum_Trusted_Network_CA.pem
+ Certum_Trusted_Root_CA.pem
+ CFCA_EV_ROOT.pem
+ CommScope_Public_Trust_ECC_Root-01.pem
+ CommScope_Public_Trust_ECC_Root-02.pem
+ CommScope_Public_Trust_RSA_Root-01.pem
+ CommScope_Public_Trust_RSA_Root-02.pem
+ Comodo_AAA_Services_root.pem
+ COMODO_Certification_Authority.pem
+ COMODO_ECC_Certification_Authority.pem
+ COMODO_RSA_Certification_Authority.pem
+ d4dae3dd.0
+ d52c538d.0
+ d6325660.0
+ d7e8dc79.0
+ d887a5bb.0
+ da0cfd1d.0
+ dc4d6a89.0
+ dc9c08a1.0
+ dd8e9d41.0
+ de6d66f3.0
+ DigiCert_Assured_ID_Root_CA.pem
+ DigiCert_Assured_ID_Root_G2.pem
+ DigiCert_Assured_ID_Root_G3.pem
+ DigiCert_Global_Root_CA.pem
+ DigiCert_Global_Root_G2.pem
+ DigiCert_Global_Root_G3.pem
+ DigiCert_High_Assurance_EV_Root_CA.pem
+ DigiCert_TLS_ECC_P384_Root_G5.pem
+ DigiCert_TLS_RSA4096_Root_G5.pem
+ DigiCert_Trusted_Root_G4.pem
+ D-TRUST_BR_Root_CA_1_2020.pem
+ D-TRUST_EV_Root_CA_1_2020.pem
+ D-TRUST_Root_Class_3_CA_2_2009.pem
+ D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+ e113c810.0
+ e18bfb83.0
+ e35234b1.0
+ e36a6752.0
+ e73d606e.0
+ e868b802.0
+ e8de2f56.0
+ ecccd8db.0
+ ed858448.0
+ ee64a828.0
+ eed8c118.0
+ ef954a4e.0
+ emSign_ECC_Root_CA_-_C3.pem
+ emSign_ECC_Root_CA_-_G3.pem
+ emSign_Root_CA_-_C1.pem
+ emSign_Root_CA_-_G1.pem
+ Entrust.net_Premium_2048_Secure_Server_CA.pem
+ Entrust_Root_Certification_Authority_-_EC1.pem
+ Entrust_Root_Certification_Authority_-_G2.pem
+ Entrust_Root_Certification_Authority_-_G4.pem
+ Entrust_Root_Certification_Authority.pem
+ ePKI_Root_Certification_Authority.pem
+ e-Szigno_Root_CA_2017.pem
+ f081611a.0
+ f0c70a8d.0
+ f249de83.0
+ f30dd6ad.0
+ f3377b1b.0
+ f387163d.0
+ f39fc864.0
+ f51bb24c.0
+ fa5da96b.0
+ fb717492.0
+ fc5a8f99.0
+ fd64f3fc.0
+ fe8a2cd8.0
+ feffd413.0
+ ff34af3f.0
+ GDCA_TrustAUTH_R5_ROOT.pem
+ GlobalSign_ECC_Root_CA_-_R4.pem
+ GlobalSign_ECC_Root_CA_-_R5.pem
+ GlobalSign_Root_CA.pem
+ GlobalSign_Root_CA_-_R3.pem
+ GlobalSign_Root_CA_-_R6.pem
+ GlobalSign_Root_E46.pem
+ GlobalSign_Root_R46.pem
+ GLOBALTRUST_2020.pem
+ Go_Daddy_Class_2_CA.pem
+ Go_Daddy_Root_Certificate_Authority_-_G2.pem
+ GTS_Root_R1.pem
+ GTS_Root_R2.pem
+ GTS_Root_R3.pem
+ GTS_Root_R4.pem
+ HARICA_TLS_ECC_Root_CA_2021.pem
+ HARICA_TLS_RSA_Root_CA_2021.pem
+ Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+ Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+ HiPKI_Root_CA_-_G1.pem
+ Hongkong_Post_Root_CA_3.pem
+ IdenTrust_Commercial_Root_CA_1.pem
+ IdenTrust_Public_Sector_Root_CA_1.pem
+ ISRG_Root_X1.pem
+ ISRG_Root_X2.pem
+ Izenpe.com.pem
+ Microsec_e-Szigno_Root_CA_2009.pem
+ Microsoft_ECC_Root_Certificate_Authority_2017.pem
+ Microsoft_RSA_Root_Certificate_Authority_2017.pem
+ NAVER_Global_Root_Certification_Authority.pem
+'NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem'
+ OISTE_WISeKey_Global_Root_GB_CA.pem
+ OISTE_WISeKey_Global_Root_GC_CA.pem
+ QuoVadis_Root_CA_1_G3.pem
+ QuoVadis_Root_CA_2_G3.pem
+ QuoVadis_Root_CA_2.pem
+ QuoVadis_Root_CA_3_G3.pem
+ QuoVadis_Root_CA_3.pem
+ Sectigo_Public_Server_Authentication_Root_E46.pem
+ Sectigo_Public_Server_Authentication_Root_R46.pem
+ Secure_Global_CA.pem
+ SecureSign_RootCA11.pem
+ SecureTrust_CA.pem
+ Security_Communication_ECC_RootCA1.pem
+ Security_Communication_RootCA2.pem
+ Security_Communication_RootCA3.pem
+ Security_Communication_Root_CA.pem
+ ssl-cert-snakeoil.pem
+ SSL.com_EV_Root_Certification_Authority_ECC.pem
+ SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+ SSL.com_Root_Certification_Authority_ECC.pem
+ SSL.com_Root_Certification_Authority_RSA.pem
+ SSL.com_TLS_ECC_Root_CA_2022.pem
+ SSL.com_TLS_RSA_Root_CA_2022.pem
+ Starfield_Class_2_CA.pem
+ Starfield_Root_Certificate_Authority_-_G2.pem
+ Starfield_Services_Root_Certificate_Authority_-_G2.pem
+ SwissSign_Gold_CA_-_G2.pem
+ SwissSign_Silver_CA_-_G2.pem
+ SZAFIR_ROOT_CA2.pem
+ Telia_Root_CA_v2.pem
+ TeliaSonera_Root_CA_v1.pem
+ TrustAsia_Global_Root_CA_G3.pem
+ TrustAsia_Global_Root_CA_G4.pem
+ Trustwave_Global_Certification_Authority.pem
+ Trustwave_Global_ECC_P256_Certification_Authority.pem
+ Trustwave_Global_ECC_P384_Certification_Authority.pem
+ T-TeleSec_GlobalRoot_Class_2.pem
+ T-TeleSec_GlobalRoot_Class_3.pem
+ TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+ TunTrust_Root_CA.pem
+ TWCA_Global_Root_CA.pem
+ TWCA_Root_Certification_Authority.pem
+ UCA_Extended_Validation_Root.pem
+ UCA_Global_G2_Root.pem
+ USERTrust_ECC_Certification_Authority.pem
+ USERTrust_RSA_Certification_Authority.pem
+ vTrus_ECC_Root_CA.pem
+ vTrus_Root_CA.pem
+ XRamp_Global_CA_Root.pem
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ sudo cp /etc/ssl/certs/AosRootCA.pem ~/.aos/security
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ sudo cp /etc/ssl/certs/AosECRootCA.pem ~/.aos/security
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Process failed with error: 
+ERROR: Configured publish->tls_pkcs12 file is set to aos-user-sp.p12, but file not found 
+neither in meta nor in /home/yata/.aos/security directory.
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Uploading...                   DONE
+Service successfully uploaded!
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ cd ..
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ ls
+doc  main.cpp  README.md  service
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ vim main.cpp
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ sudo aarch64-linux-gnu-g++ ./main.cpp -o hello_world_
+[sudo] password for yata: 
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ mv ./hello_world_ ./service/
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ vim ~/Downloads/demo-services/hello_world/service/meta/config.yaml
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ vim ~/Downloads/demo-services/hello_world/service/meta/config.yaml
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ cd service
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer sign
+Starting SERVICE SIGNING process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Copying application...         DONE
+Copying configuration...       DONE
+Copying default state...       Not required by config
+Creating archive...            DONE
+Sing package...       DONE
+Creating service package...            DONE
+Service package created: 
+/home/yata/Downloads/demo-services/hello_world/service/service.tar.gz
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ls
+hello_world  hello_world_  meta  service.tar.gz  src
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Uploading...                   DONE
+Service successfully uploaded!
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ cd ..
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ ls
+doc  main.cpp  README.md  service
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ vim main.cpp
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ rm ./service/hello_world*
+rm: remove write-protected regular file './service/hello_world_'? y
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ ls ./service/
+meta  service.tar.gz  src
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ ls ./service/src
+hello_world
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ file ./service/src/hello_world 
+./service/src/hello_world: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-x86-64.so.2, BuildID[sha1]=80199e0231ee90314480a56cacaa0718ee355591, for GNU/Linux 5.15.0, with debug_info, not stripped
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ sudo aarch64-linux-gnu-g++ ./main.cpp -o hello_world
+[sudo] password for yata: 
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ file hello_world 
+hello_world: ELF 64-bit LSB pie executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, BuildID[sha1]=907875e249e0f6116d0307be7cf094dd6d49670d, for GNU/Linux 3.7.0, not stripped
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ mv hello_world ./service/
+yata@sdmdev2:~/Downloads/demo-services/hello_world$ cd service/
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ vim ~/Downloads/demo-services/hello_world/service/meta/config.yaml
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer sign
+Starting SERVICE SIGNING process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Copying application...         DONE
+Copying configuration...       DONE
+Copying default state...       Not required by config
+Creating archive...            DONE
+Sing package...       DONE
+Creating service package...            DONE
+Service package created: 
+/home/yata/Downloads/demo-services/hello_world/service/service.tar.gz
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ ~/.aos/venv/bin/python3 -m aos_signer upload
+Starting SERVICE UPLOAD process...
+Starting CONFIG VALIDATION process...
+Validating config...           VALID
+Uploading...                   DONE
+Service successfully uploaded!
+yata@sdmdev2:~/Downloads/demo-services/hello_world/service$ 
+
+
+yata@sdmdev2:~$ openssl pkcs12 -in handmadeOEM.pfx -clcerts -nokeys -out aos-user-oem.pem
+Enter Import Password:
+yata@sdmdev2:~$ ls -l
+total 3007624
+-rw-r--r--  1 yata    yata     245039104 May  7 20:05  2025-05-02_eth0.pcap
+-rw-r--r--  1 yata    yata       1101824 May  7 20:02  20250504-115517_eth0.pcap
+-rw-r--r--  1 yata    yata             0 May  7 20:02  20250505-115517_eth0.pcap
+-rw-r--r--  1 yata    yata             0 May  7 20:02  20250506-115517_eth0.pcap
+drwxrwxr-x  3 yata    docker        4096 Apr 18 21:33  aarch64-rootfs
+drwxrwxr-x 13 yata    docker        4096 Apr 19 23:16  alsa-lib
+drwxr-xr-x  6 yata    docker        4096 Apr 19 23:18  alsa-lib-aarch64
+drwxrwxr-x 25 yata    docker        4096 Apr 20 18:01  alsa-utils
+drwxr-xr-x  8 yata    docker        4096 Apr 21 17:38  alsa-utils-aarch64
+-rw-------  1 yata    yata          1416 May  8 13:23  aos-user-oem.pem
+drwxrwxr-x  2 yata    yata          4096 May  6 20:33  bin
+-rw-r--r--  1 yata    yata       4469638 May  7 20:05  capture-20250428-190146.pcap
+-rw-r--r--  1 tcpdump tcpdump 2797691174 May  6 22:09  capture-20250506-172234.pcap
+-rw-r--r--  1 yata    yata       3926841 May  7 20:05  capture_eth0.pcap
+drwxr-xr-x  2 yata    docker        4096 May  4 04:41  Desktop
+drwxr-xr-x  2 yata    docker        4096 Apr 27 09:14  Documents
+drwxr-xr-x  6 yata    docker        4096 May  6 17:55  Downloads
+drwxrwxr-x 11 yata    docker        4096 Apr 19 23:33  gettext-0.22.5
+drwxr-xr-x  6 yata    docker        4096 Apr 18 21:24  gettext-0.22.5-old
+-rw-rw-r--  1 yata    docker    26861674 Feb 22  2024  gettext-0.22.5.tar.gz
+drwxrwxr-x  7 yata    yata          4096 Apr 26 08:58  GNS3
+-rw-rw-r--  1 yata    yata          4915 May  8 13:13  handmadeOEM.pfx
+-rw-rw-r--  1 yata    yata          4915 May  8 13:13  handmadeSP.pfx
+drwxrwxr-x  5 yata    yata          4096 May  6 21:26  hello-world
+drwxrwxr-x  3 yata    yata          4096 May  6 20:33  include
+drwxrwxr-x  8 yata    yata          4096 May  5 21:00  kepler-kit
+drwxrwxr-x  3 yata    yata          4096 May  6 20:33  lib
+lrwxrwxrwx  1 yata    yata             3 May  6 20:33  lib64 -> lib
+drwxrwxr-x 17 yata    docker        4096 Apr 18 14:58  libgpiod
+drwxrwxr-x  5 yata    docker        4096 Apr 18 14:58  libgpiod-arm64-static
+-rw-rw-r--  1 yata    yata         23234 May  8 12:42  log.txt
+-rw-r--r--  1 yata    yata            33 May  7 20:01  machine-id
+drwxrwxr-x 17 yata    docker        4096 Apr 10 14:16  meta-aos
+drwxrwxr-x 10 yata    docker        4096 Apr 10 13:29  meta-aos-rpi
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Music
+-rwxr-xr-x  1 yata    yata           761 May  7 20:01  mycommands.sh
+drwxrwxr-x 12 yata    docker        4096 May  5 21:44  MyRepository
+-rw-------  1 root    root             0 May  6 17:13  nohup.out
+drwxr-xr-x  3 yata    docker        4096 Apr 17 10:45  Pictures
+drwxrwxr-x 16 yata    docker        4096 Apr 27 12:12  poky
+drwxrwxr-x  6 yata    yata          4096 May  5 16:39  pt
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Public
+-rw-rw-r--  1 yata    yata           149 May  6 20:33  pyvenv.cfg
+drwx------  5 yata    docker        4096 May  5 22:38  snap
+-rw-------  1 yata    yata           505 May  7 20:06  ssh_host_ecdsa_key
+-rw-r--r--  1 yata    yata           171 May  7 20:06  ssh_host_ecdsa_key.pub
+-rw-------  1 yata    yata           399 May  7 20:06  ssh_host_ed25519_key
+-rw-r--r--  1 yata    yata            91 May  7 20:06  ssh_host_ed25519_key.pub
+-rw-------  1 yata    yata          2590 May  7 20:06  ssh_host_rsa_key
+-rw-r--r--  1 yata    yata           563 May  7 20:06  ssh_host_rsa_key.pub
+-rw-rw-r--  1 yata    yata        458231 May  7 12:09  sslkeys.log
+drwxrwxr-x  3 yata    docker        4096 Apr 21 17:32  tailscale-arm64-static
+drwxrwxr-x  4 yata    yata          4096 Apr 29 03:12  tcpdump-build
+-rw-r--r--  1 yata    yata             2 May  7 20:09  tempfiles.json
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Templates
+drwxrwxr-t  2 yata    yata          4096 Apr 26 08:04  thinclient_drives
+drwxrwxr-x  9 yata    docker        4096 Apr 21 20:24  usbutils
+drwxrwxr-x  3 yata    docker        4096 Apr 23 04:13  venv
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Videos
+drwxrwxr-x  4 yata    yata          4096 May  6 21:04 'VirtualBox VMs'
+drwxr-xr-x 10 yata    docker        4096 Apr 26 09:59  yocto
+yata@sdmdev2:~$ openssl pkcs12 -in handmadeSP.pfx -clcerts -nokeys -out aos-user-sp.pem
+Enter Import Password:
+yata@sdmdev2:~$ mv aos-user-oem.pem aos-user-sp.pem ~/.aos/security/
+yata@sdmdev2:~$ ls ~/.aos/security/
+aos-user-oem.pem  aos-user-sp.pem
+yata@sdmdev2:~$ python3 -m venv ~/.aos/venv
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -V
+Python 3.12.3
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m pip install --upgrade aos-keys aos-signer aos-prov
+Requirement already satisfied: aos-keys in ./.aos/venv/lib/python3.12/site-packages (1.8.0)
+Requirement already satisfied: aos-signer in ./.aos/venv/lib/python3.12/site-packages (1.16.0)
+Requirement already satisfied: aos-prov in ./.aos/venv/lib/python3.12/site-packages (5.1.0)
+Requirement already satisfied: rich>=10.13 in ./.aos/venv/lib/python3.12/site-packages (from aos-keys) (14.0.0)
+Requirement already satisfied: requests>=2.27.0 in ./.aos/venv/lib/python3.12/site-packages (from aos-keys) (2.32.3)
+Requirement already satisfied: urllib3 in ./.aos/venv/lib/python3.12/site-packages (from aos-keys) (2.4.0)
+Requirement already satisfied: chardet<6.0.0,>=3.0.2 in ./.aos/venv/lib/python3.12/site-packages (from aos-keys) (5.2.0)
+Requirement already satisfied: cryptography==42.0.4 in ./.aos/venv/lib/python3.12/site-packages (from aos-keys) (42.0.4)
+Requirement already satisfied: cffi>=1.12 in ./.aos/venv/lib/python3.12/site-packages (from cryptography==42.0.4->aos-keys) (1.17.1)
+Requirement already satisfied: ruamel.yaml>=0.16.10 in ./.aos/venv/lib/python3.12/site-packages (from aos-signer) (0.18.10)
+Requirement already satisfied: jsonschema>=3.2.0 in ./.aos/venv/lib/python3.12/site-packages (from aos-signer) (4.23.0)
+Requirement already satisfied: isoduration>=20.11.0 in ./.aos/venv/lib/python3.12/site-packages (from aos-signer) (20.11.0)
+Requirement already satisfied: PyJWT>=2.6.0 in ./.aos/venv/lib/python3.12/site-packages (from aos-signer) (2.10.1)
+Requirement already satisfied: semver>=3.0.2 in ./.aos/venv/lib/python3.12/site-packages (from aos-signer) (3.0.4)
+Requirement already satisfied: grpcio>=1.44.0 in ./.aos/venv/lib/python3.12/site-packages (from aos-prov) (1.71.0)
+Requirement already satisfied: protobuf<=3.20.1,>=3.14 in ./.aos/venv/lib/python3.12/site-packages (from aos-prov) (3.20.1)
+Requirement already satisfied: asn1crypto>=1.4.0 in ./.aos/venv/lib/python3.12/site-packages (from aos-prov) (1.5.1)
+Requirement already satisfied: arrow>=0.15.0 in ./.aos/venv/lib/python3.12/site-packages (from isoduration>=20.11.0->aos-signer) (1.3.0)
+Requirement already satisfied: attrs>=22.2.0 in ./.aos/venv/lib/python3.12/site-packages (from jsonschema>=3.2.0->aos-signer) (25.3.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./.aos/venv/lib/python3.12/site-packages (from jsonschema>=3.2.0->aos-signer) (2024.10.1)
+Requirement already satisfied: referencing>=0.28.4 in ./.aos/venv/lib/python3.12/site-packages (from jsonschema>=3.2.0->aos-signer) (0.36.2)
+Requirement already satisfied: rpds-py>=0.7.1 in ./.aos/venv/lib/python3.12/site-packages (from jsonschema>=3.2.0->aos-signer) (0.24.0)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./.aos/venv/lib/python3.12/site-packages (from requests>=2.27.0->aos-keys) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in ./.aos/venv/lib/python3.12/site-packages (from requests>=2.27.0->aos-keys) (3.10)
+Requirement already satisfied: certifi>=2017.4.17 in ./.aos/venv/lib/python3.12/site-packages (from requests>=2.27.0->aos-keys) (2025.1.31)
+Requirement already satisfied: markdown-it-py>=2.2.0 in ./.aos/venv/lib/python3.12/site-packages (from rich>=10.13->aos-keys) (3.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in ./.aos/venv/lib/python3.12/site-packages (from rich>=10.13->aos-keys) (2.19.1)
+Requirement already satisfied: ruamel.yaml.clib>=0.2.7 in ./.aos/venv/lib/python3.12/site-packages (from ruamel.yaml>=0.16.10->aos-signer) (0.2.12)
+Requirement already satisfied: python-dateutil>=2.7.0 in ./.aos/venv/lib/python3.12/site-packages (from arrow>=0.15.0->isoduration>=20.11.0->aos-signer) (2.9.0.post0)
+Requirement already satisfied: types-python-dateutil>=2.8.10 in ./.aos/venv/lib/python3.12/site-packages (from arrow>=0.15.0->isoduration>=20.11.0->aos-signer) (2.9.0.20241206)
+Requirement already satisfied: pycparser in ./.aos/venv/lib/python3.12/site-packages (from cffi>=1.12->cryptography==42.0.4->aos-keys) (2.22)
+Requirement already satisfied: mdurl~=0.1 in ./.aos/venv/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=10.13->aos-keys) (0.1.2)
+Requirement already satisfied: typing-extensions>=4.4.0 in ./.aos/venv/lib/python3.12/site-packages (from referencing>=0.28.4->jsonschema>=3.2.0->aos-signer) (4.13.2)
+Requirement already satisfied: six>=1.5 in ./.aos/venv/lib/python3.12/site-packages (from python-dateutil>=2.7.0->arrow>=0.15.0->isoduration>=20.11.0->aos-signer) (1.17.0)
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_keys install-root
+To install system root certificate execute next command:
+sudo ~/.aos/scripts/install_aos_root_ca.sh
+
+yata@sdmdev2:~$ sudo ~/.aos/scripts/install_aos_root_ca.sh
+[sudo] password for yata: 
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_keys info --oem
+ERROR: Certificate file /home/yata/.aos/security/aos-user-oem.p12 not found!
+yata@sdmdev2:~$ openssl pkcs12 -in handmadeOEM.pfx -nocerts -nodes -out aos-key-oem.pem
+Enter Import Password:
+yata@sdmdev2:~$ openssl pkcs12 -in handmadeSP.pfx -nocerts -nodes -out aos-key-sp.pem
+Enter Import Password:
+yata@sdmdev2:~$ ls
+ 2025-05-02_eth0.pcap           Documents               machine-id               ssh_host_ed25519_key.pub
+ 20250504-115517_eth0.pcap      Downloads               meta-aos                 ssh_host_rsa_key
+ 20250505-115517_eth0.pcap      gettext-0.22.5          meta-aos-rpi             ssh_host_rsa_key.pub
+ 20250506-115517_eth0.pcap      gettext-0.22.5-old      Music                    sslkeys.log
+ aarch64-rootfs                 gettext-0.22.5.tar.gz   mycommands.sh            tailscale-arm64-static
+ alsa-lib                       GNS3                    MyRepository             tcpdump-build
+ alsa-lib-aarch64               handmadeOEM.pfx         nohup.out                tempfiles.json
+ alsa-utils                     handmadeSP.pfx          Pictures                 Templates
+ alsa-utils-aarch64             hello-world             poky                     thinclient_drives
+ aos-key-oem.pem                include                 pt                       usbutils
+ aos-key-sp.pem                 kepler-kit              Public                   venv
+ bin                            lib                     pyvenv.cfg               Videos
+ capture-20250428-190146.pcap   lib64                   snap                    'VirtualBox VMs'
+ capture-20250506-172234.pcap   libgpiod                ssh_host_ecdsa_key       yocto
+ capture_eth0.pcap              libgpiod-arm64-static   ssh_host_ecdsa_key.pub
+ Desktop                        log.txt                 ssh_host_ed25519_key
+yata@sdmdev2:~$ mv aos-* ~/.aos/security/
+yata@sdmdev2:~$ ls ~/.aos/security/
+aos-key-oem.pem  aos-key-sp.pem  aos-user-oem.pem  aos-user-sp.pem
+yata@sdmdev2:~$ ls -al
+total 3010164
+drwxr-x--- 55 yata    docker        4096 May  8 13:43  .
+drwxr-xr-x 10 root    root          4096 Apr 10 11:50  ..
+-rw-r--r--  1 yata    yata     245039104 May  7 20:05  2025-05-02_eth0.pcap
+-rw-r--r--  1 yata    yata       1101824 May  7 20:02  20250504-115517_eth0.pcap
+-rw-r--r--  1 yata    yata             0 May  7 20:02  20250505-115517_eth0.pcap
+-rw-r--r--  1 yata    yata             0 May  7 20:02  20250506-115517_eth0.pcap
+drwxrwxr-x  3 yata    docker        4096 Apr 18 21:33  aarch64-rootfs
+drwxrwxr-x 13 yata    docker        4096 Apr 19 23:16  alsa-lib
+drwxr-xr-x  6 yata    docker        4096 Apr 19 23:18  alsa-lib-aarch64
+drwxrwxr-x 25 yata    docker        4096 Apr 20 18:01  alsa-utils
+drwxr-xr-x  8 yata    docker        4096 Apr 21 17:38  alsa-utils-aarch64
+drwxrwxr-x  6 yata    docker        4096 May  2 11:20  .aos
+drwxr-xr-x  2 yata    yata          4096 May  5 22:47  .arduino15
+-rw-------  1 yata    docker       65212 May  8 12:24  .bash_history
+-rw-r--r--  1 yata    docker         220 Apr  9 13:26  .bash_logout
+-rw-r--r--  1 yata    docker        3835 May  6 22:08  .bashrc
+drwxrwxr-x  2 yata    yata          4096 May  6 20:33  bin
+drwx------ 24 yata    docker        4096 May  7 10:51  .cache
+-rw-r--r--  1 yata    yata       4469638 May  7 20:05  capture-20250428-190146.pcap
+-rw-r--r--  1 tcpdump tcpdump 2797691174 May  6 22:09  capture-20250506-172234.pcap
+-rw-r--r--  1 yata    yata       3926841 May  7 20:05  capture_eth0.pcap
+drwx------ 24 yata    docker        4096 May  7 10:52  .config
+-rw-rw-r--  1 yata    yata            47 May  4 08:16  .cortex-debug
+drwxr-xr-x  2 yata    docker        4096 May  4 04:41  Desktop
+drwxr-xr-x  2 yata    docker        4096 Apr 27 09:14  Documents
+drwxrwxr-x  3 yata    docker        4096 Apr 26 06:11  .dotnet
+drwxr-xr-x  6 yata    docker        4096 May  6 17:55  Downloads
+drwxrwxr-x 11 yata    docker        4096 Apr 19 23:33  gettext-0.22.5
+drwxr-xr-x  6 yata    docker        4096 Apr 18 21:24  gettext-0.22.5-old
+-rw-rw-r--  1 yata    docker    26861674 Feb 22  2024  gettext-0.22.5.tar.gz
+-rw-rw-r--  1 yata    docker          53 Apr 25 20:51  .gitconfig
+drwxr-xr-x  2 yata    docker        4096 Apr 23 04:33  .gitconfig_backup_dir
+drwxrwxr-x  7 yata    yata          4096 Apr 26 08:58  GNS3
+drwx------  3 yata    docker        4096 Apr 26 08:04  .gnupg
+-rw-rw-r--  1 yata    yata          4915 May  8 13:13  handmadeOEM.pfx
+-rw-rw-r--  1 yata    yata          4915 May  8 13:13  handmadeSP.pfx
+drwxrwxr-x  5 yata    yata          4096 May  6 21:26  hello-world
+-rw-------  1 yata    yata             0 Apr 26 08:04  .ICEauthority
+drwxrwxr-x  3 yata    yata          4096 May  6 20:33  include
+drwxrwxr-x  8 yata    yata          4096 May  5 21:00  kepler-kit
+-rw-------  1 yata    yata            20 May  6 22:06  .lesshst
+drwxrwxr-x  3 yata    yata          4096 May  6 20:33  lib
+lrwxrwxrwx  1 yata    yata             3 May  6 20:33  lib64 -> lib
+drwxrwxr-x 17 yata    docker        4096 Apr 18 14:58  libgpiod
+drwxrwxr-x  5 yata    docker        4096 Apr 18 14:58  libgpiod-arm64-static
+drwx------  4 yata    docker        4096 Apr 10 11:44  .local
+-rw-rw-r--  1 yata    yata         23234 May  8 12:42  log.txt
+-rw-r--r--  1 yata    yata            33 May  7 20:01  machine-id
+drwxrwxr-x 17 yata    docker        4096 Apr 10 14:16  meta-aos
+drwxrwxr-x 10 yata    docker        4096 Apr 10 13:29  meta-aos-rpi
+drwx------  4 yata    yata          4096 May  2 17:14  .mozilla
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Music
+-rwxr-xr-x  1 yata    yata           761 May  7 20:01  mycommands.sh
+drwxrwxr-x 12 yata    docker        4096 May  5 21:44  MyRepository
+-rw-------  1 root    root             0 May  6 17:13  nohup.out
+-rw-rw-r--  1 yata    yata            52 May  4 18:06  .packettracer
+drwx------  2 yata    yata          4096 May  6 17:10  .pcsc10
+drwxr-xr-x  3 yata    docker        4096 Apr 17 10:45  Pictures
+drwxrwxr-x  3 yata    docker        4096 Apr 15 13:12  .pki
+drwxrwxr-x 16 yata    docker        4096 Apr 27 12:12  poky
+-rw-r--r--  1 yata    docker         807 Apr  9 13:26  .profile
+drwxrwxr-x  6 yata    yata          4096 May  5 16:39  pt
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Public
+-rw-------  1 yata    docker           5 Apr 15 12:36  .python_history
+-rw-rw-r--  1 yata    yata           149 May  6 20:33  pyvenv.cfg
+drwx------  5 yata    docker        4096 May  5 22:38  snap
+drwx------  2 yata    docker        4096 May  8 13:02  .ssh
+-rw-------  1 yata    yata           505 May  7 20:06  ssh_host_ecdsa_key
+-rw-r--r--  1 yata    yata           171 May  7 20:06  ssh_host_ecdsa_key.pub
+-rw-------  1 yata    yata           399 May  7 20:06  ssh_host_ed25519_key
+-rw-r--r--  1 yata    yata            91 May  7 20:06  ssh_host_ed25519_key.pub
+-rw-------  1 yata    yata          2590 May  7 20:06  ssh_host_rsa_key
+-rw-r--r--  1 yata    yata           563 May  7 20:06  ssh_host_rsa_key.pub
+-rw-rw-r--  1 yata    yata        458231 May  7 12:09  sslkeys.log
+-rw-r--r--  1 yata    docker           0 Apr 10 11:50  .sudo_as_admin_successful
+drwxrwxr-x  3 yata    docker        4096 Apr 21 17:32  tailscale-arm64-static
+drwxrwxr-x  4 yata    yata          4096 Apr 29 03:12  tcpdump-build
+-rw-r--r--  1 yata    yata             2 May  7 20:09  tempfiles.json
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Templates
+drwxrwxr-t  2 yata    yata          4096 Apr 26 08:04  thinclient_drives
+drwxrwxr-x  9 yata    docker        4096 Apr 21 20:24  usbutils
+drwxrwxr-x  3 yata    docker        4096 Apr 23 04:13  venv
+drwxrwxr-x  3 yata    yata          4096 May  5 22:28  .venvs
+drwxr-xr-x  2 yata    docker        4096 Apr 10 11:44  Videos
+drwxr-xr-x  2 yata    docker        4096 Apr 25 20:46  .vim
+-rw-------  1 yata    docker       12852 May  8 12:42  .viminfo
+-rw-rw-r--  1 yata    yata            72 May  4 10:01  .vimrc
+drwxrwxr-x  4 yata    yata          4096 May  6 21:04 'VirtualBox VMs'
+drwxr-xr-x  2 yata    yata          4096 May  1 19:54  .vmware
+drwxrwxr-x  2 yata    yata          4096 May  5 23:58  .vscode
+drwxr-x---  5 yata    docker        4096 May  7 02:28  .vscode-server
+-rw-rw-r--  1 yata    docker        1332 May  5 22:38  .wget-hsts
+-rw-------  1 yata    yata            53 May  2 05:58  .Xauthority
+-rw-r--r--  1 yata    yata         50618 May  6 22:09  .xorgxrdp.10.log
+-rw-r--r--  1 yata    yata         23772 Apr 29 04:43  .xorgxrdp.10.log.old
+-rw-rw-r--  1 yata    docker          14 Apr 25 19:00  .xsession
+-rw-------  1 yata    yata       2308149 May  8 12:23  .xsession-errors
+drwxr-xr-x 10 yata    docker        4096 Apr 26 09:59  yocto
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_keys info --oem
+Process failed with error: 
+Invalid password or PKCS12 data
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov download
+Failed to execute the command!
+Error: Destination file /home/yata/.aos/downloads/aos-vm-main-genericx86-64.wic.vmdk already exist. Delete it or 
+download with -f key 
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov download -f
+Downloading... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Download finished. You may find Unit images in: /home/yata/.aos/downloads
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov unit-new --name FirstUnit
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/__main__.py", line 7, in <module>
+    main()
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/main.py", line 405, in main
+    user_creds = create_and_sanitize_user_creds(args)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/main.py", line 367, in create_and_sanitize_user_creds
+    return UserCredentials(pkcs12=pkcs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/utils/user_credentials.py", line 107, in __init__
+    cert_bytes, key_bytes = _pkcs12_to_pem(pkcs12_file_content)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/utils/user_credentials.py", line 37, in _pkcs12_to_pem
+    private_key, certificate, additional_certificates = load_key_and_certificates(
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/pkcs12.py", line 157, in load_key_and_certificates
+    return ossl.load_key_and_certificates_from_pkcs12(data, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 611, in load_key_and_certificates_from_pkcs12
+    pkcs12 = self.load_pkcs12(data, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 640, in load_pkcs12
+    raise ValueError("Invalid password or PKCS12 data")
+ValueError: Invalid password or PKCS12 data
+yata@sdmdev2:~$ openssl pkcs12 -in handmadeSP.pfx -nodes
+Enter Import Password:
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+subject=CN = "sp-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "SP goro.kikuchi+oem2@gmail.com"
+issuer=CN = Aos SP Issuing CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIDDDCCArGgAwIBAgIIaBQhRgAGcoswCgYIKoZIzj0EAwIwOTEaMBgGA1UEAwwR
+QW9zIFNQIElzc3VpbmcgQ0ExDTALBgNVBAoMBEVQQU0xDDAKBgNVBAsMA0FvczAe
+Fw0yNTA1MDIwMTM1MDJaFw0zNTA0MzAwMTM1MDJaMIGUMScwJQYDVQQDDB5zcC1n
+b3JvLmtpa3VjaGkrb2VtMkBnbWFpbC5jb20xKjAoBgkqhkiG9w0BCQEWG2dvcm8u
+a2lrdWNoaStvZW0yQGdtYWlsLmNvbTEUMBIGA1UECgwLYW9zY2xvdWQuaW8xJzAl
+BgNVBAsMHlNQIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBAJP6mHZ8lYyIgalpFnaaakXmNgq4hIsAf+n5
+vw4Q1t/g0jix0IbtsoPwz+eHXHprjQYTo53CpNQVuDRWiAXQY4Db3YIrQA11bcwe
+qauELEU9+V6CRqGT9tDqt1psHGdZSNFBG0u9a89G40/pJRISyIb92hPeQWGfLtFw
+ZIM+1igPemLJzG0byhq8mRGT2BArfsaN7ftoBmrXXIbkpVBqF/9DlQwX/fcD2Rqx
+yoXwBwlMhI5lm7/b37NFXg/2Gwatla5d/kVdgZsNumrui04jzJJFUZl/yFFh2d2/
+WouAAC7Rv2XTZ8W4vMdd1sJWjJgcviHdJa33f2pi6ZsT6X7erDMCAwEAAaN8MHow
+DAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFD2YYLNSHeaiTFj/
+FEVKfdYdiwTmMB8GA1UdIwQYMBaAFNFHd8a7zMK9cr0K8kiFxJ+u8p5tMB0GA1Ud
+JQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEAzo7H
+0+xOH7zbDEJy4ZrFDOnERE0gnvSeQDiGE8UrZusCIQC/7j5zBY+yxgBLUnCQFXfA
+bPdau1uQ3UisG10ZT8SBeA==
+-----END CERTIFICATE-----
+Bag Attributes: <No Attributes>
+subject=CN = Aos SP Issuing CA, O = EPAM, OU = Aos
+issuer=CN = Aos Intermediate CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIB0zCCAXmgAwIBAgIUYn7HRlXFzeIWcIUV2Xp3EiIdUlkwCgYIKoZIzj0EAwIw
+OzEcMBoGA1UEAwwTQW9zIEludGVybWVkaWF0ZSBDQTENMAsGA1UECgwERVBBTTEM
+MAoGA1UECwwDQW9zMB4XDTIyMDMyNTEyMzEwNVoXDTI4MDMyMzEyMzEwNVowOTEa
+MBgGA1UEAwwRQW9zIFNQIElzc3VpbmcgQ0ExDTALBgNVBAoMBEVQQU0xDDAKBgNV
+BAsMA0FvczBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABFchk8SEDgVgh57X0750
+Ss7JEb5TZBq9jh/MHyUWydvw+AfuLvzQyHgjEhP/ld/yJLTyL8vIW+IOAzeFSHOP
+gkejXTBbMAwGA1UdEwQFMAMBAf8wHQYDVR0OBBYEFNFHd8a7zMK9cr0K8kiFxJ+u
+8p5tMB8GA1UdIwQYMBaAFDxDCyD6OsbEpFrrYR2RQGUF8H10MAsGA1UdDwQEAwIB
+hjAKBggqhkjOPQQDAgNIADBFAiEAjPMPxVjXUMR4gitAqcSABoKQ/D36y0lalVjB
+Ql6JV0YCIE13La/aP1dRm0q98SAZ0A/ix+FNRzg6Wff0jza5eirv
+-----END CERTIFICATE-----
+Bag Attributes: <No Attributes>
+subject=CN = Aos Intermediate CA, O = EPAM, OU = Aos
+issuer=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+-----BEGIN CERTIFICATE-----
+MIIC6TCCAdGgAwIBAgIUCnhqqnj+Gr4tUP4hJA0ZIrkQ/yUwDQYJKoZIhvcNAQEL
+BQAwgY0xFzAVBgNVBAMMDkZ1c2lvbiBSb290IENBMSkwJwYJKoZIhvcNAQkBFhp2
+b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTENMAsGA1UECgwERVBBTTEcMBoGA1UE
+CwwTTm92dXMgT3JkbyBTZWNsb3J1bTENMAsGA1UEBwwES3lpdjELMAkGA1UEBhMC
+VUEwHhcNMjIwMzI1MTIyNjM1WhcNNDIwMzIwMTIyNjM1WjA7MRwwGgYDVQQDDBNB
+b3MgSW50ZXJtZWRpYXRlIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATK6R/cdTXa15EOaZ3kk+EN4LDb6ZOp
+N2nEwbK+HHQHZcq/m43L+GUK3FAFTkjm9iliqFImRshA69GEI2ougr6eo10wWzAM
+BgNVHRMEBTADAQH/MB0GA1UdDgQWBBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDAfBgNV
+HSMEGDAWgBR0ShhzOuM95BhD0mWxC1j+KrE6UjALBgNVHQ8EBAMCAYYwDQYJKoZI
+hvcNAQELBQADggEBAHIpw+8PzvhhCIsvNjXX1GHPO9R6kYhqJT96AbZrPR9Id9nW
+pNz13Jd5SP6kUkOru8o5gZToHXhv85nzHa92EtoZPAL0TvHDxTNEiyO3BzkLkFUB
+3SCSHhtLX2HJkQWVtTWKQFBnC99OYV1mJNYPXv4dyKH3Ckmmcw1OHk0sa/JgMirg
+LAukRziSJ//LIBNDF0X2nMN0+NnxLWRUUyk2wLiSfBbYf1T/3Dtn8rxnsGtACrJR
+JEU9G/xx+tmSZH4GXXxfLcFQO3VlA5oSgEWYZUFE3krd8j50iriZmei9fuo2s0Mn
+KzYiI3VrvdMv/+yMS6ZxVJSmFlSlnjmpsrSYJJM=
+-----END CERTIFICATE-----
+Bag Attributes: <No Attributes>
+subject=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+issuer=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+-----BEGIN CERTIFICATE-----
+MIIEAjCCAuqgAwIBAgIJAPwk2NFfSDPjMA0GCSqGSIb3DQEBCwUAMIGNMRcwFQYD
+VQQDDA5GdXNpb24gUm9vdCBDQTEpMCcGCSqGSIb3DQEJARYadm9sb2R5bXlyX2Jh
+YmNodWtAZXBhbS5jb20xDTALBgNVBAoMBEVQQU0xHDAaBgNVBAsME05vdnVzIE9y
+ZG8gU2VjbG9ydW0xDTALBgNVBAcMBEt5aXYxCzAJBgNVBAYTAlVBMB4XDTE4MDQx
+MDExMzMwMFoXDTI2MDYyNzExMzMwMFowgY0xFzAVBgNVBAMMDkZ1c2lvbiBSb290
+IENBMSkwJwYJKoZIhvcNAQkBFhp2b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTEN
+MAsGA1UECgwERVBBTTEcMBoGA1UECwwTTm92dXMgT3JkbyBTZWNsb3J1bTENMAsG
+A1UEBwwES3lpdjELMAkGA1UEBhMCVUEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQC+K2ow2HO7+SUVfOq5tTtmHj4LQijHJ803mLk9pkPef+Glmeyp9HXe
+jDlQC04MeovMBeNTaq0wibf7qas9niXbeXRVzheZIFziMXqRuwLqc0KXdDxIDPTb
+TW3K0HE6M/eAtTfn9+Z/LnkWt4zMXasc02hvufsmIVEuNbc1VhrsJJg5uk88ldPM
+LSF7nff9eYZTHYgCyBkt9aL+fwoXO6eSDSAhjopX3lhdidkM+ni7EOhlN7STmgDM
+WKh9nMjXD5f28PGhtW/dZvn4SzasRE5MeaExIlBmhkWEUgVCyP7LvuQGRUPK+NYz
+FE2CLRuirLCWy1HIt9lLziPjlZ4361mNAgMBAAGjYzBhMB0GA1UdDgQWBBR0Shhz
+OuM95BhD0mWxC1j+KrE6UjAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwIBBjAlBgNV
+HREEHjAcgRp2b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTANBgkqhkiG9w0BAQsF
+AAOCAQEAl8bv1HTYe3l4Y+g0TVZR7bYL5BNsnGgqy0qS5fu991khXWf+Zwa2MLVn
+YakMnLkjvdHqUpWMJ/S82o2zWGmmuxca56ehjxCiP/nkm4M74yXz2R8cu52WxYnF
+yMvgawzQ6c1yhvZiv/gEE7KdbYRVKLHPgBzfyup21i5ngSlTcMRRS7oOBmoye4qc
+6adq6HtY6X/OnZ9I5xoRN1GcvaLUgUE6igTiVa1pF8kedWhHY7wzTXBxzSvIZkCU
+VHEOzvaGk9miP6nBrDfNv7mIkgEKARrjjSpmJasIEU+mNtzeOIEiMtW1EMRc457o
+0PdFI3jseyLVPVhEzUkuC7mwjb7CeQ==
+-----END CERTIFICATE-----
+Bag Attributes
+    localKeyID: 36 BA EB 7D A7 63 2C 6A 38 15 34 8A BE D6 65 EB 1C E9 23 57 
+Key Attributes: <No Attributes>
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCT+ph2fJWMiIGp
+aRZ2mmpF5jYKuISLAH/p+b8OENbf4NI4sdCG7bKD8M/nh1x6a40GE6OdwqTUFbg0
+VogF0GOA292CK0ANdW3MHqmrhCxFPflegkahk/bQ6rdabBxnWUjRQRtLvWvPRuNP
+6SUSEsiG/doT3kFhny7RcGSDPtYoD3piycxtG8oavJkRk9gQK37Gje37aAZq11yG
+5KVQahf/Q5UMF/33A9kascqF8AcJTISOZZu/29+zRV4P9hsGrZWuXf5FXYGbDbpq
+7otOI8ySRVGZf8hRYdndv1qLgAAu0b9l02fFuLzHXdbCVoyYHL4h3SWt939qYumb
+E+l+3qwzAgMBAAECggEAKVqv/vTkKkj/y2NV5sFSj8Q9OBPG3r2+AZpM/VZRZnGC
+7lsrBnopGFxVDcQzYPbri1YztGPwAmErgFzqWI2bMSjAp58EoH4/t/qduhQO9y7R
+oMrRiFg8crgVk4yBB5TZF7mVMj52gY+y+OMT/BAJwEfzCPhk1y5QPDGntVH7MWhs
+7qFfCLKdUqcD6Rj47sbzbfdqaZcQw2KlhCVxgHyf9wwk+yMsUj+H8L9oa/anhbt8
+E2+DNCwZ1AwOEpnvNgejbhz8FbLGi2pAFrdBOhmOyPGCqdpNRqee1iZu5jU2klvh
+qSHddpzWOpqUg276brI/mVa2ElJwU0WYyHTK/buYcQKBgQDPaflLXm8Qe5mO/9n0
+EFqUsE6DXAH+p6TxGyZcDHikb0CgRZX9DxcZRQIb7xJVHUwjoI9M3aL8jkCcH9Wc
+ukZWu2rCZs+aLcTHm32drAyNYqrq4Xw8WNmRzNB/RT4Jo6QS/DO18rOLMu60XXwp
+Ve50nKgkXww01iI+IaeMmpnWSQKBgQC2pHgkcNECvBuU1mD6hU3NLq7I6mG7+DVU
+DZ5dwe+EJQLp8Fc2LseGOqRGHY2f235q3kWWxmN2jOpzNPdxl+JwKuy3r/8wbecg
+R6v4cmb2d6dScjlfbL5hycTsSkuuOr6w4p7ju09gBXIfuVrYCDTEx9ypLdAfr5R3
+AGk5wjJ+mwKBgC2pivSIybK7Q0c0FGui3g418lMBAn9psOpTq9I//J9Wzsd6Clc3
+50Hs61Xy//o1BPoi8uldMfCf8KFucLycVbfqcspxj+rFgLjhBnqb0feebTpggdVX
+Si7LBGvAdrPwjsKPO2MnF1fh0qNqoVcIUALkKjA3rJxFOCythBF0R8HhAoGBAJ11
+3BJmpPt7mzfNPxyckn/DsHKNByecDLXja9YfHdTKZ+GyEC4pVGEX64p7bh8Uh7+w
+00Py08tgH7ylPHNVY6Yai6ytcg+ZoLqGr+9pCfWRINMGoQnw4Y3C+yBPyUFzafVr
+21owoXUCHOrWzUgUgxHn0QiV86ltoUybMRzXnNrjAoGAICJhjxn5vJC5TM9iY6Au
+oArqKIzoWsTDOOQKHC3zRjdtpeZmDBdWZ5vkYCZtHxvEzaPDFAA1QmVMHvP9b5ed
+YitJSFyaXKRqImG4n4WiBr070czeSwcLxcwCV7+NAYDrdbUbXmZjQABEn3WrXfMg
+qaHYva2AQERNaPrID1se2sg=
+-----END PRIVATE KEY-----
+yata@sdmdev2:~$ openssl pkcs12 -in handmadeOEM.pfx -nodes
+Enter Import Password:
+Bag Attributes
+    localKeyID: 02 3C 85 1C AC 39 33 AE 21 5E B6 61 5F 85 15 43 4E 90 2C 1A 
+subject=CN = "oem-goro.kikuchi+oem2@gmail.com", emailAddress = "goro.kikuchi+oem2@gmail.com", O = aoscloud.io, OU = "OEM goro.kikuchi+oem2@gmail.com"
+issuer=CN = Aos OEM Issuing CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIDDzCCArSgAwIBAgIIaBMCCgAJXPYwCgYIKoZIzj0EAwIwOjEbMBkGA1UEAwwS
+QW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+HhcNMjUwNTAxMDUwOTMwWhcNMzUwNDI5MDUwOTMwWjCBljEoMCYGA1UEAwwfb2Vt
+LWdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTEqMCgGCSqGSIb3DQEJARYbZ29y
+by5raWt1Y2hpK29lbTJAZ21haWwuY29tMRQwEgYDVQQKDAthb3NjbG91ZC5pbzEo
+MCYGA1UECwwfT0VNIGdvcm8ua2lrdWNoaStvZW0yQGdtYWlsLmNvbTCCASIwDQYJ
+KoZIhvcNAQEBBQADggEPADCCAQoCggEBAMDeTiADYoZOfdC6gvvVdFuV36CWlG4h
+LXSMxkuOhyWpIWhf10FR8Teodx3bBmiRadYza5h8wSHV3UOht6X3sxvNxcUU/s32
+b7g91Qgo2f7D/qNoLJsj5OOQQR63fkzaAbTF1L/25fVZOLBUzx74q8LEOGgSxw5D
+KY6IvQOAFR5RNuI6alksouC42thlQ3Y8PlshahAksnhJQnjMJwN+KQzSwLtd9E2w
+n0pA5RdUKxwcQp1F+FHLfnA4QMsSO3hxWuHjS9GrhQj4uI9WGlgPqGIA/m3INqzq
+CmtFahlENKex3DeCD9bFibUCNbu0k6E7/pE8FOz9ney40v9XTn7dip8CAwEAAaN8
+MHowDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBaAwHQYDVR0OBBYEFJXH3LR53l8P
+hLl8HHM8rADeA2D+MB8GA1UdIwQYMBaAFE2mHWjrpCCpT6VPGZTHwQLE5C4dMB0G
+A1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAKBggqhkjOPQQDAgNJADBGAiEA
+2OvfKyeLpbAhqa5ycBSXpolrZX6jvEYnpRSpjvX7KAsCIQCh8sOBoibvyMh7uaeQ
+RPjSSaw7+xiXN2TmTj65ZfDCjg==
+-----END CERTIFICATE-----
+Bag Attributes: <No Attributes>
+subject=CN = Aos OEM Issuing CA, O = EPAM, OU = Aos
+issuer=CN = Aos Intermediate CA, O = EPAM, OU = Aos
+-----BEGIN CERTIFICATE-----
+MIIB1TCCAXqgAwIBAgIUYn7HRlXFzeIWcIUV2Xp3EiIdUlgwCgYIKoZIzj0EAwIw
+OzEcMBoGA1UEAwwTQW9zIEludGVybWVkaWF0ZSBDQTENMAsGA1UECgwERVBBTTEM
+MAoGA1UECwwDQW9zMB4XDTIyMDMyNTEyMzEwMloXDTI4MDMyMzEyMzEwMlowOjEb
+MBkGA1UEAwwSQW9zIE9FTSBJc3N1aW5nIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYD
+VQQLDANBb3MwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARKoP/h0FJHZz3gFBWo
+6zfHyRpWxLEIe5qxLtRmzxY3bX2+TXYMyzQs1JY0tZm6IAhVFx2nJ5sdwZHOpGUq
+Euhgo10wWzAMBgNVHRMEBTADAQH/MB0GA1UdDgQWBBRNph1o66QgqU+lTxmUx8EC
+xOQuHTAfBgNVHSMEGDAWgBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDALBgNVHQ8EBAMC
+AYYwCgYIKoZIzj0EAwIDSQAwRgIhAP0sW4OmMjKqHWvzd1VvT3YkMM/hR9EuW8fN
+QuCZNsMRAiEAiuUa5Ths+9pfCwHJQVgIOqbdDrV7xMBVFo9140sXjVw=
+-----END CERTIFICATE-----
+Bag Attributes: <No Attributes>
+subject=CN = Aos Intermediate CA, O = EPAM, OU = Aos
+issuer=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+-----BEGIN CERTIFICATE-----
+MIIC6TCCAdGgAwIBAgIUCnhqqnj+Gr4tUP4hJA0ZIrkQ/yUwDQYJKoZIhvcNAQEL
+BQAwgY0xFzAVBgNVBAMMDkZ1c2lvbiBSb290IENBMSkwJwYJKoZIhvcNAQkBFhp2
+b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTENMAsGA1UECgwERVBBTTEcMBoGA1UE
+CwwTTm92dXMgT3JkbyBTZWNsb3J1bTENMAsGA1UEBwwES3lpdjELMAkGA1UEBhMC
+VUEwHhcNMjIwMzI1MTIyNjM1WhcNNDIwMzIwMTIyNjM1WjA7MRwwGgYDVQQDDBNB
+b3MgSW50ZXJtZWRpYXRlIENBMQ0wCwYDVQQKDARFUEFNMQwwCgYDVQQLDANBb3Mw
+WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATK6R/cdTXa15EOaZ3kk+EN4LDb6ZOp
+N2nEwbK+HHQHZcq/m43L+GUK3FAFTkjm9iliqFImRshA69GEI2ougr6eo10wWzAM
+BgNVHRMEBTADAQH/MB0GA1UdDgQWBBQ8Qwsg+jrGxKRa62EdkUBlBfB9dDAfBgNV
+HSMEGDAWgBR0ShhzOuM95BhD0mWxC1j+KrE6UjALBgNVHQ8EBAMCAYYwDQYJKoZI
+hvcNAQELBQADggEBAHIpw+8PzvhhCIsvNjXX1GHPO9R6kYhqJT96AbZrPR9Id9nW
+pNz13Jd5SP6kUkOru8o5gZToHXhv85nzHa92EtoZPAL0TvHDxTNEiyO3BzkLkFUB
+3SCSHhtLX2HJkQWVtTWKQFBnC99OYV1mJNYPXv4dyKH3Ckmmcw1OHk0sa/JgMirg
+LAukRziSJ//LIBNDF0X2nMN0+NnxLWRUUyk2wLiSfBbYf1T/3Dtn8rxnsGtACrJR
+JEU9G/xx+tmSZH4GXXxfLcFQO3VlA5oSgEWYZUFE3krd8j50iriZmei9fuo2s0Mn
+KzYiI3VrvdMv/+yMS6ZxVJSmFlSlnjmpsrSYJJM=
+-----END CERTIFICATE-----
+Bag Attributes: <No Attributes>
+subject=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+issuer=CN = Fusion Root CA, emailAddress = volodymyr_babchuk@epam.com, O = EPAM, OU = Novus Ordo Seclorum, L = Kyiv, C = UA
+-----BEGIN CERTIFICATE-----
+MIIEAjCCAuqgAwIBAgIJAPwk2NFfSDPjMA0GCSqGSIb3DQEBCwUAMIGNMRcwFQYD
+VQQDDA5GdXNpb24gUm9vdCBDQTEpMCcGCSqGSIb3DQEJARYadm9sb2R5bXlyX2Jh
+YmNodWtAZXBhbS5jb20xDTALBgNVBAoMBEVQQU0xHDAaBgNVBAsME05vdnVzIE9y
+ZG8gU2VjbG9ydW0xDTALBgNVBAcMBEt5aXYxCzAJBgNVBAYTAlVBMB4XDTE4MDQx
+MDExMzMwMFoXDTI2MDYyNzExMzMwMFowgY0xFzAVBgNVBAMMDkZ1c2lvbiBSb290
+IENBMSkwJwYJKoZIhvcNAQkBFhp2b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTEN
+MAsGA1UECgwERVBBTTEcMBoGA1UECwwTTm92dXMgT3JkbyBTZWNsb3J1bTENMAsG
+A1UEBwwES3lpdjELMAkGA1UEBhMCVUEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQC+K2ow2HO7+SUVfOq5tTtmHj4LQijHJ803mLk9pkPef+Glmeyp9HXe
+jDlQC04MeovMBeNTaq0wibf7qas9niXbeXRVzheZIFziMXqRuwLqc0KXdDxIDPTb
+TW3K0HE6M/eAtTfn9+Z/LnkWt4zMXasc02hvufsmIVEuNbc1VhrsJJg5uk88ldPM
+LSF7nff9eYZTHYgCyBkt9aL+fwoXO6eSDSAhjopX3lhdidkM+ni7EOhlN7STmgDM
+WKh9nMjXD5f28PGhtW/dZvn4SzasRE5MeaExIlBmhkWEUgVCyP7LvuQGRUPK+NYz
+FE2CLRuirLCWy1HIt9lLziPjlZ4361mNAgMBAAGjYzBhMB0GA1UdDgQWBBR0Shhz
+OuM95BhD0mWxC1j+KrE6UjAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwIBBjAlBgNV
+HREEHjAcgRp2b2xvZHlteXJfYmFiY2h1a0BlcGFtLmNvbTANBgkqhkiG9w0BAQsF
+AAOCAQEAl8bv1HTYe3l4Y+g0TVZR7bYL5BNsnGgqy0qS5fu991khXWf+Zwa2MLVn
+YakMnLkjvdHqUpWMJ/S82o2zWGmmuxca56ehjxCiP/nkm4M74yXz2R8cu52WxYnF
+yMvgawzQ6c1yhvZiv/gEE7KdbYRVKLHPgBzfyup21i5ngSlTcMRRS7oOBmoye4qc
+6adq6HtY6X/OnZ9I5xoRN1GcvaLUgUE6igTiVa1pF8kedWhHY7wzTXBxzSvIZkCU
+VHEOzvaGk9miP6nBrDfNv7mIkgEKARrjjSpmJasIEU+mNtzeOIEiMtW1EMRc457o
+0PdFI3jseyLVPVhEzUkuC7mwjb7CeQ==
+-----END CERTIFICATE-----
+Bag Attributes
+    localKeyID: 02 3C 85 1C AC 39 33 AE 21 5E B6 61 5F 85 15 43 4E 90 2C 1A 
+Key Attributes: <No Attributes>
+-----BEGIN PRIVATE KEY-----
+MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDA3k4gA2KGTn3Q
+uoL71XRbld+glpRuIS10jMZLjoclqSFoX9dBUfE3qHcd2wZokWnWM2uYfMEh1d1D
+obel97MbzcXFFP7N9m+4PdUIKNn+w/6jaCybI+TjkEEet35M2gG0xdS/9uX1WTiw
+VM8e+KvCxDhoEscOQymOiL0DgBUeUTbiOmpZLKLguNrYZUN2PD5bIWoQJLJ4SUJ4
+zCcDfikM0sC7XfRNsJ9KQOUXVCscHEKdRfhRy35wOEDLEjt4cVrh40vRq4UI+LiP
+VhpYD6hiAP5tyDas6gprRWoZRDSnsdw3gg/WxYm1AjW7tJOhO/6RPBTs/Z3suNL/
+V05+3YqfAgMBAAECggEAFqeGIbiEECaUHLprvEz8V+2o0OIfGTiIcFJA0IszULcn
+F216iU+ot9Lv+u/JNusttV1g3A57WRAX52PNgI8x2Kg4/MdUjrjNsqSAq26w/H3l
+ISiRZL+4mQpOu97t1PUeki9SqCHGLSWHxR6RHaAz/LKztXXPL9uvu/BP02NuF5ta
+Km1XYkdZacQWjvVwcDCcqHR0j/XVHXZv11mckktecIrdZ7q2J9LDkiRvyJvnExIK
+DNx+Di5mUFKpE4lTMo9gPoZgeR3U2VzgVlaQWf4kEHztus3a7EaJFX5rdUleB/My
+F+Yf/A6VYW1nmvNa1nRnYlwMRlvsKwmiiwYe7lt+IQKBgQDwym05FRgErzzw4Eev
+ueomH5y+cOosL8r5HppEexsHuZuLLQ3KHkkIhJ0TpPZ5n5zst0SES0K1MOPZDqvV
+JUwfNRn8DBK1a2I5qWqa7URTWHHhzuIbarf+Qrai35lmWY5A1bpZZg6IRoNr2n92
+VjJ2LDQk1BIvcee+cs1gWJfWWQKBgQDNDPoG6UTZN8Cs4KMmmpCWKx6b6WAAOIut
+qFz8iqaMNflbHV+7bUussMFZ9WcU9D8MgdKIWvzlwaiPs86H+6opUj6aevYxes/W
+hNnIbXA1465uXw/zag2v+TfzMtsMg/jWzmKNusn62MDdsCg351zgS+ioHn//xh0M
+rcWokDW5twKBgEOeVPXGuqv2GgL6uKbcaqiyD+5a/yfRdAppUaERgRG2SbvXtxuf
+TZsawpGVrbGR5RuEi7Uq/Vyskg+OUyrUAoBxBQ8GxOo1cawHq2w+XQWavMBQvKY+
+XdUFHwy2Bfn8BDqoyl/4jPQv+Q/8l/a/VgRhfXMqKsEwF4gf7RS1TE5hAoGARUcD
+Gl6pkjIR+NaUiLBj9ThwSQDaHHj+SBfAAtrdVjXOH4iXFX3huWCmkrwkraGvw4wB
+E2yaUQ3S42o+dxcB8KAG4q50i1cQ7UtJQTwoUyyvfD7F5tmH8lJjItmlxF66Lejg
+xz26i/O7harEi86xRF6hJlvXpxTKL8RuKXs/i5UCgYAJulRaarrJ7XrfKVCBm/Zg
+iAv4vbXNNcZE2gb4Fw0WEUceQZM84hJL7Nb94J0b1YirK4+sit+2ovjlZrwGL5Fl
+7FYxVh9wMSmOf8AKX1bIKkF5O5Kg+oMMVNKHg9ov7o1/weuNT/TnXwJDOLeVxvCy
+EYzihZM1xsSaQnK3fO/D+A==
+-----END PRIVATE KEY-----
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov
+usage: aos-prov [-h] [-V]
+                {provision,vm-new,vm-remove,vm-start,unit-new,unit-node-add,unit-node-remove,download} ...
+
+The unit provisioning tool using gRPC protocol
+
+options:
+  -h, --help            show this help message and exit
+  -V, --version         show program's version number and exit
+
+Commands:
+  {provision,vm-new,vm-remove,vm-start,unit-new,unit-node-add,unit-node-remove,download}
+    provision           Provision a Unit
+    vm-new              Create a new VMs group Unit
+    vm-remove           Remove the VMs group Unit
+    vm-start            Start the VMs group Unit
+    unit-new            Create and provision a new VMs group Unit
+    unit-node-add       Add dynamical node to the already presented VMs group Unit
+    unit-node-remove    Remove dynamical node from the already presented VMs group Unit. Only "secondary-N"
+                        nodes can be removed.
+    download            Download image
+
+Run 'aos-prov [COMMAND] --help' for more information about commands
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov provision 172.16.1.47
+usage: aos-prov [-h] [-V]
+                {provision,vm-new,vm-remove,vm-start,unit-new,unit-node-add,unit-node-remove,download} ...
+aos-prov: error: unrecognized arguments: 172.16.1.47
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov provision -u 172.16.1.47
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/__main__.py", line 7, in <module>
+    main()
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/main.py", line 381, in main
+    user_creds = create_and_sanitize_user_creds(args)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/main.py", line 367, in create_and_sanitize_user_creds
+    return UserCredentials(pkcs12=pkcs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/utils/user_credentials.py", line 107, in __init__
+    cert_bytes, key_bytes = _pkcs12_to_pem(pkcs12_file_content)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/utils/user_credentials.py", line 37, in _pkcs12_to_pem
+    private_key, certificate, additional_certificates = load_key_and_certificates(
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/pkcs12.py", line 157, in load_key_and_certificates
+    return ossl.load_key_and_certificates_from_pkcs12(data, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 611, in load_key_and_certificates_from_pkcs12
+    pkcs12 = self.load_pkcs12(data, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 640, in load_pkcs12
+    raise ValueError("Invalid password or PKCS12 data")
+ValueError: Invalid password or PKCS12 data
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov provision -u 172.16.1.47
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/__main__.py", line 7, in <module>
+    main()
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/main.py", line 381, in main
+    user_creds = create_and_sanitize_user_creds(args)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/main.py", line 367, in create_and_sanitize_user_creds
+    return UserCredentials(pkcs12=pkcs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/utils/user_credentials.py", line 107, in __init__
+    cert_bytes, key_bytes = _pkcs12_to_pem(pkcs12_file_content)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/aos_prov/utils/user_credentials.py", line 37, in _pkcs12_to_pem
+    private_key, certificate, additional_certificates = load_key_and_certificates(
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/primitives/serialization/pkcs12.py", line 157, in load_key_and_certificates
+    return ossl.load_key_and_certificates_from_pkcs12(data, password)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 611, in load_key_and_certificates_from_pkcs12
+    pkcs12 = self.load_pkcs12(data, password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yata/.aos/venv/lib/python3.12/site-packages/cryptography/hazmat/backends/openssl/backend.py", line 640, in load_pkcs12
+    raise ValueError("Invalid password or PKCS12 data")
+ValueError: Invalid password or PKCS12 data
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov provision --unit-cert ~/.aos/security/aos-user-oem.pem --unit-cert-password 'xxxxxxxx' -u 172.16.1.47
+usage: aos-prov [-h] [-V]
+                {provision,vm-new,vm-remove,vm-start,unit-new,unit-node-add,unit-node-remove,download} ...
+aos-prov: error: unrecognized arguments: --unit-cert /home/yata/.aos/security/aos-user-oem.pem --unit-cert-password xxxxxxxx
+yata@sdmdev2:~$ curl  -s  --cert-type p12 --cert handmadeOEM.pfx:xxxxxxxx  https://oem.aoscloud.io:10000/api/v10/users/me/ | jq .username
+"oem-goro.kikuchi+oem2@gmail.com"
+"oem-goro.kikuchi+oem2@gmail.com"
+oem-goro.kikuchi+oem2@gmail.com: command not found
+yata@sdmdev2:~$ curl  -s  --cert-type p12 --cert handmadeSP.pfx:xxxxxxxx  https://sp.aoscloud.io:10000/api/v10/users/me/ | jq .username
+"sp-goro.kikuchi+oem2@gmail.com"
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_prov -h
+usage: aos-prov [-h] [-V]
+                {provision,vm-new,vm-remove,vm-start,unit-new,unit-node-add,unit-node-remove,download}
+                ...
+
+The unit provisioning tool using gRPC protocol
+
+options:
+  -h, --help            show this help message and exit
+  -V, --version         show program's version number and exit
+
+Commands:
+  {provision,vm-new,vm-remove,vm-start,unit-new,unit-node-add,unit-node-remove,download}
+    provision           Provision a Unit
+    vm-new              Create a new VMs group Unit
+    vm-remove           Remove the VMs group Unit
+    vm-start            Start the VMs group Unit
+    unit-new            Create and provision a new VMs group Unit
+    unit-node-add       Add dynamical node to the already presented VMs group Unit
+    unit-node-remove    Remove dynamical node from the already presented VMs group Unit.
+                        Only "secondary-N" nodes can be removed.
+    download            Download image
+
+Run 'aos-prov [COMMAND] --help' for more information about commands
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_keys info --oem
+Process failed with error: 
+Invalid password or PKCS12 data
+yata@sdmdev2:~$ ~/.aos/venv/bin/python3 -m aos_keys -h
+usage: aos-keys [-h] [-V] {new-user,info,to-pem,install-root,install-cert} ...
+
+Work with keys. Create new keys, receive certificates, show info
+
+options:
+  -h, --help            show this help message and exit
+  -V, --version         show program's version number and exit
+
+Commands:
+  {new-user,info,to-pem,install-root,install-cert}
+    new-user            Create new key and receive certificate
+    info                Show certificate / user information
+    to-pem              Convert pkcs12 container to PEM key and certificates chain.
+    install-root        Install Aos CA root Certificate.
+    install-cert        Install user certificate to browser store
+yata@sdmdev2:~$ openssl pkcs12 -in ~/.aos/security/aos-user-oem.p12 -nodes -out aos-cert-oem.pem
+Enter Import Password:
+yata@sdmdev2:~$ openssl pkcs12 -export -in aos-cert-oem.pem -out aos-user-oem.p12 -passout pass:
+yata@sdmdev2:~$ openssl pkcs12 -in ~/.aos/security/aos-user-sp.p12 -nodes -out aos-cert-sp.pem
+Enter Import Password:
+yata@sdmdev2:~$ openssl pkcs12 -export -in aos-cert-sp.pem -out aos-user-sp.p12 -passout pass:
+yata@sdmdev2:~$ mv ~/.aos/security/*.p12 ~/Downloads/
+yata@sdmdev2:~$ mv ~/*.p12 ~/.aos/security/
+yata@sdmdev2:~$ cd ~/.aos/security/
+yata@sdmdev2:~/.aos/security$ ls
+aos-key-oem.pem  aos-user-oem.p12  aos-user-sp.p12  handmadeOEM.pfx
+aos-key-sp.pem   aos-user-oem.pem  aos-user-sp.pem  handmadeSP.pfx
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_keys info --oem
+                       Certificate info                       
+┌──────────────────┬─────────────────────────────────────────┐
+│File:             │/home/yata/.aos/security/aos-user-oem.p12│
+│Aos base domain:  │aoscloud.io                              │
+│Serial number:    │6813020A00095CF6                         │
+│User:             │oem-goro.kikuchi+oem2@gmail.com          │
+│e-mail:           │goro.kikuchi+oem2@gmail.com              │
+│Company name:     │OEM goro.kikuchi+oem2@gmail.com          │
+│Valid not before: │2025-05-01 14:09:30+09:00                │
+│Valid not after:  │2035-04-29 14:09:30+09:00                │
+└──────────────────┴─────────────────────────────────────────┘
+ERROR: Key container does not have all needed certificates
+  Container with key and certificates does not contain all items. Recreate key for the 
+user.
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -in aos-user-oem.pem -inkey aos-key-oem.pem -out ~/.aos/aos-user-oem.p12 -passout pass:
+yata@sdmdev2:~/.aos/security$ openssl pkcs12 -export -in aos-user-sp.pem -inkey aos-key-sp.pem -out ~/.aos/aos-user-sp.p12 -passout pass:
+yata@sdmdev2:~/.aos/security$ ls
+aos-key-oem.pem  aos-user-oem.p12  aos-user-sp.p12  handmadeOEM.pfx
+aos-key-sp.pem   aos-user-oem.pem  aos-user-sp.pem  handmadeSP.pfx
+yata@sdmdev2:~/.aos/security$ mv *.p12 ~/Desktop/
+yata@sdmdev2:~/.aos/security$ ls
+aos-key-oem.pem  aos-user-oem.pem  handmadeOEM.pfx
+aos-key-sp.pem   aos-user-sp.pem   handmadeSP.pfx
+yata@sdmdev2:~/.aos/security$ mv ~/.aos/*.p12 ./
+yata@sdmdev2:~/.aos/security$ ls
+aos-key-oem.pem  aos-user-oem.p12  aos-user-sp.p12  handmadeOEM.pfx
+aos-key-sp.pem   aos-user-oem.pem  aos-user-sp.pem  handmadeSP.pfx
+yata@sdmdev2:~/.aos/security$ vim ~/.aos/config.json
+yata@sdmdev2:~/.aos/security$ ls ..
+config.json  downloads  scripts  security  venv
+yata@sdmdev2:~/.aos/security$ ls ../downloads/
+aos-vm-main-genericx86-64.wic.vmdk  aos-vm-secondary-genericx86-64.wic.vmdk
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_prov provision -u 172.16.1.47
+Failed during communication with the AosCloud with error: Failed to connect to the cloud 
+with error: HTTPSConnectionPool(host='aoscloud.io', port=10000): Max retries exceeded with 
+url: /api/v10/users/me/ (Caused by SSLError(SSLError(1, '[SSL: TLSV1_ALERT_UNKNOWN_CA] 
+tlsv1 alert unknown ca (_ssl.c:2559)')))
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_keys info --oem
+                       Certificate info                       
+┌──────────────────┬─────────────────────────────────────────┐
+│File:             │/home/yata/.aos/security/aos-user-oem.p12│
+│Aos base domain:  │aoscloud.io                              │
+│Serial number:    │6813020A00095CF6                         │
+│User:             │oem-goro.kikuchi+oem2@gmail.com          │
+│e-mail:           │goro.kikuchi+oem2@gmail.com              │
+│Company name:     │OEM goro.kikuchi+oem2@gmail.com          │
+│Valid not before: │2025-05-01 14:09:30+09:00                │
+│Valid not after:  │2035-04-29 14:09:30+09:00                │
+└──────────────────┴─────────────────────────────────────────┘
+ERROR: Key container does not have all needed certificates
+  Container with key and certificates does not contain all items. Recreate key for the 
+user.
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_keys info --oem
+                       Certificate info                       
+┌──────────────────┬─────────────────────────────────────────┐
+│File:             │/home/yata/.aos/security/aos-user-oem.p12│
+│Aos base domain:  │aoscloud.io                              │
+│Serial number:    │6813020A00095CF6                         │
+│User:             │oem-goro.kikuchi+oem2@gmail.com          │
+│e-mail:           │goro.kikuchi+oem2@gmail.com              │
+│Company name:     │OEM goro.kikuchi+oem2@gmail.com          │
+│Valid not before: │2025-05-01 14:09:30+09:00                │
+│Valid not after:  │2035-04-29 14:09:30+09:00                │
+└──────────────────┴─────────────────────────────────────────┘
+                     Cloud user info                      
+┌────────────────────────┬───────────────────────────────┐
+│User name:              │oem-goro.kikuchi+oem2@gmail.com│
+│email:                  │goro.kikuchi+oem2@gmail.com    │
+│role:                   │oem                            │
+│OEM Title:              │OEM goro.kikuchi+oem2@gmail.com│
+│Fleets:                 │Default                        │
+│Permission groups:      │oem_management                 │
+│Standalone permissions: │auto_provisioning              │
+│                        │manage_fleet_owner             │
+│                        │manage_oem_user                │
+└────────────────────────┴───────────────────────────────┘
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_prov provision -u 172.16.1.47
+Operation will be executed on domain:                                           aoscloud.io
+OEM:                                                                            OEM goro.kikuchi+oem2@gmail.com
+user:                                                                           oem-goro.kikuchi+oem2@gmail.com
+Starting provisioning...
+Communicating with unit using provisioning protocol version 5...                DONE
+Getting System Info...                                                          DONE
+System ID:                                                                      LN4409EXY2YHGWREA
+Unit model:                                                                     aos-rpi;1.0
+
+Getting unit's status on the cloud ...
+Getting Node IDs...                                                             ['e12a5d7499a34505a478de2599609aad', '00000000-2df4-5158-cf8c-b14046f6b54b']
+Starting provisioning...                                                        DONE
+Getting certificate types to renew on node e12a5d7499a34505a478de2599609aad...  ['online', 'offline', 'iam', 'sm', 'um', 'cm']
+Generating key type: online on Node: e12a5d7499a34505a478de2599609aad...        DONE
+Generating key type: offline on Node: e12a5d7499a34505a478de2599609aad...       DONE
+Generating key type: iam on Node: e12a5d7499a34505a478de2599609aad...           DONE
+Generating key type: sm on Node: e12a5d7499a34505a478de2599609aad...            DONE
+Generating key type: um on Node: e12a5d7499a34505a478de2599609aad...            DONE
+Generating key type: cm on Node: e12a5d7499a34505a478de2599609aad...            DONE
+Starting provisioning...                                                        DONE
+Getting certificate types to renew on node 00000000-2df4-5158-cf8c-b14046f6b54b...['iam', 'sm']
+Generating key type: iam on Node: 00000000-2df4-5158-cf8c-b14046f6b54b...       DONE
+Generating key type: sm on Node: 00000000-2df4-5158-cf8c-b14046f6b54b...        DONE
+Registering the unit ...
+Applying certificate type: online Node ID: e12a5d7499a34505a478de2599609aad...  DONE
+Applying certificate type: offline Node ID: e12a5d7499a34505a478de2599609aad... DONE
+Applying certificate type: iam Node ID: e12a5d7499a34505a478de2599609aad...     DONE
+Applying certificate type: sm Node ID: e12a5d7499a34505a478de2599609aad...      DONE
+Applying certificate type: um Node ID: e12a5d7499a34505a478de2599609aad...      DONE
+Applying certificate type: cm Node ID: e12a5d7499a34505a478de2599609aad...      DONE
+Applying certificate type: iam Node ID: 00000000-2df4-5158-cf8c-b14046f6b54b... DONE
+Applying certificate type: sm Node ID: 00000000-2df4-5158-cf8c-b14046f6b54b...  DONE
+Finishing provisioning... Node ID: 00000000-2df4-5158-cf8c-b14046f6b54b         DONE
+Finishing provisioning... Node ID: e12a5d7499a34505a478de2599609aad             DONE
+Finished successfully!
+You may find your unit on the cloud here: https://oem.aoscloud.io/oem/units/32545
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_keys info --sp
+                      Certificate info                       
+┌──────────────────┬────────────────────────────────────────┐
+│File:             │/home/yata/.aos/security/aos-user-sp.p12│
+│Aos base domain:  │aoscloud.io                             │
+│Serial number:    │681421460006728B                        │
+│User:             │sp-goro.kikuchi+oem2@gmail.com          │
+│e-mail:           │goro.kikuchi+oem2@gmail.com             │
+│Company name:     │SP goro.kikuchi+oem2@gmail.com          │
+│Valid not before: │2025-05-02 10:35:02+09:00               │
+│Valid not after:  │2035-04-30 10:35:02+09:00               │
+└──────────────────┴────────────────────────────────────────┘
+                     Cloud user info                     
+┌────────────────────────┬──────────────────────────────┐
+│User name:              │sp-goro.kikuchi+oem2@gmail.com│
+│email:                  │goro.kikuchi+oem2@gmail.com   │
+│role:                   │service provider              │
+│SP Title:               │SP goro.kikuchi+oem2@gmail.com│
+│Permission groups:      │sp_management                 │
+│Standalone permissions: │manage_sp_user                │
+└────────────────────────┴──────────────────────────────┘
+yata@sdmdev2:~/.aos/security$ ls -la
+total 104
+drwxrwxr-x 2 yata docker 4096 May  9 12:40 .
+drwxrwxr-x 6 yata docker 4096 May  9 12:19 ..
+-rw-r--r-- 1 root root    741 May  9 11:32 AosECRootCA.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-oem.pem
+-rw------- 1 yata yata   1828 May  8 13:41 aos-key-sp.pem
+-rw-rw-r-- 1 yata yata    708 May  9 09:08 Aos-OEM-Issuring-CA.pem
+-rw-r--r-- 1 root root   1452 May  9 11:32 AosRootCA.pem
+-rw-rw-r-- 1 yata yata    704 May  9 11:57 Aos-SP-Issuring-CA.pem
+-rw------- 1 yata yata   4915 May  9 12:12 aos-user-oem.p12
+-rw------- 1 yata yata   6016 May  9 12:20 aos-user-oem.pem
+-rw------- 1 yata yata   4915 May  9 12:40 aos-user-sp.p12
+-rw------- 1 yata yata   6008 May  9 12:40 aos-user-sp.pem
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeOEM.pfx
+-rw-rw-r-- 1 yata yata   4915 May  8 14:08 handmadeSP.pfx
+-rw-rw-r-- 1 yata yata   1088 May  9 09:09 oem-Aos-Intermediate-CA.pem
+-rw-rw-r-- 1 yata yata   3272 May  9 12:10 oem-ca-chain.pem
+-rw-rw-r-- 1 yata yata   1476 May  9 09:09 oem-Fusion-Root-CA.pem
+-rw-rw-r-- 1 yata yata   1142 May  9 09:08 oem-goro-kikuchioem2gmail-com.pem
+-rw-rw-r-- 1 yata yata   3268 May  9 12:36 sp-ca-chain.pem
+-rw-rw-r-- 1 yata yata   1138 May  9 11:56 sp-goro-kikuchioem2gmail-com.pem
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_prov unit-new --name FirstUnit
+Checking VirtualBox...                                                          7.1.8r168469
+
+Creating a new virtual machines...
+Creating a network for the units...                                             Cannot create VM. Clean up all related resources. Try again.
+Removing VMs in Groups: /AosUnits/FirstUnit for the units...
+Removing a network: aos-network-FirstUnit for the units...                      DONE
+VMs have been deleted
+Failed to execute the command!
+Error: VBoxManage: error: NATNetwork server already exists
+ 
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -m aos_prov unit-new --name FirstUnit
+Checking VirtualBox...                                                          7.1.8r168469
+
+Creating a new virtual machines...
+Creating a network for the units...                                             Network aos-network-FirstUnit has been created
+Forwarding provisioning port...                                                 8199
+Forwarding ssh port to main...                                                  8455
+Creating a new VM for main...                                                   DONE
+Creating a new VM for secondary-1...                                            DONE
+Operation will be executed on domain:                                           aoscloud.io
+OEM:                                                                            OEM goro.kikuchi+oem2@gmail.com
+user:                                                                           oem-goro.kikuchi+oem2@gmail.com
+Starting VMs in group /AosUnits/FirstUnit
+Starting VM ee9ece91-13b3-4a75-96e6-0259494df0bf...                             DONE
+Starting VM 29fabaaa-fd12-498d-ac2c-cd733ebb51e9...                             DONE
+Trying to forward ssh port to secondary-1...
+Getting IP of 29fabaaa-fd12-498d-ac2c-cd733ebb51e9...                           Could not find IP address.
+y keyboard...
+yata@sdmdev2:~/.aos/security$ ~/.aos/venv/bin/python3 -u ~/Downloads/hello-world/src/webhook_example.py
+Unhandled exception: HTTPError
+Traceback (most recent call last):
+  File "/home/yata/Downloads/hello-world/src/webhook_example.py", line 52, in main
+    request.urlopen(request_data)
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+Unhandled exception: HTTPError
+Traceback (most recent call last):
+  File "/home/yata/Downloads/hello-world/src/webhook_example.py", line 52, in main
+    request.urlopen(request_data)
+  File "/usr/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 521, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 630, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 559, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/usr/lib/python3.12/urllib/request.py", line 639, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found

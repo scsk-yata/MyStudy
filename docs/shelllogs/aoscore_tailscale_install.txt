@@ -1,0 +1,1555 @@
+yata@sdmdev2:~$ nslookup aoscloud.io
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	aoscloud.io
+Address: 18.153.122.100
+Name:	aoscloud.io
+Address: 3.79.74.0
+Name:	aoscloud.io
+Address: 3.67.205.178
+
+yata@sdmdev2:~$ 
+yata@sdmdev2:~$ mkdir -p ~/tailscale-arm64
+yata@sdmdev2:~$ cd ~/tailscale-arm64
+yata@sdmdev2:~/tailscale-arm64$ wget https://pkgs.tailscale.com/stable/tailscale_1.64.2_arm64.tgz
+--2025-04-16 15:46:57--  https://pkgs.tailscale.com/stable/tailscale_1.64.2_arm64.tgz
+Resolving pkgs.tailscale.com (pkgs.tailscale.com)... 199.38.181.239, 2607:f740:f::d19
+Connecting to pkgs.tailscale.com (pkgs.tailscale.com)|199.38.181.239|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2025-04-16 15:46:58 ERROR 404: Not Found.
+
+yata@sdmdev2:~/tailscale-arm64$ wget https://github.com/tailscale/tailscale/releases/download/v1.82.0/tailscale_1.82.0_linux_arm64.tgz
+--2025-04-16 15:56:09--  https://github.com/tailscale/tailscale/releases/download/v1.82.0/tailscale_1.82.0_linux_arm64.tgz
+Resolving github.com (github.com)... 20.27.177.113
+Connecting to github.com (github.com)|20.27.177.113|:443... connected.
+HTTP request sent, awaiting response... 404 Not Found
+2025-04-16 15:56:10 ERROR 404: Not Found.
+
+yata@sdmdev2:~/tailscale-arm64$ cd ..
+yata@sdmdev2:~$ ls
+AosCloudMemo.txt   Desktop    MyAosRasp  tailscale_1.82.0_arm64.tgz
+AosCoreFirst       Documents  Pictures   tailscale-arm64
+AosCoreSecond.txt  Downloads  Public     Templates
+commands.txt       Music      snap       Videos
+yata@sdmdev2:~$ tar zxvf tailscale_1.82.0_arm64.tgz -C ~/tailscale-arm64
+tailscale_1.82.0_arm64/
+tailscale_1.82.0_arm64/tailscaled
+tailscale_1.82.0_arm64/tailscale
+tailscale_1.82.0_arm64/systemd/
+tailscale_1.82.0_arm64/systemd/tailscaled.service
+tailscale_1.82.0_arm64/systemd/tailscaled.defaults
+yata@sdmdev2:~$ cd tailscale-arm64/
+yata@sdmdev2:~/tailscale-arm64$ ls
+tailscale_1.82.0_arm64
+yata@sdmdev2:~/tailscale-arm64$ cd ..
+yata@sdmdev2:~$ ls
+AosCloudMemo.txt   Desktop    MyAosRasp  tailscale_1.82.0_arm64.tgz
+AosCoreFirst       Documents  Pictures   tailscale-arm64
+AosCoreSecond.txt  Downloads  Public     Templates
+commands.txt       Music      snap       Videos
+yata@sdmdev2:~$ cd tailscale-arm64/
+yata@sdmdev2:~/tailscale-arm64$ ls
+tailscale_1.82.0_arm64
+yata@sdmdev2:~/tailscale-arm64$ cd tailscale_1.82.0_arm64/
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ls
+systemd  tailscale  tailscaled
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ls -a
+.  ..  systemd  tailscale  tailscaled
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ scp tailscale tailscaled mspdev@172.16.1.30:~/
+mspdev@172.16.1.30's password: 
+scp: dest open "./tailscale": Failure
+scp: failed to upload file tailscale to ~/
+scp: dest open "./tailscaled": Failure
+scp: failed to upload file tailscaled to ~/
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ scp tailscale tailscaled mspdev@172.16.1.30
+mspdev@172.16.1.30: No such file or directory
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ scp tailscale tailscaled mspdev@172.16.1.30:~
+mspdev@172.16.1.30's password: 
+scp: dest open "./tailscale": Failure
+scp: failed to upload file tailscale to ~
+scp: dest open "./tailscaled": Failure
+scp: failed to upload file tailscaled to ~
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ssh mspdev@172.16.1.30
+mspdev@172.16.1.30's password: 
+Last login: Wed Apr 16 03:06:18 2025 from 172.16.0.76
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ 
+main:~$ 
+main:~$ ls
+main:~$ mkdir tailscale
+mkdir: cannot create directory 'tailscale': Read-only file system
+main:~$ sudo -i
+Password: 
+root@main:~# passwd
+Changing password for root
+New password: 
+Retype password: 
+passwd: /etc/passwd: Read-only file system
+passwd: can't update password file /etc/passwd
+root@main:~# 
+root@main:~# 
+root@main:~# 
+root@main:~# client_loop: send disconnect: Broken pipe
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ scp tailscale tailscaled mspdev@172.16.1.30:/var/tailscale
+mspdev@172.16.1.30's password: 
+scp: dest open "/var/tailscale/tailscale": Permission denied
+scp: failed to upload file tailscale to /var/tailscale
+scp: dest open "/var/tailscale/tailscaled": Permission denied
+scp: failed to upload file tailscaled to /var/tailscale
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ scp tailscale tailscaled mspdev@172.16.1.30:/tmp/
+mspdev@172.16.1.30's password: 
+tailscale                                     100%   19MB  60.1MB/s   00:00    
+tailscaled                                    100%   35MB 102.4MB/s   00:00    
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ tailscale status
+100.116.131.99  sdmdev2              scsksdm@     linux   -
+100.117.109.31  gorobookair          goro.kikuchi@ macOS   offline
+100.77.3.19     lenovo-tb520fu       scsksdm@     android offline
+100.90.187.121  masazhang-1          scsksdm@     linux   offline
+100.112.150.50  masazhang            scsksdm@     windows offline
+100.97.96.27    matsuzaki-note-ubuntu scsksdm@     linux   offline
+100.74.114.81   matsuzaki-note-windows scsksdm@     windows -
+100.68.245.122  msi                  scsksdm@     windows -
+100.65.202.85   mspdev01             tagged-devices linux   -
+100.93.168.97   s-114032             scsksdm@     linux   -
+100.119.236.109 sdmawsim             scsksdm@     linux   -
+100.124.216.95  sdmdev1              scsksdm@     linux   offline
+100.109.54.64   sdmdev10             scsksdm@     linux   -
+100.119.151.116 sdmdev11             scsksdm@     linux   offline
+100.82.182.121  sdmdev3              scsksdm@     linux   -
+100.127.21.120  sdmdev4              scsksdm@     linux   offline
+100.120.11.18   sdmdev5              scsksdm@     linux   offline
+100.103.88.15   sdmdev6              scsksdm@     linux   -
+100.115.23.8    sdmdev7              scsksdm@     linux   offline
+100.93.0.80     sdmdev8              scsksdm@     linux   -
+100.122.97.58   sdmdev9              scsksdm@     linux   -
+100.102.252.44  sdmdevawsim          scsksdm@     linux   -
+100.80.244.14   taiwan               goro.kikuchi@ windows -
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ssh mspdev@172.16.1.30
+mspdev@172.16.1.30's password: 
+Last login: Wed Apr 16 23:27:04 2025 from 172.16.0.76
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ sudo -i
+Password: 
+root@main:~# history
+    1  history
+root@main:~# ls /
+bin   dev  home  lost+found  mnt  proc	run   srv  tmp	var
+boot  etc  lib	 media	     opt  root	sbin  sys  usr
+root@main:~# /var
+-sh: /var: Is a directory
+root@main:~# ls /var
+aos	 cache	local  log	   lvm	       run    ssh	 tmp
+backups  lib	lock   lost+found  machine-id  spool  tailscale  volatile
+root@main:~# exit
+logout
+main:~$ exit
+logout
+Connection to 172.16.1.30 closed.
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ssh mspdev@100.65.202.85
+The authenticity of host '100.65.202.85 (100.65.202.85)' can't be established.
+ED25519 key fingerprint is SHA256:NocY4EFZnOpczBORUzQr1rBuSgFBW7gyhBqtmqtJHTM.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:7: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '100.65.202.85' (ED25519) to the list of known hosts.
+mspdev@100.65.202.85's password: 
+Last login: Thu Apr 17 01:22:22 2025 from 127.0.0.1
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ 
+main:~$ 
+main:~$ sudo -i
+Password: 
+root@main:~# 
+root@main:~# 
+root@main:~# curl
+-sh: curl: command not found
+root@main:~# help
+GNU bash, version 5.2.21(1)-release (aarch64-poky-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                            history [-c] [-d offset] [n] or hist>
+ (( expression ))                        if COMMANDS; then COMMANDS; [ elif C>
+ . filename [arguments]                  jobs [-lnprs] [jobspec ...] or jobs >
+ :                                       kill [-s sigspec | -n signum | -sigs>
+ [ arg... ]                              let arg [arg ...]
+ [[ expression ]]                        local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]          logout [n]
+ bg [job_spec ...]                       mapfile [-d delim] [-n count] [-O or>
+ bind [-lpsvPSVX] [-m keymap] [-f file>  popd [-n] [+N | -N]
+ break [n]                               printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]       pushd [-n] [+N | -N | dir]
+ caller [expr]                           pwd [-LP]
+ case WORD in [PATTERN [| PATTERN]...)>  read [-ers] [-a array] [-d delim] [->
+ cd [-L|[-P [-e]] [-@]] [dir]            readarray [-d delim] [-n count] [-O >
+ command [-pVv] command [arg ...]        readonly [-aAf] [name[=value] ...] o>
+ compgen [-abcdefgjksuv] [-o option] [>  return [n]
+ complete [-abcdefgjksuv] [-pr] [-DEI]>  select NAME [in WORDS ... ;] do COMM>
+ compopt [-o|+o option] [-DEI] [name .>  set [-abefhkmnptuvxBCEHPT] [-o optio>
+ continue [n]                            shift [n]
+ coproc [NAME] command [redirections]    shopt [-pqsu] [-o] [optname ...]
+ declare [-aAfFgiIlnrtux] [name[=value>  source filename [arguments]
+ dirs [-clpv] [+N] [-N]                  suspend [-f]
+ disown [-h] [-ar] [jobspec ... | pid >  test [expr]
+ echo [-neE] [arg ...]                   time [-p] pipeline
+ enable [-a] [-dnps] [-f filename] [na>  times
+ eval [arg ...]                          trap [-lp] [[arg] signal_spec ...]
+ exec [-cl] [-a name] [command [argume>  true
+ exit [n]                                type [-afptP] name [name ...]
+ export [-fn] [name[=value] ...] or ex>  typeset [-aAfFgiIlnrtux] name[=value>
+ false                                   ulimit [-SHabcdefiklmnpqrstuvxPRT] [>
+ fc [-e ename] [-lnr] [first] [last] o>  umask [-p] [-S] [mode]
+ fg [job_spec]                           unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do COMMAND>  unset [-f] [-v] [-n] [name ...]
+ for (( exp1; exp2; exp3 )); do COMMAN>  until COMMANDS; do COMMANDS-2; done
+ function name { COMMANDS ; } or name >  variables - Names and meanings of so>
+ getopts optstring name [arg ...]        wait [-fn] [-p var] [id ...]
+ hash [-lr] [-p pathname] [-dt] [name >  while COMMANDS; do COMMANDS-2; done
+ help [-dms] [pattern ...]               { COMMANDS ; }
+root@main:~# 
+root@main:~# 
+root@main:~# ls /var
+aos	 cache	local  log	   lvm	       run    ssh	 tmp
+backups  lib	lock   lost+found  machine-id  spool  tailscale  volatile
+root@main:~# which vi
+/usr/bin/vi
+root@main:~# ls -l /usr/bin/vi
+lrwxrwxrwx 1 root root 23 Mar  9  2018 /usr/bin/vi -> /usr/bin/busybox.nosuid
+root@main:~# ls -l /usr/bin
+total 94932
+lrwxrwxrwx 1 root root        9 Mar  9  2018  2to3 -> 2to3-3.12
+-rwxr-xr-x 1 root root       96 Mar  9  2018  2to3-3.12
+lrwxrwxrwx 1 root root       27 Mar  9  2018 '[' -> /usr/bin/lbracket.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018 '[[' -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root 18441984 Mar  9  2018  aos_communicationmanager
+-rwxr-xr-x 1 root root  2437232 Mar  9  2018  aos_iamanager
+-rwxr-xr-x 1 root root  2318040 Mar  9  2018  aos_messageproxy
+-rwxr-xr-x 1 root root 17453688 Mar  9  2018  aos_servicemanager
+-rwxr-xr-x 1 root root 16068248 Mar  9  2018  aos_updatemanager
+-rwxr-xr-x 1 root root 12567592 Mar  9  2018  aos_vis
+lrwxrwxrwx 1 root root       23 Mar  9  2018  arch -> /usr/bin/arch.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  arch.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  ascii -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  ash -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  awk -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  b2sum
+lrwxrwxrwx 1 root root       25 Mar  9  2018  base32 -> /usr/bin/base32.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  base32.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  base64 -> /usr/bin/base64.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  base64.coreutils
+lrwxrwxrwx 1 root root       27 Mar  9  2018  basename -> /usr/bin/basename.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  basename.coreutils
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  basenc
+lrwxrwxrwx 1 root root       18 Mar  9  2018  bash -> /usr/bin/bash.bash
+-rwxr-xr-x 1 root root  1345968 Mar  9  2018  bash.bash
+-rwxr-xr-x 1 root root   133624 Mar  9  2018  bootctl
+lrwxrwxrwx 1 root root       23 Mar  9  2018  bunzip2 -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   133312 Mar  9  2018  busctl
+lrwxrwxrwx 1 root root       14 Mar  9  2018  busybox -> busybox.nosuid
+-rwxr-xr-x 1 root root   723608 Mar  9  2018  busybox.nosuid
+-rwsr-xr-x 1 root root    67648 Mar  9  2018  busybox.suid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  bzcat -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  bzip2 -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67696 Mar  9  2018  cardos-tool
+lrwxrwxrwx 1 root root       22 Mar  9  2018  cat -> /usr/bin/cat.coreutils
+-rwxr-xr-x 1 root root    67904 Mar  9  2018  cat.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  chattr -> /usr/bin/chattr.e2fsprogs
+-rwxr-xr-x 1 root root    67576 Mar  9  2018  chattr.e2fsprogs
+lrwxrwxrwx 1 root root       24 Mar  9  2018  chcon -> /usr/bin/chcon.coreutils
+-rwxr-xr-x 1 root root   133400 Mar  9  2018  chcon.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  chgrp -> /usr/bin/chgrp.coreutils
+-rwxr-xr-x 1 root root   133400 Mar  9  2018  chgrp.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  chmod -> /usr/bin/chmod.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  chmod.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  chown -> /usr/bin/chown.coreutils
+-rwxr-xr-x 1 root root   133400 Mar  9  2018  chown.coreutils
+lrwxrwxrwx 1 root root       17 Mar  9  2018  chvt -> /usr/bin/chvt.kbd
+-rwxr-xr-x 1 root root    67728 Mar  9  2018  chvt.kbd
+lrwxrwxrwx 1 root root       24 Mar  9  2018  cksum -> /usr/bin/cksum.coreutils
+-rwxr-xr-x 1 root root   198960 Mar  9  2018  cksum.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  clear -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  cmp -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  comm -> /usr/bin/comm.coreutils
+-rwxr-xr-x 1 root root    67880 Mar  9  2018  comm.coreutils
+lrwxrwxrwx 1 root root       21 Mar  9  2018  cp -> /usr/bin/cp.coreutils
+-rwxr-xr-x 1 root root   198960 Mar  9  2018  cp.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  cpio -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  crc32 -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   601216 Mar  9  2018  crun
+-rwxr-xr-x 1 root root    67792 Mar  9  2018  cryptoflex-tool
+lrwxrwxrwx 1 root root       25 Mar  9  2018  csplit -> /usr/bin/csplit.coreutils
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  csplit.coreutils
+lrwxrwxrwx 1 root root       22 Mar  9  2018  cut -> /usr/bin/cut.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  cut.coreutils
+-rwxr-xr-x 1 root root   406424 Mar  9  2018  cvtsudoers
+lrwxrwxrwx 1 root root       23 Mar  9  2018  date -> /usr/bin/date.coreutils
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  date.coreutils
+-rwxr-xr-x 1 root root    67568 Mar  9  2018  dbus-cleanup-sockets
+-rwxr-xr-x 1 root root   264640 Mar  9  2018  dbus-daemon
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  dbus-launch
+-rwxr-xr-x 1 root root    67568 Mar  9  2018  dbus-monitor
+-rwxr-xr-x 1 root root    67568 Mar  9  2018  dbus-run-session
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  dbus-send
+-rwxr-xr-x 1 root root    67584 Mar  9  2018  dbus-update-activation-environment
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  dbus-uuidgen
+lrwxrwxrwx 1 root root       23 Mar  9  2018  dc -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       21 Mar  9  2018  dd -> /usr/bin/dd.coreutils
+-rwxr-xr-x 1 root root   133448 Mar  9  2018  dd.coreutils
+lrwxrwxrwx 1 root root       22 Mar  9  2018  deallocvt -> /usr/bin/deallocvt.kbd
+-rwxr-xr-x 1 root root    67736 Mar  9  2018  deallocvt.kbd
+-rwxr-xr-x 1 root root    69184 Mar  9  2018  debugedit
+lrwxrwxrwx 1 root root       21 Mar  9  2018  df -> /usr/bin/df.coreutils
+-rwxr-xr-x 1 root root   134000 Mar  9  2018  df.coreutils
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  dhcp_lease_time
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  dhcp_release
+-rwxr-xr-x 1 root root    67824 Mar  9  2018  dhcp_release6
+lrwxrwxrwx 1 root root       23 Mar  9  2018  diff -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       22 Mar  9  2018  dir -> /usr/bin/dir.coreutils
+-rwxr-xr-x 1 root root   199408 Mar  9  2018  dir.coreutils
+lrwxrwxrwx 1 root root       28 Mar  9  2018  dircolors -> /usr/bin/dircolors.coreutils
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  dircolors.coreutils
+-rwxr-xr-x 1 root root   596112 Mar  9  2018  dirmngr
+-rwxr-xr-x 1 root root   133704 Mar  9  2018  dirmngr-client
+lrwxrwxrwx 1 root root       26 Mar  9  2018  dirname -> /usr/bin/dirname.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  dirname.coreutils
+-rwxr-xr-x 1 root root     6073 Mar  9  2018  diskencryption.sh
+lrwxrwxrwx 1 root root       23 Mar  9  2018  dmesg -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root        5 Mar  9  2018  dnf -> dnf-3
+-rwxr-xr-x 1 root root     2096 Mar  9  2018  dnf-3
+lrwxrwxrwx 1 root root       15 Mar  9  2018  dnf-automatic -> dnf-automatic-3
+-rwxr-xr-x 1 root root     1433 Mar  9  2018  dnf-automatic-3
+-rwxr-xr-x 1 root root    67704 Mar  9  2018  dnie-tool
+lrwxrwxrwx 1 root root       23 Mar  9  2018  dnsdomainname -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   467952 Mar  9  2018  dnsmasq
+-rwxr-xr-x 1 root root   204368 Mar  9  2018  dtc
+-rwxr-xr-x 1 root root    67688 Mar  9  2018  dtrust-tool
+lrwxrwxrwx 1 root root       21 Mar  9  2018  du -> /usr/bin/du.coreutils
+-rwxr-xr-x 1 root root   198952 Mar  9  2018  du.coreutils
+-rwxr-xr-x 1 root root   199184 Mar  9  2018  dumpkeys
+lrwxrwxrwx 1 root root       23 Mar  9  2018  dumpkmap -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  dumpleases -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  echo -> /usr/bin/echo.coreutils
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  echo.coreutils
+-rwxr-xr-x 1 root root    67968 Mar  9  2018  egk-tool
+lrwxrwxrwx 1 root root       23 Mar  9  2018  egrep -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  eidenv
+lrwxrwxrwx 1 root root       22 Mar  9  2018  env -> /usr/bin/env.coreutils
+-rwxr-xr-x 1 root root    68280 Mar  9  2018  env.coreutils
+-rwxr-xr-x 1 root root    67640 Mar  9  2018  eu-addr2line
+-rwxr-xr-x 1 root root   396072 Mar  9  2018  eu-nm
+-rwxr-xr-x 1 root root   592512 Mar  9  2018  eu-readelf
+-rwxr-xr-x 1 root root    67688 Mar  9  2018  eu-size
+-rwxr-xr-x 1 root root   395888 Mar  9  2018  eu-strip
+lrwxrwxrwx 1 root root       25 Mar  9  2018  expand -> /usr/bin/expand.coreutils
+-rwxr-xr-x 1 root root    67880 Mar  9  2018  expand.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  expr -> /usr/bin/expr.coreutils
+-rwxr-xr-x 1 root root   133392 Mar  9  2018  expr.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  factor -> /usr/bin/factor.coreutils
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  factor.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  false -> /usr/bin/false.coreutils
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  false.coreutils
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  fdtdump
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  fdtget
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  fdtoverlay
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  fdtput
+lrwxrwxrwx 1 root root       22 Mar  9  2018  fgconsole -> /usr/bin/fgconsole.kbd
+-rwxr-xr-x 1 root root    67800 Mar  9  2018  fgconsole.kbd
+lrwxrwxrwx 1 root root       23 Mar  9  2018  fgrep -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       18 Mar  9  2018  file -> /usr/bin/file.file
+-rwxr-xr-x 1 root root    68000 Mar  9  2018  file.file
+lrwxrwxrwx 1 root root       23 Mar  9  2018  find -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    21791 Mar  9  2018  find-debuginfo
+-rwxr-xr-x 1 root root   134464 Mar  9  2018  findmnt
+lrwxrwxrwx 1 root root       23 Mar  9  2018  flock -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       22 Mar  9  2018  fmt -> /usr/bin/fmt.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  fmt.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  fold -> /usr/bin/fold.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  fold.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  free -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  fuser -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root      503 Mar  9  2018  gendiff
+-rwxr-xr-x 1 root root    67728 Mar  9  2018  getkeycodes
+lrwxrwxrwx 1 root root       23 Mar  9  2018  getopt -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67744 Mar  9  2018  gids-tool
+-rwxr-xr-x 1 root root    69888 Mar  9  2018  goid-tool
+lrwxrwxrwx 1 root root        4 Mar  9  2018  gpg -> gpg2
+-rwxr-xr-x 1 root root   464064 Mar  9  2018  gpg-agent
+-rwxr-xr-x 1 root root   265248 Mar  9  2018  gpg-card
+-rwxr-xr-x 1 root root   199664 Mar  9  2018  gpg-connect-agent
+-rwxr-xr-x 1 root root   265416 Mar  9  2018  gpg-wks-client
+-rwxr-xr-x 1 root root   199560 Mar  9  2018  gpg-wks-server
+-rwxr-xr-x 1 root root  1200720 Mar  9  2018  gpg2
+-rwxr-xr-x 1 root root   203720 Mar  9  2018  gpgconf
+-rwxr-xr-x 1 root root   133368 Mar  9  2018  gpgme-json
+-rwxr-xr-x 1 root root   133456 Mar  9  2018  gpgme-tool
+-rwxr-xr-x 1 root root    67640 Mar  9  2018  gpgparsemail
+-rwxr-xr-x 1 root root   664800 Mar  9  2018  gpgsm
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  gpgsplit
+-rwxr-xr-x 1 root root   134648 Mar  9  2018  gpgtar
+lrwxrwxrwx 1 root root        5 Mar  9  2018  gpgv -> gpgv2
+-rwxr-xr-x 1 root root   594064 Mar  9  2018  gpgv2
+lrwxrwxrwx 1 root root       23 Mar  9  2018  grep -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       22 Mar  9  2018  groups -> /usr/bin/groups.shadow
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  groups.coreutils
+-rwxr-xr-x 1 root root    67568 Mar  9  2018  groups.shadow
+lrwxrwxrwx 1 root root       23 Mar  9  2018  gunzip -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  gzip -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  head -> /usr/bin/head.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  head.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  hexdump -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       25 Mar  9  2018  hostid -> /usr/bin/hostid.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  hostid.coreutils
+lrwxrwxrwx 1 root root       27 Mar  9  2018  hostname -> /usr/bin/hostname.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  hostname.coreutils
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  hostnamectl
+-rwxr-xr-x 1 root root    67688 Mar  9  2018  iasecc-tool
+lrwxrwxrwx 1 root root       21 Mar  9  2018  id -> /usr/bin/id.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  id.coreutils
+lrwxrwxrwx 1 root root        8 Mar  9  2018  idle3 -> idle3.12
+-rwxr-xr-x 1 root root       94 Mar  9  2018  idle3.12
+lrwxrwxrwx 1 root root       26 Mar  9  2018  install -> /usr/bin/install.coreutils
+-rwxr-xr-x 1 root root   198984 Mar  9  2018  install.coreutils
+lrwxrwxrwx 1 root root       30 Mar  9  2018  iptables-xml -> /usr/sbin/xtables-legacy-multi
+lrwxrwxrwx 1 root root       23 Mar  9  2018  join -> /usr/bin/join.coreutils
+-rwxr-xr-x 1 root root    67904 Mar  9  2018  join.coreutils
+-rwxr-xr-x 1 root root    68080 Mar  9  2018  journalctl
+-rwxr-xr-x 1 root root    67552 Mar  9  2018  jq
+-rwxr-xr-x 1 root root    67920 Mar  9  2018  kbd_mode
+-rwxr-xr-x 1 root root    67760 Mar  9  2018  kbdinfo
+-rwxr-xr-x 1 root root    67792 Mar  9  2018  kbdrate
+-rwxr-xr-x 1 root root   199168 Mar  9  2018  kbxutil
+lrwxrwxrwx 1 root root       23 Mar  9  2018  kill -> /usr/bin/kill.coreutils
+-rwxr-xr-x 1 root root    68280 Mar  9  2018  kill.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  killall -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   198816 Mar  9  2018  kmod
+-rwxr-xr-x 1 root root    67744 Mar  9  2018  lbracket.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  less -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  link -> /usr/bin/link.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  link.coreutils
+lrwxrwxrwx 1 root root       21 Mar  9  2018  ln -> /usr/bin/ln.coreutils
+-rwxr-xr-x 1 root root   133416 Mar  9  2018  ln.coreutils
+-rwxr-xr-x 1 root root   265008 Mar  9  2018  loadkeys
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  loadunimap
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  localectl
+lrwxrwxrwx 1 root root       23 Mar  9  2018  logger -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       21 Mar  9  2018  login -> /usr/bin/login.shadow
+-rwxr-xr-x 1 root root   134624 Mar  9  2018  login.shadow
+-rwxr-xr-x 1 root root    67816 Mar  9  2018  loginctl
+lrwxrwxrwx 1 root root       26 Mar  9  2018  logname -> /usr/bin/logname.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  logname.coreutils
+lrwxrwxrwx 1 root root       21 Mar  9  2018  ls -> /usr/bin/ls.coreutils
+-rwxr-xr-x 1 root root   199408 Mar  9  2018  ls.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  lsattr -> /usr/bin/lsattr.e2fsprogs
+-rwxr-xr-x 1 root root    67576 Mar  9  2018  lsattr.e2fsprogs
+-rwxr-xr-x 1 root root   264248 Mar  9  2018  lsblk
+lrwxrwxrwx 1 root root       19 Mar  9  2018  lsmod -> /usr/bin/lsmod.kmod
+lrwxrwxrwx 1 root root        4 Mar  9  2018  lsmod.kmod -> kmod
+lrwxrwxrwx 1 root root       23 Mar  9  2018  lzcat -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67904 Mar  9  2018  mapscrn
+lrwxrwxrwx 1 root root       25 Mar  9  2018  md5sum -> /usr/bin/md5sum.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  md5sum.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  mesg -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  microcom -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       24 Mar  9  2018  mkdir -> /usr/bin/mkdir.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  mkdir.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  mkfifo -> /usr/bin/mkfifo.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  mkfifo.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  mknod -> /usr/bin/mknod.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  mknod.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  mktemp -> /usr/bin/mktemp.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  mktemp.coreutils
+-rwxr-xr-x 1 root root    67904 Mar  9  2018  modulemd-validator
+lrwxrwxrwx 1 root root       23 Mar  9  2018  more -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       25 Mar  9  2018  mount -> /usr/bin/mount.util-linux
+-rwsr-xr-x 1 root root    67648 Mar  9  2018  mount.util-linux
+lrwxrwxrwx 1 root root       23 Mar  9  2018  mountpoint -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67552 Mar  9  2018  mpicalc
+lrwxrwxrwx 1 root root       21 Mar  9  2018  mv -> /usr/bin/mv.coreutils
+-rwxr-xr-x 1 root root   198960 Mar  9  2018  mv.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  nc -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    68208 Mar  9  2018  netkey-tool
+lrwxrwxrwx 1 root root       23 Mar  9  2018  netstat -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   133616 Mar  9  2018  networkctl
+lrwxrwxrwx 1 root root       22 Mar  9  2018  newgrp -> /usr/bin/newgrp.shadow
+-rwsr-xr-x 1 root root    69056 Mar  9  2018  newgrp.shadow
+lrwxrwxrwx 1 root root       23 Mar  9  2018  nice -> /usr/bin/nice.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  nice.coreutils
+lrwxrwxrwx 1 root root       21 Mar  9  2018  nl -> /usr/bin/nl.coreutils
+-rwxr-xr-x 1 root root   133496 Mar  9  2018  nl.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  nohup -> /usr/bin/nohup.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  nohup.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  nproc -> /usr/bin/nproc.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  nproc.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  nslookup -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   133448 Mar  9  2018  numfmt
+lrwxrwxrwx 1 root root       21 Mar  9  2018  od -> /usr/bin/od.coreutils
+-rwxr-xr-x 1 root root   133416 Mar  9  2018  od.coreutils
+-rwxr-xr-x 1 root root    67784 Mar  9  2018  openpgp-tool
+-rwxr-xr-x 1 root root    67720 Mar  9  2018  opensc-asn1
+-rwxr-xr-x 1 root root    68928 Mar  9  2018  opensc-explorer
+-rwxr-xr-x 1 root root    68664 Mar  9  2018  opensc-tool
+-rwxr-xr-x 1 root root  1017152 Mar  9  2018  openssl
+lrwxrwxrwx 1 root root       19 Mar  9  2018  openvt -> /usr/bin/openvt.kbd
+-rwxr-xr-x 1 root root    67984 Mar  9  2018  openvt.kbd
+lrwxrwxrwx 1 root root       21 Mar  9  2018  passwd -> /usr/bin/busybox.suid
+lrwxrwxrwx 1 root root       24 Mar  9  2018  paste -> /usr/bin/paste.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  paste.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  patch -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       26 Mar  9  2018  pathchk -> /usr/bin/pathchk.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  pathchk.coreutils
+-rwxr-xr-x 1 root root    67552 Mar  9  2018  perl
+lrwxrwxrwx 1 root root       23 Mar  9  2018  pgrep -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  pidof -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       15 Mar  9  2018  pinentry -> pinentry-curses
+-rwxr-xr-x 1 root root   133632 Mar  9  2018  pinentry-curses
+lrwxrwxrwx 1 root root       21 Mar  9  2018  ping -> /usr/bin/busybox.suid
+lrwxrwxrwx 1 root root       21 Mar  9  2018  ping6 -> /usr/bin/busybox.suid
+lrwxrwxrwx 1 root root       24 Mar  9  2018  pinky -> /usr/bin/pinky.coreutils
+-rwxr-xr-x 1 root root    67912 Mar  9  2018  pinky.coreutils
+-rwxr-xr-x 1 root root    67736 Mar  9  2018  piv-tool
+-rwxr-xr-x 1 root root    68000 Mar  9  2018  pkcs11-register
+-rwxr-xr-x 1 root root   209144 Mar  9  2018  pkcs11-tool
+-rwxr-xr-x 1 root root    67800 Mar  9  2018  pkcs15-crypt
+-rwxr-xr-x 1 root root    68120 Mar  9  2018  pkcs15-init
+-rwxr-xr-x 1 root root   145728 Mar  9  2018  pkcs15-tool
+lrwxrwxrwx 1 root root       21 Mar  9  2018  pr -> /usr/bin/pr.coreutils
+-rwxr-xr-x 1 root root   133464 Mar  9  2018  pr.coreutils
+lrwxrwxrwx 1 root root       27 Mar  9  2018  printenv -> /usr/bin/printenv.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  printenv.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  printf -> /usr/bin/printf.coreutils
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  printf.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  ps -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root        9 Mar  9  2018  psfaddtable -> psfxtable
+lrwxrwxrwx 1 root root        9 Mar  9  2018  psfgettable -> psfxtable
+lrwxrwxrwx 1 root root        9 Mar  9  2018  psfstriptable -> psfxtable
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  psfxtable
+lrwxrwxrwx 1 root root       22 Mar  9  2018  ptx -> /usr/bin/ptx.coreutils
+-rwxr-xr-x 1 root root   133448 Mar  9  2018  ptx.coreutils
+lrwxrwxrwx 1 root root       22 Mar  9  2018  pwd -> /usr/bin/pwd.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  pwd.coreutils
+lrwxrwxrwx 1 root root        9 Mar  9  2018  pydoc3 -> pydoc3.12
+-rwxr-xr-x 1 root root       79 Mar  9  2018  pydoc3.12
+lrwxrwxrwx 1 root root       10 Mar  9  2018  python3 -> python3.12
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  python3.12
+-rwxr-xr-x 1 root root   134400 Mar  9  2018  quota
+-rwxr-xr-x 1 root root   133904 Mar  9  2018  quotasync
+lrwxrwxrwx 1 root root       27 Mar  9  2018  readlink -> /usr/bin/readlink.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  readlink.coreutils
+lrwxrwxrwx 1 root root       27 Mar  9  2018  realpath -> /usr/bin/realpath.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  realpath.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  renice -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  reset -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  resize -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   199048 Mar  9  2018  resolvectl
+lrwxrwxrwx 1 root root       23 Mar  9  2018  rev -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       21 Mar  9  2018  rm -> /usr/bin/rm.coreutils
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  rm.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  rmdir -> /usr/bin/rmdir.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  rmdir.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  rpcinfo -> /usr/bin/rpcinfo.rpcbind
+-rwxr-xr-x 1 root root    67944 Mar  9  2018  rpcinfo.rpcbind
+-rwxr-xr-x 1 root root    68032 Mar  9  2018  rpm
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  rpm2cpio
+-rwxr-xr-x 1 root root    70272 Mar  9  2018  rpmbuild
+-rwxr-xr-x 1 root root    68128 Mar  9  2018  rpmdb
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  rpmgraph
+-rwxr-xr-x 1 root root    67984 Mar  9  2018  rpmkeys
+-rwxr-xr-x 1 root root   198992 Mar  9  2018  rpmlua
+lrwxrwxrwx 1 root root        3 Mar  9  2018  rpmquery -> rpm
+-rwxr-xr-x 1 root root    68032 Mar  9  2018  rpmsign
+-rwxr-xr-x 1 root root    67648 Mar  9  2018  rpmsort
+-rwxr-xr-x 1 root root    68184 Mar  9  2018  rpmspec
+lrwxrwxrwx 1 root root        3 Mar  9  2018  rpmverify -> rpm
+lrwxrwxrwx 1 root root       23 Mar  9  2018  run-parts -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       25 Mar  9  2018  runcon -> /usr/bin/runcon.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  runcon.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  sc-hsm-tool
+-rwxr-xr-x 1 root root    67568 Mar  9  2018  scmp_sys_resolver
+lrwxrwxrwx 1 root root       20 Mar  9  2018  scp -> /usr/bin/scp.openssh
+-rwxr-xr-x 1 root root   264568 Mar  9  2018  scp.openssh
+lrwxrwxrwx 1 root root       23 Mar  9  2018  sed -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  sepdebugcrcfix
+lrwxrwxrwx 1 root root       22 Mar  9  2018  seq -> /usr/bin/seq.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  seq.coreutils
+-rwxr-xr-x 1 root root    67712 Mar  9  2018  setfont
+-rwxr-xr-x 1 root root    67760 Mar  9  2018  setkeycodes
+-rwxr-xr-x 1 root root    67768 Mar  9  2018  setleds
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  setmetamode
+lrwxrwxrwx 1 root root       23 Mar  9  2018  setsid -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67808 Mar  9  2018  setvtrgb
+lrwxrwxrwx 1 root root       13 Mar  9  2018  sg -> newgrp.shadow
+lrwxrwxrwx 1 root root       18 Mar  9  2018  sh -> /usr/bin/bash.bash
+lrwxrwxrwx 1 root root       26 Mar  9  2018  sha1sum -> /usr/bin/sha1sum.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  sha1sum.coreutils
+lrwxrwxrwx 1 root root       28 Mar  9  2018  sha224sum -> /usr/bin/sha224sum.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  sha224sum.coreutils
+lrwxrwxrwx 1 root root       28 Mar  9  2018  sha256sum -> /usr/bin/sha256sum.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  sha256sum.coreutils
+lrwxrwxrwx 1 root root       28 Mar  9  2018  sha384sum -> /usr/bin/sha384sum.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  sha384sum.coreutils
+lrwxrwxrwx 1 root root       28 Mar  9  2018  sha512sum -> /usr/bin/sha512sum.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  sha512sum.coreutils
+-rwxr-xr-x 1 root root    67832 Mar  9  2018  showconsolefont
+lrwxrwxrwx 1 root root       20 Mar  9  2018  showkey -> /usr/bin/showkey.kbd
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  showkey.kbd
+lrwxrwxrwx 1 root root       24 Mar  9  2018  shred -> /usr/bin/shred.coreutils
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  shred.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  shuf -> /usr/bin/shuf.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  shuf.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  sleep -> /usr/bin/sleep.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  sleep.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  sort -> /usr/bin/sort.coreutils
+-rwxr-xr-x 1 root root   133664 Mar  9  2018  sort.coreutils
+lrwxrwxrwx 1 root root       24 Mar  9  2018  split -> /usr/bin/split.coreutils
+-rwxr-xr-x 1 root root    68304 Mar  9  2018  split.coreutils
+lrwxrwxrwx 1 root root       20 Mar  9  2018  ssh -> /usr/bin/ssh.openssh
+-rwxr-xr-x 1 root root   592120 Mar  9  2018  ssh-keygen
+-rwxr-xr-x 1 root root   920256 Mar  9  2018  ssh.openssh
+lrwxrwxrwx 1 root root       23 Mar  9  2018  stat -> /usr/bin/stat.coreutils
+-rwxr-xr-x 1 root root   133416 Mar  9  2018  stat.coreutils
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  stdbuf
+lrwxrwxrwx 1 root root       23 Mar  9  2018  strings -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  stty -> /usr/bin/stty.coreutils
+-rwxr-xr-x 1 root root   133416 Mar  9  2018  stty.coreutils
+lrwxrwxrwx 1 root root       18 Mar  9  2018  su -> /usr/bin/su.shadow
+-rwsr-xr-x 1 root root    69256 Mar  9  2018  su.shadow
+---s--x--x 1 root root   334992 Mar  9  2018  sudo
+lrwxrwxrwx 1 root root        4 Mar  9  2018  sudoedit -> sudo
+-rwxr-xr-x 1 root root   134800 Mar  9  2018  sudoreplay
+lrwxrwxrwx 1 root root       22 Mar  9  2018  sum -> /usr/bin/sum.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  sum.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  sync -> /usr/bin/sync.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  sync.coreutils
+-rwxr-xr-x 1 root root   331128 Mar  9  2018  systemctl
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  systemd-ac-power
+-rwxr-xr-x 1 root root    67776 Mar  9  2018  systemd-ask-password
+-rwxr-xr-x 1 root root    67640 Mar  9  2018  systemd-cat
+-rwxr-xr-x 1 root root    67760 Mar  9  2018  systemd-cgls
+-rwxr-xr-x 1 root root    67688 Mar  9  2018  systemd-cgtop
+-rwxr-xr-x 1 root root    67936 Mar  9  2018  systemd-creds
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  systemd-delta
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  systemd-detect-virt
+-rwxr-xr-x 1 root root    67976 Mar  9  2018  systemd-dissect
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  systemd-escape
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  systemd-hwdb
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  systemd-id128
+-rwxr-xr-x 1 root root    67656 Mar  9  2018  systemd-inhibit
+-rwxr-xr-x 1 root root    67824 Mar  9  2018  systemd-machine-id-setup
+-rwxr-xr-x 1 root root    67976 Mar  9  2018  systemd-mount
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  systemd-notify
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  systemd-path
+lrwxrwxrwx 1 root root       10 Mar  9  2018  systemd-resolve -> resolvectl
+-rwxr-xr-x 1 root root    68056 Mar  9  2018  systemd-run
+-rwxr-xr-x 1 root root    67640 Mar  9  2018  systemd-socket-activate
+-rwxr-xr-x 1 root root    67648 Mar  9  2018  systemd-stdio-bridge
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  systemd-sysusers
+-rwxr-xr-x 1 root root   133496 Mar  9  2018  systemd-tmpfiles
+-rwxr-xr-x 1 root root    67648 Mar  9  2018  systemd-tty-ask-password-agent
+lrwxrwxrwx 1 root root       13 Mar  9  2018  systemd-umount -> systemd-mount
+lrwxrwxrwx 1 root root       22 Mar  9  2018  tac -> /usr/bin/tac.coreutils
+-rwxr-xr-x 1 root root   133400 Mar  9  2018  tac.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  tail -> /usr/bin/tail.coreutils
+-rwxr-xr-x 1 root root   133432 Mar  9  2018  tail.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  tar -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       22 Mar  9  2018  tee -> /usr/bin/tee.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  tee.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  telnet -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  test -> /usr/bin/test.coreutils
+-rwxr-xr-x 1 root root    67848 Mar  9  2018  test.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  tftp -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  time -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  timedatectl
+lrwxrwxrwx 1 root root       26 Mar  9  2018  timeout -> /usr/bin/timeout.coreutils
+-rwxr-xr-x 1 root root    68296 Mar  9  2018  timeout.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  top -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       24 Mar  9  2018  touch -> /usr/bin/touch.coreutils
+-rwxr-xr-x 1 root root   133408 Mar  9  2018  touch.coreutils
+lrwxrwxrwx 1 root root       21 Mar  9  2018  tr -> /usr/bin/tr.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  tr.coreutils
+lrwxrwxrwx 1 root root       21 Mar  9  2018  traceroute -> /usr/bin/busybox.suid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  true -> /usr/bin/true.coreutils
+-rwxr-xr-x 1 root root    67856 Mar  9  2018  true.coreutils
+lrwxrwxrwx 1 root root       27 Mar  9  2018  truncate -> /usr/bin/truncate.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  truncate.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  ts -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       24 Mar  9  2018  tsort -> /usr/bin/tsort.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  tsort.coreutils
+lrwxrwxrwx 1 root root       22 Mar  9  2018  tty -> /usr/bin/tty.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  tty.coreutils
+-rwxr-xr-x 1 root root   592904 Mar  9  2018  udevadm
+lrwxrwxrwx 1 root root       26 Mar  9  2018  umount -> /usr/bin/umount.util-linux
+-rwsr-xr-x 1 root root    67640 Mar  9  2018  umount.util-linux
+lrwxrwxrwx 1 root root       24 Mar  9  2018  uname -> /usr/bin/uname.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  uname.coreutils
+lrwxrwxrwx 1 root root       27 Mar  9  2018  unexpand -> /usr/bin/unexpand.coreutils
+-rwxr-xr-x 1 root root    67880 Mar  9  2018  unexpand.coreutils
+-rwxr-xr-x 1 root root     2435 Mar  9  2018  unicode_start
+-rwxr-xr-x 1 root root      361 Mar  9  2018  unicode_stop
+lrwxrwxrwx 1 root root       23 Mar  9  2018  uniq -> /usr/bin/uniq.coreutils
+-rwxr-xr-x 1 root root    67872 Mar  9  2018  uniq.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  unlink -> /usr/bin/unlink.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  unlink.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  unzip -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root   133352 Mar  9  2018  update-mime-database
+lrwxrwxrwx 1 root root       25 Mar  9  2018  uptime -> /usr/bin/uptime.coreutils
+-rwxr-xr-x 1 root root    67896 Mar  9  2018  uptime.coreutils
+-rwxr-xr-x 1 root root    67760 Mar  9  2018  userdbctl
+lrwxrwxrwx 1 root root       24 Mar  9  2018  users -> /usr/bin/users.coreutils
+-rwxr-xr-x 1 root root    67896 Mar  9  2018  users.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  usleep -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67656 Mar  9  2018  varlinkctl
+lrwxrwxrwx 1 root root       23 Mar  9  2018  vdir -> /usr/bin/vdir.coreutils
+-rwxr-xr-x 1 root root   199408 Mar  9  2018  vdir.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  vi -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       21 Mar  9  2018  vlock -> /usr/bin/busybox.suid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  watch -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67560 Mar  9  2018  watchgnupg
+lrwxrwxrwx 1 root root       21 Mar  9  2018  wc -> /usr/bin/wc.coreutils
+-rwxr-xr-x 1 root root    67880 Mar  9  2018  wc.coreutils
+-rwxr-xr-x 1 root root    67768 Mar  9  2018  westcos-tool
+lrwxrwxrwx 1 root root       23 Mar  9  2018  wget -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       23 Mar  9  2018  which -> /usr/bin/busybox.nosuid
+lrwxrwxrwx 1 root root       22 Mar  9  2018  who -> /usr/bin/who.coreutils
+-rwxr-xr-x 1 root root    67912 Mar  9  2018  who.coreutils
+lrwxrwxrwx 1 root root       25 Mar  9  2018  whoami -> /usr/bin/whoami.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  whoami.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  xargs -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-chmod
+-rwxr-xr-x 1 root root    67888 Mar  9  2018  xenstore-control
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-exists
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-list
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-ls
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-read
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-rm
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-watch
+-rwxr-xr-x 9 root root    68272 Mar  9  2018  xenstore-write
+lrwxrwxrwx 1 root root       23 Mar  9  2018  xzcat -> /usr/bin/busybox.nosuid
+-rwxr-xr-x 1 root root    67632 Mar  9  2018  yat2m
+lrwxrwxrwx 1 root root       22 Mar  9  2018  yes -> /usr/bin/yes.coreutils
+-rwxr-xr-x 1 root root    67864 Mar  9  2018  yes.coreutils
+lrwxrwxrwx 1 root root       23 Mar  9  2018  zcat -> /usr/bin/busybox.nosuid
+root@main:~# history
+    1  curl
+    2  help
+    3  ls /var
+    4  which vi
+    5  ls -l /usr/bin/vi
+    6  ls -l /usr/bin
+    7  history
+
+
+yata@sdmdev2:~/alsa-lib$ history
+    1  ls /home
+    2  cd /home/test1
+    3  ls -a
+    4  ls -a ../yata
+    5  cat .bash_logout
+    6  cat .bashrc
+    7  cd ..
+    8  sudo rm -rf /home/test1
+    9  ls
+   10  cd yata
+   11  sudo apt update
+   12  exit
+   13  sudoapt update
+   14  sudo apt update && sudo apt install -y rpi-imager
+   15  ssh-keygen -t ed25519 -C m.yata@scsk.jp
+   16  ls -l .ssh/
+   17  cat .ssh/id_ed25519.pub
+   18  ssh -T git@github.com
+   19  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+   20  sudo apt install jq
+   21  curl https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json | jq
+   22  mkdir myAosRasp && cd myAosRasp && git clone https://raw.githubusercontent.com/aosedge/meta-aos-rpi.git
+   23  git clone https://git@github.com/aosedge/meta-aos-rpi.git
+   24  ls
+   25  cd ..
+   26  ls
+   27  mv myAosRasp MyAosRasp
+   28  ls
+   29  cd MyAosRasp
+   30  ls
+   31  cd meta-aos-rpi
+   32  ls
+   33  cat aps-rpi.yaml
+   34  cat aos-rpi.yaml
+   35  cd ..
+   36  git clone https://git@github.com/aosedge/aos-sdk.git
+   37  git clone https://git@github.com/aosedge/meta-aos-vm.git
+   38  ls
+   39  sudo apt install minicom
+   40  cd meta-aos-rpi
+   41  ls
+   42  cat os_list.json
+   43  sudo apt install screen
+   44  cd ..
+   45  git clone https://git@github.com/aosedge/meta-aos-sdk.git
+   46  ls
+   47  find . -type f -iname "*prov*"
+   48  git clone https://git@github.com/aosedge/meta-aos.git
+   49  sudo apt install curl wget jq unzip tar gzip wz-utils python3 python3-pip build-essential libssl-dev libncurses5-dev zlib1g-dev device-tree-compiler
+   50  sudo apt install curl wget jq unzip tar gzip xz-utils python3 python3-pip build-essential libssl-dev libncurses5-dev zlib1g-dev device-tree-compiler
+   51  df -h
+   52  sudo apt install docker.io
+   53  sudo systemctl enable --now docker
+   54  ps
+   55  ps -a
+   56  sudo usermod -aG docker $USER
+   57  reboot
+   58  ls
+   59  cd meta-aos-rpi
+   60  ls
+   61  ls scripts
+   62  less scripts/image_archive.sh
+   63  ls -a
+   64  cd doc
+   65  ls
+   66  cd pictures
+   67  ls
+   68  sudo install imagemagick
+   69  sudo apt install imagemagick
+   70  ls
+   71  display architecture.svg
+   72  display install_step_1.png
+   73  cd ..
+   74  ls
+   75  less build.md
+   76  less docker.md
+   77  cd ..
+   78  ls
+   79  cd meta-aos-rpi-domd
+   80  ls
+   81  tree -l 2
+   82  sudo snap install tree
+   83  ls 
+   84  cd recipes-aos
+   85  ls
+   86  cd ..
+   87  ls
+   88  cd conf
+   89  ls
+   90  cat layer.conf
+   91  cd ..
+   92  ls
+   93  cd ..
+   94  ls
+   95  cd meta-aos-rpi-install
+   96  ls
+   97  cd recipes-core
+   98  ls
+   99  cd images
+  100  ls
+  101  cat aos-install-initramfs.bb
+  102  less aos-install-initramfs.bb
+  103  tailscale status
+  104  ssh user@100.119.236.109
+  105  history
+  106  cd
+  107  history
+  108  less history
+  109  history | less
+  110  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+  111  lsblk
+  112  lsusb
+  113  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+  114  lsblk
+  115  sudo fdisk -l /dev/sda
+  116  sudo umount /dev/sda1
+  117  sudo umount /dev/sda
+  118  udiskctl power-off -b /dev/sda
+  119  udisksctl power-off -b /dev/sda
+  120  df -h
+  121  lsblk
+  122  sudo fdisk -l /dev/sda
+  123  lsblk
+  124  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+  125  lsusb
+  126  df -h
+  127  sudo fdisk -l /dev/sda
+  128  lsusb
+  129  df
+  130  lsblk
+  131  lsusb
+  132  df -h
+  133  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+  134  sudo apt install nmap
+  135  ps -a
+  136  kill 63953
+  137  lsusb
+  138  history
+  139  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+  140  dmesg | grep tty
+  141  sudo dmesg | grep tty
+  142  sudo minicom -s
+  143  minicom
+  144  history
+  145  minicom -s
+  146  sudo dmesg
+  147  sudo dmesg | tty
+  148  lsusb
+  149  exit
+  150  history
+  151  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+  152  lsusb
+  153  minicom -s
+  154  sudo dmesg | grep tty
+  155  minicom -s
+  156  sudo dmesg | grep tty
+  157  minicom -s
+  158  sudo minicom -s
+  159  lsusb
+  160  rpi-imager --repo https://raw.githubusercontent.com/aosedge/meta-aos-rpi/main/os_list.json
+  161  history
+  162  lsblk
+  163  udisksctl power-off -b /dev/sda
+  164  sudo minicom -s
+  165  lsusb
+  166  rpi-imager
+  167  lsusb
+  168  minicom -s
+  169  sudo minicom -s
+  170  vim memo
+  171  cat memo
+  172  rpi-imager
+  173  history
+  174  history >> memo.txt
+  175  cat memo.txt
+  176  ls
+  177  lsusb
+  178  lsblk
+  179  sudo dmesg | grep tty
+  180  sudo minicom -s
+  181  history
+  182  exit
+  183  python -m pip install --upgrade pip
+  184  python3 -m pip install --upgrade pip
+  185  sudo apt update && sudo apt upgrade -y
+  186  sudo apt install -y libnss3-tools ca-certificates
+  187  python3
+  188  python3 -m venv ~/.aos/venv
+  189  sudo apt install python3.12-venv
+  190  python3 -m venv ~/.aos/venv
+  191  ~/.aos/venv/bin/python3 -V
+  192  ~/.aos/venv/bin/python3 -m pip install --upgrade aos-keys aos-singer aos-prov
+  193  ~/.aos/venv/bin/python3 -m pip install --upgrade aos-keys aos-signer aos-prov
+  194  ~/.aos/venv/bin/python3 -m aos_keys install-root
+  195  sudo ~/.aos/scripts/install_aos_root_ca.sh
+  196  ifconfig
+  197  sudo apt install net-tools
+  198  ~/.aos/venv/bin/python3 -m aos_keys new-user -d api.aoscloud.io -t 7cdc4fa3e74db9eb4e0b88d7699364aff6802201 --oem
+  199  ~/.aos/venv/bin/python3 -m aos_keys new-user -d api.aoscloud.io -t 3ed55a2b854ff2bc93425423077255556f39f6c9 --sp
+  200  ls ~/.aos/security/
+  201  ~/.aos/venv/bin/python3 -m aos_keys info --oem
+  202  ~/.aos/venv/bin/python3 -m aos_keys info --sp
+  203  ~/.aos/venv/bin/python3 -m aos_keys info --fleet
+  204  ls
+  205  ls -a
+  206  cd .aos
+  207  ls
+  208  cd scripts
+  209  ls
+  210  cd ..
+  211  aos-prov provision -u 172.16.1.30
+  212  ~/.aos/venv/bin/python3 pip install aos-prov
+  213  history
+  214  ~/.aos/venv/bin/python3 -m pip install aos-prov
+  215  aos-prov provision -u 172.16.1.30
+  216  ~/.aos/venv/bin/python3 -m aos-prov provision -u 172.16.1.30
+  217  history
+  218  ~/.aos/venv/bin/python3 aos-prov provision -u 172.16.1.30
+  219  ~/.aos/venv/bin/aos-prov provision -u 172.16.1.30
+  220  ~/.aos/venv/bin/python3 -m aos_keys info --sp
+  221  ls ~/.aos/security/sp.*
+  222  ls ~/.aos/security/
+  223  cd ~/.aos/security/
+  224  rm aos-user-oem.p12
+  225  rm aos-user-sp.p12
+  226  rm aos-user-oem.pem
+  227  rm aos-user-sp.pem
+  228  ls -a
+  229  ~/.aos/venv/bin/python3 -m aos_keys new-user -d aoscloud.io -t 07723af3788de3a5b70fe4628ade73ad7a701ba1 --sp
+  230  ~/.aos/venv/bin/python3 -m aos_keys info --sp
+  231  cd ~
+  232  ls
+  233  cd My
+  234  cd MyAosRasp/
+  235  ls
+  236  history
+  237  ssh -T git@github.com
+  238  git clone https://git@github.com/aosedge/hello-world.git
+  239  cd hello-world
+  240  ls
+  241  cd src
+  242  ls
+  243  ~/.aos/venv/bin/python3 -m aos_keys new-user -d aoscloud.io -t cb634b2543c2b11862cbf82cf0d5386e287d791d --sp
+  244  rm ~/.aos/security/aos-user-sp.pem
+  245  rm ~/.aos/security/aos-user-sp.p12
+  246  ls ~/.aos/security/
+  247  ~/.aos/venv/bin/python3 -m aos_keys new-user -d aoscloud.io -t cb634b2543c2b11862cbf82cf0d5386e287d791d --sp
+  248  cd ..
+  249  ls
+  250  cd meta
+  251  ls
+  252  vim config.yaml
+  253  cd ..
+  254  src/webhook_example.py
+  255  sudo src/webhook_example.py
+  256  sudo vim src/webhook_example.py
+  257  ~/.aos/venv/bin/python3 -m aos_signer sign
+  258  ~/.aos/venv/bin/python3 -m aos_signer upload
+  259  ~/.aos/venv/bin/python3 -m aos_keys new-user -d aoscloud.io -t 3ff17861feaa9e9c6804fa7b37c3b989603b51c7 --oem
+  260  ssh mspdev@172.16.1.30
+  261  sudo minicom -s
+  262  sudo minicom -s
+  263  history
+  264  ls
+  265  cd MyAosRasp/
+  266  ls
+  267  cd hello-world/
+  268  ls
+  269  vim src/webhook_example.py 
+  270  ls ~/.aos/security/
+  271  /usr/bin/python3 -u webhook_example.py~
+  272  /usr/bin/python3 -u webhook_example.py
+  273  /usr/bin/python3 -u /home/yata/MyAosRasp/hello-world/src/webhook_example.py
+  274  sudo minicom -s
+  275  dmesg | grep tty
+  276  sudo dmesg | grep tty
+  277  sudo -i
+  278  nslookup aoscloud.io
+  279  mkdir -p ~/tailscale-arm64
+  280  cd ~/tailscale-arm64
+  281  wget https://pkgs.tailscale.com/stable/tailscale_1.64.2_arm64.tgz
+  282  wget https://github.com/tailscale/tailscale/releases/download/v1.82.0/tailscale_1.82.0_linux_arm64.tgz
+  283  cd ..
+  284  ls
+  285  tar zxvf tailscale_1.82.0_arm64.tgz -C ~/tailscale-arm64
+  286  cd tailscale-arm64/
+  287  ls
+  288  cd ..
+  289  ls
+  290  cd tailscale-arm64/
+  291  ls
+  292  cd tailscale_1.82.0_arm64/
+  293  ls
+  294  ls -a
+  295  scp tailscale tailscaled mspdev@172.16.1.30:~/
+  296  scp tailscale tailscaled mspdev@172.16.1.30
+  297  scp tailscale tailscaled mspdev@172.16.1.30:~
+  298  ssh mspdev@172.16.1.30
+  299  scp tailscale tailscaled mspdev@172.16.1.30:/var/tailscale
+  300  scp tailscale tailscaled mspdev@172.16.1.30:/tmp/
+  301  tailscale status
+  302  ssh mspdev@172.16.1.30
+  303  ssh mspdev@100.65.202.85
+  304  history
+  305  history > commands.txt
+  306  cat commands.txt 
+  307  vim ~/MyAosRasp/hello-world/meta/config.yaml
+  308  vim ~/MyAosRasp/hello-world/src/webhook_example.py 
+  309  ~/.aos/venv/bin/python3 -m aos_signer sign
+  310  cd ~/MyAosRasp/hello-world
+  311  ~/.aos/venv/bin/python3 -m aos_signer sign
+  312  ls
+  313  rm service.tar.gz 
+  314  ~/.aos/venv/bin/python3 -m aos_signer sign
+  315  ls
+  316  ~/.aos/venv/bin/python3 -m aos_signer upload
+  317  vim ~/MyAosRasp/hello-world/meta/config.yaml
+  318  ~/.aos/venv/bin/python3 -m aos_signer sign
+  319  ~/.aos/venv/bin/python3 -m aos_signer upload
+  320  history
+  321  sudo apt update
+  322  sudo apt install -y git build-essential autoconf libtool pkg-config
+  323  git clone https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+  324  cd libgpiod
+  325  git checkout v2.0.1
+  326  ./autoconf.sh
+  327  ./autogen.sh
+  328  ./configure --enable-tools=yes --disable-shared --enable-static
+  329  sudo apt update
+  330  sudo apt install -y   build-essential   autoconf   automake   libtool   pkg-config   git   gperf   m4   libgpiod-dev   libgpiod-doc   autoconf-archive
+  331  git clone https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+  332  cd libgpiod
+  333  ./autogen.sh
+  334  ./configure   --enable-tools=yes   --disable-shared   --enable-static   --prefix=$HOME/libgpiod-static
+  335  make -j$(nproc)
+  336  make install
+  337  ls
+  338  echo $HOME
+  339  ls /home/yata/libgpiod-static/bin
+  340  cd ~
+  341  pwd
+  342  ls
+  343  cd libgpiod-static
+  344  ls
+  345  cd bin
+  346  scp $HOME/libgpiod-static/bin/gpio* mspdev@172.16.1.30:/var/
+  347  history
+  348  scp $HOME/libgpiod-static/bin/gpio* mspdev@172.16.1.30:/var/libgpiod-static_bin
+  349  scp $HOME/libgpiod-static/bin/gpio* mspdev@172.16.1.30:/tmp
+  350  sudo apt update
+  351  sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+  352  export CC=aarch64-linux-gnu-gcc
+  353  export CXX=aarch64-linux-gnu-g++
+  354  export AR=aarch64-linux-gnu-ar
+  355  export RANLIB=aarch64-linux-gnu-ranlib
+  356  cd ~/libgpiod
+  357  make clean
+  358  ./configure   --host=aarch64-linux-gnu   --enable-tools=yes   --disable-shared   --enable-static   --prefix=$HOME/libgpiod-arm64-static
+  359  make -j$(nproc)
+  360  cd ..
+  361  ls
+  362  rm libgpiod
+  363  rm -fr libgpiod
+  364  rm -fr libgpiod-static
+  365  ls
+  366  sudo apt update
+  367  sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+  368  export CC=aarch64-linux-gnu-gcc
+  369  export CXX=aarch64-linux-gnu-g++
+  370  export AR=aarch64-linux-gnu-ar
+  371  export RANLIB=aarch64-linux-gnu-ranlib
+  372  cd ~/libgpiod
+  373  make clean
+  374  ./configure   --host=aarch64-linux-gnu   --enable-tools=yes   --disable-shared   --enable-static   --prefix=$HOME/libgpiod-arm64-static
+  375  make -j$(nproc)
+  376  make install
+  377  mkdir libgpiod
+  378  export CC=aarch64-linux-gnu-gcc
+  379  export CXX=aarch64-linux-gnu-g++
+  380  export AR=aarch64-linux-gnu-ar
+  381  export RANLIB=aarch64-linux-gnu-ranlib
+  382  cd ~/libgpiod
+  383  make clean
+  384  ./configure   --host=aarch64-linux-gnu   --enable-tools=yes   --disable-shared   --enable-static   --prefix=$HOME/libgpiod-arm64-static
+  385  make -j$(nproc)
+  386  make install
+  387  ls
+  388  cd ..
+  389  ls
+  390  sudo apt install -y   build-essential   autoconf   automake   libtool   pkg-config   git   gperf   m4   libgpiod-dev   libgpiod-doc   autoconf-archive
+  391  history
+  392  git clone https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+  393  cd libgpiod
+  394  git checkout v2.0.1  # 安定版を選択
+  395  ./autogen.sh
+  396  ./configure --enable-tools=yes --disable-shared --enable-static
+  397  make -j$(nproc)
+  398  cd ..
+  399  ls
+  400  git clone https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+  401  cd libgpiod
+  402  rm -fr libgpiod
+  403  cd ..
+  404  ls
+  405  rm -fr libgpiod
+  406  ls
+  407  git clone https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+  408  cd libgpiod
+  409  ls
+  410  ./autogen.sh
+  411  cd ..
+  412  ls
+  413  rm -fr libgpiod
+  414  git clone https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git~
+  415  git clone https://git.kernel.org/pub/scm/libs/libgpiod/libgpiod.git
+  416  ./autogen.sh
+  417  cd libgpiod
+  418  ./autogen.sh
+  419  ./configure --host=aarch64-linux-gnu --enable-tools=yes --disable-shared --enable-static   --prefix=$HOME/libgpiod-arm64-static   PKG_CONFIG_PATH=/usr/aarch64-linux-gnu/lib/pkgconfig
+  420  make -j$(nproc)
+  421  make install
+  422  ls
+  423  cd ..
+  424  l
+  425  ls
+  426  cd libgpiod-arm64-static
+  427  ls
+  428  ls bin
+  429  scp $HOME/libgpiod-arm64-static/bin/gpio* mspdev@172.16.1.30:/tmp
+  430  ldd
+  431  ls
+  432  cd ..
+  433  ls
+  434  ldd libgpiod-arm64-static
+  435  ./gpioinfo
+  436  ls /dev
+  437  dmesg | tty
+  438  sudo dmesg | tty
+  439  sudo dmesg | grep tty
+  440  sudo dmesg | grep /dev/
+  441  sudo evtest
+  442  ls /dev/input/eventX
+  443  ls /dev/input/
+  444  vim logs0418
+  445  touch logs0418
+  446  sudo apt update && sudo apt install language-pack-ja
+  447  sudo apt update ibus-mozc
+  448  sudo apt install ibus-mozc
+  449  logout
+  450  exit
+  451  sudo apt update && sudo apt install rpi-imager
+  452  history
+yata@sdmdev2:~/alsa-lib$ 
+yata@sdmdev2:~/alsa-lib$ 
+yata@sdmdev2:~/alsa-lib$ 
+yata@sdmdev2:~/alsa-lib$ 
+yata@sdmdev2:~/alsa-lib$ ls
+yata@sdmdev2:~/alsa-lib$ cd ..
+yata@sdmdev2:~$ cd tailscale-arm64/
+yata@sdmdev2:~/tailscale-arm64$ cd tailscale_1.82.0_arm64/
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ls
+systemd  tailscale  tailscaled
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ scp tailscale tailscaled ispdev@172.16.1.37:/tmp/
+The authenticity of host '172.16.1.37 (172.16.1.37)' can't be established.
+ED25519 key fingerprint is SHA256:4NKpwSE/kyb7yncnERTT+2GaD19vKPqGnKDeewQhkko.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '172.16.1.37' (ED25519) to the list of known hosts.
+ispdev@172.16.1.37's password: 
+tailscale                        100%   19MB  60.6MB/s   00:00    
+tailscaled                       100%   35MB 110.8MB/s   00:00    
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ssh ispdev@172.16.1.37
+ispdev@172.16.1.37's password: 
+Last login: Mon Apr 21 03:34:41 2025 from 172.16.0.53
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ 
+main:~$ 
+main:~$ mv /tmp/tailscale* /var
+mv: cannot create regular file '/var/tailscale': Permission denied
+mv: cannot create regular file '/var/tailscaled': Permission denied
+main:~$ sudo -i
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+For security reasons, the password you type will not be visible.
+
+Password: 
+root@main:~# mv /tmp/tailscale* /var
+root@main:~# cd /var
+root@main:/var# ls
+aos	 lib	log	    run    tailscale   volatile
+backups  local	lost+found  spool  tailscaled
+cache	 lock	machine-id  ssh    tmp
+root@main:/var# ./tailscaled --tun=userspace-networking
+logtail started
+Program starting: v1.82.0-t6676b1261-g3ec4bfb9c, Go 1.24.1: []string{"./tailscaled", "--tun=userspace-networking"}
+LogID: 81d97b455bbad05d3c89746ddfa2cc406a7def3a557b89ac31e981f334bc6383
+logpolicy: using system state directory "/var/lib/tailscale"
+logpolicy.ConfigFromFile /var/lib/tailscale/tailscaled.log.conf: open /var/lib/tailscale/tailscaled.log.conf: no such file or directory
+logpolicy.Config.Validate for /var/lib/tailscale/tailscaled.log.conf: config is nil
+dns: resolvedIsActuallyResolver error: resolv.conf doesn't point to systemd-resolved; points to [202.232.2.3 202.232.2.2]
+dns: [resolved-ping=yes rc=resolved resolved=not-in-use ret=direct]
+dns: using "direct" mode
+dns: using *dns.directManager
+dns: inotify: NewDirWatcher: context canceled
+wgengine.NewUserspaceEngine(tun "userspace-networking") ...
+dns: using dns.noopManager
+link state: interfaces.State{defaultRoute=eth0 ifs={eth0:[172.16.1.37/16 llu6]} v4=true v6=false}
+onPortUpdate(port=43015, network=udp6)
+onPortUpdate(port=53119, network=udp4)
+magicsock: disco key = d:dc3193b64fafb155
+Creating WireGuard device...
+Bringing WireGuard device up...
+Bringing router up...
+Clearing router settings...
+Starting network monitor...
+Engine created.
+pm: migrating "_daemon" profile to new format
+logpolicy: using system state directory "/var/lib/tailscale"
+got LocalBackend in 13ms
+Start
+auditlog: created
+auditlog: [unexpected] failed to restore logs: empty key
+Backend: logs: be:81d97b455bbad05d3c89746ddfa2cc406a7def3a557b89ac31e981f334bc6383 fe:
+Switching ipn state NoState -> NeedsLogin (WantRunning=false, nm=false)
+blockEngineUpdates(true)
+wgengine: Reconfig: configuring userspace WireGuard config (with 0/0 peers)
+wgengine: Reconfig: configuring router
+wgengine: Reconfig: configuring DNS
+dns: Set: {DefaultResolvers:[] Routes:{} SearchDomains:[] Hosts:0}
+dns: Resolvercfg: {Routes:{} Hosts:0 LocalDomains:[]}
+dns: OScfg: {}
+health(warnable=wantrunning-false): error: Tailscale is stopped.
+
+^Ctailscaled got signal interrupt; shutting down
+control: client.Shutdown ...
+auditlog: stopped for profileID: 
+control: authRoutine: exiting
+control: updateRoutine: exiting
+control: mapRoutine: exiting
+control: Client.Shutdown done.
+flushing log.
+logger closing down
+root@main:/var# ls
+aos	 lib	log	    run    tailscale   volatile
+backups  local	lost+found  spool  tailscaled
+cache	 lock	machine-id  ssh    tmp
+root@main:/var# mkdir tailscale-static
+root@main:/var# mv tailscale /tailscale-static
+mv: inter-device move failed: 'tailscale' to '/tailscale-static'; unable to remove target: Read-only file system
+root@main:/var# mv tailscale /tailscale-static/
+mv: inter-device move failed: 'tailscale' to '/tailscale-static/'; unable to remove target: Read-only file system
+root@main:/var# mv tailscale /var/tailscale-static/
+root@main:/var# mv tailscaled /var/tailscale-static/
+root@main:/var# cd tailscale-static/
+root@main:/var/tailscale-static# ./tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
+[1] 810
+root@main:/var/tailscale-static# logtail started
+Program starting: v1.82.0-t6676b1261-g3ec4bfb9c, Go 1.24.1: []string{"./tailscaled", "--tun=userspace-networking", "--socks5-server=localhost:1055"}
+LogID: 81d97b455bbad05d3c89746ddfa2cc406a7def3a557b89ac31e981f334bc6383
+logpolicy: using system state directory "/var/lib/tailscale"
+dns: resolvedIsActuallyResolver error: resolv.conf doesn't point to systemd-resolved; points to [202.232.2.3 202.232.2.2]
+dns: [resolved-ping=yes rc=resolved resolved=not-in-use ret=direct]
+dns: using "direct" mode
+dns: using *dns.directManager
+dns: inotify: NewDirWatcher: context canceled
+wgengine.NewUserspaceEngine(tun "userspace-networking") ...
+dns: using dns.noopManager
+link state: interfaces.State{defaultRoute=eth0 ifs={eth0:[172.16.1.37/16 llu6]} v4=true v6=false}
+onPortUpdate(port=47557, network=udp6)
+onPortUpdate(port=44321, network=udp4)
+magicsock: disco key = d:db126d63dc1649eb
+Creating WireGuard device...
+Bringing WireGuard device up...
+Bringing router up...
+Clearing router settings...
+Starting network monitor...
+Engine created.
+pm: migrating "_daemon" profile to new format
+logpolicy: using system state directory "/var/lib/tailscale"
+got LocalBackend in 4ms
+Start
+auditlog: created
+auditlog: [unexpected] failed to restore logs: empty key
+Backend: logs: be:81d97b455bbad05d3c89746ddfa2cc406a7def3a557b89ac31e981f334bc6383 fe:
+Switching ipn state NoState -> NeedsLogin (WantRunning=false, nm=false)
+blockEngineUpdates(true)
+wgengine: Reconfig: configuring userspace WireGuard config (with 0/0 peers)
+wgengine: Reconfig: configuring router
+wgengine: Reconfig: configuring DNS
+dns: Set: {DefaultResolvers:[] Routes:{} SearchDomains:[] Hosts:0}
+dns: Resolvercfg: {Routes:{} Hosts:0 LocalDomains:[]}
+dns: OScfg: {}
+health(warnable=wantrunning-false): error: Tailscale is stopped.
+^C
+root@main:/var/tailscale-static# /var/tailscale/tailscale up --authkey tskey-xxxxxxxxxxxx --hostname=mspdev
+-sh: /var/tailscale/tailscale: No such file or directory
+root@main:/var/tailscale-static# 
+root@main:/var/tailscale-static# ./tailscale up --login-server=https://login.tailscale.com
+Start
+generating new machine key
+machine key written to store
+auditlog: created
+auditlog: [unexpected] failed to restore logs: empty key
+Backend: logs: be:81d97b455bbad05d3c89746ddfa2cc406a7def3a557b89ac31e981f334bc6383 fe:
+Switching ipn state NoState -> NeedsLogin (WantRunning=true, nm=false)
+blockEngineUpdates(true)
+control: client.Shutdown ...
+auditlog: stopped for profileID: 
+health(warnable=warming-up): error: Tailscale is starting. Please wait.
+health(warnable=wantrunning-false): ok
+control: authRoutine: exiting
+control: updateRoutine: exiting
+control: mapRoutine: exiting
+control: Client.Shutdown done.
+StartLoginInteractiveAs("root"): url=false
+control: client.Login(2)
+control: LoginInteractive -> regen=true
+control: doLogin(regen=true, hasUrl=false)
+control: control server key from https://controlplane.tailscale.com: ts2021=[fSeS+], legacy=[nlFWp]
+control: Generating a new nodekey.
+control: RegisterReq: onode= node=[dxoU+] fup=false nks=false
+control: RegisterReq: got response; nodeKeyExpired=false, machineAuthorized=false; authURL=true
+control: AuthURL is https://login.tailscale.com/a/b52265201d082
+control: doLogin(regen=false, hasUrl=true)
+control: RegisterReq: onode= node=[dxoU+] fup=true nks=false
+Received auth URL: https://login.tailsc...
+popBrowserAuthNow("root"): url=true, key-expired=false, seamless-key-renewal=false
+blockEngineUpdates(true)
+stopEngineAndWait...
+requestEngineStatusAndWait
+requestEngineStatusAndWait: waiting...
+requestEngineStatusAndWait: got status update.
+stopEngineAndWait: done.
+
+To authenticate, visit:
+
+	https://login.tailscale.com/a/b52265201d082
+
+health(warnable=warming-up): ok
+control: RegisterReq: got response; nodeKeyExpired=false, machineAuthorized=true; authURL=false
+blockEngineUpdates(false)
+control: netmap: got new dial plan from control
+using tailnet default auto-update setting: true
+EditPrefs: MaskedPrefs{AutoUpdate={Apply=true}}
+offline auto-update: starting update checks
+health(warnable=not-in-map-poll): ok
+active login: scsksdm@gmail.com
+monitor: gateway and self IP changed: gw=172.16.0.1 self=172.16.1.37
+Switching ipn state NeedsLogin -> Starting (WantRunning=true, nm=true)
+magicsock: SetPrivateKey called (init)
+wgengine: Reconfig: configuring userspace WireGuard config (with 0/25 peers)
+wgengine: Reconfig: configuring router
+wgengine: Reconfig: configuring DNS
+dns: Set: {DefaultResolvers:[1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001] Routes:{tail75c68e.ts.net.:[] ts.net.:[199.247.155.53 2620:111:8007::53]}+65arpa SearchDomains:[tail75c68e.ts.net.] Hosts:26}
+dns: Resolvercfg: {Routes:{.:[1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001] ts.net.:[199.247.155.53 2620:111:8007::53]} Hosts:26 LocalDomains:[tail75c68e.ts.net.]+65arpa}
+dns: OScfg: {Nameservers:[100.100.100.100] SearchDomains:[tail75c68e.ts.net.] }
+peerapi: serving on http://100.81.26.4:41815
+peerapi: serving on http://[fd7a:115c:a1e0::8b01:1a04]:41815
+netcheck: DetectCaptivePortal(found=false)
+magicsock: home DERP changing from derp-0 [0ms] to derp-7 [17ms]
+magicsock: home is now derp-7 (tok)
+magicsock: endpoints changed: 202.32.155.43:3160 (stun), 202.32.155.43:11490 (stun), 172.16.1.37:44321 (local)
+health(warnable=no-derp-home): ok
+magicsock: adding connection to derp-7 for home-keep-alive
+magicsock: 1 active derp conns: derp-7=cr0s,wr0s
+control: NetInfo: NetInfo{varies=true hairpin= ipv6=false ipv6os=true udp=true icmpv4=false derp=#7 portmap= link="" firewallmode=""}
+derphttp.Client.Connect: connecting to derp-7 (tok)
+offline auto-update: stopping update checks
+Switching ipn state Starting -> Running (WantRunning=true, nm=true)
+Success.
+root@main:/var/tailscale-static# magicsock: derp-7 connected; connGen=1
+health(warnable=no-derp-connection): ok
+
+root@main:/var/tailscale-static# 
+root@main:/var/tailscale-static# Received error: PollNetMap: unexpected EOF
+control: controlhttp: forcing port 443 dial due to recent noise dial
+control: netmap: got new dial plan from control
+
+root@main:/var/tailscale-static# ./tailscale up --authkey tskey-auth-kSfADZULub11CNTRL-g3na8KPeWvXghFuYSvhruXL2Kg2fLNeEh --hostname=mspdev02
+Start
+auditlog: created
+Backend: logs: be:81d97b455bbad05d3c89746ddfa2cc406a7def3a557b89ac31e981f334bc6383 fe:
+control: client.Login(0)
+Switching ipn state NoState -> Starting (WantRunning=true, nm=true)
+Switching ipn state Starting -> Running (WantRunning=true, nm=true)
+control: client.Shutdown ...
+auditlog: stopped for profileID: 46dd
+control: doLogin(regen=false, hasUrl=false)
+control: authRoutine: exiting
+control: updateRoutine: exiting
+control: mapRoutine: exiting
+control: Client.Shutdown done.
+root@main:/var/tailscale-static# control: control server key from https://controlplane.tailscale.com: ts2021=[fSeS+], legacy=[nlFWp]
+control: RegisterReq: onode= node=[dxoU+] fup=false nks=false
+control: controlhttp: forcing port 443 dial due to recent noise dial
+control: RegisterReq: got response; nodeKeyExpired=false, machineAuthorized=true; authURL=false
+control: netmap: got new dial plan from control
+using tailnet default auto-update setting: true
+EditPrefs: MaskedPrefs{AutoUpdate={Apply=true}}
+wgengine: Reconfig: configuring router
+wgengine: Reconfig: configuring DNS
+dns: Set: {DefaultResolvers:[1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001] Routes:{tail75c68e.ts.net.:[] ts.net.:[199.247.155.53 2620:111:8007::53]}+65arpa SearchDomains:[tail75c68e.ts.net.] Hosts:26}
+dns: Resolvercfg: {Routes:{.:[1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001] ts.net.:[199.247.155.53 2620:111:8007::53]} Hosts:26 LocalDomains:[tail75c68e.ts.net.]+65arpa}
+dns: OScfg: {Nameservers:[100.100.100.100] SearchDomains:[tail75c68e.ts.net.] }
+
+root@main:/var/tailscale-static# 
+root@main:/var/tailscale-static# ./tailscale status
+100.81.26.4     mspdev02             scsksdm@     linux   -
+100.117.109.31  gorobookair          goro.kikuchi@ macOS   offline
+100.77.3.19     lenovo-tb520fu       scsksdm@     android offline
+100.90.187.121  masazhang-1          scsksdm@     linux   offline
+100.112.150.50  masazhang            scsksdm@     windows offline
+100.97.96.27    matsuzaki-note-ubuntu scsksdm@     linux   offline
+100.74.114.81   matsuzaki-note-windows scsksdm@     windows -
+100.68.245.122  msi                  scsksdm@     windows offline
+100.65.202.85   mspdev01             tagged-devices linux   -
+100.100.147.98  mywindows            scsksdm@     windows offline
+100.93.168.97   s-114032             scsksdm@     linux   offline
+100.118.30.80   s-818351             scsksdm@     windows -
+100.119.236.109 sdmawsim             scsksdm@     linux   -
+100.124.216.95  sdmdev1              scsksdm@     linux   offline
+100.109.54.64   sdmdev10             scsksdm@     linux   -
+100.119.151.116 sdmdev11             scsksdm@     linux   offline
+100.116.131.99  sdmdev2              scsksdm@     linux   -
+100.82.182.121  sdmdev3              scsksdm@     linux   -
+100.127.21.120  sdmdev4              scsksdm@     linux   offline
+100.120.11.18   sdmdev5              scsksdm@     linux   offline
+100.103.88.15   sdmdev6              scsksdm@     linux   -
+100.115.23.8    sdmdev7              scsksdm@     linux   offline
+100.93.0.80     sdmdev8              scsksdm@     linux   -
+100.122.97.58   sdmdev9              scsksdm@     linux   -
+100.102.252.44  sdmdevawsim          scsksdm@     linux   -
+100.80.244.14   taiwan               goro.kikuchi@ windows -
+root@main:/var/tailscale-static# ifconfig
+eth0      Link encap:Ethernet  HWaddr 2C:CF:67:28:F7:85  
+          inet addr:172.16.1.37  Bcast:172.16.255.255  Mask:255.255.0.0
+          inet6 addr: fe80::2ecf:67ff:fe28:f785/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:56514 errors:0 dropped:3830 overruns:0 frame:0
+          TX packets:15328 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:59655152 (56.8 MiB)  TX bytes:1589002 (1.5 MiB)
+          Interrupt:86 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:590 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:590 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:36713 (35.8 KiB)  TX bytes:36713 (35.8 KiB)
+
+xenbr0    Link encap:Ethernet  HWaddr 56:59:98:6F:CA:2A  
+          UP BROADCAST MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@main:/var/tailscale-static# exit
+logout
+main:~$ exit
+logout
+Connection to 172.16.1.37 closed.
+yata@sdmdev2:~/tailscale-arm64/tailscale_1.82.0_arm64$ ssh ispdev@100.81.26.4
+The authenticity of host '100.81.26.4 (100.81.26.4)' can't be established.
+ED25519 key fingerprint is SHA256:4NKpwSE/kyb7yncnERTT+2GaD19vKPqGnKDeewQhkko.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:14: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '100.81.26.4' (ED25519) to the list of known hosts.
+ispdev@100.81.26.4's password: 
+Last login: Mon Apr 21 03:38:11 2025 from 172.16.0.76
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ 
+main:~$ 
+main:~$ sudo -i
+Password: 
+root@main:~# 
+

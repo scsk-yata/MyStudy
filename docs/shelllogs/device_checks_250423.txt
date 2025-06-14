@@ -1,0 +1,940 @@
+yata@sdmdev2:~$ ssh mspdev@100.65.202.85
+mspdev@100.65.202.85's password: 
+Last login: Tue Apr 22 08:58:26 2025 from 172.16.0.76
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ sudo -i
+Password: 
+root@main:~# ls -l /dev 
+total 0
+drwxr-xr-x 2 root   root      120 Jan  1  1970 aosvg
+crw-r--r-- 1 root   root  10, 235 Apr 22 10:35 autofs
+drwxr-xr-x 2 root   root      700 Feb 27  2024 block
+crw------- 1 root   root  10, 126 Apr 22 10:35 cachefiles
+drwxr-xr-x 2 root   root     2540 Apr 22 10:35 char
+crw------- 1 root   root   5,   1 Apr 22 10:35 console
+crw------- 1 root   root  10, 119 Apr 22 10:35 cpu_dma_latency
+drwxr-xr-x 8 root   root      160 Jan  1  1970 disk
+brw-rw---- 1 root   disk 254,   0 Feb 27  2024 dm-0
+brw-rw---- 1 root   disk 254,   1 Feb 27  2024 dm-1
+brw-rw---- 1 root   disk 254,   2 Feb 27  2024 dm-2
+brw-rw---- 1 root   disk 254,   3 Feb 27  2024 dm-3
+brw-rw---- 1 root   disk 254,   4 Feb 27  2024 dm-4
+drwxr-xr-x 2 root   root       80 Jan  1  1970 dma_heap
+lrwxrwxrwx 1 root   root       13 Feb 27  2024 fd -> /proc/self/fd
+crw-rw-rw- 1 root   root   1,   7 Apr 22 10:35 full
+crw------- 1 root   root 254,   0 Apr 22 10:35 gpiochip0
+crw------- 1 root   root  10, 183 Apr 22 10:35 hwrng
+lrwxrwxrwx 1 root   root       12 Feb 27  2024 initctl -> /run/initctl
+drwxr-xr-x 2 root   root       60 Jan  1  1970 input
+crw-r--r-- 1 root   root   1,  11 Apr 22 10:35 kmsg
+lrwxrwxrwx 1 root   root       28 Feb 27  2024 log -> /run/systemd/journal/dev-log
+crw-rw---- 1 root   disk  10, 237 Apr 22 10:35 loop-control
+brw-rw---- 1 root   disk   7,   0 Feb 27  2024 loop0
+brw-rw---- 1 root   disk   7,   1 Feb 27  2024 loop1
+brw-rw---- 1 root   disk   7,   2 Feb 27  2024 loop2
+brw-rw---- 1 root   disk   7,   3 Feb 27  2024 loop3
+brw-rw---- 1 root   disk   7,   4 Feb 27  2024 loop4
+brw-rw---- 1 root   disk   7,   5 Feb 27  2024 loop5
+brw-rw---- 1 root   disk   7,   6 Feb 27  2024 loop6
+brw-rw---- 1 root   disk   7,   7 Feb 27  2024 loop7
+drwxr-xr-x 2 root   root      160 Jan  1  1970 mapper
+crw-r----- 1 root   kmem   1,   1 Apr 22 10:35 mem
+drwxrwxrwt 2 root   root       40 Jan  1  1970 mqueue
+crw------- 1 root   root 242,   0 Apr 22 10:35 ng0n1
+crw-rw-rw- 1 root   root   1,   3 Apr 22 10:35 null
+crw------- 1 root   root 243,   0 Feb 27  2024 nvme0
+brw-rw---- 1 root   disk 259,   0 Feb 27  2024 nvme0n1
+brw-rw---- 1 root   disk 259,   1 Feb 27  2024 nvme0n1p1
+brw-rw---- 1 root   disk 259,   2 Feb 27  2024 nvme0n1p2
+brw-rw---- 1 root   disk 259,   3 Feb 27  2024 nvme0n1p3
+crw-r----- 1 root   kmem   1,   4 Apr 22 10:35 port
+crw------- 1 root   root 249,   0 Apr 22 10:35 pps0
+crw-rw-rw- 1 root   tty    5,   2 Apr 23 00:12 ptmx
+crw------- 1 root   root 248,   0 Apr 22 10:35 ptp0
+drwxr-xr-x 2 root   root        0 Feb 27  2024 pts
+brw-rw---- 1 root   disk   1,   0 Feb 27  2024 ram0
+brw-rw---- 1 root   disk   1,   1 Feb 27  2024 ram1
+brw-rw---- 1 root   disk   1,  10 Feb 27  2024 ram10
+brw-rw---- 1 root   disk   1,  11 Feb 27  2024 ram11
+brw-rw---- 1 root   disk   1,  12 Feb 27  2024 ram12
+brw-rw---- 1 root   disk   1,  13 Feb 27  2024 ram13
+brw-rw---- 1 root   disk   1,  14 Feb 27  2024 ram14
+brw-rw---- 1 root   disk   1,  15 Feb 27  2024 ram15
+brw-rw---- 1 root   disk   1,   2 Feb 27  2024 ram2
+brw-rw---- 1 root   disk   1,   3 Feb 27  2024 ram3
+brw-rw---- 1 root   disk   1,   4 Feb 27  2024 ram4
+brw-rw---- 1 root   disk   1,   5 Feb 27  2024 ram5
+brw-rw---- 1 root   disk   1,   6 Feb 27  2024 ram6
+brw-rw---- 1 root   disk   1,   7 Feb 27  2024 ram7
+brw-rw---- 1 root   disk   1,   8 Feb 27  2024 ram8
+brw-rw---- 1 root   disk   1,   9 Feb 27  2024 ram9
+crw-rw-rw- 1 root   root   1,   8 Apr 22 10:35 random
+drwxrwxrwt 2 root   root       40 Feb 27  2024 shm
+crw------- 1 root   root  10, 231 Apr 22 10:35 snapshot
+drwxr-xr-x 2 root   root       60 Jan  1  1970 snd
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stderr -> /proc/self/fd/2
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stdin -> /proc/self/fd/0
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stdout -> /proc/self/fd/1
+crw------- 1 root   root 247,   0 Apr 22 10:35 tee0
+crw------- 1 root   root 247,  16 Apr 22 10:35 teepriv0
+crw-rw-rw- 1 root   tty    5,   0 Apr 23 00:12 tty
+crw--w---- 1 root   tty    4,   0 Feb 27  2024 tty0
+crw--w---- 1 root   tty    4,   1 Apr 22 10:35 tty1
+crw--w---- 1 root   tty    4,  10 Feb 27  2024 tty10
+crw--w---- 1 root   tty    4,  11 Feb 27  2024 tty11
+crw--w---- 1 root   tty    4,  12 Feb 27  2024 tty12
+crw--w---- 1 root   tty    4,  13 Feb 27  2024 tty13
+crw--w---- 1 root   tty    4,  14 Feb 27  2024 tty14
+crw--w---- 1 root   tty    4,  15 Feb 27  2024 tty15
+crw--w---- 1 root   tty    4,  16 Feb 27  2024 tty16
+crw--w---- 1 root   tty    4,  17 Feb 27  2024 tty17
+crw--w---- 1 root   tty    4,  18 Feb 27  2024 tty18
+crw--w---- 1 root   tty    4,  19 Feb 27  2024 tty19
+crw--w---- 1 root   tty    4,   2 Apr 22 10:35 tty2
+crw--w---- 1 root   tty    4,  20 Feb 27  2024 tty20
+crw--w---- 1 root   tty    4,  21 Feb 27  2024 tty21
+crw--w---- 1 root   tty    4,  22 Feb 27  2024 tty22
+crw--w---- 1 root   tty    4,  23 Feb 27  2024 tty23
+crw--w---- 1 root   tty    4,  24 Feb 27  2024 tty24
+crw--w---- 1 root   tty    4,  25 Feb 27  2024 tty25
+crw--w---- 1 root   tty    4,  26 Feb 27  2024 tty26
+crw--w---- 1 root   tty    4,  27 Feb 27  2024 tty27
+crw--w---- 1 root   tty    4,  28 Feb 27  2024 tty28
+crw--w---- 1 root   tty    4,  29 Feb 27  2024 tty29
+crw--w---- 1 root   tty    4,   3 Apr 22 10:35 tty3
+crw--w---- 1 root   tty    4,  30 Feb 27  2024 tty30
+crw--w---- 1 root   tty    4,  31 Feb 27  2024 tty31
+crw--w---- 1 root   tty    4,  32 Feb 27  2024 tty32
+crw--w---- 1 root   tty    4,  33 Feb 27  2024 tty33
+crw--w---- 1 root   tty    4,  34 Feb 27  2024 tty34
+crw--w---- 1 root   tty    4,  35 Feb 27  2024 tty35
+crw--w---- 1 root   tty    4,  36 Feb 27  2024 tty36
+crw--w---- 1 root   tty    4,  37 Feb 27  2024 tty37
+crw--w---- 1 root   tty    4,  38 Feb 27  2024 tty38
+crw--w---- 1 root   tty    4,  39 Feb 27  2024 tty39
+crw--w---- 1 root   tty    4,   4 Apr 22 10:35 tty4
+crw--w---- 1 root   tty    4,  40 Feb 27  2024 tty40
+crw--w---- 1 root   tty    4,  41 Feb 27  2024 tty41
+crw--w---- 1 root   tty    4,  42 Feb 27  2024 tty42
+crw--w---- 1 root   tty    4,  43 Feb 27  2024 tty43
+crw--w---- 1 root   tty    4,  44 Feb 27  2024 tty44
+crw--w---- 1 root   tty    4,  45 Feb 27  2024 tty45
+crw--w---- 1 root   tty    4,  46 Feb 27  2024 tty46
+crw--w---- 1 root   tty    4,  47 Feb 27  2024 tty47
+crw--w---- 1 root   tty    4,  48 Feb 27  2024 tty48
+crw--w---- 1 root   tty    4,  49 Feb 27  2024 tty49
+crw--w---- 1 root   tty    4,   5 Apr 22 10:35 tty5
+crw--w---- 1 root   tty    4,  50 Feb 27  2024 tty50
+crw--w---- 1 root   tty    4,  51 Feb 27  2024 tty51
+crw--w---- 1 root   tty    4,  52 Feb 27  2024 tty52
+crw--w---- 1 root   tty    4,  53 Feb 27  2024 tty53
+crw--w---- 1 root   tty    4,  54 Feb 27  2024 tty54
+crw--w---- 1 root   tty    4,  55 Feb 27  2024 tty55
+crw--w---- 1 root   tty    4,  56 Feb 27  2024 tty56
+crw--w---- 1 root   tty    4,  57 Feb 27  2024 tty57
+crw--w---- 1 root   tty    4,  58 Feb 27  2024 tty58
+crw--w---- 1 root   tty    4,  59 Feb 27  2024 tty59
+crw--w---- 1 root   tty    4,   6 Apr 22 10:35 tty6
+crw--w---- 1 root   tty    4,  60 Feb 27  2024 tty60
+crw--w---- 1 root   tty    4,  61 Feb 27  2024 tty61
+crw--w---- 1 root   tty    4,  62 Feb 27  2024 tty62
+crw--w---- 1 root   tty    4,  63 Feb 27  2024 tty63
+crw--w---- 1 root   tty    4,   7 Feb 27  2024 tty7
+crw--w---- 1 root   tty    4,   8 Feb 27  2024 tty8
+crw--w---- 1 root   tty    4,   9 Feb 27  2024 tty9
+crw------- 1 mspdev tty  204,  64 Apr 23 00:11 ttyAMA0
+crw------- 1 root   root   5,   3 Feb 27  2024 ttyprintk
+crw------- 1 root   root  10, 118 Apr 22 10:35 ubi_ctrl
+crw-rw-rw- 1 root   root   1,   9 Apr 22 10:35 urandom
+crw------- 1 root   root 244,   0 Apr 22 10:35 vc-mem
+crw-rw---- 1 root   tty    7,   0 Apr 22 10:35 vcs
+crw-rw---- 1 root   tty    7,   1 Apr 22 10:35 vcs1
+crw-rw---- 1 root   tty    7,   2 Apr 22 10:35 vcs2
+crw-rw---- 1 root   tty    7,   3 Apr 22 10:35 vcs3
+crw-rw---- 1 root   tty    7,   4 Apr 22 10:35 vcs4
+crw-rw---- 1 root   tty    7,   5 Apr 22 10:35 vcs5
+crw-rw---- 1 root   tty    7,   6 Apr 22 10:35 vcs6
+crw-rw---- 1 root   tty    7, 128 Apr 22 10:35 vcsa
+crw-rw---- 1 root   tty    7, 129 Apr 22 10:35 vcsa1
+crw-rw---- 1 root   tty    7, 130 Apr 22 10:35 vcsa2
+crw-rw---- 1 root   tty    7, 131 Apr 22 10:35 vcsa3
+crw-rw---- 1 root   tty    7, 132 Apr 22 10:35 vcsa4
+crw-rw---- 1 root   tty    7, 133 Apr 22 10:35 vcsa5
+crw-rw---- 1 root   tty    7, 134 Apr 22 10:35 vcsa6
+crw-rw---- 1 root   tty    7,  64 Apr 22 10:35 vcsu
+crw-rw---- 1 root   tty    7,  65 Apr 22 10:35 vcsu1
+crw-rw---- 1 root   tty    7,  66 Apr 22 10:35 vcsu2
+crw-rw---- 1 root   tty    7,  67 Apr 22 10:35 vcsu3
+crw-rw---- 1 root   tty    7,  68 Apr 22 10:35 vcsu4
+crw-rw---- 1 root   tty    7,  69 Apr 22 10:35 vcsu5
+crw-rw---- 1 root   tty    7,  70 Apr 22 10:35 vcsu6
+crw------- 1 root   root  10, 127 Apr 22 10:35 vga_arbiter
+drwxr-xr-x 2 root   root      160 Jan  1  1970 xen
+crw-rw-rw- 1 root   root   1,   5 Apr 22 10:35 zero
+root@main:~# ls /dev/input
+mice
+root@main:~# ls /dev/input/mice
+/dev/input/mice
+root@main:~# file /dev/input/mice
+/dev/input/mice: character special (13/63)
+root@main:~# ls -l /sys
+total 0
+drwxr-xr-x   2 root root 0 Jan  1  1970 block
+drwxr-xr-x  35 root root 0 Apr 23 00:14 bus
+drwxr-xr-x  62 root root 0 Apr 22 23:23 class
+drwxr-xr-x   4 root root 0 Apr 23 00:14 dev
+drwxr-xr-x  10 root root 0 Jan  1  1970 devices
+drwxr-xr-x   3 root root 0 Apr 22 23:23 firmware
+drwxr-xr-x   8 root root 0 Jan  1  1970 fs
+drwxr-xr-x   6 root root 0 Apr 23 00:14 hypervisor
+drwxr-xr-x  14 root root 0 Jan  1  1970 kernel
+drwxr-xr-x 132 root root 0 Jan  1  1970 module
+drwxr-xr-x   3 root root 0 Apr 23 00:14 power
+root@main:~# ls -l /sys/class
+total 0
+drwxr-xr-x 2 root root 0 Apr 23 00:15 bdi
+drwxr-xr-x 2 root root 0 Apr 23 00:15 block
+drwxr-xr-x 2 root root 0 Apr 23 00:15 bsg
+drwxr-xr-x 2 root root 0 Apr 23 00:15 devcoredump
+drwxr-xr-x 2 root root 0 Apr 23 00:15 devlink
+drwxr-xr-x 2 root root 0 Apr 23 00:15 dma
+drwxr-xr-x 2 root root 0 Apr 23 00:15 dma_heap
+drwxr-xr-x 2 root root 0 Apr 23 00:15 drm
+drwxr-xr-x 2 root root 0 Apr 23 00:15 extcon
+drwxr-xr-x 2 root root 0 Apr 23 00:15 gpio
+drwxr-xr-x 2 root root 0 Apr 23 00:15 graphics
+drwxr-xr-x 2 root root 0 Apr 23 00:15 hidraw
+drwxr-xr-x 2 root root 0 Apr 23 00:15 hwmon
+drwxr-xr-x 2 root root 0 Apr 23 00:15 i2c-adapter
+drwxr-xr-x 2 root root 0 Apr 23 00:15 input
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iommu
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_connection
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_endpoint
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_host
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_iface
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_session
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_transport
+drwxr-xr-x 2 root root 0 Apr 23 00:15 leds
+drwxr-xr-x 2 root root 0 Apr 23 00:15 lirc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mdio_bus
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mem
+drwxr-xr-x 2 root root 0 Apr 23 00:15 misc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mmc_host
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mtd
+drwxr-xr-x 2 root root 0 Apr 23 00:15 net
+drwxr-xr-x 2 root root 0 Apr 23 00:15 nvme
+drwxr-xr-x 2 root root 0 Apr 23 00:15 nvme-generic
+drwxr-xr-x 2 root root 0 Apr 23 00:15 nvme-subsystem
+drwxr-xr-x 2 root root 0 Apr 23 00:15 pci_bus
+drwxr-xr-x 2 root root 0 Apr 23 00:15 phy
+drwxr-xr-x 2 root root 0 Apr 23 00:15 power_supply
+drwxr-xr-x 2 root root 0 Apr 23 00:15 pps
+drwxr-xr-x 2 root root 0 Apr 23 00:15 ptp
+drwxr-xr-x 2 root root 0 Apr 23 00:15 pwm
+drwxr-xr-x 2 root root 0 Apr 23 00:15 rc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 regulator
+drwxr-xr-x 2 root root 0 Apr 23 00:15 rtc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 scsi_device
+drwxr-xr-x 2 root root 0 Apr 23 00:15 scsi_disk
+drwxr-xr-x 2 root root 0 Apr 23 00:15 scsi_host
+drwxr-xr-x 2 root root 0 Apr 23 00:15 sound
+drwxr-xr-x 2 root root 0 Apr 23 00:15 spi_master
+drwxr-xr-x 2 root root 0 Apr 23 00:15 spi_slave
+drwxr-xr-x 2 root root 0 Apr 23 00:15 tee
+drwxr-xr-x 2 root root 0 Apr 23 00:15 thermal
+drwxr-xr-x 2 root root 0 Apr 23 00:15 tty
+drwxr-xr-x 2 root root 0 Apr 23 00:15 ubi
+drwxr-xr-x 2 root root 0 Apr 23 00:15 udc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 usb_role
+drwxr-xr-x 2 root root 0 Apr 23 00:15 usbmisc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 vc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 vc-mem
+drwxr-xr-x 2 root root 0 Apr 23 00:15 vtconsole
+drwxr-xr-x 2 root root 0 Apr 23 00:15 wakeup
+drwxr-xr-x 2 root root 0 Apr 23 00:15 watchdog
+root@main:~# ls -l /sys/class/graphics
+total 0
+lrwxrwxrwx 1 root root 0 Apr 23 00:15 fbcon -> ../../devices/virtual/graphics/fbcon
+root@main:~# ls -l /sys/devices/virtual/graphics/   
+total 0
+drwxr-xr-x 3 root root 0 Apr 23 00:16 fbcon
+root@main:~# ls -l /sys/devices/virtual/graphics/fbcon
+total 0
+-rw-r--r-- 1 root root 16384 Apr 23 00:17 cursor_blink
+drwxr-xr-x 2 root root     0 Apr 23 00:17 power
+-rw-r--r-- 1 root root 16384 Apr 23 00:17 rotate
+--w------- 1 root root 16384 Apr 23 00:17 rotate_all
+lrwxrwxrwx 1 root root     0 Apr 23 00:17 subsystem -> ../../../../class/graphics
+-rw-r--r-- 1 root root 16384 Apr 23 00:17 uevent
+root@main:~# file /sys/devices/virtual/graphics/fbcon
+/sys/devices/virtual/graphics/fbcon: directory
+root@main:~# ls -l /sys/devices/virtual/graphics/fbcon/power/
+total 0
+-rw-r--r-- 1 root root 16384 Apr 23 00:18 autosuspend_delay_ms
+-rw-r--r-- 1 root root 16384 Apr 23 00:18 control
+-r--r--r-- 1 root root 16384 Apr 23 00:18 runtime_active_time
+-r--r--r-- 1 root root 16384 Apr 23 00:18 runtime_status
+-r--r--r-- 1 root root 16384 Apr 23 00:18 runtime_suspended_time
+root@main:~# ls -l /proc
+total 0
+dr-xr-xr-x  9 root             root                 0 Jan  1  1970 1
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 10
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:14 10321
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:16 10755
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:16 10810
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:17 10826
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:17 10872
+dr-xr-xr-x  9             5000             5000     0 Apr 23 00:18 11185
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:18 11186
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 12
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 13
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 14
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 15
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 16
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 17
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 18
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 19
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 2
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 20
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 21
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 2170
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 2225
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 2226
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 23
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 24
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 25
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 26
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 27
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 2709
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 2744
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 28
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 29
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:24 2909
+dr-xr-xr-x  9 mspdev           mspdev               0 Apr 23 00:14 2930
+dr-xr-xr-x  9 mspdev           mspdev               0 Apr 22 23:24 2931
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:24 2946
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:14 2965
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:14 2966
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 3
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 30
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 31
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 32
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 34
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 35
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 36
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 360
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 361
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 38
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 39
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 399
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 4
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 40
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 409
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 410
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 411
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 42
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 427
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 428
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 429
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 43
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 430
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 44
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 45
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 46
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 47
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 472
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 473
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 48
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 49
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 5
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 50
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 519
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 520
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:14 5234
+dr-xr-xr-x  9 rpc              rpc                  0 Apr 22 23:23 548
+dr-xr-xr-x  9 root             root                 0 Feb 27  2024 549
+dr-xr-xr-x  9 root             root                 0 Feb 27  2024 585
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 6
+dr-xr-xr-x  9 systemd-resolve  systemd-resolve      0 Feb 27  2024 611
+dr-xr-xr-x  9 systemd-timesync systemd-timesync     0 Feb 27  2024 612
+dr-xr-xr-x  9 root             root                 0 Feb 27  2024 620
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 642
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 643
+dr-xr-xr-x  9 messagebus       messagebus           0 Apr 22 10:35 644
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 645
+dr-xr-xr-x  9 mspdev           mspdev               0 Apr 22 10:35 648
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 650
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 651
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 669
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 671
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 672
+dr-xr-xr-x  9 systemd-network  systemd-network      0 Apr 22 23:23 673
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 675
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 676
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 679
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 684
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 685
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 686
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 7
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:14 7034
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 714
+dr-xr-xr-x  9 rpcuser          rpcuser              0 Apr 22 23:23 716
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 721
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 734
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 735
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 736
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 737
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 738
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 739
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 740
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 741
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 746
+dr-xr-xr-x  9 nobody           dip                  0 Apr 22 23:23 776
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 777
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:14 7901
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 794
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 8
+dr-xr-xr-x  9 root             dip                  0 Apr 22 23:23 805
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 806
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 807
+dr-xr-xr-x  9 root             root                 0 Apr 22 10:35 808
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 81
+dr-xr-xr-x  9 root             root                 0 Apr 22 23:23 82
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:14 9499
+dr-xr-xr-x  9 root             dip                  0 Apr 22 23:23 971
+dr-xr-xr-x  9 root             root                 0 Apr 23 00:18 asound
+-r--r--r--  1 root             root                 0 Apr 23 00:18 buddyinfo
+dr-xr-xr-x  4 root             root                 0 Apr 23 00:18 bus
+-r--r--r--  1 root             root                 0 Apr 23 00:18 cgroups
+-r--r--r--  1 root             root               366 Apr 22 23:27 cmdline
+-r--r--r--  1 root             root             53487 Apr 23 00:18 config.gz
+-r--r--r--  1 root             root                 0 Apr 23 00:18 consoles
+-r--r--r--  1 root             root                 0 Apr 23 00:18 cpuinfo
+-r--r--r--  1 root             root                 0 Apr 23 00:18 crypto
+lrwxrwxrwx  1 root             root                29 Apr 23 00:18 device-tree -> /sys/firmware/devicetree/base
+-r--r--r--  1 root             root                 0 Apr 23 00:18 devices
+-r--r--r--  1 root             root                 0 Apr 23 00:18 diskstats
+dr-xr-xr-x  2 root             root                 0 Apr 23 00:18 driver
+-r--r--r--  1 root             root                 0 Apr 23 00:18 execdomains
+-r--r--r--  1 root             root                 0 Apr 23 00:18 fb
+-r--r--r--  1 root             root                 0 Apr 23 00:18 filesystems
+dr-xr-xr-x  9 root             root                 0 Feb 27  2024 fs
+-r--r--r--  1 root             root                 0 Apr 23 00:18 interrupts
+-r--r--r--  1 root             root                 0 Apr 23 00:18 iomem
+-r--r--r--  1 root             root                 0 Apr 23 00:18 ioports
+dr-xr-xr-x 24 root             root                 0 Apr 23 00:18 irq
+-r--r--r--  1 root             root                 0 Apr 23 00:18 kallsyms
+-r--r--r--  1 root             root                 0 Apr 23 00:18 key-users
+-r--r--r--  1 root             root                 0 Apr 23 00:18 keys
+-r--------  1 root             root                 0 Apr 23 00:18 kmsg
+-r--------  1 root             root                 0 Apr 23 00:18 kpagecgroup
+-r--------  1 root             root                 0 Apr 23 00:18 kpagecount
+-r--------  1 root             root                 0 Apr 23 00:18 kpageflags
+-rw-r--r--  1 root             root                 0 Apr 23 00:18 latency_stats
+-r--r--r--  1 root             root                 0 Apr 23 00:18 loadavg
+-r--r--r--  1 root             root                 0 Apr 23 00:18 locks
+-r--r--r--  1 root             root                 0 Apr 22 23:48 meminfo
+-r--r--r--  1 root             root                 0 Apr 23 00:18 misc
+-r--r--r--  1 root             root                 0 Apr 23 00:18 modules
+lrwxrwxrwx  1 root             root                11 Apr 22 23:23 mounts -> self/mounts
+-r--r--r--  1 root             root                 0 Apr 23 00:18 mtd
+lrwxrwxrwx  1 root             root                 8 Apr 22 23:49 net -> self/net
+-r--------  1 root             root                 0 Apr 23 00:18 pagetypeinfo
+-r--r--r--  1 root             root                 0 Apr 23 00:18 partitions
+-r--r--r--  1 root             root                 0 Apr 23 00:18 schedstat
+lrwxrwxrwx  1 root             root                 0 Jan  1  1970 self -> 11186
+-r--------  1 root             root                 0 Apr 23 00:18 slabinfo
+-r--r--r--  1 root             root                 0 Apr 23 00:18 softirqs
+-r--r--r--  1 root             root                 0 Apr 22 23:48 stat
+-r--r--r--  1 root             root                 0 Feb 27  2024 swaps
+dr-xr-xr-x  1 root             root                 0 Jan  1  1970 sys
+--w-------  1 root             root                 0 Apr 23 00:18 sysrq-trigger
+dr-xr-xr-x  5 root             root                 0 Apr 23 00:18 sysvipc
+lrwxrwxrwx  1 root             root                 0 Jan  1  1970 thread-self -> 11186/task/11186
+-r--------  1 root             root                 0 Apr 23 00:18 timer_list
+dr-xr-xr-x  6 root             root                 0 Apr 23 00:18 tty
+-r--r--r--  1 root             root                 0 Apr 23 00:18 uptime
+-r--r--r--  1 root             root                 0 Apr 23 00:18 version
+-r--------  1 root             root                 0 Apr 23 00:18 vmallocinfo
+-r--r--r--  1 root             root                 0 Apr 23 00:18 vmstat
+drwxr-xr-x  2 root             root                 0 Feb 27  2024 xen
+-r--r--r--  1 root             root                 0 Apr 23 00:18 zoneinfo
+root@main:~# ls -l /proc/fb*
+-r--r--r-- 1 root root 0 Apr 23 00:18 /proc/fb
+root@main:~# file /proc/fb
+/proc/fb: empty
+root@main:~# cat /proc/fb
+root@main:~# ls -l /sys/class
+total 0
+drwxr-xr-x 2 root root 0 Apr 23 00:15 bdi
+drwxr-xr-x 2 root root 0 Apr 23 00:15 block
+drwxr-xr-x 2 root root 0 Apr 23 00:15 bsg
+drwxr-xr-x 2 root root 0 Apr 23 00:15 devcoredump
+drwxr-xr-x 2 root root 0 Apr 23 00:15 devlink
+drwxr-xr-x 2 root root 0 Apr 23 00:15 dma
+drwxr-xr-x 2 root root 0 Apr 23 00:15 dma_heap
+drwxr-xr-x 2 root root 0 Apr 23 00:15 drm
+drwxr-xr-x 2 root root 0 Apr 23 00:15 extcon
+drwxr-xr-x 2 root root 0 Apr 23 00:15 gpio
+drwxr-xr-x 2 root root 0 Apr 23 00:15 graphics
+drwxr-xr-x 2 root root 0 Apr 23 00:15 hidraw
+drwxr-xr-x 2 root root 0 Apr 23 00:15 hwmon
+drwxr-xr-x 2 root root 0 Apr 23 00:15 i2c-adapter
+drwxr-xr-x 2 root root 0 Apr 23 00:15 input
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iommu
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_connection
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_endpoint
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_host
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_iface
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_session
+drwxr-xr-x 2 root root 0 Apr 23 00:15 iscsi_transport
+drwxr-xr-x 2 root root 0 Apr 23 00:15 leds
+drwxr-xr-x 2 root root 0 Apr 23 00:15 lirc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mdio_bus
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mem
+drwxr-xr-x 2 root root 0 Apr 23 00:15 misc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mmc_host
+drwxr-xr-x 2 root root 0 Apr 23 00:15 mtd
+drwxr-xr-x 2 root root 0 Apr 23 00:15 net
+drwxr-xr-x 2 root root 0 Apr 23 00:15 nvme
+drwxr-xr-x 2 root root 0 Apr 23 00:15 nvme-generic
+drwxr-xr-x 2 root root 0 Apr 23 00:15 nvme-subsystem
+drwxr-xr-x 2 root root 0 Apr 23 00:15 pci_bus
+drwxr-xr-x 2 root root 0 Apr 23 00:15 phy
+drwxr-xr-x 2 root root 0 Apr 23 00:15 power_supply
+drwxr-xr-x 2 root root 0 Apr 23 00:15 pps
+drwxr-xr-x 2 root root 0 Apr 23 00:15 ptp
+drwxr-xr-x 2 root root 0 Apr 23 00:15 pwm
+drwxr-xr-x 2 root root 0 Apr 23 00:15 rc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 regulator
+drwxr-xr-x 2 root root 0 Apr 23 00:15 rtc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 scsi_device
+drwxr-xr-x 2 root root 0 Apr 23 00:15 scsi_disk
+drwxr-xr-x 2 root root 0 Apr 23 00:15 scsi_host
+drwxr-xr-x 2 root root 0 Apr 23 00:15 sound
+drwxr-xr-x 2 root root 0 Apr 23 00:15 spi_master
+drwxr-xr-x 2 root root 0 Apr 23 00:15 spi_slave
+drwxr-xr-x 2 root root 0 Apr 23 00:15 tee
+drwxr-xr-x 2 root root 0 Apr 23 00:15 thermal
+drwxr-xr-x 2 root root 0 Apr 23 00:15 tty
+drwxr-xr-x 2 root root 0 Apr 23 00:15 ubi
+drwxr-xr-x 2 root root 0 Apr 23 00:15 udc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 usb_role
+drwxr-xr-x 2 root root 0 Apr 23 00:15 usbmisc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 vc
+drwxr-xr-x 2 root root 0 Apr 23 00:15 vc-mem
+drwxr-xr-x 2 root root 0 Apr 23 00:15 vtconsole
+drwxr-xr-x 2 root root 0 Apr 23 00:15 wakeup
+drwxr-xr-x 2 root root 0 Apr 23 00:15 watchdog
+root@main:~# ls -l /sys/class/drm
+total 0
+-r--r--r-- 1 root root 16384 Apr 23 00:21 version
+root@main:~# cat /sys/class/drm/version
+drm 1.1.0 20060810
+root@main:~# cat /sys/class/phy        
+cat: /sys/class/phy: Is a directory
+root@main:~# ls -l /sys/class/phy
+total 0
+root@main:~# ls -l /sys/class/i2c-adapter/
+total 0
+root@main:~# ls -l /sys/class/net         
+total 0
+lrwxrwxrwx 1 root root 0 Apr 23 00:24 br-sp8b2ebc9f -> ../../devices/virtual/net/br-sp8b2ebc9f
+lrwxrwxrwx 1 root root 0 Apr 23 00:24 eth0 -> ../../devices/platform/passthrough/1000120000.pcie/1f00100000.ethernet/net/eth0
+lrwxrwxrwx 1 root root 0 Apr 23 00:24 lo -> ../../devices/virtual/net/lo
+lrwxrwxrwx 1 root root 0 Apr 23 00:24 veth3e2d367a -> ../../devices/virtual/net/veth3e2d367a
+lrwxrwxrwx 1 root root 0 Apr 23 00:24 vlan-171a63d7 -> ../../devices/virtual/net/vlan-171a63d7
+lrwxrwxrwx 1 root root 0 Apr 23 00:24 xenbr0 -> ../../devices/virtual/net/xenbr0
+root@main:~# ls -l /sys/devices  
+total 0
+drwxr-xr-x  3 root root 0 Apr 23 00:24 breakpoint
+drwxr-xr-x  4 root root 0 Apr 23 00:24 kprobe
+drwxr-xr-x 13 root root 0 Apr 23 00:24 platform
+drwxr-xr-x  3 root root 0 Apr 23 00:24 software
+drwxr-xr-x  7 root root 0 Jan  1  1970 system
+drwxr-xr-x  3 root root 0 Apr 23 00:24 tracepoint
+drwxr-xr-x 21 root root 0 Jan  1  1970 virtual
+drwxr-xr-x  2 root root 0 Apr 23 00:24 wakeup0
+root@main:~# ls -l /sys/devices/virtual
+total 0
+drwxr-xr-x 33 root root 0 Apr 23 00:24 bdi
+drwxr-xr-x 31 root root 0 Apr 23 00:24 block
+drwxr-xr-x  6 root root 0 Apr 23 00:24 devlink
+drwxr-xr-x  4 root root 0 Apr 23 00:24 dma_heap
+drwxr-xr-x  3 root root 0 Apr 23 00:16 graphics
+drwxr-xr-x  3 root root 0 Apr 23 00:24 input
+drwxr-xr-x  4 root root 0 Apr 23 00:24 leds
+drwxr-xr-x 10 root root 0 Apr 23 00:24 mem
+drwxr-xr-x 17 root root 0 Apr 23 00:24 misc
+drwxr-xr-x  9 root root 0 Jan  1  1970 net
+drwxr-xr-x  3 root root 0 Apr 23 00:24 nvme-subsystem
+drwxr-xr-x  3 root root 0 Apr 23 00:24 pps
+drwxr-xr-x  3 root root 0 Apr 23 00:24 sound
+drwxr-xr-x  4 root root 0 Apr 23 00:24 tee
+drwxr-xr-x 70 root root 0 Jan  1  1970 tty
+drwxr-xr-x 23 root root 0 Apr 23 00:24 vc
+drwxr-xr-x  3 root root 0 Apr 23 00:24 vc-mem
+drwxr-xr-x  3 root root 0 Apr 23 00:24 vtconsole
+drwxr-xr-x  9 root root 0 Apr 23 00:24 workqueue
+root@main:~# ls -l /sys/devices/breakpoint
+total 0
+-rw-r--r-- 1 root root 16384 Apr 23 00:25 perf_event_mux_interval_ms
+drwxr-xr-x 2 root root     0 Apr 23 00:25 power
+lrwxrwxrwx 1 root root     0 Apr 23 00:25 subsystem -> ../../bus/event_source
+-r--r--r-- 1 root root 16384 Apr 23 00:25 type
+-rw-r--r-- 1 root root 16384 Apr 23 00:25 uevent
+root@main:~# ls -l /sys/devices/kprobe/   
+total 0
+drwxr-xr-x 2 root root     0 Apr 23 00:25 format
+-rw-r--r-- 1 root root 16384 Apr 23 00:25 perf_event_mux_interval_ms
+drwxr-xr-x 2 root root     0 Apr 23 00:25 power
+lrwxrwxrwx 1 root root     0 Apr 23 00:25 subsystem -> ../../bus/event_source
+-r--r--r-- 1 root root 16384 Apr 23 00:25 type
+-rw-r--r-- 1 root root 16384 Apr 23 00:25 uevent
+root@main:~# ls -l /sys/devices/graphics
+ls: cannot access '/sys/devices/graphics': No such file or directory
+root@main:~# ls -l /sys/devices/system/ 
+total 0
+drwxr-xr-x 5 root root 0 Apr 23 00:26 clockevents
+drwxr-xr-x 4 root root 0 Apr 23 00:26 clocksource
+drwxr-xr-x 3 root root 0 Apr 23 00:26 container
+drwxr-xr-x 7 root root 0 Jan  1  1970 cpu
+drwxr-xr-x 4 root root 0 Apr 23 00:26 xen_memory
+root@main:~# ls -l /sys/devices/system/container
+total 0
+drwxr-xr-x 2 root root     0 Apr 23 00:26 power
+-rw-r--r-- 1 root root 16384 Apr 23 00:26 uevent
+root@main:~# ls -l /sys/devices/system/xeb_memory
+ls: cannot access '/sys/devices/system/xeb_memory': No such file or directory
+root@main:~# ls -l /sys/devices/system/xen_memory
+total 0
+drwxr-xr-x 2 root root     0 Apr 23 00:27 power
+-rw-r--r-- 1 root root 16384 Apr 23 00:27 uevent
+drwxr-xr-x 4 root root     0 Apr 23 00:27 xen_memory0
+root@main:~# ls /sys/class
+bdi	     hwmon	       mdio_bus        pps	    tee
+block	     i2c-adapter       mem	       ptp	    thermal
+bsg	     input	       misc	       pwm	    tty
+devcoredump  iommu	       mmc_host        rc	    ubi
+devlink      iscsi_connection  mtd	       regulator    udc
+dma	     iscsi_endpoint    net	       rtc	    usb_role
+dma_heap     iscsi_host        nvme	       scsi_device  usbmisc
+drm	     iscsi_iface       nvme-generic    scsi_disk    vc
+extcon	     iscsi_session     nvme-subsystem  scsi_host    vc-mem
+gpio	     iscsi_transport   pci_bus	       sound	    vtconsole
+graphics     leds	       phy	       spi_master   wakeup
+hidraw	     lirc	       power_supply    spi_slave    watchdog
+root@main:~# ls /sys/class/tty
+console  tty13	tty20  tty28  tty35  tty42  tty5   tty57  tty7
+ptmx	 tty14	tty21  tty29  tty36  tty43  tty50  tty58  tty8
+tty	 tty15	tty22  tty3   tty37  tty44  tty51  tty59  tty9
+tty0	 tty16	tty23  tty30  tty38  tty45  tty52  tty6   ttyAMA0
+tty1	 tty17	tty24  tty31  tty39  tty46  tty53  tty60  ttyprintk
+tty10	 tty18	tty25  tty32  tty4   tty47  tty54  tty61
+tty11	 tty19	tty26  tty33  tty40  tty48  tty55  tty62
+tty12	 tty2	tty27  tty34  tty41  tty49  tty56  tty63
+root@main:~# 
+
+
+root@main:/var# ls
+alsa-utils-static  libgpiod-arm64-static  lvm		 ssh
+aos		   local		  machine-id	 tailscale-static
+backups		   lock			  mycommands.sh  tmp
+cache		   log			  run		 volatile
+lib		   lost+found		  spool
+root@main:/var# cd aos
+root@main:/var/aos# ls
+downloads  iam	states	storages  vis  workdirs
+root@main:/var/aos# ls -l
+total 21
+drwxr-xr-x 3 root root 4096 Apr 16 02:31 downloads
+drwxr-xr-x 3 root root 4096 Apr 22 10:35 iam
+drwxr-xr-x 3 root root 1024 Apr 15 06:30 states
+drwxr-xr-x 4 root root 4096 Apr 16 00:38 storages
+drwxr-xr-x 2 root root 4096 Feb 27  2024 vis
+drwxr-xr-x 7 root root 4096 Apr 15 06:30 workdirs
+
+root@main:/var/aos# ls -l /dev/
+total 0
+drwxr-xr-x 2 root   root      120 Jan  1  1970 aosvg
+crw-r--r-- 1 root   root  10, 235 Apr 22 10:35 autofs
+drwxr-xr-x 2 root   root      700 Feb 27  2024 block
+crw------- 1 root   root  10, 126 Apr 22 10:35 cachefiles
+drwxr-xr-x 2 root   root     2540 Apr 22 10:35 char
+crw------- 1 root   root   5,   1 Apr 22 10:35 console
+crw------- 1 root   root  10, 119 Apr 22 10:35 cpu_dma_latency
+drwxr-xr-x 8 root   root      160 Jan  1  1970 disk
+brw-rw---- 1 root   disk 254,   0 Feb 27  2024 dm-0
+brw-rw---- 1 root   disk 254,   1 Feb 27  2024 dm-1
+brw-rw---- 1 root   disk 254,   2 Feb 27  2024 dm-2
+brw-rw---- 1 root   disk 254,   3 Feb 27  2024 dm-3
+brw-rw---- 1 root   disk 254,   4 Feb 27  2024 dm-4
+drwxr-xr-x 2 root   root       80 Jan  1  1970 dma_heap
+lrwxrwxrwx 1 root   root       13 Feb 27  2024 fd -> /proc/self/fd
+crw-rw-rw- 1 root   root   1,   7 Apr 22 10:35 full
+crw------- 1 root   root 254,   0 Apr 22 10:35 gpiochip0
+crw------- 1 root   root  10, 183 Apr 22 10:35 hwrng
+lrwxrwxrwx 1 root   root       12 Feb 27  2024 initctl -> /run/initctl
+drwxr-xr-x 2 root   root       60 Jan  1  1970 input
+crw-r--r-- 1 root   root   1,  11 Apr 22 10:35 kmsg
+lrwxrwxrwx 1 root   root       28 Feb 27  2024 log -> /run/systemd/journal/dev-log
+crw-rw---- 1 root   disk  10, 237 Apr 22 10:35 loop-control
+brw-rw---- 1 root   disk   7,   0 Feb 27  2024 loop0
+brw-rw---- 1 root   disk   7,   1 Feb 27  2024 loop1
+brw-rw---- 1 root   disk   7,   2 Feb 27  2024 loop2
+brw-rw---- 1 root   disk   7,   3 Feb 27  2024 loop3
+brw-rw---- 1 root   disk   7,   4 Feb 27  2024 loop4
+brw-rw---- 1 root   disk   7,   5 Feb 27  2024 loop5
+brw-rw---- 1 root   disk   7,   6 Feb 27  2024 loop6
+brw-rw---- 1 root   disk   7,   7 Feb 27  2024 loop7
+drwxr-xr-x 2 root   root      160 Jan  1  1970 mapper
+crw-r----- 1 root   kmem   1,   1 Apr 22 10:35 mem
+drwxrwxrwt 2 root   root       40 Jan  1  1970 mqueue
+crw------- 1 root   root 242,   0 Apr 22 10:35 ng0n1
+crw-rw-rw- 1 root   root   1,   3 Apr 22 10:35 null
+crw------- 1 root   root 243,   0 Feb 27  2024 nvme0
+brw-rw---- 1 root   disk 259,   0 Feb 27  2024 nvme0n1
+brw-rw---- 1 root   disk 259,   1 Feb 27  2024 nvme0n1p1
+brw-rw---- 1 root   disk 259,   2 Feb 27  2024 nvme0n1p2
+brw-rw---- 1 root   disk 259,   3 Feb 27  2024 nvme0n1p3
+crw-r----- 1 root   kmem   1,   4 Apr 22 10:35 port
+crw------- 1 root   root 249,   0 Apr 22 10:35 pps0
+crw-rw-rw- 1 root   tty    5,   2 Apr 23 23:48 ptmx
+crw------- 1 root   root 248,   0 Apr 22 10:35 ptp0
+drwxr-xr-x 2 root   root        0 Feb 27  2024 pts
+brw-rw---- 1 root   disk   1,   0 Feb 27  2024 ram0
+brw-rw---- 1 root   disk   1,   1 Feb 27  2024 ram1
+brw-rw---- 1 root   disk   1,  10 Feb 27  2024 ram10
+brw-rw---- 1 root   disk   1,  11 Feb 27  2024 ram11
+brw-rw---- 1 root   disk   1,  12 Feb 27  2024 ram12
+brw-rw---- 1 root   disk   1,  13 Feb 27  2024 ram13
+brw-rw---- 1 root   disk   1,  14 Feb 27  2024 ram14
+brw-rw---- 1 root   disk   1,  15 Feb 27  2024 ram15
+brw-rw---- 1 root   disk   1,   2 Feb 27  2024 ram2
+brw-rw---- 1 root   disk   1,   3 Feb 27  2024 ram3
+brw-rw---- 1 root   disk   1,   4 Feb 27  2024 ram4
+brw-rw---- 1 root   disk   1,   5 Feb 27  2024 ram5
+brw-rw---- 1 root   disk   1,   6 Feb 27  2024 ram6
+brw-rw---- 1 root   disk   1,   7 Feb 27  2024 ram7
+brw-rw---- 1 root   disk   1,   8 Feb 27  2024 ram8
+brw-rw---- 1 root   disk   1,   9 Feb 27  2024 ram9
+crw-rw-rw- 1 root   root   1,   8 Apr 22 10:35 random
+drwxrwxrwt 2 root   root       40 Feb 27  2024 shm
+crw------- 1 root   root  10, 231 Apr 22 10:35 snapshot
+drwxr-xr-x 2 root   root       60 Jan  1  1970 snd
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stderr -> /proc/self/fd/2
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stdin -> /proc/self/fd/0
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stdout -> /proc/self/fd/1
+crw------- 1 root   root 247,   0 Apr 22 10:35 tee0
+crw------- 1 root   root 247,  16 Apr 22 10:35 teepriv0
+crw-rw-rw- 1 root   tty    5,   0 Apr 23 23:48 tty
+crw--w---- 1 root   tty    4,   0 Feb 27  2024 tty0
+crw--w---- 1 root   tty    4,   1 Apr 22 10:35 tty1
+crw--w---- 1 root   tty    4,  10 Feb 27  2024 tty10
+crw--w---- 1 root   tty    4,  11 Feb 27  2024 tty11
+crw--w---- 1 root   tty    4,  12 Feb 27  2024 tty12
+crw--w---- 1 root   tty    4,  13 Feb 27  2024 tty13
+crw--w---- 1 root   tty    4,  14 Feb 27  2024 tty14
+crw--w---- 1 root   tty    4,  15 Feb 27  2024 tty15
+crw--w---- 1 root   tty    4,  16 Feb 27  2024 tty16
+crw--w---- 1 root   tty    4,  17 Feb 27  2024 tty17
+crw--w---- 1 root   tty    4,  18 Feb 27  2024 tty18
+crw--w---- 1 root   tty    4,  19 Feb 27  2024 tty19
+crw--w---- 1 root   tty    4,   2 Apr 22 10:35 tty2
+crw--w---- 1 root   tty    4,  20 Feb 27  2024 tty20
+crw--w---- 1 root   tty    4,  21 Feb 27  2024 tty21
+crw--w---- 1 root   tty    4,  22 Feb 27  2024 tty22
+crw--w---- 1 root   tty    4,  23 Feb 27  2024 tty23
+crw--w---- 1 root   tty    4,  24 Feb 27  2024 tty24
+crw--w---- 1 root   tty    4,  25 Feb 27  2024 tty25
+crw--w---- 1 root   tty    4,  26 Feb 27  2024 tty26
+crw--w---- 1 root   tty    4,  27 Feb 27  2024 tty27
+crw--w---- 1 root   tty    4,  28 Feb 27  2024 tty28
+crw--w---- 1 root   tty    4,  29 Feb 27  2024 tty29
+crw--w---- 1 root   tty    4,   3 Apr 22 10:35 tty3
+crw--w---- 1 root   tty    4,  30 Feb 27  2024 tty30
+crw--w---- 1 root   tty    4,  31 Feb 27  2024 tty31
+crw--w---- 1 root   tty    4,  32 Feb 27  2024 tty32
+crw--w---- 1 root   tty    4,  33 Feb 27  2024 tty33
+crw--w---- 1 root   tty    4,  34 Feb 27  2024 tty34
+crw--w---- 1 root   tty    4,  35 Feb 27  2024 tty35
+crw--w---- 1 root   tty    4,  36 Feb 27  2024 tty36
+crw--w---- 1 root   tty    4,  37 Feb 27  2024 tty37
+crw--w---- 1 root   tty    4,  38 Feb 27  2024 tty38
+crw--w---- 1 root   tty    4,  39 Feb 27  2024 tty39
+crw--w---- 1 root   tty    4,   4 Apr 22 10:35 tty4
+crw--w---- 1 root   tty    4,  40 Feb 27  2024 tty40
+crw--w---- 1 root   tty    4,  41 Feb 27  2024 tty41
+crw--w---- 1 root   tty    4,  42 Feb 27  2024 tty42
+crw--w---- 1 root   tty    4,  43 Feb 27  2024 tty43
+crw--w---- 1 root   tty    4,  44 Feb 27  2024 tty44
+crw--w---- 1 root   tty    4,  45 Feb 27  2024 tty45
+crw--w---- 1 root   tty    4,  46 Feb 27  2024 tty46
+crw--w---- 1 root   tty    4,  47 Feb 27  2024 tty47
+crw--w---- 1 root   tty    4,  48 Feb 27  2024 tty48
+crw--w---- 1 root   tty    4,  49 Feb 27  2024 tty49
+crw--w---- 1 root   tty    4,   5 Apr 22 10:35 tty5
+crw--w---- 1 root   tty    4,  50 Feb 27  2024 tty50
+crw--w---- 1 root   tty    4,  51 Feb 27  2024 tty51
+crw--w---- 1 root   tty    4,  52 Feb 27  2024 tty52
+crw--w---- 1 root   tty    4,  53 Feb 27  2024 tty53
+crw--w---- 1 root   tty    4,  54 Feb 27  2024 tty54
+crw--w---- 1 root   tty    4,  55 Feb 27  2024 tty55
+crw--w---- 1 root   tty    4,  56 Feb 27  2024 tty56
+crw--w---- 1 root   tty    4,  57 Feb 27  2024 tty57
+crw--w---- 1 root   tty    4,  58 Feb 27  2024 tty58
+crw--w---- 1 root   tty    4,  59 Feb 27  2024 tty59
+crw--w---- 1 root   tty    4,   6 Apr 22 10:35 tty6
+crw--w---- 1 root   tty    4,  60 Feb 27  2024 tty60
+crw--w---- 1 root   tty    4,  61 Feb 27  2024 tty61
+crw--w---- 1 root   tty    4,  62 Feb 27  2024 tty62
+crw--w---- 1 root   tty    4,  63 Feb 27  2024 tty63
+crw--w---- 1 root   tty    4,   7 Feb 27  2024 tty7
+crw--w---- 1 root   tty    4,   8 Feb 27  2024 tty8
+crw--w---- 1 root   tty    4,   9 Feb 27  2024 tty9
+crw------- 1 mspdev tty  204,  64 Apr 23 23:46 ttyAMA0
+crw------- 1 root   root   5,   3 Feb 27  2024 ttyprintk
+crw------- 1 root   root  10, 118 Apr 22 10:35 ubi_ctrl
+crw-rw-rw- 1 root   root   1,   9 Apr 22 10:35 urandom
+crw------- 1 root   root 244,   0 Apr 22 10:35 vc-mem
+crw-rw---- 1 root   tty    7,   0 Apr 22 10:35 vcs
+crw-rw---- 1 root   tty    7,   1 Apr 22 10:35 vcs1
+crw-rw---- 1 root   tty    7,   2 Apr 22 10:35 vcs2
+crw-rw---- 1 root   tty    7,   3 Apr 22 10:35 vcs3
+crw-rw---- 1 root   tty    7,   4 Apr 22 10:35 vcs4
+crw-rw---- 1 root   tty    7,   5 Apr 22 10:35 vcs5
+crw-rw---- 1 root   tty    7,   6 Apr 22 10:35 vcs6
+crw-rw---- 1 root   tty    7, 128 Apr 22 10:35 vcsa
+crw-rw---- 1 root   tty    7, 129 Apr 22 10:35 vcsa1
+crw-rw---- 1 root   tty    7, 130 Apr 22 10:35 vcsa2
+crw-rw---- 1 root   tty    7, 131 Apr 22 10:35 vcsa3
+crw-rw---- 1 root   tty    7, 132 Apr 22 10:35 vcsa4
+crw-rw---- 1 root   tty    7, 133 Apr 22 10:35 vcsa5
+crw-rw---- 1 root   tty    7, 134 Apr 22 10:35 vcsa6
+crw-rw---- 1 root   tty    7,  64 Apr 22 10:35 vcsu
+crw-rw---- 1 root   tty    7,  65 Apr 22 10:35 vcsu1
+crw-rw---- 1 root   tty    7,  66 Apr 22 10:35 vcsu2
+crw-rw---- 1 root   tty    7,  67 Apr 22 10:35 vcsu3
+crw-rw---- 1 root   tty    7,  68 Apr 22 10:35 vcsu4
+crw-rw---- 1 root   tty    7,  69 Apr 22 10:35 vcsu5
+crw-rw---- 1 root   tty    7,  70 Apr 22 10:35 vcsu6
+crw------- 1 root   root  10, 127 Apr 22 10:35 vga_arbiter
+drwxr-xr-x 2 root   root      160 Jan  1  1970 xen
+crw-rw-rw- 1 root   root   1,   5 Apr 22 10:35 zero
+root@main:/var/aos# ls -l /sys/class/rtc
+total 0
+root@main:/var/aos# hwclock
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+root@main:/var/aos# ls -l /dev/i2c-1
+ls: cannot access '/dev/i2c-1': No such file or directory
+root@main:/var/aos# ls -l /dev/i*   
+lrwxrwxrwx 1 root root 12 Feb 27  2024 /dev/initctl -> /run/initctl
+
+/dev/input:
+total 0
+crw-rw---- 1 root input 13, 63 Feb 27  2024 mice
+root@main:/var/aos# ls -l /dev/tty*
+crw-rw-rw- 1 root   tty    5,  0 Apr 23 23:55 /dev/tty
+crw--w---- 1 root   tty    4,  0 Feb 27  2024 /dev/tty0
+crw--w---- 1 root   tty    4,  1 Apr 22 10:35 /dev/tty1
+crw--w---- 1 root   tty    4, 10 Feb 27  2024 /dev/tty10
+crw--w---- 1 root   tty    4, 11 Feb 27  2024 /dev/tty11
+crw--w---- 1 root   tty    4, 12 Feb 27  2024 /dev/tty12
+crw--w---- 1 root   tty    4, 13 Feb 27  2024 /dev/tty13
+crw--w---- 1 root   tty    4, 14 Feb 27  2024 /dev/tty14
+crw--w---- 1 root   tty    4, 15 Feb 27  2024 /dev/tty15
+crw--w---- 1 root   tty    4, 16 Feb 27  2024 /dev/tty16
+crw--w---- 1 root   tty    4, 17 Feb 27  2024 /dev/tty17
+crw--w---- 1 root   tty    4, 18 Feb 27  2024 /dev/tty18
+crw--w---- 1 root   tty    4, 19 Feb 27  2024 /dev/tty19
+crw--w---- 1 root   tty    4,  2 Apr 22 10:35 /dev/tty2
+crw--w---- 1 root   tty    4, 20 Feb 27  2024 /dev/tty20
+crw--w---- 1 root   tty    4, 21 Feb 27  2024 /dev/tty21
+crw--w---- 1 root   tty    4, 22 Feb 27  2024 /dev/tty22
+crw--w---- 1 root   tty    4, 23 Feb 27  2024 /dev/tty23
+crw--w---- 1 root   tty    4, 24 Feb 27  2024 /dev/tty24
+crw--w---- 1 root   tty    4, 25 Feb 27  2024 /dev/tty25
+crw--w---- 1 root   tty    4, 26 Feb 27  2024 /dev/tty26
+crw--w---- 1 root   tty    4, 27 Feb 27  2024 /dev/tty27
+crw--w---- 1 root   tty    4, 28 Feb 27  2024 /dev/tty28
+crw--w---- 1 root   tty    4, 29 Feb 27  2024 /dev/tty29
+crw--w---- 1 root   tty    4,  3 Apr 22 10:35 /dev/tty3
+crw--w---- 1 root   tty    4, 30 Feb 27  2024 /dev/tty30
+crw--w---- 1 root   tty    4, 31 Feb 27  2024 /dev/tty31
+crw--w---- 1 root   tty    4, 32 Feb 27  2024 /dev/tty32
+crw--w---- 1 root   tty    4, 33 Feb 27  2024 /dev/tty33
+crw--w---- 1 root   tty    4, 34 Feb 27  2024 /dev/tty34
+crw--w---- 1 root   tty    4, 35 Feb 27  2024 /dev/tty35
+crw--w---- 1 root   tty    4, 36 Feb 27  2024 /dev/tty36
+crw--w---- 1 root   tty    4, 37 Feb 27  2024 /dev/tty37
+crw--w---- 1 root   tty    4, 38 Feb 27  2024 /dev/tty38
+crw--w---- 1 root   tty    4, 39 Feb 27  2024 /dev/tty39
+crw--w---- 1 root   tty    4,  4 Apr 22 10:35 /dev/tty4
+crw--w---- 1 root   tty    4, 40 Feb 27  2024 /dev/tty40
+crw--w---- 1 root   tty    4, 41 Feb 27  2024 /dev/tty41
+crw--w---- 1 root   tty    4, 42 Feb 27  2024 /dev/tty42
+crw--w---- 1 root   tty    4, 43 Feb 27  2024 /dev/tty43
+crw--w---- 1 root   tty    4, 44 Feb 27  2024 /dev/tty44
+crw--w---- 1 root   tty    4, 45 Feb 27  2024 /dev/tty45
+crw--w---- 1 root   tty    4, 46 Feb 27  2024 /dev/tty46
+crw--w---- 1 root   tty    4, 47 Feb 27  2024 /dev/tty47
+crw--w---- 1 root   tty    4, 48 Feb 27  2024 /dev/tty48
+crw--w---- 1 root   tty    4, 49 Feb 27  2024 /dev/tty49
+crw--w---- 1 root   tty    4,  5 Apr 22 10:35 /dev/tty5
+crw--w---- 1 root   tty    4, 50 Feb 27  2024 /dev/tty50
+crw--w---- 1 root   tty    4, 51 Feb 27  2024 /dev/tty51
+crw--w---- 1 root   tty    4, 52 Feb 27  2024 /dev/tty52
+crw--w---- 1 root   tty    4, 53 Feb 27  2024 /dev/tty53
+crw--w---- 1 root   tty    4, 54 Feb 27  2024 /dev/tty54
+crw--w---- 1 root   tty    4, 55 Feb 27  2024 /dev/tty55
+crw--w---- 1 root   tty    4, 56 Feb 27  2024 /dev/tty56
+crw--w---- 1 root   tty    4, 57 Feb 27  2024 /dev/tty57
+crw--w---- 1 root   tty    4, 58 Feb 27  2024 /dev/tty58
+crw--w---- 1 root   tty    4, 59 Feb 27  2024 /dev/tty59
+crw--w---- 1 root   tty    4,  6 Apr 22 10:35 /dev/tty6
+crw--w---- 1 root   tty    4, 60 Feb 27  2024 /dev/tty60
+crw--w---- 1 root   tty    4, 61 Feb 27  2024 /dev/tty61
+crw--w---- 1 root   tty    4, 62 Feb 27  2024 /dev/tty62
+crw--w---- 1 root   tty    4, 63 Feb 27  2024 /dev/tty63
+crw--w---- 1 root   tty    4,  7 Feb 27  2024 /dev/tty7
+crw--w---- 1 root   tty    4,  8 Feb 27  2024 /dev/tty8
+crw--w---- 1 root   tty    4,  9 Feb 27  2024 /dev/tty9
+crw------- 1 mspdev tty  204, 64 Apr 23 23:51 /dev/ttyAMA0
+crw------- 1 root   root   5,  3 Feb 27  2024 /dev/ttyprintk
+
+root@main:/var/aos# cat /proc/asound/pcm
+root@main:/var/aos# aplay -l
+-sh: aplay: command not found
+root@main:/var/aos# cd ..
+root@main:/var# ls
+alsa-utils-static  libgpiod-arm64-static  lvm		 ssh
+aos		   local		  machine-id	 tailscale-static
+backups		   lock			  mycommands.sh  tmp
+cache		   log			  run		 volatile
+lib		   lost+found		  spool
+root@main:/var# cd libgpiod-arm64-static/
+root@main:/var/libgpiod-arm64-static# ls
+gpio-tools-test.bash  gpioget	 gpioinfo.c  gpiomon.o	   gpioset
+gpiodetect	      gpioget.c  gpioinfo.o  gpionotify    gpioset.c
+gpiodetect.c	      gpioget.o  gpiomon     gpionotify.c  gpioset.o
+gpiodetect.o	      gpioinfo	 gpiomon.c   gpionotify.o
+root@main:/var/libgpiod-arm64-static# ./aplay -l
+-sh: ./aplay: No such file or directory
+root@main:/var/libgpiod-arm64-static# cd ..
+root@main:/var# cd alsa-utils-static/
+root@main:/var/alsa-utils-static# ls
+aconnect  alsaucm  aplaymidi	arecordmidi2  axfer
+alsabat   amidi    aplaymidi2	aseqdump      iecset
+alsaloop  amixer   arecord	aseqnet       nhlt-dmic-info
+alsatplg  aplay    arecordmidi	aseqsend      speaker-test
+root@main:/var/alsa-utils-static# ./aplay -l
+aplay: device_list:279: no soundcards found...
+root@main:/var/alsa-utils-static# ./aplay -L
+ALSA lib conf.c:4580:(snd_config_update_r) Cannot access file /opt/alsa-lib-aarch64/share/alsa/alsa.conf
+root@main:/var/alsa-utils-static# 
+
+

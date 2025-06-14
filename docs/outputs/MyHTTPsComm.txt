@@ -1,0 +1,35 @@
+HTTP/1.1 200 OK
+HTTPプロトコルのバージョンが1.1であり、ステータスコード200はリクエストが正常に処理されたことを示しています。​
+Server: nginx
+このレスポンスを提供しているウェブサーバーのソフトウェアがnginxであることを示しています。​
+Date: Thu, 13 Mar 2025 15:08:07 GMT
+レスポンスが生成された日時をGMT（グリニッジ標準時）で示しています。​
+Content-Type: text/html
+レスポンスの内容がHTML形式のテキストデータであることを示しています。​
+Content-Length: 52774
+レスポンスボディのサイズが52774バイトであることを示しています。​
+Connection: close
+この接続を今回のレスポンス送信後に閉じることを示しています。​
+Last-Modified: Thu, 13 Mar 2025 06:25:58 GMT
+リソースが最後に変更された日時をGMTで示しています。​
+ETag: "ce26-6303365241419"
+リソースの特定のバージョンを識別するためのエンティティタグ（ETag）を示しています。​
+Accept-Ranges: bytes
+クライアントがバイト単位での範囲リクエストを行えることを示しています。​
+
+<!DOCTYPE html>
+このドキュメントがHTML5で書かれていることを宣言しています。
+<html lang="ja" dir="ltr">
+HTMLドキュメントの開始タグで、言語が日本語（ja）であり、テキストの方向が左から右（ltr）であることを示しています。
+<head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+<head>タグの開始を示し、Open Graphプロトコルの名前空間を定義
+<meta charset="UTF-8">
+ドキュメントの文字エンコーディングがUTF-8であることを指定しています。
+<title>SCSK株式会社</title>
+ブラウザのタイトルバーやタブに表示されるドキュメントのタイトルを「SCSK株式会社」と設定
+<meta name="description" content="SCSK株式会社は、コンサルティングから、システム開発～～ ">
+ページの内容を説明するメタデータを提供し、検索エンジンの結果やソーシャルメディアでのプレビューに使用
+<meta name="keywords" content="SCSK">
+ページに関連するキーワードを指定し、検索エンジン最適化（SEO）に利用
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+Internet Explorerに最新のレンダリングエンジンを使用させる指示を出す

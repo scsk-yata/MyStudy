@@ -1,0 +1,1957 @@
+Welcome to minicom 2.9
+
+OPTIONS: I18n                                                                
+Port /dev/ttyUSB0, 15:29:04                                                  
+                                                                             
+Press CTRL-A Z for help on special keys                                      
+                                                                             
+                                                                             
+  0.32 RPi: BOOTSYS release VERSION:26826259 DATE: 2024/09/23 TIME: 14:02:56 
+  0.36 BOOTMODE: 0x06 partition 0 build-ts BUILD_TIMESTAMP=1727096576 serial 942
+  0.46 AON_RESET: 00000003 PM_RSTS 00001000                                  
+  0.53 RP1_BOOT chip ID: 0x20001927                                          
+  0.56 PM_RSTS: 0x00001000                                                   
+  0.56 part 00000000 reset_info 00000000                                     
+  0.60 PMIC reset-event 00000000 rtc 00000000 alarm 00000000 enabled 0       
+  0.66 uSD voltage 3.3V                                                      
+  1.85 Initialising SDRAM rank 2 total-size: 64 Gbit 4267 (0x14 0x00)        
+  1.89 DDR 4267 1 0 64 152                                                   
+  2.83 OTP boardrev d04170 bootrom a a                                       
+  2.84 Customer key hash 0000000000000000000000000000000000000000000000000000000
+  2.91 VC-JTAG unlocked
+  2.14 RP1_BOOT chip ID: 0x20001927
+                                                                                
+  3.16 RP1_BOOT chip ID: 0x20001927                                             
+  3.16 RP1_BOOT: fw size 25992                                                  
+  3.71 PCI2 init                                                                
+  3.71 PCI2 reset                                                               
+  3.16 PCIe scan 00001de4:00000001                                              
+  3.17 RP1_CHIP_INFO 20001927                                                   
+                                                                                
+  3.19 RPi: BOOTLOADER release VERSION:26826259 DATE: 2024/09/23 TIME: 14:02:56 
+  3.26 BOOTMODE: 0x06 partition 0 build-ts BUILD_TIMESTAMP=1727096576 serial 948
+  3.36 AON_RESET: 00000003 PM_RSTS 00001000                                     
+  3.40 PCIEx1: PWR 0 DET_WAKE 1                                                 
+  3.67 usb_pd_init status 3                                                     
+  3.68 USB_PD CONFIG 0 41                                                       
+  3.75 XHCI-STOP                                                                
+  3.75 xHC0 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  3.79 USBSTS 1                                                                 
+  3.82 xHC0 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  3.87 xHC0 ports 3 slots 64 intrs 4                                            
+  3.99 XHCI-STOP                                                                
+  3.99 xHC1 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  4.03 USBSTS 1                                                                 
+  4.06 xHC1 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  4.11 xHC1 ports 3 slots 64 intrs 4                                            
+  4.18 Boot mode: SD (01) order f46                                             
+  4.19 USB-PD: src-cap PDO object1 0x080191f4                                   
+  4.20 Current 5000 mA                                                          
+  4.22 Voltage 5000 mV                                                          
+  4.24 USB-PD: src-cap PDO object2 0x0002d12c                                   
+  4.28 Current 3000 mA                                                          
+  4.30 Voltage 9000 mV                                                          
+  4.32 USB-PD: src-cap PDO object3 0x0003c0e1                                   
+  4.37 Current 2250 mA                                                          
+  4.39 Voltage 12000 mV                                                         
+  4.41 USB-PD: src-cap PDO object4 0x0004b0b4                                   
+  4.45 Current 1800 mA                                                          
+  4.47 Voltage 15000 mV                                                         
+  4.49 USB-PD: src-cap PDO object5 0xc0dc212d                                   
+  4.53 USB-PD: src-cap PDO object6 0xc1402124                                   
+  4.72 SD HOST: 200000000 CTL0: 0x00800000 BUS: 400000 Hz actual: 390625 HZ div6
+  4.83 SD HOST: 200000000 CTL0: 0x00800f00 BUS: 400000 Hz actual: 390625 HZ div6
+  4.38 OCR c0ff8000 [74]                                                        
+CID: 0002544d5341313647554a2adf6e018a                                           
+CSD: 400e00325b59000073df7f800a400000                                           
+  4.46 SD: bus-width: 4 spec: 2 SCR: 0x02058083 0x01000000                      
+  4.53 SD HOST: 200000000 CTL0: 0x00800f04 BUS: 50000000 Hz actual: 50000000 HZ2
+  4.63 MBR: 0x00000001,  911359 type: 0xee                                      
+  4.65 MBR: 0x00000000,       0 type: 0x00                                      
+  4.69 MBR: 0x00000000,       0 type: 0x00                                      
+  4.73 MBR: 0x00000000,       0 type: 0x00                                      
+  4.76 Trying partition: 0                                                      
+  4.79 GPT d0b46976cbc0f343b7b7b82b13e20cce 000000001 0000de7ff num-partitions 8
+  4.88 GPT partition: 0 c12a7328-f81f-11d2-ba4b-00a0c93ec93b 000000800..0000407f
+  4.95 Matched GUID bootable-part-idx 0 want partition 0                        
+  4.00 type: 32 lba: 2048 'mkfs.fat' ' rpi5       ' clusters 258078 (1)         
+  4.06 rsc 32 fat-sectors 2017 root dir cluster 2 sectors 0 entries 0           
+  4.13 FAT32 clusters 258078                                                    
+  4.19 [sdcard] autoboot.txt not found                                          
+  4.20 Select partition rsts 0 C(boot_partition) 0 EEPROM config 0 result 0     
+  4.27 Trying partition: 0                                                      
+  4.30 GPT d0b46976cbc0f343b7b7b82b13e20cce 000000001 0000de7ff num-partitions 8
+  4.38 GPT partition: 0 c12a7328-f81f-11d2-ba4b-00a0c93ec93b 000000800..0000407f
+  4.45 Matched GUID bootable-part-idx 0 want partition 0                        
+  4.51 type: 32 lba: 2048 'mkfs.fat' ' rpi5       ' clusters 258078 (1)         
+  4.56 rsc 32 fat-sectors 2017 root dir cluster 2 sectors 0 entries 0           
+  4.63 FAT32 clusters 258078                                                    
+  4.69 Read config.txt bytes     2533 hnd 0x6b                                  
+  4.72 [sdcard] pieeprom.upd not found                                          
+  4.74 usb_max_current_enable default 0 max-current 5000                        
+  4.87 Read bcm2712-rpi-5-b.dtb bytes    78059 hnd 0xaa05                       
+  4.89 dt-match: compatible: raspberrypi,5-model-b match: brcm,bcm2712          
+  4.96 dt-match: compatible: brcm,bcm2712 match: brcm,bcm2712                   
+                                                                                
+NOTICE:  BL31: v2.6(release):v2.6-239-g2a9ede0bd                                
+NOTICE:  BL31: Built : 14:26:57, Jun 22 2023                                    
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x414fd0b1]          
+[    0.000000] Linux version 6.6.22-v8-16k (oe-user@oe-host) (aarch64-poky-linu4
+[    0.000000] KASLR enabled                                                    
+[    0.000000] random: crng init done                                           
+[    0.000000] Machine model: Raspberry Pi 5 Model B Rev 1.0                    
+[    0.000000] efi: UEFI not found.                                             
+[    0.000000] Reserved memory: created CMA memory pool at 0x0000000004000000, B
+[    0.000000] OF: reserved mem: initialized node linux,cma, compatible id sharl
+[    0.000000] OF: reserved mem: 0x0000000004000000..0x0000000017ffffff (327680a
+[    0.000000] OF: reserved mem: 0x0000000000000000..0x000000000007ffff (512 Ki0
+[    0.000000] OF: reserved mem: 0x000000003fd16ae0..0x000000003fd16b17 (0 KiB)0
+[    0.000000] Zone ranges:                                                     
+[    0.000000]   DMA      [mem 0x0000000000000000-0x00000000ffffffff]           
+[    0.000000]   DMA32    empty                                                 
+[    0.000000]   Normal   [mem 0x0000000100000000-0x00000001ffffffff]           
+[    0.000000] Movable zone start for each node                                 
+[    0.000000] Early memory node ranges                                         
+[    0.000000]   node   0: [mem 0x0000000000000000-0x000000000007ffff]          
+[    0.000000]   node   0: [mem 0x0000000000080000-0x000000003fbfffff]          
+[    0.000000]   node   0: [mem 0x0000000040000000-0x00000001ffffffff]          
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x00000001ffffffff] 
+[    0.000000] On node 0, zone DMA: 256 pages in unavailable ranges             
+[    0.000000] psci: probing for conduit method from DT.                        
+[    0.000000] psci: PSCIv1.1 detected in firmware.                             
+[    0.000000] psci: Using standard PSCI v0.2 function IDs                      
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.                           
+[    0.000000] psci: SMC Calling Convention v1.2                                
+[    0.000000] percpu: Embedded 14 pages/cpu s184936 r8192 d36248 u229376       
+[    0.000000] Detected PIPT I-cache on CPU0                                    
+[    0.000000] CPU features: detected: Virtualization Host Extensions           
+[    0.000000] CPU features: detected: Hardware dirty bit management            
+[    0.000000] CPU features: detected: Spectre-v4                               
+[    0.000000] CPU features: detected: Spectre-BHB                              
+[    0.000000] CPU features: kernel page table isolation forced ON by KASLR     
+[    0.000000] CPU features: detected: Kernel page table isolation (KPTI)       
+[    0.000000] alternatives: applying boot alternatives                         
+[    0.000000] Kernel command line: reboot=w coherent_pool=1M 8250.nr_uarts=1 pt
+[    0.000000] Unknown kernel command line parameters "aos_disk=nvme0n1p", will.
+[    0.000000] Dentry cache hash table entries: 1048576 (order: 9, 8388608 byte)
+[    0.000000] Inode-cache hash table entries: 524288 (order: 8, 4194304 bytes,)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 521984    
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off    
+[    0.000000] software IO TLB: area num 4.                                     
+[    0.000000] software IO TLB: mapped [mem 0x00000000fbffc000-0x00000000ffffc0)
+[    0.000000] Memory: 7902688K/8384512K available (14848K kernel code, 2280K r)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1       
+[    0.000000] ftrace: allocating 47760 entries in 47 pages                     
+[    0.000000] ftrace: allocated 47 pages with 5 groups                         
+[    0.000000] trace event string verifier disabled                             
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.                
+[    0.000000] rcu:     RCU event tracing is enabled.                           
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=4.  
+[    0.000000]  Trampoline variant of Tasks RCU enabled.                        
+[    0.000000]  Rude variant of Tasks RCU enabled.                              
+[    0.000000]  Tracing variant of Tasks RCU enabled.                           
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 ji.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4     
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0                   
+[    0.000000] Root IRQ handler: gic_handle_irq                                 
+[    0.000000] GIC: Using split EOI/Deactivate mode                             
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.   
+[    0.000000] arch_timer: cp15 timer(s) running at 54.00MHz (phys).            
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycless
+[    0.000000] sched_clock: 56 bits at 54MHz, resolution 18ns, wraps every 4398s
+[    0.000160] Console: colour dummy device 80x25                               
+[    0.000177] Calibrating delay loop (skipped), value calculated using timer f)
+[    0.000181] pid_max: default: 32768 minimum: 301                             
+[    0.000205] LSM: initializing lsm=capability,integrity                       
+[    0.000273] Mount-cache hash table entries: 16384 (order: 3, 131072 bytes, l)
+[    0.000302] Mountpoint-cache hash table entries: 16384 (order: 3, 131072 byt)
+[    0.000666] cgroup: Disabling memory control group subsystem                 
+[    0.001116] RCU Tasks: Setting shift to 2 and lim to 1 rcu_task_cb_adjust=1. 
+[    0.001140] RCU Tasks Rude: Setting shift to 2 and lim to 1 rcu_task_cb_adju.
+[    0.001164] RCU Tasks Trace: Setting shift to 2 and lim to 1 rcu_task_cb_adj.
+[    0.001222] rcu: Hierarchical SRCU implementation.                           
+[    0.001224] rcu:     Max phase no-delay instances is 1000.                   
+[    0.001817] EFI services will not be available.                              
+[    0.001885] smp: Bringing up secondary CPUs ...                              
+[    0.002041] Detected PIPT I-cache on CPU1                                    
+[    0.002082] CPU1: Booted secondary processor 0x0000000100 [0x414fd0b1]       
+[    0.002257] Detected PIPT I-cache on CPU2                                    
+[    0.002292] CPU2: Booted secondary processor 0x0000000200 [0x414fd0b1]       
+[    0.002450] Detected PIPT I-cache on CPU3                                    
+[    0.002481] CPU3: Booted secondary processor 0x0000000300 [0x414fd0b1]       
+[    0.002510] smp: Brought up 1 node, 4 CPUs                                   
+[    0.002512] SMP: Total of 4 processors activated.                            
+[    0.002515] CPU features: detected: 32-bit EL0 Support                       
+[    0.002516] CPU features: detected: Data cache clean to the PoU not requirede
+[    0.002518] CPU features: detected: Common not Private translations          
+[    0.002519] CPU features: detected: CRC32 instructions                       
+[    0.002521] CPU features: detected: RCpc load-acquire (LDAPR)                
+[    0.002523] CPU features: detected: LSE atomic instructions                  
+[    0.002525] CPU features: detected: Privileged Access Never                  
+[    0.002526] CPU features: detected: RAS Extension Support                    
+[    0.002528] CPU features: detected: Speculative Store Bypassing Safe (SSBS)  
+[    0.002559] CPU: All CPU(s) started at EL2                                   
+[    0.002560] alternatives: applying system-wide alternatives                  
+[    0.004260] devtmpfs: initialized                                            
+[    0.007000] Enabled cp15_barrier support                                     
+[    0.007005] Enabled setend support                                           
+[    0.007100] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, ms
+[    0.007105] futex hash table entries: 1024 (order: 2, 65536 bytes, linear)   
+[    0.007903] pinctrl core: initialized pinctrl subsystem                      
+[    0.008064] DMI not present or invalid.                                      
+[    0.008231] NET: Registered PF_NETLINK/PF_ROUTE protocol family              
+[    0.008798] DMA: preallocated 1024 KiB GFP_KERNEL pool for atomic allocations
+[    0.008843] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA pool for atomic als
+[    0.008888] DMA: preallocated 1024 KiB GFP_KERNEL|GFP_DMA32 pool for atomic s
+[    0.008905] audit: initializing netlink subsys (disabled)                    
+[    0.008960] audit: type=2000 audit(0.008:1): state=initialized audit_enabled1
+[    0.009080] thermal_sys: Registered thermal governor 'step_wise'             
+[    0.009092] cpuidle: using governor menu                                     
+[    0.009161] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.    
+[    0.009190] ASID allocator initialised with 32768 entries                    
+[    0.009481] Serial: AMBA PL011 UART driver                                   
+[    0.010404] bcm2835-mbox 107c013880.mailbox: mailbox enabled                 
+[    0.010760] 107d001000.serial: ttyAMA10 at MMIO 0x107d001000 (irq = 15, base2
+[    0.010770] printk: console [ttyAMA10] enabled                               
+[    0.768289] raspberrypi-firmware soc:firmware: Attached to firmware from 202d
+[    0.782340] raspberrypi-firmware soc:firmware: Firmware hash is 2682625900000
+[    0.798159] Modules: 2G module region forced by RANDOMIZE_MODULE_REGION_FULL 
+[    0.805238] Modules: 0 pages in range for non-PLT usage                      
+[    0.805240] Modules: 128772 pages in range for PLT usage                     
+[    0.815065] bcm2835-dma 1000010000.dma: DMA legacy API manager, dmachans=0x1 
+[    0.828071] iommu: Default domain type: Translated                           
+[    0.832947] iommu: DMA domain TLB invalidation policy: strict mode           
+[    0.839245] SCSI subsystem initialized                                       
+[    0.843040] usbcore: registered new interface driver usbfs                   
+[    0.848555] usbcore: registered new interface driver hub                     
+[    0.853891] usbcore: registered new device driver usb                        
+[    0.859049] pps_core: LinuxPPS API ver. 1 registered                         
+[    0.864029] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giom>
+[    0.873201] PTP clock support registered                                     
+[    0.877179] Advanced Linux Sound Architecture Driver Initialized.            
+[    0.883505] vgaarb: loaded                                                   
+[    0.886313] clocksource: Switched to clocksource arch_sys_counter            
+[    0.892546] VFS: Disk quotas dquot_6.6.0                                     
+[    0.896491] VFS: Dquot-cache hash table entries: 2048 (order 0, 16384 bytes) 
+[    0.903593] FS-Cache: Loaded                                                 
+[    0.906508] CacheFiles: Loaded                                               
+[    0.911071] NET: Registered PF_INET protocol family                          
+[    0.916101] IP idents hash table entries: 131072 (order: 6, 1048576 bytes, l)
+[    0.926096] tcp_listen_portaddr_hash hash table entries: 4096 (order: 2, 655)
+[    0.934701] Table-perturb hash table entries: 65536 (order: 4, 262144 bytes,)
+[    0.942476] TCP established hash table entries: 65536 (order: 5, 524288 byte)
+[    0.950689] TCP bind hash table entries: 65536 (order: 7, 2097152 bytes, lin)
+[    0.959680] TCP: Hash tables configured (established 65536 bind 65536)       
+[    0.966366] MPTCP token hash table entries: 8192 (order: 3, 196608 bytes, li)
+[    0.973988] UDP hash table entries: 4096 (order: 3, 131072 bytes, linear)    
+[    0.980898] UDP-Lite hash table entries: 4096 (order: 3, 131072 bytes, linea)
+[    0.988303] NET: Registered PF_UNIX/PF_LOCAL protocol family                 
+[    0.994127] RPC: Registered named UNIX socket transport module.              
+[    1.000070] RPC: Registered udp transport module.                            
+[    1.004786] RPC: Registered tcp transport module.                            
+[    1.009503] RPC: Registered tcp-with-tls transport module.                   
+[    1.015009] RPC: Registered tcp NFSv4.1 backchannel transport module.        
+[    1.021474] PCI: CLS 0 bytes, default 64                                     
+[    1.034419] kvm [1]: IPA Size Limit: 40 bits                                 
+[    1.038738] kvm [1]: GICV region size/alignment is unsafe, using trapping (r)
+[    1.047491] kvm [1]: vgic interrupt IRQ9                                     
+[    1.051434] kvm [1]: VHE mode initialized successfully                       
+[    1.100182] Initialise system trusted keyrings                               
+[    1.104716] workingset: timestamp_bits=46 max_order=19 bucket_order=0        
+[    1.111196] zbud: loaded                                                     
+[    1.113827] squashfs: version 4.0 (2009/01/31) Phillip Lougher               
+[    1.119765] NFS: Registering the id_resolver key type                        
+[    1.124839] Key type id_resolver registered                                  
+[    1.129033] Key type id_legacy registered                                    
+[    1.133057] nfs4filelayout_init: NFSv4 File Layout Driver Registering...     
+[    1.139783] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registerin.
+[    1.147249] F2FS not supported on PAGE_SIZE(16384) != 4096                   
+[    1.152802] Key type asymmetric registered                                   
+[    1.156910] Asymmetric key parser 'x509' registered                          
+[    1.161816] Block layer SCSI generic (bsg) driver version 0.4 loaded (major )
+[    1.169277] io scheduler mq-deadline registered                              
+[    1.173823] io scheduler kyber registered                                    
+[    1.177850] io scheduler bfq registered                                      
+[    1.181930] irq_brcmstb_l2: registered L2 intc (/soc/interrupt-controller@7c)
+[    1.191082] irq_brcmstb_l2: registered L2 intc (/soc/intc@7d503000, parent i)
+[    1.198844] irq_brcmstb_l2: registered L2 intc (/soc/intc@7d508380, parent i)
+[    1.206577] irq_brcmstb_l2: registered L2 intc (/soc/intc@7d508400, parent i)
+[    1.214320] irq_brcmstb_l2: registered L2 intc (/soc/interrupt-controller@7d)
+[    1.223446] irq_brcmstb_l2: registered L2 intc (/soc/intc@7d517b00, parent i)
+[    1.266340] Serial: 8250/16550 driver, 1 ports, IRQ sharing enabled          
+[    1.273049] 107d50c000.serial: ttyS0 at MMIO 0x107d50c000 (irq = 33, base_baT
+[    1.283667] serial serial0: tty port ttyS0 registered                        
+[    1.289022] iproc-rng200 107d208000.rng: hwrng registered                    
+[    1.294489] vc-mem: phys_addr:0x00000000 mem_base=0x3fc00000 mem_size:0x4000)
+[    1.303013] bcm2712-iommu-cache 1000005b00.iommuc: bcm2712_iommu_cache_probe 
+[    1.312448] brd: module loaded                                               
+[    1.316910] loop: module loaded                                              
+[    1.320176] bcm2835-power bcm2835-power: Broadcom BCM2835 power domains drivr
+[    1.327540] Loading iSCSI transport class v2.0-870.                          
+[    1.333297] usbcore: registered new device driver r8152-cfgselector          
+[    1.339600] usbcore: registered new interface driver r8152                   
+[    1.345109] usbcore: registered new interface driver lan78xx                 
+[    1.350792] usbcore: registered new interface driver smsc95xx                
+[    1.356609] dwc_otg: version 3.00a 10-AUG-2012 (platform bus)                
+[    1.362519] usbcore: registered new interface driver uas                     
+[    1.367855] usbcore: registered new interface driver usb-storage             
+[    1.373970] mousedev: PS/2 mouse device common for all mice                  
+[    1.387959] rpi-rtc soc:rpi_rtc: registered as rtc0                          
+[    1.394375] rpi-rtc soc:rpi_rtc: setting system clock to 1970-01-01T00:00:09)
+[    1.402495] bcm2835-wdt bcm2835-wdt: Poweroff handler already present!       
+[    1.409049] bcm2835-wdt bcm2835-wdt: Broadcom BCM2835 watchdog timer         
+[    1.417828] sdhci: Secure Digital Host Controller Interface driver           
+[    1.424037] sdhci: Copyright(c) Pierre Ossman                                
+[    1.428445] sdhci-pltfm: SDHCI platform and OF driver helper                 
+[    1.434246] ledtrig-cpu: registered to indicate activity on CPUs             
+[    1.440308] SMCCC: SOC_ID: ARCH_SOC_ID not implemented, skipping ....        
+[    1.446779] hid: raw HID events driver (C) Jiri Kosina                       
+[    1.451943] usbcore: registered new interface driver usbhid                  
+[    1.457533] usbhid: USB HID core driver                                      
+[    1.461583] hw perfevents: enabled with armv8_cortex_a76 PMU driver, 7 counte
+[    1.469984] NET: Registered PF_PACKET protocol family                        
+[    1.475070] Key type dns_resolver registered                                 
+[    1.482593] registered taskstats version 1                                   
+[    1.486748] Loading compiled-in X.509 certificates                           
+[    1.493306] Key type .fscrypt registered                                     
+[    1.497242] Key type fscrypt-provisioning registered                         
+[    1.503754] brcm-pcie 1000110000.pcie: host bridge /axi/pcie@110000 ranges:  
+[    1.510755] brcm-pcie 1000110000.pcie:   No bus range found for /axi/pcie@11]
+[    1.519847] brcm-pcie 1000110000.pcie:      MEM 0x1b00000000..0x1bfffffffb -0
+[    1.528146] brcm-pcie 1000110000.pcie:      MEM 0x1800000000..0x1affffffff -0
+[    1.536443] brcm-pcie 1000110000.pcie:   IB MEM 0x0000000000..0x0fffffffff -0
+[    1.545906] brcm-pcie 1000110000.pcie: Forcing gen 2                         
+[    1.551105] brcm-pcie 1000110000.pcie: PCI host bridge to bus 0000:00        
+[    1.557570] pci_bus 0000:00: root bus resource [bus 00-ff]                   
+[    1.563073] pci_bus 0000:00: root bus resource [mem 0x1b00000000-0x1bfffffff)
+[    1.573638] pci_bus 0000:00: root bus resource [mem 0x1800000000-0x1afffffff)
+[    1.584821] pci 0000:00:00.0: [14e4:2712] type 01 class 0x060400             
+[    1.590864] pci 0000:00:00.0: PME# supported from D0 D3hot                   
+[    1.596939] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reg
+[    1.710318] brcm-pcie 1000110000.pcie: link up, 5.0 GT/s PCIe x1 (!SSC)      
+[    1.716974] pci 0000:01:00.0: [1dee:5216] type 00 class 0x010802             
+[    1.723016] pci 0000:01:00.0: reg 0x10: [mem 0x1b00000000-0x1b00003fff 64bit]
+[    1.730202] pci 0000:01:00.0: reg 0x30: [mem 0x1b00000000-0x1b0001ffff pref] 
+[    1.737382] pci 0000:01:00.0: 4.000 Gb/s available PCIe bandwidth, limited b)
+[    1.762330] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01      
+[    1.768973] pci 0000:00:00.0: BAR 8: assigned [mem 0x1b00000000-0x1b000fffff]
+[    1.776135] pci 0000:01:00.0: BAR 6: assigned [mem 0x1b00000000-0x1b0001ffff]
+[    1.783732] pci 0000:01:00.0: BAR 0: assigned [mem 0x1b00020000-0x1b00023fff]
+[    1.791423] pci 0000:00:00.0: PCI bridge to [bus 01]                         
+[    1.796403] pci 0000:00:00.0:   bridge window [mem 0x1b00000000-0x1b000fffff]
+[    1.803565] pci 0000:00:00.0: Max Payload Size set to  512/ 512 (was  128), 2
+[    1.812040] pci 0000:01:00.0: Max Payload Size set to  512/ 512 (was  128), 2
+[    1.820557] pcieport 0000:00:00.0: enabling device (0000 -> 0002)            
+[    1.826697] pcieport 0000:00:00.0: PME: Signaling with IRQ 38                
+[    1.832518] pcieport 0000:00:00.0: AER: enabled with IRQ 38                  
+[    1.838212] nvme nvme0: pci function 0000:01:00.0                            
+[    1.842941] nvme 0000:01:00.0: enabling device (0000 -> 0002)                
+[    1.872527] nvme nvme0: missing or invalid SUBNQN field.                     
+[    1.879730] hwmon hwmon1: temp1_input not attached to any thermal zone       
+[    1.886285] hwmon hwmon1: temp2_input not attached to any thermal zone       
+[    1.892837] hwmon hwmon1: temp3_input not attached to any thermal zone       
+[    1.900893] nvme nvme0: allocated 64 MiB host memory buffer.                 
+[    2.050138] nvme nvme0: 4/0/0 default/read/poll queues                       
+[    2.078250] GPT:Primary header thinks Alt. header is not at the end of the d.
+[    2.085680] GPT:10897407 != 1000215215                                       
+[    2.089439] GPT:Alternate GPT header not at the end of the disk.             
+[    2.095466] GPT:10897407 != 1000215215                                       
+[    2.099224] GPT: Use GNU Parted to correct GPT errors.                       
+[    2.104384]  nvme0n1: p1 p2 p3                                               
+[    2.107666] brcm-pcie 1000110000.pcie: clkreq control enabled                
+[    2.113497] brcm-pcie 1000120000.pcie: host bridge /axi/pcie@120000 ranges:  
+[    2.120488] brcm-pcie 1000120000.pcie:   No bus range found for /axi/pcie@12]
+[    2.129578] brcm-pcie 1000120000.pcie:      MEM 0x1f00000000..0x1ffffffffb -0
+[    2.137882] brcm-pcie 1000120000.pcie:      MEM 0x1c00000000..0x1effffffff -0
+[    2.146185] brcm-pcie 1000120000.pcie:   IB MEM 0x1f00000000..0x1f003fffff -0
+[    2.154485] brcm-pcie 1000120000.pcie:   IB MEM 0x0000000000..0x0fffffffff -0
+[    2.163848] brcm-pcie 1000120000.pcie: Forcing gen 2                         
+[    2.168859] brcm-pcie 1000120000.pcie: PCI host bridge to bus 0001:00        
+[    2.175324] pci_bus 0001:00: root bus resource [bus 00-ff]                   
+[    2.180829] pci_bus 0001:00: root bus resource [mem 0x1f00000000-0x1ffffffff)
+[    2.191408] pci_bus 0001:00: root bus resource [mem 0x1c00000000-0x1efffffff)
+[    2.202593] pci 0001:00:00.0: [14e4:2712] type 01 class 0x060400             
+[    2.208641] pci 0001:00:00.0: PME# supported from D0 D3hot                   
+[    2.214788] pci 0001:00:00.0: bridge configuration invalid ([bus 00-00]), reg
+[    2.330316] brcm-pcie 1000120000.pcie: link up, 5.0 GT/s PCIe x4 (!SSC)      
+[    2.336972] pci 0001:01:00.0: [1de4:0001] type 00 class 0x020000             
+[    2.343010] pci 0001:01:00.0: reg 0x10: [mem 0xffffc000-0xffffffff]          
+[    2.349303] pci 0001:01:00.0: reg 0x14: [mem 0xffc00000-0xffffffff]          
+[    2.355595] pci 0001:01:00.0: reg 0x18: [mem 0xffff0000-0xffffffff]          
+[    2.361943] pci 0001:01:00.0: supports D1                                    
+[    2.365962] pci 0001:01:00.0: PME# supported from D0 D1 D3hot D3cold         
+[    2.382324] pci_bus 0001:01: busn_res: [bus 01-ff] end is updated to 01      
+[    2.388969] pci 0001:00:00.0: BAR 8: assigned [mem 0x1f00000000-0x1f005fffff]
+[    2.396133] pci 0001:01:00.0: BAR 1: assigned [mem 0x1f00000000-0x1f003fffff]
+[    2.403297] pci 0001:01:00.0: BAR 2: assigned [mem 0x1f00400000-0x1f0040ffff]
+[    2.410459] pci 0001:01:00.0: BAR 0: assigned [mem 0x1f00410000-0x1f00413fff]
+[    2.417633] pci 0001:00:00.0: PCI bridge to [bus 01]                         
+[    2.422614] pci 0001:00:00.0:   bridge window [mem 0x1f00000000-0x1f005fffff]
+[    2.429777] pci 0001:00:00.0: Max Payload Size set to  256/ 512 (was  128), 2
+[    2.438254] pci 0001:01:00.0: Max Payload Size set to  256/ 256 (was  128), 2
+[    2.446768] pcieport 0001:00:00.0: enabling device (0000 -> 0002)            
+[    2.452904] pcieport 0001:00:00.0: PME: Signaling with IRQ 44                
+[    2.458707] pcieport 0001:00:00.0: AER: enabled with IRQ 44                  
+[    2.464352] rp1 0001:01:00.0: bar0 len 0x4000, start 0x1f00410000, end 0x1f00
+[    2.473435] rp1 0001:01:00.0: bar1 len 0x400000, start 0x1f00000000, end 0x10
+[    2.482695] rp1 0001:01:00.0: enabling device (0000 -> 0002)                 
+[    2.489007] rp1 0001:01:00.0: chip_id 0x20001927                             
+[    2.517076] macb 1f00100000.ethernet eth0: Cadence GEM rev 0x00070109 at 0x1)
+[    2.527852] dw_axi_dmac_platform 1f00188000.dma: DesignWare AXI DMA Controlls
+[    2.536360] xhci-hcd xhci-hcd.0: xHCI Host Controller                        
+[    2.541434] xhci-hcd xhci-hcd.0: new USB bus registered, assigned bus number1
+[    2.549118] xhci-hcd xhci-hcd.0: hcc params 0x0240fe6d hci version 0x110 qui0
+[    2.558118] xhci-hcd xhci-hcd.0: irq 137, io mem 0x1f00200000                
+[    2.563941] xhci-hcd xhci-hcd.0: xHCI Host Controller                        
+[    2.569008] xhci-hcd xhci-hcd.0: new USB bus registered, assigned bus number2
+[    2.576256] xhci-hcd xhci-hcd.0: Host supports USB 3.0 SuperSpeed            
+[    2.582403] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, b6
+[    2.590700] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber1
+[    2.597948] usb usb1: Product: xHCI Host Controller                          
+[    2.602839] usb usb1: Manufacturer: Linux 6.6.22-v8-16k xhci-hcd             
+[    2.608865] usb usb1: SerialNumber: xhci-hcd.0                               
+[    2.613404] hub 1-0:1.0: USB hub found                                       
+[    2.617175] hub 1-0:1.0: 2 ports detected                                    
+[    2.621279] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, b6
+[    2.629575] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber1
+[    2.636825] usb usb2: Product: xHCI Host Controller                          
+[    2.641716] usb usb2: Manufacturer: Linux 6.6.22-v8-16k xhci-hcd             
+[    2.647804] usb usb2: SerialNumber: xhci-hcd.0                               
+[    2.652334] hub 2-0:1.0: USB hub found                                       
+[    2.656100] hub 2-0:1.0: 1 port detected                                     
+[    2.660249] xhci-hcd xhci-hcd.1: xHCI Host Controller                        
+[    2.665425] xhci-hcd xhci-hcd.1: new USB bus registered, assigned bus number3
+[    2.673103] xhci-hcd xhci-hcd.1: hcc params 0x0240fe6d hci version 0x110 qui0
+[    2.682204] xhci-hcd xhci-hcd.1: irq 142, io mem 0x1f00300000                
+[    2.688022] xhci-hcd xhci-hcd.1: xHCI Host Controller                        
+[    2.693090] xhci-hcd xhci-hcd.1: new USB bus registered, assigned bus number4
+[    2.700436] xhci-hcd xhci-hcd.1: Host supports USB 3.0 SuperSpeed            
+[    2.706572] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, b6
+[    2.714964] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber1
+[    2.722212] usb usb3: Product: xHCI Host Controller                          
+[    2.727103] usb usb3: Manufacturer: Linux 6.6.22-v8-16k xhci-hcd             
+[    2.733225] usb usb3: SerialNumber: xhci-hcd.1                               
+[    2.737744] hub 3-0:1.0: USB hub found                                       
+[    2.741512] hub 3-0:1.0: 2 ports detected                                    
+[    2.745613] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, b6
+[    2.754009] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber1
+[    2.761259] usb usb4: Product: xHCI Host Controller                          
+[    2.766170] usb usb4: Manufacturer: Linux 6.6.22-v8-16k xhci-hcd             
+[    2.772306] usb usb4: SerialNumber: xhci-hcd.1                               
+[    2.776878] hub 4-0:1.0: USB hub found                                       
+[    2.780651] hub 4-0:1.0: 1 port detected                                     
+[    2.785011] bcm2712-iommu 1000005100.iommu: bcm2712_iommu_init: DEBUG_INFO =4
+[    2.793463] platform 1000800000.codec: bcm2712_iommu_probe_device: MMU 10000u
+[    2.801500] platform 1000800000.codec: bcm2712_iommu_device_group: MMU 10000u
+[    2.809737] platform 1000800000.codec: Adding to iommu group 0               
+[    2.815598] platform 1000880000.pisp_be: bcm2712_iommu_probe_device: MMU 100u
+[    2.824000] platform 1000880000.pisp_be: bcm2712_iommu_device_group: MMU 100u
+[    2.832209] platform 1000880000.pisp_be: Adding to iommu group 0             
+[    2.838250] platform 1000800000.codec: bcm2712_iommu_attach_dev: MMU 1000005u
+[    2.846295] platform 1000880000.pisp_be: bcm2712_iommu_attach_dev: MMU 10000u
+[    2.854350] bcm2712-iommu 1000005100.iommu: bcm2712_iommu_probe: Success     
+[    2.861502] bcm2712-iommu 1000005200.iommu: bcm2712_iommu_init: DEBUG_INFO =4
+[    2.869737] platform axi:gpu: bcm2712_iommu_probe_device: MMU 1000005200.iomu
+[    2.877184] platform axi:gpu: bcm2712_iommu_device_group: MMU 1000005200.iomu
+[    2.884435] platform axi:gpu: Adding to iommu group 1                        
+[    2.889540] platform axi:gpu: bcm2712_iommu_attach_dev: MMU 1000005200.iommu 
+[    2.896802] bcm2712-iommu 1000005200.iommu: bcm2712_iommu_probe: Success     
+[    2.903772] bcm2712-iommu 1000005280.iommu: bcm2712_iommu_init: DEBUG_INFO =4
+[    2.912204] bcm2712-iommu 1000005280.iommu: bcm2712_iommu_probe: Success     
+[    2.918974] vc4-drm axi:gpu: bcm2712_iommu_of_xlate: MMU 1000005200.iommu    
+[    2.927845] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[    2.934465] sdhci-brcmstb 1000fff000.mmc: Got CD GPIO                        
+[    2.935087] mmc1: CQHCI version 5.10                                         
+[    2.939612] mmc0: CQHCI version 5.10                                         
+[    2.943196] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[    2.955062] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[    2.963364] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[    2.970014] of_cfs_init                                                      
+[    2.972480] of_cfs_init: OK                                                  
+[    2.982445] mmc0: SDHCI controller on 1000fff000.mmc [1000fff000.mmc] using t
+[    2.992493] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[    3.090516] mmc0: new ultra high speed SDR104 SDHC card at address 1234      
+[    3.097365] mmcblk0: mmc0:1234 SA16G 14.5 GiB                                
+[    3.104807] GPT:Primary header thinks Alt. header is not at the end of the d.
+[    3.112237] GPT:911359 != 30375935                                           
+[    3.115650] GPT:Alternate GPT header not at the end of the disk.             
+[    3.121675] GPT:911359 != 30375935                                           
+[    3.125082] GPT: Use GNU Parted to correct GPT errors.                       
+[    3.130238]  mmcblk0: p1 p2                                                  
+[    3.130839] mmc1: SDHCI controller on 1001100000.mmc [1001100000.mmc] using t
+[    3.133104] mmcblk0: mmc0:1234 SA16G 14.5 GiB                                
+[    3.143218] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[    3.152835] clk: Disabling unused clocks                                     
+[    3.153807] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[    3.168838] ALSA device list:                                                
+[    3.171811]   No soundcards found.                                           
+[    3.177328] uart-pl011 107d001000.serial: no DMA platform data               
+[    3.190409] Freeing unused kernel memory: 13248K                             
+[    3.190815] mmc1: new ultra high speed DDR50 SDIO card at address 0001       
+[    3.195095] Run /init as init process                                        
+                                                                                
+********************************************************************************
+Welcome to AosCore install script!                                              
+********************************************************************************
+                                                                                
+Setting up your system for a smooth experience.                                 
+Initializing the file system...                                                 
+Waiting for device /dev/nvme0n1 to be ready...                                  
+Device /dev/nvme0n1 is ready.                                                   
+Preparing the SD card...                                                        
+[    5.224093] EXT4-fs (mmcblk0p2): mounted filesystem 2d8a2edd-cec3-4495-81e4-.
+Flashing root device...                                                         
+[   13.396290] vc4-drm axi:gpu: bound 107c580000.hvs (ops vc4_hvs_ops)          
+[   13.404539] platform axi:gpu: deferred probe pending                         
+688540+12762 records in                                                         
+688540+12762 records out                                                        
+mke2fs 1.47.0 (5-Feb-2023)                                                      
+Discarding device blocks: done                                                  
+Creating filesystem with 1048576 4k blocks and 262144 inodes                    
+Filesystem UUID: 5edeb7ee-8b6a-41df-8ddd-5ca6ee460776                           
+Superblock backups stored on blocks:                                            
+        32768, 98304, 163840, 229376, 294912, 819200, 884736                    
+                                                                                
+Allocating group tables: done                                                   
+Writing inode tables: done                                                      
+Creating journal (16384 blocks): done                                           
+Writing superblocks and filesystem accounting information: done                 
+                                                                                
+[   58.633323] EXT4-fs (nvme0n1p3): mounted filesystem 5edeb7ee-8b6a-41df-8ddd-.
+Adding user provided by Raspberry Pi Imager...                                  
+[   58.775446] EXT4-fs (nvme0n1p1): mounted filesystem fdbf10d0-fb54-4c50-b9fc-.
+[   58.799240] EXT4-fs (nvme0n1p1): unmounting filesystem fdbf10d0-fb54-4c50-b9.
+Flashing SD card...                                                             
+[   59.533949] EXT4-fs (mmcblk0p2): unmounting filesystem 2d8a2edd-cec3-4495-81.
+134828+1 records in                                                             
+134828+1 records out                                                            
+                                                                                
+********************************************************************************
+AosCore image successfully installed!                                           
+********************************************************************************
+                                                                                
+Rebooting the system...                                                         
+[  200.191747] kvm: exiting hardware virtualization                             
+[  200.196392] reboot: Restarting system                                        
+                                                                                
+  0.40 RPi: BOOTSYS release VERSION:26826259 DATE: 2024/09/23 TIME: 14:02:56    
+  0.44 BOOTMODE: 0x06 partition 0 build-ts BUILD_TIMESTAMP=1727096576 serial 947
+  0.54 AON_RESET: 00000003 PM_RSTS 00001020                                     
+  0.61 RP1_BOOT chip ID: 0x20001927                                             
+  0.64 PM_RSTS: 0x00001020                                                      
+  0.64 part 00000000 reset_info 00000000                                        
+  0.68 PMIC reset-event 00000000 rtc 000000d1 alarm 00000000 enabled 0          
+  0.74 uSD voltage 3.3V                                                         
+  1.93 Initialising SDRAM rank 2 total-size: 64 Gbit 4267 (0x14 0x00)           
+  1.97 DDR 4267 1 0 64 152                                                      
+  2.00 OTP boardrev d04170 bootrom a a                                          
+  2.02 Customer key hash 0000000000000000000000000000000000000000000000000000000
+  2.09 VC-JTAG unlocked                                                         
+  2.31 RP1_BOOT chip ID: 0x20001927                                             
+                                                                                
+  3.33 RP1_BOOT chip ID: 0x20001927                                             
+  3.34 RP1_BOOT: fw size 25992                                                  
+  3.89 PCI2 init                                                                
+  3.89 PCI2 reset                                                               
+  3.33 PCIe scan 00001de4:00000001                                              
+  3.34 RP1_CHIP_INFO 20001927                                                   
+                                                                                
+  3.37 RPi: BOOTLOADER release VERSION:26826259 DATE: 2024/09/23 TIME: 14:02:56 
+  3.44 BOOTMODE: 0x06 partition 0 build-ts BUILD_TIMESTAMP=1727096576 serial 942
+  3.54 AON_RESET: 00000003 PM_RSTS 00001020                                     
+  3.58 PCIEx1: PWR 0 DET_WAKE 1                                                 
+  3.84 usb_pd_init status 3                                                     
+  3.84 USB_PD CONFIG 0 43                                                       
+  4.02 XHCI-STOP                                                                
+  4.02 xHC0 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  4.07 USBSTS 1                                                                 
+  4.09 xHC0 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  4.14 xHC0 ports 3 slots 64 intrs 4                                            
+  4.26 XHCI-STOP                                                                
+  4.26 xHC1 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  4.34 USBSTS 1                                                                 
+  4.35 xHC1 ver: 272 HCS: 03000440 140000f1 07ff000a HCC: 0240fe6d              
+  4.40 xHC1 ports 3 slots 64 intrs 4                                            
+  4.46 USB-PD: src-cap PDO object1 0x080191f4                                   
+  4.47 Current 5000 mA                                                          
+  4.49 Voltage 5000 mV                                                          
+  4.52 USB-PD: src-cap PDO object2 0x0002d12c                                   
+  4.56 Current 3000 mA                                                          
+  4.58 Voltage 9000 mV                                                          
+  4.60 USB-PD: src-cap PDO object3 0x0003c0e1                                   
+  4.64 Current 2250 mA                                                          
+  4.66 Voltage 12000 mV                                                         
+  4.68 USB-PD: src-cap PDO object4 0x0004b0b4                                   
+  4.72 Current 1800 mA                                                          
+  4.74 Voltage 15000 mV                                                         
+  4.77 USB-PD: src-cap PDO object5 0xc0dc212d                                   
+  4.81 USB-PD: src-cap PDO object6 0xc1402124                                   
+  4.85 Boot mode: SD (01) order f46                                             
+  4.02 SD HOST: 200000000 CTL0: 0x00800000 BUS: 400000 Hz actual: 390625 HZ div6
+  4.13 SD HOST: 200000000 CTL0: 0x00800f00 BUS: 400000 Hz actual: 390625 HZ div6
+  4.68 OCR c0ff8000 [73]                                                        
+CID: 0002544d5341313647554a2adf6e018a                                           
+CSD: 400e00325b59000073df7f800a400000                                           
+  4.76 SD: bus-width: 4 spec: 2 SCR: 0x02058083 0x01000000                      
+  4.84 SD HOST: 200000000 CTL0: 0x00800f04 BUS: 50000000 Hz actual: 50000000 HZ2
+  4.93 MBR: 0x00000001, 2131967 type: 0xee                                      
+  4.95 MBR: 0x00000000,       0 type: 0x00                                      
+  4.99 MBR: 0x00000000,       0 type: 0x00                                      
+  4.03 MBR: 0x00000000,       0 type: 0x00                                      
+  4.06 Trying partition: 0                                                      
+  4.10 GPT fab44d3347b8da4ab1d20fdda878c3ed 000000001 0002087ff num-partitions 8
+  4.18 GPT partition: 0 ebd0a0a2-b9e5-4433-87c0-68b6b72699c7 000000800..0001007f
+  4.25 Matched GUID bootable-part-idx 0 want partition 0                        
+  4.30 type: 32 lba: 2048 'mkfs.fat' ' NO NAME    ' clusters 130812 (8)         
+  4.36 rsc 32 fat-sectors 1024 root dir cluster 2 sectors 0 entries 0           
+  4.43 FAT32 clusters 130812                                                    
+  4.49 [sdcard] autoboot.txt not found                                          
+  4.49 Select partition rsts 0 C(boot_partition) 0 EEPROM config 0 result 0     
+  4.56 Trying partition: 0                                                      
+  4.59 GPT fab44d3347b8da4ab1d20fdda878c3ed 000000001 0002087ff num-partitions 8
+  4.68 GPT partition: 0 ebd0a0a2-b9e5-4433-87c0-68b6b72699c7 000000800..0001007f
+  4.74 Matched GUID bootable-part-idx 0 want partition 0                        
+  4.80 type: 32 lba: 2048 'mkfs.fat' ' NO NAME    ' clusters 130812 (8)         
+  4.86 rsc 32 fat-sectors 1024 root dir cluster 2 sectors 0 entries 0           
+  4.92 FAT32 clusters 130812                                                    
+  4.96 Read config.txt bytes     2580 hnd 0x5                                   
+  4.99 [sdcard] pieeprom.upd not found                                          
+  4.02 usb_max_current_enable default 0 max-current 5000                        
+  4.14 Read bcm2712-rpi-5-b.dtb bytes    78059 hnd 0x35e0                       
+  4.16 dt-match: compatible: raspberrypi,5-model-b match: brcm,bcm2712          
+  4.23 dt-match: compatible: brcm,bcm2712 match: brcm,bcm2712                   
+  4.31 Read /config.txt bytes     2580 hnd 0x5                                  
+  4.35 Read /config.txt bytes     2580 hnd 0x5                                  
+  4.40 MESS:00:00:04.940878:0: Initial voltage 800000 temp 35631                
+  5.41 MESS:00:00:05.141181:0: avs_2712: AVS pred 9207 920700 temp 35082        
+  5.44 MESS:00:00:05.144786:0: vpred 920 mV +0                                  
+  5.53 MESS:00:00:05.153414:0: FB framebuffer_swap 1                            
+  5.72 MESS:00:00:05.172781:0: Select resolution HDMI0/2 hotplug 0 max_mode 2   
+  5.76 MESS:00:00:05.176829:0: Select resolution HDMI1/2 hotplug 0 max_mode 2   
+  5.93 MESS:00:00:05.193543:0: dtb_file 'bcm2712-rpi-5-b.dtb'                   
+  5.96 Loading 'bcm2712-rpi-5-b.dtb' to 0x00000000 offset 0x100                 
+  5.06 Read bcm2712-rpi-5-b.dtb bytes    78059 hnd 0x35e0                       
+  5.30  /overlays/overlay_map.dtb                                               
+  5.80 Read /config.txt bytes     2580 hnd 0x5                                  
+  5.83  /overlays/vc4-kms-v3d.dtbo                                              
+  5.62 Read /cmdline.txt bytes      104 hnd 0x4                                 
+  5.68 Loading 'armstub8-2712.bin' to 0x00000000 offset 0x0                     
+  5.21 Read armstub8-2712.bin bytes  1146776 hnd 0x154d                         
+  5.24 Loading 'u-boot' to 0x00000000 offset 0x200000                           
+  5.59 Read u-boot bytes   652704 hnd 0x353c                                    
+  5.60 PCI1 reset                                                               
+  5.72 PCI2 reset                                                               
+  5.82 USB-OTG disconnect                                                       
+  6.22 MESS:00:00:06.722207:0: Starting OS 6722 ms                              
+  6.26 MESS:00:00:06.726517:0: 00000040: -> 00000480                            
+  6.28 MESS:00:00:06.728611:0: 00000030: -> 00100080                            
+  6.33 MESS:00:00:06.733323:0: 00000034: -> 00100080                            
+  6.38 MESS:00:00:06.738036:0: 00000038: -> 00100080                            
+  6.42 MESS:00:00:06.742749:0: 0000003c: -> 00100080                            
+                                                                                
+NOTICE:  BL31: v2.10.0(release):v2.10.0-958-g09a1cc2a0b-dirty                   
+NOTICE:  BL31: Built : 14:54:20, May 10 2024                                    
+I/TC:                                                                           
+I/TC: Non-secure external DT found                                              
+I/TC: pl011: device parameters ignored (115200n8)                               
+E/TC:0 0   pl011_dev_init:216 pl011: unexpected register size: 200              
+I/TC: OP-TEE version: 4.2.0 (gcc version 13.3.0 (GCC)) #1 Fri Apr 12 09:51:21 U4
+I/TC: WARNING: This OP-TEE configuration might be insecure!                     
+I/TC: WARNING: Please check https://optee.readthedocs.io/en/latest/architecturel
+I/TC: Primary CPU initializing                                                  
+I/TC: Initializing virtualization support                                       
+I/TC: Primary CPU switching to normal world boot                                
+I/TC: WARNING: Using fixed value for stack canary                               
+                                                                                
+                                                                                
+U-Boot 2024.04 (Jul 28 2024 - 17:15:26 +0000)                                   
+                                                                                
+DRAM:  1020 MiB (effective 8 GiB)                                               
+RPI 5 Model B (0xd04170)                                                        
+Core:  45 devices, 15 uclasses, devicetree: board                               
+MMC:   mmc@fff000: 0, mmc@1100000: 1                                            
+Loading Environment from FAT... Unable to read "uboot.env" from mmc0:1...       
+In:    serial,usbkbd                                                            
+Out:   serial,vidconsole                                                        
+Err:   serial,vidconsole                                                        
+mbox: Header response code invalid                                              
+bcm2835: Could not query MAC address                                            
+PCIe BRCM: link up, 5.0 Gbps x1 (!SSC)                                          
+PCIe BRCM: link up, 5.0 Gbps x4 (!SSC)                                          
+Net:   eth0: ethernet@100000                                                    
+                                                                                
+starting USB...                                                                 
+No working controllers found                                                    
+Hit any key to stop autoboot:  0                                                
+No EFI system partition                                                         
+No EFI system partition                                                         
+Failed to persist EFI variables                                                 
+No EFI system partition                                                         
+Failed to persist EFI variables                                                 
+No EFI system partition                                                         
+Failed to persist EFI variables                                                 
+** Booting bootflow '<NULL>' with efi_mgr                                       
+Loading Boot0000 'mmc 0' failed                                                 
+EFI boot manager: Cannot load any image                                         
+Boot failed (err=-14)                                                           
+** Booting bootflow 'mmc@fff000.bootdev.part_1' with script                     
+Working FDT set to 2efec900                                                     
+1179656 bytes read in 51 ms (22.1 MiB/s)                                        
+2850 bytes read in 2 ms (1.4 MiB/s)                                             
+225 bytes read in 1 ms (219.7 KiB/s)                                            
+11982 bytes read in 3 ms (3.8 MiB/s)                                            
+6688772 bytes read in 279 ms (22.9 MiB/s)                                       
+31140266 bytes read in 1292 ms (23 MiB/s)                                       
+5680 bytes read in 3 ms (1.8 MiB/s)                                             
+Working FDT set to b000000                                                      
+1986 bytes read in 2 ms (969.7 KiB/s)                                           
+Moving Image from 0xb100000 to 0xb200000, end=b36d000                           
+## Flattened Device Tree blob at 2efec900                                       
+   Booting using the fdt blob at 0x2efec900                                     
+Working FDT set to 2efec900                                                     
+   Using Device Tree in place at 000000002efec900, end 000000002f005fff         
+Working FDT set to 2efec900                                                     
+                                                                                
+Starting kernel ...                                                             
+                                                                                
+ Xen 4.19-unstable                                                              
+(XEN) Xen version 4.19-unstable (@) (aarch64-poky-linux-gcc (GCC) 13.3.0) debug2
+(XEN) Latest ChangeSet: Fri Jan 5 10:46:44 2024 +0200 git:8ff1f6708a-dirty      
+(XEN) build-id: 90773c9c149a7beb6e5de8c633590af6d533ba63                        
+(XEN) Processor: 00000000414fd0b1: "ARM Limited", variant: 0x4, part 0xd0b,rev 1
+(XEN) 64-bit Execution:                                                         
+(XEN)   Processor Features: 1100000010111112 0000000000000010                   
+(XEN)     Exception Levels: EL3:64 EL2:64 EL1:64 EL0:64+32                      
+(XEN)     Extensions: FloatingPoint AdvancedSIMD                                
+(XEN)   Debug Features: 0000000010305408 0000000000000000                       
+(XEN)   Auxiliary Features: 0000000000000000 0000000000000000                   
+(XEN)   Memory Model Features: 0000000000101122 0000000010212122                
+(XEN)   ISA Features:  0000100010211120 0000000000100001                        
+(XEN) 32-bit Execution:                                                         
+(XEN)   Processor Features: 0000000010010131:0000000000010000                   
+(XEN)     Instruction Sets: AArch32 A32 Thumb Thumb-2 Jazelle                   
+(XEN)     Extensions: GenericTimer                                              
+(XEN)   Debug Features: 0000000004010088                                        
+(XEN)   Auxiliary Features: 0000000000000000                                    
+(XEN)   Memory Model Features: 0000000010201105 0000000040000000                
+(XEN)                          0000000001260000 0000000002122211                
+(XEN)   ISA Features: 0000000002101110 0000000013112111 0000000021232042        
+(XEN)                 0000000001112131 0000000000010142 0000000001011121        
+(XEN) Using SMC Calling Convention v1.5                                         
+(XEN) Using PSCI v1.1                                                           
+(XEN) SMP: Allowing 4 CPUs                                                      
+(XEN) Generic Timer IRQ: phys=30 hyp=26 virt=27 Freq: 54000 KHz                 
+(XEN) GICv2 initialization:                                                     
+(XEN)         gic_dist_addr=000000107fff9000                                    
+(XEN)         gic_cpu_addr=000000107fffa000                                     
+(XEN)         gic_hyp_addr=000000107fffc000                                     
+(XEN)         gic_vcpu_addr=000000107fffe000                                    
+(XEN)         gic_maintenance_irq=25                                            
+(XEN) GICv2: 320 lines, 4 cpus, secure (IID 0200143b).                          
+(XEN) XSM Framework v1.0.1 initialized                                          
+(XEN) Flask: 128 avtab hash slots, 361 rules.                                   
+(XEN) Flask: 128 avtab hash slots, 361 rules.                                   
+(XEN) Flask:  4 users, 3 roles, 42 types, 2 bools                               
+(XEN) Flask:  13 classes, 361 rules                                             
+(XEN) Flask:  Starting in permissive mode.                                      
+(XEN) Initialized GSX IRQ                                                       
+(XEN) Using scheduler: SMP Credit Scheduler rev2 (credit2)                      
+(XEN) Initializing Credit2 scheduler                                            
+(XEN)  load_precision_shift: 18                                                 
+(XEN)  load_window_shift: 30                                                    
+(XEN)  underload_balance_tolerance: 0                                           
+(XEN)  overload_balance_tolerance: -3                                           
+(XEN)  runqueues arrangement: socket                                            
+(XEN)  cap enforcement granularity: 10ms                                        
+(XEN) load tracking window length 1073741824 ns                                 
+(XEN) Allocated console ring of 32 KiB.                                         
+(XEN) CPU0: Guest atomics will try 16 times before pausing the domain           
+(XEN) Bringing up CPU1                                                          
+I/TC: Secondary CPU 1 initializing                                              
+I/TC: Secondary CPU 1 switching to normal world boot                            
+(XEN) CPU1: Guest atomics will try 15 times before pausing the domain           
+(XEN) CPU 1 booted.                                                             
+(XEN) Bringing up CPU2                                                          
+I/TC: Secondary CPU 2 initializing                                              
+I/TC: Secondary CPU 2 switching to normal world boot                            
+(XEN) CPU2: Guest atomics will try 1 times before pausing the domain            
+(XEN) CPU 2 booted.                                                             
+(XEN) Bringing up CPU3                                                          
+I/TC: Secondary CPU 3 initializing                                              
+I/TC: Secondary CPU 3 switching to normal world boot                            
+(XEN) CPU3: Guest atomics will try 2 times before pausing the domain            
+(XEN) Brought up 4 CPUs                                                         
+(XEN) CPU 3 booted.                                                             
+(XEN) I/O virtualisation disabled                                               
+(XEN) P2M: 40-bit IPA with 40-bit PA and 16-bit VMID                            
+(XEN) P2M: 3 levels with order-1 root, VTCR 0x00000000800a3558                  
+(XEN) Scheduling granularity: cpu, 1 CPU per sched-resource                     
+(XEN) Initializing Credit2 scheduler                                            
+(XEN)  load_precision_shift: 18                                                 
+(XEN)  load_window_shift: 30                                                    
+(XEN)  underload_balance_tolerance: 0                                           
+(XEN)  overload_balance_tolerance: -3                                           
+(XEN)  runqueues arrangement: socket                                            
+(XEN)  cap enforcement granularity: 10ms                                        
+(XEN) load tracking window length 1073741824 ns                                 
+(XEN) Adding cpu 0 to runqueue 0                                                
+(XEN)  First cpu on runqueue, activating                                        
+(XEN) Adding cpu 1 to runqueue 0                                                
+(XEN) Adding cpu 2 to runqueue 0                                                
+(XEN) Adding cpu 3 to runqueue 0                                                
+(XEN) OP-TEE supports 4 simultaneous threads per guest.                         
+I/TC: Removing guest 0                                                          
+E/TC:0 0   virt_guest_destroyed:393 Client with id 0 is not found               
+(XEN) Using TEE mediator for OP-TEE                                             
+(XEN) alternatives: Patching with alt table 00000a00002f0d88 -> 00000a00002f1fa0
+(XEN) CPU0 will use 24 loops workaround on exception entry                      
+(XEN) CPU2 will use 24 loops workaround on exception entry                      
+(XEN) CPU3 will use 24 loops workaround on exception entry                      
+(XEN) CPU1 will use 24 loops workaround on exception entry                      
+I/TC: Added guest 1                                                             
+(XEN) *** LOADING DOMAIN 0 ***                                                  
+(XEN) Loading d0 kernel from boot module @ 0000000000e00000                     
+(XEN) Allocating 1:1 mappings totalling 128MB for dom0:                         
+(XEN) BANK[0] 0x00000010000000-0x00000018000000 (128MB)                         
+(XEN) Grant table range: 0x0000000b200000-0x0000000b240000                      
+(XEN) Allocating PPI 16 for event channel interrupt                             
+(XEN) d0: extended region 0: 0x200000->0x7e00000                                
+(XEN) d0: extended region 1: 0xb400000->0xfe00000                               
+(XEN) d0: extended region 2: 0x18000000->0x1ce00000                             
+(XEN) d0: extended region 3: 0x1f000000->0x3fa00000                             
+(XEN) d0: extended region 4: 0x40000000->0x4fe00000                             
+(XEN) d0: extended region 5: 0x70000000->0x1ffe00000                            
+(XEN) Loading zImage from 0000000000e00000 to 0000000010000000-0000000010661004 
+(XEN) Loading d0 DTB to 0x0000000017e00000-0x0000000017e1372d                   
+(XEN) avc:  denied  { create } for current=d[IDLE] scontext=system_u:system_r:xn
+(XEN) *** LOADING DOMU cpus=1 memory=0x80000KB ***                              
+(XEN) Loading d1 kernel from boot module @ 0000000003500000                     
+(XEN) d1: STATIC BANK[0] 0x00000050000000-0x00000070000000                      
+I/TC: Added guest 2                                                             
+(XEN) d1: extended region 0: 0x200000->0x7e00000                                
+(XEN) d1: extended region 1: 0x8400000->0x1ce00000                              
+(XEN) d1: extended region 2: 0x1f000000->0x37e00000                             
+(XEN) d1: extended region 3: 0x39000000->0x3fa00000                             
+(XEN) d1: extended region 4: 0x40000000->0x4fe00000                             
+(XEN) d1: extended region 5: 0x70000000->0x1ffe00000                            
+(XEN) Loading zImage from 00000001e8000000 to 0000000050000000-000000005518da00 
+(XEN) Loading d1 DTB to 0x0000000058000000-0x00000000580018cc                   
+(XEN) avc:  denied  { create } for current=d[IDLE] scontext=system_u:system_r:xt
+(XEN) avc:  denied  { bind } for current=d[IDLE] scontext=system_u:object_r:domt
+(XEN) Initial low memory virq threshold set at 0x4000 pages.                    
+(XEN) Scrubbing Free RAM in background                                          
+(XEN) Std. Loglevel: All                                                        
+(XEN) Guest Loglevel: All                                                       
+(XEN) ***************************************************                       
+(XEN) WARNING: SILO mode is not enabled.                                        
+(XEN) It has implications on the security of the system,                        
+(XEN) unless the communications have been forbidden between                     
+(XEN) untrusted domains.                                                        
+(XEN) ***************************************************                       
+(XEN) 3... 2... 1...                                                            
+(XEN) *** Serial input to DOM0 (type 'CTRL-a' three times to switch input)      
+(XEN) Freed 396kB init memory.                                                  
+(XEN) d1v0 Unhandled SMC/HVC: 0x84000050                                        
+(XEN) d1v0 Unhandled SMC/HVC: 0x8600ff01                                        
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER4          
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER8          
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER12         
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER16         
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER20         
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER24         
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER28         
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER32         
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER36         
+(XEN) d1v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER0          
+(XEN) avc:  denied  { getparam } for source=d1 scontext=system_u:system_r:unlabm
+(XEN) avc:  denied  { physmap } for source=d1 scontext=system_u:system_r:unlabeu
+(XEN) avc:  denied  { query } for source=d1 scontext=system_u:system_r:unlabelet
+I/TC: Reserved shared memory is enabled                                         
+I/TC: Dynamic shared memory is enabled                                          
+I/TC: Normal World virtualization support is enabled                            
+I/TC: Asynchronous notifications are disabled                                   
+(XEN) DOM1: Starting systemd-udevd version 255.4^                               
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER4          
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER8          
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER12         
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER16         
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER20         
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER24         
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER28         
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER32         
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER36         
+(XEN) d0v0: vGICD: unhandled word write 0x000000ffffffff to ICACTIVER0          
+I/TC: Reserved shared memory is enabled                                         
+I/TC: Dynamic shared memory is enabled                                          
+I/TC: Normal World virtualization support is enabled                            
+I/TC: Asynchronous notifications are disabled                                   
+                                                                                
+                                                                                
+** Booting Zephyr OS build 4d91cdd6fd3f ***                                     
+(XEN) avc:  denied  { getdomaininfo } for source=d0 target=d1 scontext=system_un
+(XEN) avc:  denied  { getparam } for source=d0 target=d1 scontext=system_u:systm
+(XEN) avc:  denied  { map_read map_write } for source=d0 target=d1 scontext=sysu
+(XEN) avc:  denied  { create } for source=d0 target=d1 scontext=system_u:systemt
+(XEN) avc:  denied  { bind } for source=d0 target=d1 scontext=system_u:object_rt
+(XEN) avc:  denied  { setparam } for source=d0 target=d1 scontext=system_u:systm
+(XEN) DOM1: Open Aos disk: /dev/nvme0n1p3, pkcs11: /usr/lib/libckteec.so.0      
+(XEN) avc:  denied  { send } for current=d0 scontext=system_u:system_r:dom0_t tt
+(XEN) DOM1: Opening device: /dev/nvme0n1p3 ...                                  
+***(XEN) avc:  denied  { send } for current=d1 scontext=system_u:system_r:unlabt
+ Aos zephyr application: v1.0.0 ***                                             
+*** Aos core l(XEN) DOM1: Device /dev/nvme0n1p3 is not a valid LUKS2 device.    
+ibrary:(XEN) DOM1: Error: can't get Aos token from device                       
+ d283 ***                                                                       
+*** Aos core size: 1991520 ***                                                  
+Mounting fatfs...2m[00:00:00.000,000] <inf> xen_events: xen_events_init: eventsd
+                                                                                
+[00:00:00.001,000] <inf> optee: OPTEE revision 4.2                              
+[00:00:00.017,000] <inf> sdhci_common: sdhc: detected ver:2 vendor_ver:16 suppod
+[00:00:00.017,000] <inf> sdhci_common: sdhc: capabilities caps0:15eac832 caps1:7
+[00:00:00.017,000] <inf> brcm_bcm2712_sdhci: mmc@1000fff000:"reset max bus freq"
+[00:00:00.017,000] <err> brcm_bcm2712_sdhci: mmc@1000fff000:"enable adma"       
+[00:00:00.116,000] <inf> xen_dom_mgmt: dom0less: attached 1 domains             
+uart:~$ (XEN) DOM1: Aos update disabled: device /dev/aosvg/workdirs not exist.  
+(XEN) avc:  denied  { xen_guest_handle } for current=d1 scontext=system_u:systen
+[fatfs] Aos disk mounted at /1:                                                 
+[fatfs] TMP disk mounted at /2:                                                 
+Start guest reboot watcher                                                      
+I/TC: WARNING (insecure configuration): Failed to get monotonic counter for REE0
+I/TC: WARNING (insecure configuration): Failed to commit dirh counter 2         
+[00:00:01.733,000] <inf> sd: Card switched to 1.8V signaling                    
+[00:00:02.435,000] <inf> tee_supplicant: Started tee_supplicant thread          
+[00:00:02.437,000] <inf> app: Initialize application                            
+[00:00:02.557,000] <wrn> nodeinfoprovider: Failed to read node id: path=/1:/aos]
+[00:00:02.573,000] <inf> crypto: Initialize mbedTLS crypto provider             
+[00:00:02.573,000] <inf> pkcs11: Open library: path=/usr/lib/softhsm/libsofthsmo
+uart:~$ (XEN) avc:  denied  { xen_extraversion } for current=d1 scontext=systemn
+(XEN) avc:  denied  { xen_compile_info } for current=d1 scontext=system_u:systen
+(XEN) avc:  denied  { xen_capabilities } for current=d1 scontext=system_u:systen
+(XEN) avc:  denied  { xen_changeset } for current=d1 scontext=system_u:system_rn
+(XEN) avc:  denied  { xen_pagesize } for current=d1 scontext=system_u:system_r:n
+(XEN) avc:  denied  { xen_commandline } for current=d1 scontext=system_u:systemn
+(XEN) avc:  denied  { xen_build_id } for current=d1 scontext=system_u:system_r:n
+(XEN) avc:  denied  { physinfo } for current=d1 scontext=system_u:system_r:unlan
+[00:00:03.396,000] <inf> certhandler: Register module: type=iam                 
+[00:00:03.397,000] <inf> certhandler: Register module: type=sm                  
+[00:00:03.399,000] <inf> communication: Init channel manager                    
+[00:00:03.399,000] <inf> app: Start application                                 
+[00:00:03.399,000] <inf> iamclient: Node is unprovisioned                       
+[00:00:03.399,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:05.399,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:07.399,000] <err> communication: Transport connect error: err=runtime er)
+uart:~$ (XEN) DOM1:                                                             
+(XEN) DOM1: Poky (Yocto Project Reference Distro) 5.0.5 main ttyAMA0            
+(XEN) DOM1:                                                                     
+[00:00:09.399,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:11.399,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:13.399,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:15.399,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:17.399,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:19.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:21.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:23.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:25.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:27.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:29.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:31.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:33.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:35.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:37.400,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:39.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:41.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:43.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:45.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:47.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:49.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:51.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:53.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:55.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:57.401,000] <err> communication: Transport connect error: err=runtime er)
+[00:00:59.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:01.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:03.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:05.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:07.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:09.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:11.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:13.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:15.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:17.402,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:19.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:21.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:23.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:25.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:27.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:29.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:31.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:33.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:35.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:37.403,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:39.404,000] <err> communication: Transport connect error: err=runtime er)
+uart:~$                                                                         
+[00:01:41.404,000] <err> communication: Transport connect error: err=runtime er)
+uart:~$                                                                         
+uart:~$                                                                         
+uart:~$                                                                         
+uart:~$                                                                         
+uart:~$                                                                         
+[00:01:43.404,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:45.404,000] <err> communication: Transport connect error: err=runtime er)
+uart:~$ (XEN) *** Serial input to DOM1 (type 'CTRL-a' three times to switch inp)
+[00:01:47.404,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:49.404,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:51.404,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:53.404,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:55.404,000] <err> communication: Transport connect error: err=runtime er)
+uart:~$ (XEN) *** Serial input to Xen (type 'CTRL-a' three times to switch inpu)
+[00:01:57.404,000] <err> communication: Transport connect error: err=runtime er)
+[00:01:59.405,000] <err> communication: Transport connect error: err=runtime er)
+[00:02:01.405,000] <err> communication: Transport connect error: err=runtime er)
+uart:~$ (XEN) avc:  denied  { create } for current=d1 scontext=system_u:system_t
+I/TC: WARNING (insecure configuration): Failed to get monotonic counter for REE0
+I/TC: WARNING (insecure configuration): Failed to commit dirh counter 2         
+[00:02:03.405,000] <err> communication: Transport connect error: err=runtime er)
+uart:~$ (XEN) avc:  denied  { map_read map_write } for source=d0 target=d1 scont
+[00:02:05.418,000] <inf> smclient: Send SM clock sync request                   
+[00:02:05.419,000] <inf> smclient: Process clock sync                           
+[00:02:05.419,000] <inf> clocksync: Clock sync notification: synced=true        
+uart:~$ (XEN) *** Serial input to DOM0 (type 'CTRL-a' three times to switch inp)
+                                                                                
+uart:~$                                                                         
+uart:~$                                                                         
+uart:~$ help                                                                    
+Please press the <Tab> button to see all available commands.                    
+You can also use the <Tab> button to prompt or auto-complete all commands or it.
+You can try to call commands with <-h> or <--help> parameter for more informati.
+                                                                                
+Shell supports following meta-keys:                                             
+  Ctrl + (a key from: abcdefklnpuw)                                             
+  Alt  + (a key from: bf)                                                       
+Please refer to shell documentation for more details. 
+                                                                              
+Available commands:                                                             
+  clear    : Clear screen.                                                      
+  date     : Date commands                                                      
+  device   : Device commands                                                    
+  devmem   : Read/write physical memory                                         
+            Usage:                                                              
+            Read memory at address with optional width:                         
+            devmem address [width]                                              
+            Write memory at address with mandatory width and value:             
+            devmem address <width> <value>                                      
+  fs       : File system commands                                               
+  help     : Prints the help message.                                           
+  history  : Command history.                                                   
+  kernel   : Kernel commands                                                    
+  log      : Commands for controlling logger                                    
+  rem      : Ignore lines beginning with 'rem '                                 
+  resize   : Console gets terminal screen size or assumes default in case the   
+            readout fails. It must be executed after each terminal width change 
+            to ensure correct text display.                                     
+  retval   : Print return value of most recent command                          
+  shell    : Useful, not Unix-like shell commands.                              
+  xrun     : XRun commands                                                      
+  xs       : Xenstore commands                                                  
+  xstat    : XStat commands                                                     
+  xu       : Xenutils commands                                                  
+uart:~$ (XEN) *** Serial input to DOM1 (type 'CTRL-a' three times to switch inp)
+(XEN) main login:                                                               
+(XEN)                                                                           
+(XEN) main login: mspdev                                                        
+(XEN) Pa[00:03:05.419,000] <inf> smclient: Send SM clock sync request           
+[00:03:05.420,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) Login incorrect                                                           
+(XEN)                                                                           
+(XEN) main login: mspdev                                                        
+(XEN) Password:                                                                 
+(XEN)                                                                           
+(XEN) WARNING: Poky is a reference Yocto Project distribution that should be usr
+(XEN) testing and development purposes only. It is recommended that you create r
+(XEN) own distribution for production use.                                      
+(XEN)                                                                           
+(XEN) [00:04:05.420,000] <inf> smclient: Send SM clock sync request             
+[00:04:05.421,000] <inf> smclient: Process clock sync                           
+[00:05:05.421,000] <inf> smclient: Send SM clock sync request                   
+[00:05:05.421,000] <inf> smclient: Process clock sync                           
+[00:06:05.421,000] <inf> smclient: Send SM clock sync request                   
+[00:06:05.422,000] <inf> smclient: Process clock sync                           
+[00:07:05.422,000] <inf> smclient: Send SM clock sync request                   
+[00:07:05.422,000] <inf> smclient: Process clock sync                           
+[00:08:05.423,000] <inf> smclient: Send SM clock sync request                   
+[00:08:05.423,000] <inf> smclient: Process clock sync                           
+[00:09:05.423,000] <inf> smclient: Send SM clock sync request                   
+[00:09:05.423,000] <inf> smclient: Process clock sync                           
+[00:10:05.424,000] <inf> smclient: Send SM clock sync request                   
+[00:10:05.424,000] <inf> smclient: Process clock sync                           
+uart:~$ help                                                                    
+(XEN) GNU bash, version 5.2.21(1)-release (aarch64-poky-linux-gnu)              
+(XEN) These shell commands are defined internally.  Type `help' to see this lis.
+(XEN) Type `help name' to find out more about the function `name'.              
+(XEN) Use `info bash' to find out more about the shell in general.              
+(XEN) Use `man -k' or `info' to find out more about commands not in this list.  
+(XEN)                                                                           
+(XEN) A star (*) next to a name means that the command is disabled.             
+(XEN)                                                                           
+(XEN)  job_spec [&]                            history [-c] [-d offset] [n] or >
+(XEN)  (( expression ))                        if COMMANDS; then COMMANDS; [ el>
+(XEN)  . filename [arguments]                  jobs [-lnprs] [jobspec ...] or j>
+(XEN)  :                                       kill [-s sigspec | -n signum | ->
+(XEN)  [ arg... ]                              let arg [arg ...]                
+(XEN)  [[ expression ]]                        local [option] name[=value] ...  
+(XEN)  alias [-p] [name[=value] ... ]          logout [n]                       
+(XEN)  bg [job_spec ...]                       mapfile [-d delim] [-n count] [->
+(XEN)  bind [-lpsvPSVX] [-m keymap] [-f file>  popd [-n] [+N | -N]              
+(XEN)  break [n]                               printf [-v var] format [argument]
+(XEN)  builtin [shell-builtin [arg ...]]       pushd [-n] [+N | -N | dir]       
+(XEN)  caller [expr]                           pwd [-LP]                        
+(XEN)  case WORD in [PATTERN [| PATTERN]...)>  read [-ers] [-a array] [-d delim>
+(XEN)  cd [-L|[-P [-e]] [-@]] [dir]            readarray [-d delim] [-n count] >
+(XEN)  command [-pVv] command [arg ...]        readonly [-aAf] [name[=value] ..>
+(XEN)  compgen [-abcdefgjksuv] [-o option] [>  return [n]                       
+(XEN)  complete [-abcdefgjksuv] [-pr] [-DEI]>  select NAME [in WORDS ... ;] do >
+(XEN)  compopt [-o|+o option] [-DEI] [name .>  set [-abefhkmnptuvxBCEHPT] [-o o>
+(XEN)  continue [n]                            shift [n]                        
+(XEN)  coproc [NAME] command [redirections]    shopt [-pqsu] [-o] [optname ...] 
+(XEN)  declare [-aAfFgiIlnrtux] [name[=value>  source filename [arguments]      
+(XEN)  dirs [-clpv] [+N] [-N]                  suspend [-f]                     
+(XEN)  disown [-h] [-ar] [jobspec ... | pid >  test [expr]                      
+(XEN)  echo [-neE] [arg ...]                   time [-p] pipeline               
+(XEN)  enable [-a] [-dnps] [-f filename] [na>  times                            
+(XEN)  eval [arg ...]                          trap [-lp] [[arg] signal_spec ..]
+(XEN)  exec [-cl] [-a name] [command [argume>  true                             
+(XEN)  exit [n]                                type [-afptP] name [name ...]    
+(XEN)  export [-fn] [name[=value] ...] or ex>  typeset [-aAfFgiIlnrtux] name[=v>
+(XEN)  false                                   ulimit [-SHabcdefiklmnpqrstuvxPR>
+(XEN)  fc [-e ename] [-lnr] [first] [last] o>  umask [-p] [-S] [mode]           
+(XEN)  fg [job_spec]                           unalias [-a] name [name ...]     
+(XEN)  for NAME [in WORDS ... ] ; do COMMAND>  unset [-f] [-v] [-n] [name ...]  
+(XEN)  for (( exp1; exp2; exp3 )); do COMMAN>  until COMMANDS; do COMMANDS-2; de
+(XEN)  function name { COMMANDS ; } or name >  variables - Names and meanings o>
+(XEN)  getopts optstring name [arg ...]        wait [-fn] [-p var] [id ...]     
+(XEN)  hash [-lr] [-p pathname] [-dt] [name >  while COMMANDS; do COMMANDS-2; de
+(XEN)  help [-dms] [pattern ...]               { COMMANDS ; }                   
+(XEN) main[00:11:05.424,000] <inf> smclient: Send SM clock sync request         
+[00:11:05.424,000] <inf> smclient: Process clock sync                           
+uart                                                                            
+(XEN) main:~$                                                                   
+(XEN) main:~$                                                                   
+(XEN) main:~$                                                                   
+(XEN) main:~$ ls /                                                              
+(XEN) bin   dev  home  lost+found  mnt  proc    run   srv  tmp  var             
+(XEN) boot  etc  lib     media       opt  root  sbin  sys  usr                  
+(XEN) main:~$ ls dev                                                            
+(XEN) ls: cannot access 'dev': No such file or directory                        
+(XEN) main:~$ sudo ls dev                                                       
+(XEN)                                                                           
+(XEN) We trust you have received the usual lecture from the local System        
+(XEN) Administrator. It usually boils down to these three things:               
+(XEN)                                                                           
+(XEN)     #1) Respect the privacy of others.                                    
+(XEN)     #2) Think before you type.                                            
+(XEN)     #3) With great power comes great responsibility.                      
+(XEN)                                                                           
+(XEN) For security reasons, the password you type will not be visible.          
+(XEN)                                                                           
+(XEN) Pa[00:12:05.425,000] <inf> smclient: Send SM clock sync request           
+[00:12:05.425,000] <inf> smclient: Process clock sync                           
+[00:13:05.425,000] <inf> smclient: Send SM clock sync request                   
+[00:13:05.426,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) Sorry, try again.                                                         
+(XEN) Password:                                                                 
+(XEN) ls: cannot access 'dev': No such file or directory                        
+(XEN) main:~$ sudo -i                                                           
+(XEN) root@main:~# cd /etc                                                      
+(XEN) root@mai[00:14:05.426,000] <inf> smclient: Send SM clock sync request     
+[00:14:05.426,000] <inf> smclient: Process clock sync                           
+uart:~$ ls                                                                      
+(XEN) aos                       opensc.conf                                     
+(XEN) bash_completion.d os-release                                              
+(XEN) bindresvport.blacklist    pam.d                                           
+(XEN) busybox.links.nosuid      passwd                                          
+(XEN) busybox.links.suid        passwd-                                         
+(XEN) ca-certificates           profile                                         
+(XEN) ca-certificates.conf      profile.d                                       
+(XEN) cni                       protocols                                       
+(XEN) credstore         quotagrpadmins                                          
+(XEN) credstore.encrypted       quotatab                                        
+(XEN) dbus-1                    resolv-conf.systemd                             
+(XEN) default                   resolv.conf                                     
+(XEN) depmod.d          rpc                                                     
+(XEN) dnf                       rpcbind.conf                                    
+(XEN) dnsmasq.conf              rpm                                             
+(XEN) dnsmasq.d         rpmrc                                                   
+(XEN) e2scrub.conf              securetty                                       
+(XEN) ethertypes                security                                        
+(XEN) exports                   services                                        
+(XEN) fstab                     shadow                                          
+(XEN) fw_env.config             shadow-                                         
+(XEN) group                     shells                                          
+(XEN) group-                    skel                                            
+(XEN) gshadow                   ssh                                             
+(XEN) gshadow-          ssl                                                     
+(XEN) host.conf         subgid-                                                 
+(XEN) hostname          subuid-                                                 
+(XEN) hosts                     sudo.conf                                       
+(XEN) inputrc                   sudo_logsrvd.conf                               
+(XEN) iptables          sudoers                                                 
+(XEN) issue                     sudoers.d                                       
+(XEN) issue.net         sudoers.dist                                            
+(XEN) ld.so.cache               sysctl.conf                                     
+(XEN) ld.so.conf                sysctl.d                                        
+(XEN) libnl                     syslog.conf                                     
+(XEN) libreport         systemd                                                 
+(XEN) localtime         terminfo                                                
+(XEN) login.defs                timestamp                                       
+(XEN) logrotate.d               timezone                                        
+(XEN) lvm                       tmpfiles.d                                      
+(XEN) machine-id                u-boot-initial-env                              
+(XEN) mke2fs.conf               u-boot-initial-env-raspberrypi5                 
+(XEN) modprobe.d                u-boot-initial-env-raspberrypi5-2024.04-r0      
+(XEN) modules-load.d            udev                                            
+(XEN) motd                      udhcpc.d                                        
+(XEN) mtab                      version                                         
+(XEN) netconfig         warnquota.conf                                          
+(XEN) network                   xattr.conf                                      
+(XEN) nfs-utils.conf            xdg                                             
+(XEN) nfsmount.conf             xen                                             
+(XEN) nsswitch.conf                                                             
+(XEN) root@main:/etc# cat shadow                                                
+(XEN) root:*:15069:0:99999:7:::                                                 
+(XEN) daemon:*:15069:0:99999:7:::                                               
+(XEN) bin:*:15069:0:99999:7:::                                                  
+(XEN) sys:*:15069:0:99999:7:::                                                  
+(XEN) sync:*:15069:0:99999:7:::                                                 
+(XEN) games:*:15069:0:99999:7:::                                                
+(XEN) man:*:15069:0:99999:7:::                                                  
+(XEN) lp:*:15069:0:99999:7:::                                                   
+(XEN) mail:*:15069:0:99999:7:::                                                 
+(XEN) news:*:15069:0:99999:7:::                                                 
+(XEN) uucp:*:15069:0:99999:7:::                                                 
+(XEN) proxy:*:15069:0:99999:7:::                                                
+(XEN) www-data:*:15069:0:99999:7:::                                             
+(XEN) backup:*:15069:0:99999:7:::                                               
+(XEN) list:*:15069:0:99999:7:::                                                 
+(XEN) irc:*:15069:0:99999:7:::                                                  
+(XEN) _apt:*:15069:0:99999:7:::                                                 
+(XEN) systemd-timesync:!:15069::::::                                            
+(XEN) systemd-resolve:!:15069::::::                                             
+(XEN) systemd-network:!:15069::::::                                             
+(XEN) rpcuser:!:15069::::::                                                     
+(XEN) rpc:!:15069::::::                                                         
+(XEN) sshd:!:15069::::::                                                        
+(XEN) messagebus:!:15069::::::                                                  
+(XEN) nobody:*:15069:0:99999:7:::                                               
+(XEN) mspdev:$5$HaB0024CC/$DDgdEFjq4fOqh/7E1dkn5iH44.61634A1o0uCQXP4b3:15069:0::
+(XEN) root@mai[00:15:05.426,000] <inf> smclient: Send SM clock sync request     
+[00:15:05.427,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@mai[00:16:05.427,000] <inf> smclient: Send SM clock sync request     
+[00:16:05.427,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/etc# cat /etc/passwd                                           
+(XEN) root:x:0:0:root:/root:/bin/sh                                             
+(XEN) daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin                           
+(XEN) bin:x:2:2:bin:/bin:/usr/sbin/nologin                                      
+(XEN) sys:x:3:3:sys:/dev:/usr/sbin/nologin                                      
+(XEN) sync:x:4:65534:sync:/bin:/bin/sync                                        
+(XEN) games:x:5:60:games:/usr/games:/usr/sbin/nologin                           
+(XEN) man:x:6:12:man:/var/cache/man:/usr/sbin/nologin                           
+(XEN) lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin                              
+(XEN) mail:x:8:8:mail:/var/mail:/usr/sbin/nologin                               
+(XEN) news:x:9:9:news:/var/spool/news:/usr/sbin/nologin                         
+(XEN) uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin                       
+(XEN) proxy:x:13:13:proxy:/bin:/usr/sbin/nologin                                
+(XEN) www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin                      
+(XEN) backup:x:34:34:backup:/var/backups:/usr/sbin/nologin                      
+(XEN) list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin             
+(XEN) irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin                              
+(XEN) _apt:x:42:65534::/nonexistent:/usr/sbin/nologin                           
+(XEN) systemd-timesync:x:993:991::/:/sbin/nologin                               
+(XEN) systemd-resolve:x:994:992::/:/sbin/nologin                                
+(XEN) systemd-network:x:995:993::/:/sbin/nologin                                
+(XEN) rpcuser:x:996:995::/var/lib/nfs:/bin/false                                
+(XEN) rpc:x:997:996::/:/bin/false                                               
+(XEN) sshd:x:998:997::/var/run/sshd:/bin/false                                  
+(XEN) messagebus:x:999:998::/var/lib/dbus:/bin/false                            
+(XEN) nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin                
+(XEN) mspdev:x:1000:1000::/home/mspdev:/bin/sh                                  
+(XEN) root@mai[00:17:05.427,000] <inf> smclient: Send SM clock sync request     
+[00:17:05.428,000] <inf> smclient: Process clock sync                           
+[00:18:05.428,000] <inf> smclient: Send SM clock sync request                   
+[00:18:05.428,000] <inf> smclient: Process clock sync                           
+[00:19:05.428,000] <inf> smclient: Send SM clock sync request                   
+[00:19:05.429,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/etc# cat /boot/firstrun.sh                                     
+(XEN) cat: /boot/firstrun.sh: No such file or directory                         
+(XEN) root@mai[00:20:05.429,000] <inf> smclient: Send SM clock sync request     
+[00:20:05.429,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/etc# cd /                                                      
+(XEN) root@main:/# ls                                                           
+(XEN) bin   dev  home  lost+found  mnt  proc    run   srv  tmp  var             
+(XEN) boot  etc  lib     media       opt  root  sbin  sys  usr                  
+(XEN) root@main:/# cd dev                                                       
+(XEN) root@main[00:21:05.429,000] <inf> smclient: Send SM clock sync request    
+[00:21:05.430,000] <inf> smclient: Process clock sync                           
+uart:~$ ls                                                                      
+(XEN) -sh: lls: command not found                                               
+(XEN) root@main:/dev# ls                                                        
+(XEN) autofs             loop6      ram14     tty11  tty32  tty53      vcs3     
+(XEN) block              loop7      ram15     tty12  tty33  tty54      vcs4     
+(XEN) cachefiles         mapper     ram2      tty13  tty34  tty55      vcs5     
+(XEN) char               mem        ram3      tty14  tty35  tty56      vcs6     
+(XEN) console            mqueue     ram4      tty15  tty36  tty57      vcsa     
+(XEN) cpu_dma_latency  ng0n1        ram5      tty16  tty37  tty58      vcsa1    
+(XEN) disk               null       ram6      tty17  tty38  tty59      vcsa2    
+(XEN) dma_heap   nvme0      ram7      tty18  tty39  tty6       vcsa3            
+(XEN) fd                 nvme0n1    ram8      tty19  tty4   tty60      vcsa4    
+(XEN) full               nvme0n1p1  ram9      tty2   tty40  tty61      vcsa5    
+(XEN) gpiochip0  nvme0n1p2  random    tty20  tty41  tty62      vcsa6            
+(XEN) hwrng              nvme0n1p3  shm       tty21  tty42  tty63      vcsu     
+(XEN) initctl            port       snapshot  tty22  tty43  tty7       vcsu1    
+(XEN) input              pps0       snd       tty23  tty44  tty8       vcsu2    
+(XEN) kmsg               ptmx       stderr    tty24  tty45  tty9       vcsu3    
+(XEN) log                ptp0       stdin     tty25  tty46  ttyAMA0    vcsu4    
+(XEN) loop-control       pts        stdout    tty26  tty47  ttyprintk  vcsu5    
+(XEN) loop0              ram0       tee0      tty27  tty48  ubi_ctrl   vcsu6    
+(XEN) loop1              ram1       teepriv0  tty28  tty49  urandom    vga_arbir
+(XEN) loop2              ram10      tty       tty29  tty5   vc-mem     xen      
+(XEN) loop3              ram11      tty0      tty3   tty50  vcs        zero     
+(XEN) loop4              ram12      tty1      tty30  tty51  vcs1                
+(XEN) loop5              ram13      tty10     tty31  tty52  vcs2                
+(XEN) root@mai[00:22:05.430,000] <inf> smclient: Send SM clock sync request     
+[00:22:05.430,000] <inf> smclient: Process clock sync                           
+uart:~$ uart:~$ lsblk                                                                   
+(XEN) NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS                         
+(XEN) nvme0n1     259:0    0 476.9G  0 disk                                     
+(XEN) |-nvme0n1p1 259:1    0   696M  0 part /                                   
+(XEN) |-nvme0n1p2 259:2    0   512M  0 part /etc/machine-id                     
+(XEN) |                                     /var                                
+(XEN) `-nvme0n1p3 259:3    0     4G  0 part                                     
+(XEN) root@mai[00:23:05.430,000] <inf> smclient: Send SM clock sync request     
+[00:23:05.431,000] <inf> smclient: Process clock sync                           
+[00:24:05.431,000] <inf> smclient: Send SM clock sync request                   
+[00:24:05.431,000] <inf> smclient: Process clock sync                           
+[00:25:05.431,000] <inf> smclient: Send SM clock sync request                   
+[00:25:05.432,000] <inf> smclient: Process clock sync                           
+[00:26:05.432,000] <inf> smclient: Send SM clock sync request                   
+[00:26:05.432,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/dev# cat /etc/shadow                                           
+(XEN) root:*:15069:0:99999:7:::                                                 
+(XEN) daemon:*:15069:0:99999:7:::                                               
+(XEN) bin:*:15069:0:99999:7:::                                                  
+(XEN) sys:*:15069:0:99999:7:::                                                  
+(XEN) sync:*:15069:0:99999:7:::                                                 
+(XEN) games:*:15069:0:99999:7:::                                                
+(XEN) man:*:15069:0:99999:7:::                                                  
+(XEN) lp:*:15069:0:99999:7:::                                                   
+(XEN) mail:*:15069:0:99999:7:::                                                 
+(XEN) news:*:15069:0:99999:7:::                                                 
+(XEN) uucp:*:15069:0:99999:7:::                                                 
+(XEN) proxy:*:15069:0:99999:7:::                                                
+(XEN) www-data:*:15069:0:99999:7:::                                             
+(XEN) backup:*:15069:0:99999:7:::                                               
+(XEN) list:*:15069:0:99999:7:::                                                 
+(XEN) irc:*:15069:0:99999:7:::                                                  
+(XEN) _apt:*:15069:0:99999:7:::                                                 
+(XEN) systemd-timesync:!:15069::::::                                            
+(XEN) systemd-resolve:!:15069::::::                                             
+(XEN) systemd-network:!:15069::::::                                             
+(XEN) rpcuser:!:15069::::::                                                     
+(XEN) rpc:!:15069::::::                                                         
+(XEN) sshd:!:15069::::::                                                        
+(XEN) messagebus:!:15069::::::                                                  
+(XEN) nobody:*:15069:0:99999:7:::                                               
+(XEN) mspdev:$5$HaB0024CC/$DDgdEFjq4fOqh/7E1dkn5iH44.61634A1o0uCQXP4b3:15069:0::
+(XEN) root@mai[00:27:05.432,000] <inf> smclient: Send SM clock sync request     
+[00:27:05.433,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/dev#                                                           
+(XEN) root@main:/dev#                                                           
+(XEN) root@main:/dev# cd ..                                                     
+(XEN) root@main:/# ifconfig                                                     
+(XEN) eth0      Link encap:Ethernet  HWaddr 2C:CF:67:28:F3:E9                   
+(XEN)           inet6 addr: fe80::2ecf:67ff:fe28:f3e9/64 Scope:Link             
+(XEN)           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1              
+(XEN)           RX packets:87114 errors:0 dropped:7726 overruns:0 frame:0       
+(XEN)           TX packets:59 errors:0 dropped:0 overruns:0 carrier:0           
+(XEN)           collisions:0 txqueuelen:1000                                    
+(XEN)           RX bytes:7754543 (7.3 MiB)  TX bytes:13600 (13.2 KiB)           
+(XEN)           Interrupt:86                                                    
+(XEN)                                                                           
+(XEN) lo        Link encap:Local Loopback                                       
+(XEN)           inet addr:127.0.0.1  Mask:255.0.0.0                             
+(XEN)           inet6 addr: ::1/128 Scope:Host                                  
+(XEN)           UP LOOPBACK RUNNING  MTU:65536  Metric:1                        
+(XEN)           RX packets:109 errors:0 dropped:0 overruns:0 frame:0            
+(XEN)           TX packets:109 errors:0 dropped:0 overruns:0 carrier:0          
+(XEN)           collisions:0 txqueuelen:1000                                    
+(XEN)           RX bytes:8330 (8.1 KiB)  TX bytes:8330 (8.1 KiB)                
+(XEN)                                                                           
+(XEN) xenbr0    Link encap:Ethernet  HWaddr 36:64:13:C9:0F:D6                   
+(XEN)           UP BROADCAST MULTICAST  MTU:1500  Metric:1                      
+(XEN)           RX packets:0 errors:0 dropped:0 overruns:0 frame:0              
+(XEN)           TX packets:0 errors:0 dropped:0 overruns:0 carrier:0            
+(XEN)           collisions:0 txqueuelen:1000                                    
+(XEN)           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)                          
+(XEN)                                                                           
+(XEN) root@[00:34:05.436,000] <inf> smclient: Send SM clock sync request        
+[00:34:05.436,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@mai[00:35:05.437,000] <inf> smclient: Send SM clock sync request     
+[00:35:05.437,000] <inf> smclient: Process clock sync                           
+uart:                                                                           
+(XEN) root@[00:36:05.437,000] <inf> smclient: Send SM clock sync request        
+[00:36:05.438,000] <inf> smclient: Process clock sync                           
+[00:37:05.438,000] <inf> smclient: Send SM clock sync request                   
+[00:37:05.438,000] <inf> smclient: Process clock sync                           
+[00:38:05.438,000] <inf> smclient: Send SM clock sync request                   
+[00:38:05.439,000] <inf> smclient: Process clock sync                           
+[00:39:05.439,000] <inf> smclient: Send SM clock sync request                   
+[00:39:05.439,000] <inf> smclient: Process clock sync                           
+[00:40:05.439,000] <inf> smclient: Send SM clock sync request                   
+[00:40:05.440,000] <inf> smclient: Process clock sync                           
+[00:41:05.440,000] <inf> smclient: Send SM clock sync request                   
+[00:41:05.440,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/# ip a                                                         
+(XEN) 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000           
+(XEN)     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00                 
+(XEN)     inet 127.0.0.1/8 scope host lo                                        
+(XEN)        valid_lft forever preferred_lft forever                            
+(XEN)     inet6 ::1/128 scope host noprefixroute                                
+(XEN)        valid_lft forever preferred_lft forever                            
+(XEN) 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel qlen 10
+(XEN)     link/ether 2c:cf:67:28:f3:e9 brd ff:ff:ff:ff:ff:ff                    
+(XEN)     inet6 fe80::2ecf:67ff:fe28:f3e9/64 scope link                         
+(XEN)        valid_lft forever preferred_lft forever                            
+(XEN) 3: xenbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue qle0
+(XEN)     link/ether 36:64:13:c9:0f:d6 brd ff:ff:ff:ff:ff:ff                    
+(XEN) root@[00:42:05.440,000] <inf> smclient: Send SM clock sync request        
+[00:42:05.441,000] <inf> smclient: Process clock sync                           
+[00:43:05.441,000] <inf> smclient: Send SM clock sync request                   
+[00:43:05.441,000] <inf> smclient: Process clock sync                           
+[00:44:05.441,000] <inf> smclient: Send SM clock sync request                   
+[00:44:05.442,000] <inf> smclient: Process clock sync                           
+[00:45:05.442,000] <inf> smclient: Send SM clock sync request                   
+[00:45:05.442,000] <inf> smclient: Process clock sync                           
+uart:~$ sudo dhclient eth0                                                      
+(XEN) sudo: dhclient: command not found                                         
+(XEN) root@main:/# sudo dhcpclient eth0                                         
+(XEN) sudo: dhcpclient: command not found                                       
+(XEN) root@[00:46:05.442,000] <inf> smclient: Send SM clock sync request        
+[00:46:05.442,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/# vim /etc/network/interfaces                                  
+(XEN) -sh: vim: command not found                                               
+(XEN) root@main:/# sudo v[00:47:05.443,000] <inf> smclient: Send SM clock sync t
+[00:47:05.443,000] <inf> smclient: Process clock sync                           
+sudo vi /etc/network/interfaces                                                 
+(XEN) root@main:/#                                                              
+(XEN) root@main:/#                                                              
+(XEN) root@main:/#                                                              
+(XEN) root@main:/#                                                              
+(XEN) root@main:/#                                                              
+(XEN) root@main:/#                                                              
+(XEN) root@main:/# help                                                         
+(XEN) GNU bash, version 5.2.21(1)-release (aarch64-poky-linux-gnu)              
+(XEN) These shell commands are defined internally.  Type `help' to see this lis.
+(XEN) Type `help name' to find out more about the function `name'.              
+(XEN) Use `info bash' to find out more about the shell in general.              
+(XEN) Use `man -k' or `info' to find out more about commands not in this list.  
+(XEN)                                                                           
+(XEN) A star (*) next to a name means that the command is disabled.             
+(XEN)                                                                           
+(XEN)  job_spec [&]                            history [-c] [-d offset] [n] or >
+(XEN)  (( expression ))                        if COMMANDS; then COMMANDS; [ el>
+(XEN)  . filename [arguments]                  jobs [-lnprs] [jobspec ...] or j>
+(XEN)  :                                       kill [-s sigspec | -n signum | ->
+(XEN)  [ arg... ]                              let arg [arg ...]                
+(XEN)  [[ expression ]]                        local [option] name[=value] ...  
+(XEN)  alias [-p] [name[=value] ... ]          logout [n]                       
+(XEN)  bg [job_spec ...]                       mapfile [-d delim] [-n count] [->
+(XEN)  bind [-lpsvPSVX] [-m keymap] [-f file>  popd [-n] [+N | -N]              
+(XEN)  break [n]                               printf [-v var] format [argument]
+(XEN)  builtin [shell-builtin [arg ...]]       pushd [-n] [+N | -N | dir]       
+(XEN)  caller [expr]                           pwd [-LP]                        
+(XEN)  case WORD in [PATTERN [| PATTERN]...)>  read [-ers] [-a array] [-d delim>
+(XEN)  cd [-L|[-P [-e]] [-@]] [dir]            readarray [-d delim] [-n count] >
+(XEN)  command [-pVv] command [arg ...]        readonly [-aAf] [name[=value] ..>
+(XEN)  compgen [-abcdefgjksuv] [-o option] [>  return [n]                       
+(XEN)  complete [-abcdefgjksuv] [-pr] [-DEI]>  select NAME [in WORDS ... ;] do >
+(XEN)  compopt [-o|+o option] [-DEI] [name .>  set [-abefhkmnptuvxBCEHPT] [-o o>
+(XEN)  continue [n]                            shift [n]                        
+(XEN)  coproc [NAME] command [redirections]    shopt [-pqsu] [-o] [optname ...] 
+(XEN)  declare [-aAfFgiIlnrtux] [name[=value>  source filename [arguments]      
+(XEN)  dirs [-clpv] [+N] [-N]                  suspend [-f]                     
+(XEN)  disown [-h] [-ar] [jobspec ... | pid >  test [expr]                      
+(XEN)  echo [-neE] [arg ...]                   time [-p] pipeline               
+(XEN)  enable [-a] [-dnps] [-f filename] [na>  times                            
+(XEN)  eval [arg ...]                          trap [-lp] [[arg] signal_spec ..]
+(XEN)  exec [-cl] [-a name] [command [argume>  true                             
+(XEN)  exit [n]                                type [-afptP] name [name ...]    
+(XEN)  export [-fn] [name[=value] ...] or ex>  typeset [-aAfFgiIlnrtux] name[=v>
+(XEN)  false                                   ulimit [-SHabcdefiklmnpqrstuvxPR>
+(XEN)  fc [-e ename] [-lnr] [first] [last] o>  umask [-p] [-S] [mode]           
+(XEN)  fg [job_spec]                           unalias [-a] name [name ...]     
+(XEN)  for NAME [in WORDS ... ] ; do COMMAND>  unset [-f] [-v] [-n] [name ...]  
+(XEN)  for (( exp1; exp2; exp3 )); do COMMAN>  until COMMANDS; do COMMANDS-2; de
+(XEN)  function name { COMMANDS ; } or name >  variables - Names and meanings o>
+(XEN)  getopts optstring name [arg ...]        wait [-fn] [-p var] [id ...]     
+(XEN)  hash [-lr] [-p pathname] [-dt] [name >  while COMMANDS; do COMMANDS-2; de
+(XEN)  help [-dms] [pattern ...]               { COMMANDS ; }                   
+(XEN) root@[00:56:05.448,000] <inf> smclient: Send SM clock sync request        
+[00:56:05.449,000] <inf> smclient: Process clock sync                           
+[00:57:05.449,000] <inf> smclient: Send SM clock sync request                   
+[00:57:05.449,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/#                                                              
+(XEN) root@main:/#                                                              
+(XEN) root@main:[00:58:05.449,000] <inf> smclient: Send SM clock sync request   
+[00:58:05.450,000] <inf> smclient: Process clock sync                           
+uar                                                                             
+(XEN) root@main:/# mount                                                        
+(XEN) proc on /proc type proc (rw,relatime)                                     
+(XEN) sysfs on /sys type sysfs (rw,relatime)                                    
+(XEN) devtmpfs on /dev type devtmpfs (rw,relatime,size=201616k,nr_inodes=12601,)
+(XEN) tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)                       
+(XEN) /dev/nvme0n1p2 on /var type ext4 (rw,relatime)                            
+(XEN) /dev/nvme0n1p1 on / type ext4 (ro,relatime)                               
+(XEN) /dev/nvme0n1p2 on /etc/machine-id type ext4 (rw,relatime)                 
+(XEN) securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexe)
+(XEN) tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)                            
+(XEN) devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=666)  
+(XEN) cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,n)
+(XEN) bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)    
+(XEN) mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)       
+(XEN) xenfs on /proc/xen type xenfs (rw,relatime)                               
+(XEN) debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatim)
+(XEN) tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relat)
+(XEN) tmpfs on /tmp type tmpfs (rw,nosuid,nodev,size=248480k,nr_inodes=1048576) 
+(XEN) configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,rela)
+(XEN) nfsd on /proc/fs/nfsd type nfsd (rw,relatime)                             
+(XEN) tmpfs on /var/volatile type tmpfs (rw,relatime)                           
+(XEN) overlay on /srv type overlay (rw,relatime,lowerdir=/srv,upperdir=/var/vol)
+(XEN) root@main:/# cat /etc/fstab                                               
+(XEN) # stock fstab - you probably want to override this with a machine specifie
+(XEN)                                                                           
+(XEN) /dev/root            /                    auto       ro              1  0 
+(XEN) proc                 /proc                proc       defaults            0
+(XEN) devpts               /dev/pts             devpts     mode=0620,ptmxmode=00
+(XEN) tmpfs                /var/volatile        tmpfs      defaults            0
+(XEN)                                                                           
+(XEN) # uncomment this if your device has a SD/MMC/Transflash slot              
+(XEN) #/dev/mmcblk0p1       /media/card          auto       defaults,sync,noaut0
+(XEN)                                                                           
+(XEN) # Aos partitions                                                          
+(XEN) /dev/aosvg/workdirs /var/aos/workdirs ext4 defaults,auto,nofail,noatime,x0
+(XEN) /dev/aosvg/downloads /var/aos/downloads ext4 defaults,auto,nofail,noatime0
+(XEN) /dev/aosvg/storages /var/aos/storages ext4 defaults,auto,nofail,noatime,u0
+(XEN) /dev/aosvg/states /var/aos/states ext4 defaults,auto,nofail,noatime,usrqu0
+(XEN) root@main:/# groups mspdev                                                
+(XEN) sudo mspdev                                                               
+(XEN) root@[00:59:05.450,000] <inf> smclient: Send SM clock sync request        
+[00:59:05.450,000] <inf> smclient: Process clock sync                           
+uart:~$ id mspdev                                                               
+(XEN) uid=1000(mspdev) gid=1000(mspdev) groups=1000(mspdev),27(sudo)            
+(XEN) root@main:/# ls /proc                                                     
+(XEN) 1   25     375  478  590  815          driver       latency_stats  swaps  
+(XEN) 11  26     38   48   6    816          execdomains  loadavg        sys    
+uart:~$ id mspdev                                                               
+(XEN) uid=1000(mspdev) gid=1000(mspdev) groups=1000(mspdev),27(sudo)            
+(XEN) root@main:/# ls /proc                                                     
+(XEN) 1   25     375  478  590  815          driver       latency_stats  swaps  
+(XEN) 11  26     38   48   6    816          execdomains  loadavg        sys    
+(XEN) 12  27     39   49   608  819          fb           locks          sysrq-r
+(XEN) 13  28     4    5    622  9            filesystems  meminfo        sysvipc
+(XEN) 14  29     40   50   668  asound       fs           misc           threadf
+(XEN) 15  3      415  516  669  buddyinfo    interrupts   modules        timer_t
+(XEN) 16  30     416  543  677  bus          iomem        mounts         tty    
+(XEN) 17  31     42   544  680  cgroups      ioports      mtd            uptime 
+(XEN) 18  32     43   550  7    cmdline      irq          net            version
+(XEN) 19  33     44   571  741  config.gz    kallsyms     pagetypeinfo   vmalloo
+(XEN) 2   34     448  572  744  consoles     key-users    partitions     vmstat 
+(XEN) 20  35     449  573  745  cpuinfo      keys         schedstat      xen    
+(XEN) 21  358  45   574  746    crypto       kmsg         self           zoneino
+(XEN) 22  359  46   577  8      device-tree  kpagecgroup  slabinfo              
+(XEN) 23  36     47   578  811  devices      kpagecount   softirqs              
+(XEN) 24  374  477  580  813    diskstats    kpageflags   stat                  
+(XEN) root@main:/# ls /sys                                                      
+(XEN) block  class  devices     fs          kernel  power                       
+(XEN) bus    dev    firmware    hypervisor  module                              
+(XEN) root@main:/# ls /dev                                                      
+(XEN) autofs             loop6      ram14     tty11  tty32  tty53      vcs3     
+(XEN) block              loop7      ram15     tty12  tty33  tty54      vcs4     
+(XEN) cachefiles         mapper     ram2      tty13  tty34  tty55      vcs5     
+(XEN) char               mem        ram3      tty14  tty35  tty56      vcs6     
+(XEN) console            mqueue     ram4      tty15  tty36  tty57      vcsa     
+(XEN) cpu_dma_latency  ng0n1        ram5      tty16  tty37  tty58      vcsa1    
+(XEN) disk               null       ram6      tty17  tty38  tty59      vcsa2    
+(XEN) dma_heap   nvme0      ram7      tty18  tty39  tty6       vcsa3            
+(XEN) fd                 nvme0n1    ram8      tty19  tty4   tty60      vcsa4    
+(XEN) full               nvme0n1p1  ram9      tty2   tty40  tty61      vcsa5    
+(XEN) gpiochip0  nvme0n1p2  random    tty20  tty41  tty62      vcsa6            
+(XEN) hwrng              nvme0n1p3  shm       tty21  tty42  tty63      vcsu     
+(XEN) initctl            port       snapshot  tty22  tty43  tty7       vcsu1    
+(XEN) input              pps0       snd       tty23  tty44  tty8       vcsu2    
+(XEN) kmsg               ptmx       stderr    tty24  tty45  tty9       vcsu3    
+(XEN) log                ptp0       stdin     tty25  tty46  ttyAMA0    vcsu4    
+(XEN) loop-control       pts        stdout    tty26  tty47  ttyprintk  vcsu5    
+(XEN) loop0              ram0       tee0      tty27  tty48  ubi_ctrl   vcsu6    
+(XEN) loop1              ram1       teepriv0  tty28  tty49  urandom    vga_arbir
+(XEN) loop2              ram10      tty       tty29  tty5   vc-mem     xen      
+(XEN) loop3              ram11      tty0      tty3   tty50  vcs        zero     
+(XEN) loop4              ram12      tty1      tty30  tty51  vcs1                
+(XEN) loop5              ram13      tty10     tty31  tty52  vcs2                
+(XEN) root@main:/# cat /etc/hostname                                            
+(XEN) main                                                                      
+(XEN) root@[01:00:05.450,000] <inf> smclient: Send SM clock sync request        
+[01:00:05.451,000] <inf> smclient: Process clock sync                           
+uart:~$ cat /etc/hosts                                                          
+(XEN) 127.0.0.1 localhost                                                       
+(XEN)                                                                           
+(XEN) # The following lines are desirable for IPv6 capable hosts                
+(XEN) ::1     localhost ip6-localhost ip6-loopback                              
+(XEN) fe00::0 ip6-localnet                                                      
+(XEN) ff00::0 ip6-mcastprefix                                                   
+(XEN) ff02::1 ip6-allnodes                                                      
+(XEN) ff02::2 ip6-allrouters                                                    
+(XEN) 127.0.1.1 main                                                            
+(XEN) 127.0.0.1 wwwivi                                                          
+(XEN) root@main:/# find / -name aos                                             
+(XEN) /opt/aos                                                                  
+(XEN) /usr/share/aos                                                            
+(XEN) /var/aos                                                                  
+(XEN) /etc/aos                                                                  
+(XEN) root@main:/# which aos                                                    
+(XEN) root@[01:01:05.451,000] <inf> smclient: Send SM clock sync request        
+[01:01:05.451,000] <inf> smclient: Process clock sync                           
+uart:~$ ps aux                                                                  
+(XEN) ps: invalid option -- 'a'                                                 
+(XEN) BusyBox v1.36.1 () multi-call binary.                                     
+(XEN)                                                                           
+(XEN) Usage: ps                                                                 
+(XEN) root@main:/# ps                                                           
+(XEN)   PID USER       VSZ STAT COMMAND                                         
+(XEN)     1 root     18832 S    {systemd} /sbin/init                            
+(XEN)     2 root         0 SW   [kthreadd]                                      
+(XEN)     3 root         0 SW   [pool_workqueue_]                               
+(XEN)     4 root         0 IW<  [kworker/R-rcu_g]                               
+(XEN)     5 root         0 IW<  [kworker/R-rcu_p]                               
+(XEN)     6 root         0 IW<  [kworker/R-slub_]                               
+(XEN)     7 root         0 IW<  [kworker/R-netns]                               
+(XEN)     8 root         0 IW   [kworker/0:0-pm]                                
+(XEN)     9 root         0 IW<  [kworker/0:0H-ev]                               
+(XEN)    11 root         0 IW   [kworker/u2:0-fl]                               
+(XEN)    12 root         0 IW<  [kworker/R-mm_pe]                               
+(XEN)    13 root         0 IW   [rcu_tasks_kthre]                               
+(XEN)    14 root         0 IW   [rcu_tasks_rude_]                               
+(XEN)    15 root         0 IW   [rcu_tasks_trace]                               
+(XEN)    16 root         0 SW   [ksoftirqd/0]                                   
+(XEN)    17 root         0 RW   [rcu_preempt]                                   
+(XEN)    18 root         0 SW   [migration/0]                                   
+(XEN)    19 root         0 SW   [cpuhp/0]                                       
+(XEN)    20 root         0 SW   [kdevtmpfs]                                     
+(XEN)    21 root         0 IW<  [kworker/R-inet_]                               
+(XEN)    22 root         0 IW   [kworker/u2:1-fl]                               
+(XEN)    23 root         0 SW   [kauditd]                                       
+(XEN)    24 root         0 SW   [khungtaskd]                                    
+(XEN)    25 root         0 SW   [oom_reaper]                                    
+(XEN)    26 root         0 IW<  [kworker/R-write]                               
+(XEN)    27 root         0 SW   [kcompactd0]                                    
+(XEN)    28 root         0 IW<  [kworker/R-kinte]                               
+(XEN)    29 root         0 IW<  [kworker/R-kbloc]                               
+(XEN)    30 root         0 IW<  [kworker/R-blkcg]                               
+(XEN)    31 root         0 SW   [xen-balloon]                                   
+(XEN)    32 root         0 SW   [watchdogd]                                     
+(XEN)    33 root         0 RW   [kworker/u2:2-ev]                               
+(XEN)    34 root         0 IW<  [kworker/R-rpcio]                               
+(XEN)    35 root         0 IW<  [kworker/R-xprti]                               
+(XEN)    36 root         0 IW<  [kworker/0:1H-kb]                               
+(XEN)    38 root         0 SW   [kswapd0]                                       
+(XEN)    39 root         0 IW<  [kworker/R-nfsio]                               
+(XEN)    40 root         0 IW<  [kworker/R-kthro]                               
+(XEN)    42 root         0 IW<  [kworker/R-iscsi]                               
+(XEN)    43 root         0 IW<  [kworker/R-nvme-]                               
+(XEN)    44 root         0 IW<  [kworker/R-nvme-]                               
+(XEN)    45 root         0 IW<  [kworker/R-nvme-]                               
+(XEN)    46 root         0 IW<  [kworker/R-DWC N]                               
+(XEN)    47 root         0 IW<  [kworker/R-uas]                                 
+(XEN)    48 root         0 IW<  [kworker/u3:0]                                  
+(XEN)    49 root         0 SW   [irq/15-aerdrv]                                 
+(XEN)    50 root         0 SW   [irq/18-aerdrv]                                 
+(XEN)   358 root         0 SW   [jbd2/nvme0n1p2-]                               
+(XEN)   359 root         0 IW<  [kworker/R-ext4-]                               
+(XEN)   374 root         0 SW   [xenbus]                                        
+(XEN)   375 root         0 SW   [xenwatch]                                      
+(XEN)   415 root         0 SW   [jbd2/nvme0n1p1-]                               
+(XEN)   416 root         0 IW<  [kworker/R-ext4-]                               
+(XEN)   448 root         0 IW<  [kworker/R-mld]                                 
+(XEN)   449 root         0 IW<  [kworker/R-ipv6_]                               
+(XEN)   477 rpc       4832 S    /usr/sbin/rpcbind -w -f                         
+(XEN)   478 root     31648 S    /usr/lib/systemd/systemd-journald               
+(XEN)   516 root     26864 S    /usr/lib/systemd/systemd-udevd                  
+(XEN)   543 systemd- 15360 S    /usr/lib/systemd/systemd-resolved               
+(XEN)   544 systemd- 89056 S    /usr/lib/systemd/systemd-timesyncd              
+(XEN)   550 root     14896 S    /usr/lib/systemd/systemd-userdbd                
+(XEN)   571 root      3632 S    /usr/sbin/klogd -n                              
+(XEN)   572 root      3632 S    /usr/sbin/syslogd -n                            
+(XEN)   573 messageb  7248 S    /usr/bin/dbus-daemon --system --address=systemdn
+(XEN)   574 root      2368 S    /sbin/agetty -o -p -- \u --noclear - linux      
+(XEN)   577 mspdev    4352 S    -sh                                             
+(XEN)   578 root     15152 S    /usr/lib/systemd/systemd-logind                 
+(XEN)   580 root      146m S    /usr/sbin/tee-supplicant                        
+(XEN)   590 systemd- 16704 S    /usr/lib/systemd/systemd-networkd               
+(XEN)   608 root     74400 S    /usr/sbin/xl devd                               
+(XEN)   622 rpcuser   3152 S    /usr/sbin/rpc.statd -F                          
+(XEN)   668 root      670m S    /usr/bin/aos_iamanager -c /etc/aos/aos_iamanageg
+(XEN)   669 root     1641m S    /usr/bin/aos_vis -c /etc/aos/aos_vis.cfg -j     
+(XEN)   677 nobody    2816 S    /usr/bin/dnsmasq -x /run/dnsmasq.pid -7 /etc/dnq
+(XEN)   680 root      747m S    /usr/bin/aos_messageproxy -c /etc/aos/aos_messao
+(XEN)   741 root         0 IW   [kworker/0:2-eve]                               
+(XEN)   744 root      5568 R    sudo -i                                         
+(XEN)   745 root      5568 S    sudo -i                                         
+(XEN)   746 root      4352 S    -sh                                             
+(XEN)   813 root     15440 S    systemd-userwork: waiting...                    
+(XEN)   815 root     15584 S    systemd-userwork: waiting...                    
+(XEN)   816 root     15440 S    systemd-userwork: waiting...                    
+(XEN)   826 root         0 IW   [kworker/0:1-eve]                               
+(XEN)   828 root         0 IW   [kworker/u2:3-ev]                               
+(XEN)   830 root      3776 R    ps                                              
+(XEN) root@main:/# cat /etc/aos/aos.conf                                        
+(XEN) cat: /etc/aos/aos.conf: No such file or directory                         
+(XEN) root@main:/# ca[01:02:05.452,000] <inf> smclient: Send SM clock sync requt
+[01:02:05.452,000] <inf> smclient: Process clock sync                           
+                                                                                
+(XEN) root@main:/# cat /etc/machine-id                                          
+(XEN) 1d0ff6f5889941afa60625b0a2ca965d                                          
+(XEN) root@main:/# which aos-prov                                               
+(XEN) root@[01:03:05.452,000] <inf> smclient: Send SM clock sync request        
+[01:03:05.453,000] <inf> smclient: Process clock sync                           
+uart:~$ cat /etc/systemd/system/                                                
+(XEN) cat: /etc/systemd/system/: Is a directory                                 
+(XEN) root@main:/# ls /etc/systemd/system                                       
+(XEN) aos-communicationmanager.service.d        dnsmasq.service.d               
+(XEN) aos-iamanager-provisioning.service.d      getty.target.wants              
+(XEN) aos-iamanager.service.d                   local-fs.target.wants           
+(XEN) aos-messageproxy.service.d                multi-user.target.wants         
+(XEN) aos-servicemanager.service.d              network-online.target.wants     
+(XEN) aos-updatemanager.service.d               sockets.target.wants            
+(XEN) aos.target.d                              sysinit.target.wants            
+(XEN) basic.target.wants                        syslog.service                  
+(XEN) ctrl-alt-del.target                       systemd-journal-flush.service.d 
+(XEN) dbus-org.freedesktop.network1.service     systemd-journald.service.wants  
+(XEN) dbus-org.freedesktop.resolve1.service     systemd-networkd-wait-online.sed
+(XEN) dbus-org.freedesktop.timesync1.service    systemd-networkd.service.d      
+(XEN) default.target                            systemd-random-seed.service.wans
+(XEN) root@[01:04:05.453,000] <inf> smclient: Send SM clock sync request        
+[01:04:05.453,000] <inf> smclient: Process clock sync                           
+uart:~$ sudo udhcpc                                                             
+(XEN) udhcpc: started, v1.36.1                                                  
+(XEN) Dropped protocol specifier '.udhcpc' from 'eth0.udhcpc'. Using 'eth0' (if.
+(XEN) udhcpc: broadcasting discover                                             
+(XEN) udhcpc: broadcasting discover                                             
+(XEN) udhcpc: broadcasting discover                                             
+[01:05:05.453,000] <inf> smclient: Send SM clock sync request                   
+[01:05:05.454,000] <inf> smclient: Process clock sync                           
+uart:~$ (XEN) udhcpc: broadcasting discover                                     
+(XEN) udhcpc: broadcasting discover                                             
+(XEN) udhcpc: broadcasting discover                                             
+[01:06:05.454,000] <inf> smclient: Send SM clock sync request                   
+[01:06:05.454,000] <inf> smclient: Process clock sync                           
+uart:~$ (XEN) udhcpc: broadcasting discover                                     
+(XEN) udhcpc: broadcasting discover                                             
+(XEN) udhcpc: broadcasting discover                                             
+(XEN) ^C                                                                        
+(XEN) root@main:/# ifconfig                                                     
+(XEN) eth0      Link encap:Ethernet  HWaddr 2C:CF:67:28:F3:E9                   
+(XEN)           inet6 addr: fe80::2ecf:67ff:fe28:f3e9/64 Scope:Link             
+(XEN)           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1              
+(XEN)           RX packets:180544 errors:0 dropped:15260 overruns:0 frame:0     
+(XEN)           TX packets:109 errors:0 dropped:0 overruns:0 carrier:0          
+(XEN)           collisions:0 txqueuelen:1000                                    
+(XEN)           RX bytes:15781823 (15.0 MiB)  TX bytes:28410 (27.7 KiB)         
+(XEN)           Interrupt:86                                                    
+(XEN)                                                                           
+(XEN) lo        Link encap:Local Loopback                                       
+(XEN)           inet addr:127.0.0.1  Mask:255.0.0.0                             
+(XEN)           inet6 addr: ::1/128 Scope:Host                                  
+(XEN)           UP LOOPBACK RUNNING  MTU:65536  Metric:1                        
+(XEN)           RX packets:109 errors:0 dropped:0 overruns:0 frame:0            
+(XEN)           TX packets:109 errors:0 dropped:0 overruns:0 carrier:0          
+(XEN)           collisions:0 txqueuelen:1000                                    
+(XEN)           RX bytes:8330 (8.1 KiB)  TX bytes:8330 (8.1 KiB)                
+(XEN)                                                                           
+(XEN) xenbr0    Link encap:Ethernet  HWaddr 36:64:13:C9:0F:D6                   
+(XEN)           UP BROADCAST MULTICAST  MTU:1500  Metric:1                      
+(XEN)           RX packets:0 errors:0 dropped:0 overruns:0 frame:0              
+(XEN)           TX packets:0 errors:0 dropped:0 overruns:0 carrier:0            
+(XEN)           collisions:0 txqueuelen:1000                                    
+(XEN)           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)                          
+(XEN)                                                                           
+(XEN) root@main:/# sudo systemd-networkd enable                                 
+(XEN) sudo: systemd-networkd: command not found                                 
+(XEN) root@main:/# sudo syste[01:07:05.455,000] <inf> smclient: Send SM clock st
+[01:07:05.455,000] inf> smclient: Process clock sync                            
+sudo systemd systemd-networkd enable                                            
+(XEN) sudo: systemd: command not found                                          
+(XEN) root@main:/# sudo systemctl systemd-networkd enable                       
+(XEN) Unknown command verb 'systemd-networkd'.                                  
+(XEN) root@[01:08:05.455,000] <inf> smclient: Send SM clock sync request        
+01:21:05.463,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/#                                                              
+(XEN) root@main:/#                                                              
+(XEN) root@main:/# history                                                      
+(XEN)     1  cd /etc                                                            
+(XEN)     2  ls                                                                 
+(XEN)     3  cat shadow                                                         
+(XEN)     4  cat /etc/passwd                                                    
+(XEN)     5  cat /boot/firstrun.sh                                              
+(XEN)     6  cd /                                                               
+(XEN)     7  ls                                                                 
+(XEN)     8  cd dev                                                             
+(XEN)     9  lls                                                                
+(XEN)    10  ls                                                                 
+(XEN)    11  lsblk                                                              
+(XEN)    12  cat /etc/shadow                                                    
+(XEN)    13  cd ..                                                              
+(XEN)    14  ifconfig                                                           
+(XEN)    15  ip a                                                               
+(XEN)    16  sudo dhclient eth0                                                 
+(XEN)    17  sudo dhcpclient eth0                                               
+(XEN)    18  vim /etc/network/interfaces                                        
+(XEN)    19  sudo vi /etc/network/interfaces                                    
+(XEN)    20  help                                                               
+(XEN)    21  mount                                                              
+(XEN)    22  cat /etc/fstab                                                     
+(XEN)    23  groups mspdev                                                      
+(XEN)    24  id mspdev                                                          
+(XEN)    25  ls /proc                                                           
+(XEN)    26  ls /sys                                                            
+(XEN)    27  ls /dev                                                            
+(XEN)    28  cat /etc/hostname                                                  
+(XEN)    29  cat /etc/hosts                                                     
+(XEN)    30  find / -name aos                                                   
+(XEN)    31  which aos                                                          
+(XEN)    32  ps aux                                                             
+(XEN)    33  ps                                                                 
+(XEN)    34  cat /etc/aos/aos.conf                                              
+(XEN)    35  cat /etc/machine-id                                                
+(XEN)    36  which aos-prov                                                     
+(XEN)    37  cat /etc/systemd/system/                                           
+(XEN)    38  ls /etc/systemd/system                                             
+(XEN)    39  sudo udhcpc                                                        
+(XEN)    40  ifconfig                                                           
+(XEN)    41*  systemd-networkd enable                                           
+(XEN)    42  sudo systemd systemd-networkd enable                               
+(XEN)    43  sudo systemctl systemd-networkd enable                             
+(XEN)    44  history                                                            
+(XEN) root@[01:22:05.464,000] <inf> smclient: Send SM clock sync request        
+[01:22:05.464,000] <inf> smclient: Process clock sync                           
+uart:~$ netstat                                                                 (XEN) Active Internet connections (w/o servers)                                 
+(XEN) Proto Recv-Q Send-Q Local Address           Foreign Address         State 
+(XEN) tcp        0      0 localhost:39772         main:8090               ESTAB 
+(XEN) tcp        0      0 main:8090               localhost:39772         ESTAB 
+(XEN) Active UNIX domain sockets (w/o servers)                                  
+(XEN) Proto RefCnt Flags       Type       State         I-Node Path             
+(XEN) unix  3      [ ]         STREAM     CONNECTED      11950                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED      85432                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       3353                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4419 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4575 /run/dbus/systemt
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       4130                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       4277                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       5801                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4219                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       3787                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4739                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       5700 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4660 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4160 /run/systemd/jout
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       3168                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4410                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4931 /run/systemd/jout
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       4728                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED      11948                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4533                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4659                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       4400                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4496 /run/dbus/systemt
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4107                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4540 /run/systemd/jout
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       3166 /run/systemd/noty
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4220                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4218                  
+(XEN) unix  2      [ ]         DGRAM                      3199 /run/systemd/joug
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       3203 /run/systemd/joug
+(XEN) unix  12     [ ]         DGRAM      CONNECTED       3205 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       5682                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4740                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       3598                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4156                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       4954                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       3167                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       3828                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4378                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED      11949                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED      85637                  
+(XEN) unix  2      [ ]         DGRAM                      5807                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4702 /run/dbus/systemt
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4492                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4108 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       5699                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4741                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       3834                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       3455                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4548                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4217                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       3791 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4735 /run/dbus/systemt
+(XEN) unix  3      [ ]         STREAM     CONNECTED       5802 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4155 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4446                  
+(XEN) unix  2      [ ]         DGRAM                      5808                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       3573 /run/systemd/jout
+(XEN) unix  5      [ ]         DGRAM      CONNECTED       4420 /run/systemd/joug
+(XEN) unix  2      [ ]         DGRAM      CONNECTED      85627                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       5759                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4448 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4495 /run/dbus/systemt
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4493                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       5683 /run/systemd/jout
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       3835                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       4211                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4549 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4379 /run/systemd/jout
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4930                  
+(XEN) unix  3      [ ]         DGRAM      CONNECTED       4738                  
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4153                  
+(XEN) unix  2      [ ]         DGRAM      CONNECTED       4674                  
+(XEN) unix  2      [ ]         DGRAM                      5754 @f58d5           
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4574 @e83dde09cc41dd8m
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4695 @ea8d7491aa865bam
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4734 @8be1212c3209302k
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4317 @23bf7b5f5a6907fc
+(XEN) unix  3      [ ]         STREAM     CONNECTED       4318 @a70aea777bf9bc2e
+(XEN) root@[01:23:05.464,000] <inf> smclient: Send SM clock sync request        
+[01:23:05.465,000] <inf> smclient: Process clock sync                           
+uart:~$ vim logs                                                                
+(XEN) -sh: vim: command not found                                               
+(XEN) root@main:/# vi logs                                                      
+(XEN) root@main:/# ls                                                           
+(XEN) bin   dev  home  lost+found  mnt  proc    run   srv  tmp  var             
+(XEN) boot  etc  lib     media       opt  root  sbin  sys  usr                  
+(XEN) root@main:/# ls                                                           
+(XEN) bin   dev  home  lost+found  mnt  proc    run   srv  tmp  var             
+(XEN) boot  etc  lib     media       opt  root  sbin  sys  usr                  
+(XEN) root@[01:25:05.465,000] <inf> smclient: Send SM clock sync request        
+[01:25:05.466,000] <inf> smclient: Process clock sync                           
+uart:~$                                                                         
+(XEN) root@main:/# (XEN) *** Serial input to Xen (type 'CTRL-a' three times to )
+uart:~$ (XEN) *** Serial input to DOM0 (type 'CTRL-a' three times to switch inp)

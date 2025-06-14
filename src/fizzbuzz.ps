@@ -1,0 +1,13 @@
+%!PS-Adobe-3.0
+% 100回繰り返す ---- (*1)
+1 1 100 {
+  /n exch def % --- (*2) ループカウンタの値をnに設定
+  % --- (*3) 以下、順に条件を繰り返す
+  n 15 mod 0 eq { (FizzBuzz) == } { 
+  n 3  mod 0 eq { (Fizz) ==     } {
+  n 5  mod 0 eq { (Buzz) ==     }
+                { n ==          } 
+  ifelse } ifelse } ifelse
+} for
+quit
+

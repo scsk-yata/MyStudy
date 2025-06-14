@@ -1,0 +1,477 @@
+uart:~$ (XEN) *** Serial input to Xen (type 'CTRL-a' three times to switch inpu)
+(XEN) 'h' pressed -> showing installed handlers                                 
+(XEN)  key '*' (ascii '2a') => print all diagnostics                            
+(XEN)  key '+' (ascii '2b') => increase log level threshold                     
+(XEN)  key '-' (ascii '2d') => decrease log level threshold                     
+(XEN)  key '0' (ascii '30') => dump Dom0 registers                              
+(XEN)  key 'A' (ascii '41') => toggle alternative key handling                  
+(XEN)  key 'G' (ascii '47') => toggle host/guest log level adjustment           
+(XEN)  key 'H' (ascii '48') => dump heap info                                   
+(XEN)  key 'R' (ascii '52') => reboot machine                                   
+(XEN)  key 'a' (ascii '61') => dump timer queues                                
+(XEN)  key 'd' (ascii '64') => dump registers                                   
+(XEN)  key 'e' (ascii '65') => dump evtchn info                                 
+(XEN)  key 'g' (ascii '67') => print grant table usage                          
+(XEN)  key 'h' (ascii '68') => show this message                                
+(XEN)  key 'm' (ascii '6d') => memory info                                      
+(XEN)  key 'q' (ascii '71') => dump domain (and guest debug) info               
+(XEN)  key 'r' (ascii '72') => dump run queues                                  
+(XEN)  key 't' (ascii '74') => display multi-cpu clock info                     
+(XEN)  key 'w' (ascii '77') => synchronously dump console ring buffer (dmesg)   
+[30:56:43.645,000] <inf> smclient: Send node monitoring                         
+uart:~$ (XEN) '*' pressed -> firing all diagnostic keyhandlers                  
+(XEN) [d: dump registers]                                                       
+(XEN) 'd' pressed -> dumping registers                                          
+(XEN)                                                                           
+(XEN) *** Dumping CPU0 host state: ***                                          
+(XEN) ----[ Xen-4.19-unstable  arm64  debug=y  Not tainted ]----                
+(XEN) CPU:    0                                                                 
+(XEN) PC:     00000a000026eaa8 domain.c#idle_loop+0x124/0x18c                   
+(XEN) LR:     00000a000026ea8c                                                  
+(XEN) SP:     00008001fffafe60                                                  
+(XEN) CPSR:   0000000080000249 MODE:64-bit EL2h (Hypervisor, handler)           
+(XEN)      X0: 0000000000000000  X1: 0000000000000000  X2: 00000a0000328048     
+(XEN)      X3: fffffffffffffeed  X4: 0000000000000000  X5: 00000a00002b7068     
+(XEN)      X6: 00000a00003626b0  X7: 00008001fffdbaf0  X8: 0000000000000012     
+(XEN)      X9: 0000000000000080 X10: 7f7f7f7f7f7f7f7f X11: 0101010101010101     
+(XEN)     X12: 0000000000000008 X13: 0000000000000030 X14: 0000000000000000     
+(XEN)     X15: aaaaaaaaaaaaaaaa X16: aaaaaaaaaaaaaaaa X17: aaaaaaaaaaaaaaaa     
+(XEN)     X18: aaaaaaaaaaaaaaaa X19: 00000a00003626b0 X20: 0000000000000000     
+(XEN)     X21: 00000a000032df80 X22: 0000000000000001 X23: 0000000000000000     
+(XEN)     X24: 0000000000000000 X25: 0000000000000000 X26: 0000000000000000     
+(XEN)     X27: 0000000000000000 X28: 000000003f762200  FP: 00008001fffafe60     
+(XEN)                                                                           
+(XEN)   VTCR_EL2: 00000000800a3558                                              
+(XEN)  VTTBR_EL2: 00010000052b6000                                              
+(XEN)                                                                           
+(XEN)  SCTLR_EL2: 0000000030cd183d                                              
+(XEN)    HCR_EL2: 00000000807c663f                                              
+(XEN)  TTBR0_EL2: 000000000b341000                                              
+(XEN)                                                                           
+(XEN)    ESR_EL2: 0000000007e00000                                              
+(XEN)  HPFAR_EL2: 00000000107fff90                                              
+(XEN)    FAR_EL2: 000000107fff9124                                              
+(XEN)                                                                           
+(XEN) Xen stack trace from sp=00008001fffafe60:                                 
+(XEN)    00008001fffafe90 00000a00002789f8 00000a00002b5000 0000000000000004    
+(XEN)    00000a00002b5000 00000a00003626b0 00000a00002b10e8 0000000000000004    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN) Xen call trace:                                                           
+(XEN)    [<00000a000026eaa8>] domain.c#idle_loop+0x124/0x18c (PC)               
+(XEN)    [<00000a000026ea8c>] domain.c#idle_loop+0x108/0x18c (LR)               
+(XEN)    [<00000a00002789f8>] arch_get_xen_caps+0/0x94                          
+(XEN)    [<0000000000000004>] 0000000000000004                                  
+(XEN)                                                                           
+*** Dumping CPU1 host state: ***                                                
+(XEN) ----[ Xen-4.19-unstable  arm64  debug=y  Not tainted ]----                
+(XEN) CPU:    1                                                                 
+(XEN) PC:     00000a000026eaa8 domain.c#idle_loop+0x124/0x18c                   
+(XEN) LR:     00000a000026ea8c                                                  
+(XEN) SP:     00008001fffbfe60                                                  
+(XEN) CPSR:   0000000080400249 MODE:64-bit EL2h (Hypervisor, handler)           
+(XEN)      X0: 0000000000000000  X1: 00007601ffcc4000  X2: 00008001fffec048     
+(XEN)      X3: fffffffffffffeed  X4: 0000000000000000  X5: 00000a00002b7068     
+(XEN)      X6: 00000a00003626b0  X7: 00008001fffeb010  X8: 0000000000000012     
+(XEN)      X9: 0000000000000080 X10: 0000000000001a30 X11: 000000000000010f     
+(XEN)     X12: 0000000000000bad X13: 00000bad63025b3b X14: 000000050b9decb6     
+(XEN)     X15: 00000006ba27e648 X16: 0000000000000000 X17: 0000000000000000     
+(XEN)     X18: 0000000000000000 X19: 00000a00003626b0 X20: 0000000000000001     
+(XEN)     X21: 00000a000032e000 X22: 0000000000000002 X23: 0000000000000001     
+(XEN)     X24: 0000000000000001 X25: 0000000000000000 X26: 0000000000000000     
+(XEN)     X27: 0000000000000000 X28: 0000000000000000  FP: 00008001fffbfe60     
+(XEN)                                                                           
+(XEN)   VTCR_EL2: 00000000800a3558                                              
+(XEN)  VTTBR_EL2: 0002000037ffe000                                              
+(XEN)                                                                           
+(XEN)  SCTLR_EL2: 0000000030cd183d                                              
+(XEN)    HCR_EL2: 00000000807c663f                                              
+(XEN)  TTBR0_EL2: 000000000b341000                                              
+(XEN)                                                                           
+(XEN)    ESR_EL2: 0000000007e00000                                              
+(XEN)  HPFAR_EL2: 00000000107d0010                                              
+(XEN)    FAR_EL2: ffffc000854a1038                                              
+(XEN)                                                                           
+(XEN) Xen stack trace from sp=00008001fffbfe60:                                 
+(XEN)    00008001fffbfe70 00000a0000279280 00000a0000329320 00000a00003626d8    
+(XEN)    0000000000000001 0000000000000000 0000000000000000 0000000000000100    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN) Xen call trace:                                                           
+(XEN)    [<00000a000026eaa8>] domain.c#idle_loop+0x124/0x18c (PC)               
+(XEN)    [<00000a000026ea8c>] domain.c#idle_loop+0x108/0x18c (LR)               
+(XEN)    [<00000a0000279280>] start_secondary+0x21c/0x220                       
+(XEN)    [<00000a00003626d8>] 00000a00003626d8                                  
+(XEN)                                                                           
+(XEN) *** Dumping CPU2 host state: ***                                          
+(XEN) ----[ Xen-4.19-unstable  arm64  debug=y  Not tainted ]----                
+(XEN) CPU:    2                                                                 
+(XEN) CPU:    2                                                                 
+(XEN) PC:     00000a000026eaa8 domain.c#idle_loop+0x124/0x18c                   
+(XEN) LR:     00000a000026ea8c                                                  
+(XEN) SP:     00008001fffb7e60                                                  
+(XEN) CPSR:   0000000080000249 MODE:64-bit EL2h (Hypervisor, handler)           
+(XEN)      X0: 0000000000000000  X1: 00007601ffcc0000  X2: 00008001fffe8048     
+(XEN)      X3: fffffffffffffeed  X4: 0000000000000000  X5: 00000a00002b7068     
+(XEN)      X6: 00000a00003626b0  X7: 00008001fffeb410  X8: 0000000000000012     
+(XEN)      X9: 0000000000000080 X10: aaaaaaaaaaaaaaaa X11: aaaaaaaaaaaaaaaa     
+(XEN)     X12: aaaaaaaaaaaaaaaa X13: aaaaaaaaaaaaaaaa X14: aaaaaaaaaaaaaaaa     
+(XEN)     X15: aaaaaaaaaaaaaaaa X16: aaaaaaaaaaaaaaaa X17: aaaaaaaaaaaaaaaa     
+(XEN)     X18: aaaaaaaaaaaaaaaa X19: 00000a00003626b0 X20: 0000000000000002     
+(XEN)     X21: 00000a000032e080 X22: 0000000000000004 X23: 0000000000000002     
+(XEN)     X24: 0000000000000002 X25: 0000000000000000 X26: 0000000000000000     
+(XEN)     X27: 0000000000000000 X28: 0000000000000000  FP: 00008001fffb7e60     
+(XEN)                                                                           
+(XEN)   VTCR_EL2: 00000000800a3558                                              
+(XEN)  VTTBR_EL2: 00010000052b6000                                              
+(XEN)                                                                           
+(XEN)  SCTLR_EL2: 0000000030cd183d                                              
+(XEN)    HCR_EL2: 00000000807c663f                                              
+(XEN)  TTBR0_EL2: 000000000b341000                                              
+(XEN)                                                                           
+(XEN)    ESR_EL2: 0000000007e00000                                              
+(XEN)  HPFAR_EL2: 0000000000000000                                              
+(XEN)    FAR_EL2: 00007fffe72e3800                                              
+(XEN)                                                                           
+(XEN) Xen stack trace from sp=00008001fffb7e60:                                 
+(XEN)    00008001fffb7e70 00000a0000279280 00000a0000329320 00000a00003626d8    
+(XEN)    0000000000000002 0000000000000000 0000000000000000 0000000000000200    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN) Xen call trace:                                                           
+(XEN)    [<00000a000026eaa8>] domain.c#idle_loop+0x124/0x18c (PC)               
+(XEN)    [<00000a000026ea8c>] domain.c#idle_loop+0x108/0x18c (LR)               
+(XEN)    [<00000a0000279280>] start_secondary+0x21c/0x220                       
+(XEN)    [<00000a00003626d8>] 00000a00003626d8                                  
+(XEN)                                                                           
+(XEN) *** Dumping CPU3 host state: ***                                          
+(XEN) ----[ Xen-4.19-unstable  arm64  debug=y  Not tainted ]----                
+(XEN) CPU:    3                                                                 
+(XEN) PC:     00000a000026eaa8 domain.c#idle_loop+0x124/0x18c                   
+(XEN) LR:     00000a000026ea8c                                                  
+(XEN) SP:     00008001fff77e60                                                  
+(XEN) CPSR:   0000000080000249 MODE:64-bit EL2h (Hypervisor, handler)           
+(XEN)      X0: 0000000000000000  X1: 00007601ffc56000  X2: 00008001fff7e048     
+(XEN)      X3: fffffffffffffed9  X4: 0000000000000000  X5: 00000a00002b7068     
+(XEN)      X6: 00000a00003626b0  X7: 0000000000000014  X8: 0000000000000012     
+(XEN)      X9: 0000000000000000 X10: 7f7f7f7f7f7f7f7f X11: 0101010101010101     
+(XEN)     X12: 0000000000000008 X13: 0000000000000020 X14: 0000000000000000     
+(XEN)     X15: 0000000000000000 X16: 0000000000000000 X17: 0000000000000000     
+(XEN)     X18: 0000000000000000 X19: 00000a00003626b0 X20: 0000000000000003     
+(XEN)     X21: 00000a000032e100 X22: 0000000000000008 X23: 0000000000000003     
+(XEN)     X24: 0000000000000003 X25: 0000000000000000 X26: 0000000000000000     
+(XEN)     X27: 0000000000000000 X28: 0000000000000000  FP: 00008001fff77e60     
+(XEN)                                                                           
+(XEN)   VTCR_EL2: 00000000800a3558                                              
+(XEN)  VTTBR_EL2: 0000000000000000                                              
+(XEN)                                                                           
+(XEN)  SCTLR_EL2: 0000000030cd183d                                              
+(XEN)    HCR_EL2: 0000000080000038                                              
+(XEN)  TTBR0_EL2: 000000000b341000                                              
+(XEN)                                                                           
+(XEN)    ESR_EL2: 0000000056000000                                              
+(XEN)  HPFAR_EL2: 0000000000000000                                              
+(XEN)    FAR_EL2: 00007fffdd936550                                              
+(XEN)                                                                           
+(XEN) Xen stack trace from sp=00008001fff77e60:                                 
+(XEN)    00008001fff77e70 00000a0000279280 00000a0000329320 00000a00003626d8    
+(XEN)    0000000000000003 0000000000000000 0000000000000000 0000000000000300    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN)    0000000000000000 0000000000000000 0000000000000000 0000000000000000    
+(XEN) Xen call trace:                                                           
+(XEN)    [<00000a000026eaa8>] domain.c#idle_loop+0x124/0x18c (PC)               
+(XEN)    [<00000a000026ea8c>] domain.c#idle_loop+0x108/0x18c (LR)               
+(XEN)    [<00000a0000279280>] start_secondary+0x21c/0x220                       
+(XEN)    [<00000a00003626d8>] 00000a00003626d8                                  
+(XEN)                                                                           
+(XEN) [0: dump Dom0 registers]                                                  
+(XEN) '0' pressed -> dumping Dom0's registers                                   
+(XEN) *** Dumping Dom0 vcpu#0 state: ***                                        
+(XEN) ----[ Xen-4.19-unstable  arm64  debug=y  Not tainted ]----                
+(XEN) CPU:    0                                                                 
+(XEN) PC:     0000000010049034                                                  
+(XEN) LR:     00000000100a8900                                                  
+(XEN) SP_EL0: 0000000000000000                                                  
+(XEN) SP_EL1: 00000000103d0fc0                                                  
+(XEN) CPSR:   00000000000000c5 MODE:64-bit EL1h (Guest Kernel, handler)         
+(XEN)      X0: 0000000000000040  X1: 0000000000000000  X2: 0000000000000000     
+(XEN)      X3: 0000000000000000  X4: 00000000100a88a8  X5: aaaaaaaaaaaaaaaa     
+(XEN)      X6: aaaaaaaaaaaaaaaa  X7: aaaaaaaaaaaaaaaa  X8: aaaaaaaaaaaaaaaa     
+(XEN)      X9: aaaaaaaaaaaaaaaa X10: aaaaaaaaaaaaaaaa X11: aaaaaaaaaaaaaaaa     
+(XEN)     X12: aaaaaaaaaaaaaaaa X13: aaaaaaaaaaaaaaaa X14: aaaaaaaaaaaaaaaa     
+(XEN)     X15: aaaaaaaaaaaaaaaa X16: aaaaaaaaaaaaaaaa X17: aaaaaaaaaaaaaaaa     
+(XEN)     X18: aaaaaaaaaaaaaaaa X19: 0000000000000000 X20: 0000000000000000     
+(XEN)     X21: 0000000000000000 X22: 0000000000000000 X23: 0000000000000000     
+(XEN)     X24: 0000000000000000 X25: 0000000000000000 X26: 0000000000000000     
+(XEN)     X27: 0000000000000000 X28: 0000000000000000  FP: 00000000103d0fc0     
+(XEN)                                                                           
+(XEN)    ELR_EL1: 0000000010049038                                              
+(XEN)    ESR_EL1: 1fe00000                                                      
+(XEN)    FAR_EL1: 0000000000000000                                              
+(XEN)                                                                           
+(XEN)  SCTLR_EL1: 0000000030d5183d                                              
+(XEN)    TCR_EL1: 0000000280803518                                              
+(XEN)  TTBR0_EL1: 000100001015a000                                              
+(XEN)  TTBR1_EL1: 0000000000000000                                              
+(XEN)                                                                           
+(XEN)   VTCR_EL2: 00000000800a3558                                              
+(XEN)  VTTBR_EL2: 00010000052b6000                                              
+(XEN)                                                                           
+(XEN)  SCTLR_EL2: 0000000030cd183d                                              
+(XEN)    HCR_EL2: 00000000807c663f                                              
+(XEN)  TTBR0_EL2: 000000000b341000                                              
+(XEN)                                                                           
+(XEN)    ESR_EL2: 0000000007e00000                                              
+(XEN)  HPFAR_EL2: 00000000107fff90                                              
+(XEN)    FAR_EL2: 000000107fff9124                                              
+(XEN)                                                                           
+(XEN) Guest stack trace from sp=103d0fc0:                                       
+(XEN)   Failed to convert stack to physical address                             
+(XEN) [H: dump heap info]                                                       
+(XEN) 'H' pressed -> dumping heap info (now = 111417199489685)                  
+(XEN) heap[node=0][zone=0] -> 0 pages                                           
+(XEN) heap[node=0][zone=1] -> 0 pages                                           
+(XEN) heap[node=0][zone=2] -> 0 pages                                           
+(XEN) heap[node=0][zone=3] -> 0 pages                                           
+(XEN) heap[node=0][zone=4] -> 0 pages                                           
+(XEN) heap[node=0][zone=5] -> 0 pages                                           
+(XEN) heap[node=0][zone=6] -> 0 pages                                           
+(XEN) heap[node=0][zone=7] -> 0 pages                                           
+(XEN) heap[node=0][zone=8] -> 128 pages                                         
+(XEN) heap[node=0][zone=9] -> 256 pages                                         
+(XEN) heap[node=0][zone=10] -> 512 pages                                        
+(XEN) heap[node=0][zone=11] -> 1024 pages                                       
+(XEN) heap[node=0][zone=12] -> 2048 pages                                       
+(XEN) heap[node=0][zone=13] -> 4096 pages                                       
+(XEN) heap[node=0][zone=14] -> 8192 pages                                       
+(XEN) heap[node=0][zone=15] -> 16381 pages                                      
+(XEN) heap[node=0][zone=16] -> 31478 pages                                      
+(XEN) heap[node=0][zone=17] -> 24576 pages                                      
+(XEN) heap[node=0][zone=18] -> 130045 pages                                     
+(XEN) heap[node=0][zone=19] -> 131072 pages                                     
+(XEN) heap[node=0][zone=20] -> 524284 pages                                     
+(XEN) heap[node=0][zone=21] -> 1014471 pages                                    
+(XEN) heap[node=0][zone=22] -> 0 pages                                          
+(XEN) heap[node=0][zone=23] -> 0 pages                                          
+(XEN) heap[node=0][zone=24] -> 0 pages                                          
+(XEN) heap[node=0][zone=25] -> 0 pages                                          
+(XEN) heap[node=0][zone=26] -> 0 pages                                          
+(XEN) heap[node=0][zone=27] -> 0 pages                                          
+(XEN) heap[node=0][zone=28] -> 0 pages                                          
+(XEN) heap[node=0][zone=29] -> 0 pages                                          
+(XEN) heap[node=0][zone=30] -> 0 pages                                          
+(XEN) heap[node=0][zone=31] -> 0 pages                                          
+(XEN) heap[node=0][zone=32] -> 0 pages                                          
+(XEN) heap[node=0][zone=33] -> 0 pages                                          
+(XEN) heap[node=0][zone=34] -> 0 pages                                          
+(XEN) heap[node=0][zone=35] -> 0 pages                                          
+(XEN) heap[node=0][zone=36] -> 0 pages                                          
+(XEN) [a: dump timer queues]                                                    
+(XEN) Dumping timer queues:                                                     
+(XEN) CPU00:                                                                    
+(XEN) CPU01:                                                                    
+(XEN)   ex=       23127us timer=00008001ffb2ae98 cb=vtimer.c#virt_timer_expired)
+(XEN) CPU02:                                                                    
+(XEN)   ex=       21468us timer=00008001fff5fe98 cb=vtimer.c#virt_timer_expired)
+(XEN) CPU03:                                                                    
+(XEN) [e: dump evtchn info]                                                     
+(XEN) 'e' pressed -> dumping event-channel info                                 
+(XEN) Event channel information for domain 0:                                   
+(XEN) Polling vCPUs: {}                                                         
+(XEN)     port [p/m/s]                                                          
+(XEN)        1 [0/0/0]: s=3 n=0 x=0 d=1 p=1 Z=system_u:object_r:unlabeled_t     
+(XEN)        2 [0/0/0]: s=3 n=0 x=0 d=1 p=3 Z=system_u:object_r:unlabeled_t     
+(XEN)        3 [0/0/0]: s=3 n=0 x=0 d=1 p=2 Z=system_u:object_r:unlabeled_t     
+(XEN) Event channel information for domain 1:                                   
+(XEN) Polling vCPUs: {}                                                         
+(XEN)     port [p/m/s]                                                          
+(XEN)        1 [0/0/  -   ]: s=3 n=0 x=0 d=0 p=1 Z=system_u:object_r:dom0_t     
+(XEN)        2 [0/0/  -   ]: s=3 n=0 x=0 d=0 p=3 Z=system_u:object_r:dom0_t     
+(XEN)        3 [0/0/  -   ]: s=3 n=0 x=0 d=0 p=2 Z=system_u:object_r:dom0_t     
+(XEN) [g: print grant table usage]                                              
+(XEN) gnttab_usage_print_all [ key 'g' pressed                                  
+(XEN)       -------- active --------       -------- shared --------             
+(XEN) [ref] localdom mfn      pin          localdom gmfn     flags              
+(XEN) grant-table for remote d0 (v1)                                            
+(XEN)   1 frames (64 max), 1 maptrack frames (1024 max)                         
+(XEN) no active grant table entries                                             
+(XEN)       -------- active --------       -------- shared --------             
+(XEN) [ref] localdom mfn      pin          localdom gmfn     flags              
+(XEN) grant-table for remote d1 (v1)                                            
+(XEN)   1 frames (64 max), 0 maptrack frames (1024 max)                         
+(XEN) [0x008]      0 0x5e0ac 0x00000001          0 0x05e0ac 0x19                
+(XEN) [0x009]      0 0x5e0b8 0x00000001          0 0x05e0b8 0x19                
+(XEN) gnttab_usage_print_all ] done                                             
+(XEN) [m: memory info]                                                          
+(XEN) Physical memory information:                                              
+(XEN)     Xen heap: 0kB free                                                    
+(XEN)     heap[08]: 512kB free                                                  
+(XEN)     heap[09]: 1024kB free                                                 
+(XEN)     heap[10]: 2048kB free                                                 
+(XEN)     heap[11]: 4096kB free                                                 
+(XEN)     heap[12]: 8192kB free                                                 
+(XEN)     heap[13]: 16384kB free                                                
+(XEN)     heap[14]: 32768kB free                                                
+(XEN)     heap[15]: 65524kB free                                                
+(XEN)     heap[16]: 125912kB free                                               
+(XEN)     heap[17]: 98304kB free                                                
+(XEN)     heap[18]: 520180kB free                                               
+(XEN)     heap[19]: 524288kB free                                               
+(XEN)     heap[20]: 2097136kB free                                              
+(XEN)     heap[21]: 4057884kB free                                              
+(XEN)     Dom heap: 7554252kB free                                              
+(XEN) [q: dump domain (and guest debug) info]                                   
+(XEN) 'q' pressed -> dumping domain info (now = 111417551554203)                
+(XEN) General information for domain 0:                                         
+(XEN)     refcnt=3 dying=0 pause_count=0                                        
+(XEN)     nr_pages=32768 xenheap_pages=2 dirty_cpus={} max_pages=32768          
+(XEN)     handle=00000000-0000-0000-0000-000000000000 vm_assist=00000000        
+(XEN) p2m mappings for domain 0 (vmid 1):                                       
+(XEN)   1G mappings: 16 (shattered 0)                                           
+(XEN)   2M mappings: 81 (shattered 1)                                           
+(XEN)   4K mappings: 1388                                                       
+(XEN) Rangesets belonging to domain 0:                                          
+(XEN)     Interrupts { 48-51, 65, 96-99, 104-105, 112-123, 129-130, 133, 142, 1}
+(XEN)     I/O Memory { 0-80, 8000-8400, 1d000-1f000, 3fd16-3fd17, 1000005-10000}
+(XEN) NODE affinity for domain 0: [0]                                           
+(XEN) VCPU information and callbacks for domain 0:                              
+(XEN)   UNIT0 affinities: hard={0-3} soft={0-3}                                 
+(XEN)     VCPU0: CPU2 [has=F] poll=0 upcall_pend=00 upcall_mask=01              
+(XEN)     pause_count=0 pause_flags=1                                           
+(XEN) GICH_LRs (vcpu 0) mask=0                                                  
+(XEN)    VCPU_LR[0]=0                                                           
+(XEN)    VCPU_LR[1]=0                                                           
+(XEN)    VCPU_LR[2]=0                                                           
+(XEN)    VCPU_LR[3]=0                                                           
+(XEN) No periodic timer                                                         
+(XEN) General information for domain 1:                                         
+(XEN)     refcnt=3 dying=0 pause_count=0                                        
+(XEN)     nr_pages=131076 xenheap_pages=2 dirty_cpus={} max_pages=131076        
+(XEN)     handle=00000000-0000-0000-0000-000000000000 vm_assist=00000020        
+(XEN) p2m mappings for domain 1 (vmid 2):                                       
+(XEN)   1G mappings: 0 (shattered 0)                                            
+(XEN)   2M mappings: 261 (shattered 1)                                          
+(XEN)   4K mappings: 597                                                        
+(XEN) Rangesets belonging to domain 1:                                          
+(XEN)     Interrupts { 160-223, 255-256, 265-266 }                              
+(XEN) p2m mappings for domain 1 (vmid 2):                                       
+(XEN)   1G mappings: 0 (shattered 0)                                            
+(XEN)   2M mappings: 261 (shattered 1)                                          
+(XEN)   4K mappings: 597                                                        
+(XEN) Rangesets belonging to domain 1:                                          
+(XEN)     Interrupts { 160-223, 255-256, 265-266 }                              
+(XEN)     I/O Memory { 1000110-100011a, 1000120-100012a, 1000130-1000131, 10015}
+(XEN) NODE affinity for domain 1: [0]                                           
+(XEN) VCPU information and callbacks for domain 1:                              
+(XEN)   UNIT0 affinities: hard={0-3} soft={0-3}                                 
+(XEN)     VCPU0: CPU1 [has=F] poll=0 upcall_pend=00 upcall_mask=01              
+(XEN)     pause_count=0 pause_flags=1                                           
+(XEN) GICH_LRs (vcpu 0) mask=0                                                  
+(XEN)    VCPU_LR[0]=0                                                           
+(XEN)    VCPU_LR[1]=0                                                           
+(XEN)    VCPU_LR[2]=0                                                           
+(XEN)    VCPU_LR[3]=0                                                           
+(XEN) No periodic timer                                                         
+(XEN) Notifying guest 0:0 (virq 1, port 0)                                      
+(XEN) Notifying guest 1:0 (virq 1, port 0)                                      
+(XEN) [r: dump run queues]                                                      
+(XEN) sched_smt_power_savings: disabled                                         
+(XEN) NOW=111417808751592                                                       
+(XEN) Online Cpus: 0-3                                                          
+(XEN) Cpupool 0:                                                                
+(XEN) Cpus: 0-3                                                                 
+(XEN) Scheduling granularity: cpu, 1 CPU per sched-resource                     
+(XEN) Scheduler: SMP Credit Scheduler rev2 (credit2)                            
+(XEN) Active queues: 1                                                          
+(XEN)   default-weight     = 256                                                
+(XEN) Runqueue 0:                                                               
+(XEN)   ncpus              = 4                                                  
+(XEN)   cpus               = 0-3                                                
+(XEN)   max_weight         = 256                                                
+(XEN)   pick_bias          = 0                                                  
+(XEN)   instload           = 0                                                  
+(XEN)   aveload            = 3570 (~1%)                                         
+(XEN)   idlers: e                                                               
+(XEN)   tickled: 0                                                              
+(XEN)   fully idle cores: e                                                     
+(XEN) Domain info:                                                              
+(XEN)   Domain: 0 w 256 c 0 v 1                                                 
+(XEN)     1: [0.0] flags=0 cpu=2 credit=10357267 [w=256] load=156 (~0%)         
+(XEN)   Domain: 1 w 256 c 0 v 1                                                 
+(XEN)     2: [1.0] flags=0 cpu=1 credit=5380115 [w=256] load=3531 (~1%)         
+(XEN) Runqueue 0:                                                               
+(XEN) CPU[00] runq=0, sibling={0}, core={0}                                     
+(XEN) CPU[01] runq=0, sibling={1}, core={1}                                     
+(XEN) CPU[02] runq=0, sibling={2}, core={2}                                     
+(XEN) CPU[03] runq=0, sibling={3}, core={3}                                     
+(XEN) RUNQ:                                                                     
+(XEN) CPUs info:                                                                
+(XEN) CPU[00] current=d[IDLE]v0, curr=d[IDLE]v0, prev=NULL                      
+(XEN) CPU[01] current=d[IDLE]v1, curr=d[IDLE]v1, prev=NULL                      
+(XEN) CPU[02] current=d0v0, curr=d0v0, prev=NULL                                
+(XEN) CPU[03] current=d[IDLE]v3, curr=d[IDLE]v3, prev=NULL                      
+(XEN) [t: display multi-cpu clock info]                                         
+(XEN) Synced stime skew: max=167ns avg=167ns samples=1 current=167ns            
+(XEN) Synced cycles skew: max=9 avg=9 samples=1 current=9                       
+[30:56:53.645,000] <inf> smclient: Send node monitoring                         
+[30:57:03.645,000] <inf> smclient: Send node monitoring                         
+[30:57:13.645,000] <inf> smclient: Send node monitoring                         
+[30:57:17.741,000] <inf> smclient: Send SM clock sync request                   
+[30:57:17.741,000] <inf> smclient: Process clock sync                           
+[30:57:23.645,000] <inf> smclient: Send node monitoring                         
+[30:57:33.645,000] <inf> smclient: Send node monitoring                         
+[30:57:43.645,000] <inf> smclient: Send node monitoring                         
+[30:57:53.645,000] <inf> smclient: Send node monitoring                         
+[30:58:03.645,000] <inf> smclient: Send node monitoring                         
+[30:58:13.645,000] <inf> smclient: Send node monitoring                         
+[30:58:17.741,000] <inf> smclient: Send SM clock sync request                   
+[30:58:17.742,000] <inf> smclient: Process clock sync                           
+uart:~$ (XEN) gnttab_usage_print_all [ key 'g' pressed                          
+(XEN)       -------- active --------       -------- shared --------             
+(XEN) [ref] localdom mfn      pin          localdom gmfn     flags              
+(XEN) grant-table for remote d0 (v1)                                            
+(XEN)   1 frames (64 max), 1 maptrack frames (1024 max)                         
+(XEN) no active grant table entries                                             
+(XEN)       -------- active --------       -------- shared --------             
+(XEN) [ref] localdom mfn      pin          localdom gmfn     flags              
+(XEN) grant-table for remote d1 (v1)                                            
+(XEN)   1 frames (64 max), 0 maptrack frames (1024 max)                         
+(XEN) [0x008]      0 0x5e0ac 0x00000001          0 0x05e0ac 0x19                
+(XEN) [0x009]      0 0x5e0b8 0x00000001          0 0x05e0b8 0x19                
+(XEN) gnttab_usage_print_all ] done                                             

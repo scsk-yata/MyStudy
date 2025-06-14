@@ -1,0 +1,397 @@
+[24:49:17.787,000] <inf> smclient: Process clock sync
+uart:~$ (XEN) DOM1: netcheck: DetectCaptivePortal(found=false)
+(XEN) DOM1: magicsock: endpoints changed: 202.32.155.43:13960 (stun), 2025
+(XEN) DOM1: 1588 (local), 172.18.0.1:51588 (local)
+[24:49:23.839,000] <inf> smclient: Send node monitoring
+[24:49:33.839,000] <inf> smclient: Send node monitoring
+[24:49:43.840,000] <inf> smclient: Send node monitoring
+uart:~$ (XEN) DOM1: magicsock: endpoints changed: 202.32.155.43:13960 (st1
+(XEN) DOM1: 588 (local)
+[24:49:53.840,000] <inf> smclient: Send node monitoring
+[24:50:03.840,000] <inf> smclient: Send node monitoring
+[24:50:13.840,000] <inf> smclient: Send node monitoring
+[24:50:17.787,000] <inf> smclient: Send SM clock sync request
+[24:50:17.787,000] <inf> smclient: Process clock sync
+[24:50:23.840,000] <inf> smclient: Send node monitoring
+[24:50:33.840,000] <inf> smclient: Send node monitoring
+[24:50:43.840,000] <inf> smclient: Send node monitoring
+[24:50:53.840,000] <inf> smclient: Send node monitoring
+[24:51:03.840,000] <inf> smclient: Send node monitoring
+[24:51:13.840,000] <inf> smclient: Send node monitoring
+[24:51:17.787,000] <inf> smclient: Send SM clock sync request
+[24:51:17.788,000] <inf> smclient: Process clock sync
+[24:51:23.841,000] <inf> smclient: Send node monitoring
+uart:~$ 
+uart:~$ 
+[24:51:33.841,000] <inf> smclient: Send node monitoring
+uart:~$ help
+Please press the <Tab> button to see all available commands.
+You can also use the <Tab> button to prompt or auto-complete all commands.
+You can try to call commands with <-h> or <--help> parameter for more inf.
+
+Shell supports following meta-keys:
+  Ctrl + (a key from: abcdefklnpuw)
+  Alt  + (a key from: bf)
+Please refer to shell documentation for more details.
+
+Available commands:
+  clear    : Clear screen.
+  date     : Date commands
+  device   : Device commands
+  devmem   : Read/write physical memory
+            Usage:
+            Read memory at address with optional width:
+            devmem address [width]
+            Write memory at address with mandatory width and value:
+            devmem address <width> <value>
+  fs       : File system commands
+  help     : Prints the help message.
+  history  : Command history.
+  kernel   : Kernel commands
+  log      : Commands for controlling logger
+  rem      : Ignore lines beginning with 'rem '
+  resize   : Console gets terminal screen size or assumes default in casee
+            readout fails. It must be executed after each terminal width e
+            to ensure correct text display.
+  retval   : Print return value of most recent command
+  shell    : Useful, not Unix-like shell commands.
+  xrun     : XRun commands
+  xs       : Xenstore commands
+  xstat    : XStat commands
+  xu       : Xenutils commands
+[24:51:43.841,000] <inf> smclient: Send node monitoring
+uart:~$ device
+device - Device commands
+Subcommands:
+  list  : List configured devices
+uart:~$ device list
+devices:
+- interrupt-controller@107fff9000 (READY)
+- gpio@0 (READY)
+- psci (READY)
+- hvc (READY)
+- ramdisk0 (READY)
+- tee (READY)
+- sd_vcc_reg (READY)
+- sd_io_1v8_reg (READY)
+- mmc@1000fff000 (READY)
+- disk (READY)
+[24:51:53.841,000] <inf> smclient: Send node monitoring
+[24:52:03.841,000] <inf> smclient: Send node monitoring
+[24:52:13.841,000] <inf> smclient: Send node monitoring
+[24:52:17.788,000] <inf> smclient: Send SM clock sync request
+[24:52:17.788,000] <inf> smclient: Process clock sync
+[24:52:23.841,000] <inf> smclient: Send node monitoring
+[24:52:33.841,000] <inf> smclient: Send node monitoring
+uart:~$ devmem
+[24:52:43.841,000] <inf> smclient: Send node monitoring
+[24:52:53.841,000] <inf> smclient: Send node monitoring
+uart:~$ fs
+fs - File system commands
+Subcommands:
+  cd       : Change working directory
+  ls       : List files in current directory
+  mkdir    : Create directory
+  mount    : <Mount fs, syntax:- fs mount <fs type> <mount-point>
+  pwd      : Print current working directory
+  read     : Read from file
+  cat      : Concatenate files and print on the standard output
+  rm       : Remove file
+  statvfs  : Show file system state
+  trunc    : Truncate file
+  write    : Write file
+[24:53:03.842,000] <inf> smclient: Send node monitoring
+uart:~$ fs pwd
+/
+[24:53:13.842,000] <inf> smclient: Send node monitoring
+[24:53:17.789,000] <inf> smclient: Send SM clock sync request
+[24:53:17.789,000] <inf> smclient: Process clock sync
+uart:~$ fs statvfs
+statvfs: wrong parameter count
+statvfs - Show file system state
+[24:53:23.842,000] <inf> smclient: Send node monitoring
+uart:~$ fs trunc
+trunc: wrong parameter count
+trunc - Truncate file
+[24:53:33.842,000] <inf> smclient: Send node monitoring
+[24:53:43.842,000] <inf> smclient: Send node monitoring
+uart:~$ fs mkdir new
+Error creating dir[-2]
+[24:53:53.842,000] <inf> smclient: Send node monitoring
+[24:54:03.842,000] <inf> smclient: Send node monitoring
+uart:~$ kernel
+kernel - Kernel commands
+Subcommands:
+  cycles     : Kernel cycles.
+  stacks     : List threads stack usage.
+  threads    : List kernel threads.
+  uptime     : Kernel uptime. Can be called with the -p or --pretty optios
+  version    : Kernel version.
+  sleep      : ms
+  log-level  : <module name> <severity (0-4)>
+[24:54:13.842,000] <inf> smclient: Send node monitoring
+[24:54:17.789,000] <inf> smclient: Send SM clock sync request
+[24:54:17.791,000] <inf> smclient: Process clock sync
+[24:54:23.842,000] <inf> smclient: Send node monitoring
+uart:~$ log
+log - Commands for controlling logger
+Subcommands:
+  backend        : Logger backends commands.
+  disable        : 'log disable <module_0> .. <module_n>' disables logs in
+                  specified modules (all if no modules specified).
+  enable         : 'log enable <level> <module_0> ...  <module_n>' enables
+                  up to given level in specified modules (all if no moduls
+                  specified).
+  go             : Resume logging
+  halt           : Halt logging
+  list_backends  : Lists logger backends.
+  status         : Logger status
+  mem            : Logger memory usage
+uart:~$ (XEN) DOM1: netcheck: DetectCaptivePortal(found=false)
+(XEN) DOM1: magicsock: endpoints changed: 202.32.155.43:13960 (stun), 2025
+(XEN) DOM1: 88 (local)
+[24:54:33.842,000] <inf> smclient: Send node monitoring
+[24:54:43.843,000] <inf> smclient: Send node monitoring
+uart:~$ log status
+module_name                              | current | built-in 
+----------------------------------------------------------
+app                                      | inf     | dbg
+brcm_bcm2712_sdhci                       | inf     | inf
+cbprintf_package                         | inf     | inf
+certhandler                              | inf     | dbg
+clocksync                                | inf     | dbg
+communication                            | inf     | dbg
+crypto                                   | inf     | dbg
+disk                                     | inf     | inf
+domains                                  | inf     | inf
+downloader                               | inf     | dbg
+getopt                                   | inf     | inf
+iamclient                                | inf     | dbg
+launcher                                 | inf     | dbg
+log                                      | inf     | inf
+log_mgmt                                 | inf     | inf
+monitoring                               | inf     | dbg
+nodeinfoprovider                         | inf     | dbg
+ocispec                                  | inf     | dbg
+optee                                    | inf     | inf
+os                                       | inf     | inf
+pkcs11                                   | inf     | dbg
+posix_timer                              | inf     | inf
+provisionmanager                         | inf     | dbg
+psci                                     | inf     | inf
+pthread                                  | inf     | inf
+pthread_key                              | inf     | inf
+pthread_mutex                            | inf     | inf
+pthread_rwlock                           | inf     | inf
+ramdisk                                  | inf     | inf
+ree_fs                                   | inf     | inf
+regulator_fixed                          | inf     | inf
+regulator_gpio                           | inf     | inf
+resourcemanager                          | inf     | dbg
+runner                                   | inf     | dbg
+sd                                       | inf     | inf
+sdhci_common                             | inf     | inf
+servicemanager                           | inf     | dbg
+shell.shell_uart                         | inf     | inf
+shell_uart                               | inf     | inf
+smclient                                 | inf     | dbg
+storage                                  | inf     | dbg
+storage                                  | inf     | inf
+tee_client_api                           | inf     | inf
+tee_supplicant                           | inf     | inf
+teec_ta_load                             | inf     | inf
+xen_dom_mgmt                             | inf     | inf
+xen_dom_xs                               | inf     | inf
+xen_domain_console                       | inf     | inf
+xen_enlighten                            | inf     | inf
+xen_events                               | inf     | inf
+xen_gnttab                               | inf     | inf
+xen_regions                              | inf     | inf
+xen_shell                                | inf     | inf
+xenstore                                 | inf     | inf
+xl_parser                                | inf     | inf
+xrun                                     | inf     | inf
+[24:54:53.843,000] <inf> smclient: Send node monitoring
+[24:55:03.843,000] <inf> smclient: Send node monitoring
+[24:55:13.843,000] <inf> smclient: Send node monitoring
+[24:55:17.791,000] <inf> smclient: Send SM clock sync request
+[24:55:17.791,000] <inf> smclient: Process clock sync
+[24:55:23.843,000] <inf> smclient: Send node monitoring
+[24:55:33.843,000] <inf> smclient: Send node monitoring
+[24:55:43.843,000] <inf> smclient: Send node monitoring
+[24:55:53.843,000] <inf> smclient: Send node monitoring
+[24:56:03.843,000] <inf> smclient: Send node monitoring
+[24:56:13.843,000] <inf> smclient: Send node monitoring
+[24:56:17.791,000] <inf> smclient: Send SM clock sync request
+[24:56:17.792,000] <inf> smclient: Process clock sync
+uart:~$ retval
+0
+[24:56:23.844,000] <inf> smclient: Send node monitoring
+[24:56:33.844,000] <inf> smclient: Send node monitoring
+[24:56:43.844,000] <inf> smclient: Send node monitoring
+[24:56:53.844,000] <inf> smclient: Send node monitoring
+[24:57:03.844,000] <inf> smclient: Send node monitoring
+uart:~$ xrun
+xrun - XRun commands
+Subcommands:
+  run     : Create xrun container
+           Usage: create -c <container_id> -b <bundle_path> -s <socket>
+
+  kill    : Destroy container
+            Usage: kill -c <container_id>
+
+  pause   : Pause container
+            Usage: pause -c <container_id>
+
+  resume  : Resume container
+            Usage: resume -c <container_id>
+
+  state   : Show container state
+            Usage: state -c <container_id>
+
+[24:57:13.844,000] <inf> smclient: Send node monitoring
+[24:57:17.792,000] <inf> smclient: Send SM clock sync request
+[24:57:17.792,000] <inf> smclient: Process clock sync
+uart:~$ xrun state
+state: wrong parameter count
+state - Show container state
+         Usage: state -c <container_id>
+
+[24:57:23.844,000] <inf> smclient: Send node monitoring
+uart:~$ help
+Please press the <Tab> button to see all available commands.
+You can also use the <Tab> button to prompt or auto-complete all commands.
+You can try to call commands with <-h> or <--help> parameter for more inf.
+
+Shell supports following meta-keys:
+  Ctrl + (a key from: abcdefklnpuw)
+  Alt  + (a key from: bf)
+Please refer to shell documentation for more details.
+
+Available commands:
+  clear    : Clear screen.
+  date     : Date commands
+  device   : Device commands
+  devmem   : Read/write physical memory
+            Usage:
+            Read memory at address with optional width:
+            devmem address [width]
+            Write memory at address with mandatory width and value:
+            devmem address <width> <value>
+  fs       : File system commands
+  help     : Prints the help message.
+  history  : Command history.
+  kernel   : Kernel commands
+  log      : Commands for controlling logger
+  rem      : Ignore lines beginning with 'rem '
+  resize   : Console gets terminal screen size or assumes default in casee
+            readout fails. It must be executed after each terminal width e
+            to ensure correct text display.
+  retval   : Print return value of most recent command
+  shell    : Useful, not Unix-like shell commands.
+  xrun     : XRun commands
+  xs       : Xenstore commands
+  xstat    : XStat commands
+  xu       : Xenutils commands
+[24:57:33.844,000] <inf> smclient: Send node monitoring
+uart:~$ xs
+xs - Xenstore commands
+Subcommands:
+  read   : Read from xenstore
+           Usage: read <path>
+
+  write  : Write to xenstore
+           Usage: write <path> <value>
+
+  ls     : List xenstore
+
+  rm     : Remove from xenstore
+           Usage: rm <path>
+
+uart:~$ xs ls
+ls: wrong parameter count
+ls - List xenstore
+
+[24:57:43.844,000] <inf> smclient: Send node monitoring
+uart:~$ ls
+ls: command not found
+[24:57:53.844,000] <inf> smclient: Send node monitoring
+uart:~$ xstat
+xstat - XStat commands
+Subcommands:
+  version   : Version command
+
+  physinfo  : stat command
+
+uart:~$ xstat version
+XEN version 4.19-unstable
+[24:58:03.845,000] <inf> smclient: Send node monitoring
+uart:~$ xstat physinfo
+XEN version 4.19-unstable
+CPUs         : 4
+CPU freq(kHz): 54000
+Total mem(K) : 8384512
+Free mem(K)  : 7554252
+[24:58:13.845,000] <inf> smclient: Send node monitoring
+[24:58:17.792,000] <inf> smclient: Send SM clock sync request
+[24:58:17.793,000] <inf> smclient: Process clock sync
+[24:58:23.845,000] <inf> smclient: Send node monitoring
+uart:~$ xu
+xu - Xenutils commands
+Subcommands:
+  create       : Create Xen domain
+                 Usage: create cfg_name [-d <domid>] [-p]
+
+  destroy      : Destroy Xen domain
+                 Usage: destroy <domid|name>
+
+  pause        : Pause Xen domain
+                 Usage: pause <domid|name>
+
+  unpause      : Unpause Xen domain
+                 Usage: unpause <domid|name>
+
+  config_list  : List available domain configurations
+
+  console      : Attach to a domain console.
+                Press CTRL+] to detach from console
+                Usage: console <domid|name>
+
+  list         : List all Xen domains
+                 Usage: list
+
+uart:~$ xu create
+create: wrong parameter count
+create - Create Xen domain
+          Usage: create cfg_name [-d <domid>] [-p]
+
+[24:58:33.845,000] <inf> smclient: Send node monitoring
+uart:~$ xu list
+Name                                        ID   Mem VCPUs      State   T)
+Domain-0                                     0   128     1      r----    3
+Dom0less-1                                   1   512     1      -b---    0
+[24:58:43.845,000] <inf> smclient: Send node monitoring
+[24:58:53.845,000] <inf> smclient: Send node monitoring
+[24:59:03.845,000] <inf> smclient: Send node monitoring
+[24:59:13.845,000] <inf> smclient: Send node monitoring
+[24:59:17.793,000] <inf> smclient: Send SM clock sync request
+[24:59:17.793,000] <inf> smclient: Process clock sync
+[24:59:23.845,000] <inf> smclient: Send node monitoring
+[24:59:33.845,000] <inf> smclient: Send node monitoring
+uart:~$ (XEN) DOM1: netcheck: DetectCaptivePortal(found=false)
+(XEN) DOM1: magicsock: endpoints changed: 202.32.155.43:13960 (stun), 2021
+(XEN) DOM1: 588 (local), 172.18.0.1:51588 (local)
+[24:59:43.846,000] <inf> smclient: Send node monitoring
+[24:59:53.846,000] <inf> smclient: Send node monitoring
+uart:~$ (XEN) DOM1: magicsock: endpoints changed: 202.32.155.43:13960 (st5
+(XEN) DOM1: 88 (local)
+[25:00:03.846,000] <inf> smclient: Send node monitoring
+[25:00:13.846,000] <inf> smclient: Send node monitoring
+[25:00:17.793,000] <inf> smclient: Send SM clock sync request
+[25:00:17.794,000] <inf> smclient: Process clock sync
+[25:00:23.846,000] <inf> smclient: Send node monitoring
+[25:00:33.846,000] <inf> smclient: Send node monitoring
+[25:00:43.846,000] <inf> smclient: Send node monitoring
+[25:00:53.846,000] <inf> smclient: Send node monitoring
+[25:01:03.846,000] <inf> smclient: Send node monitoring
+[25:01:13.846,000] <inf> smclient: Send node monitoring

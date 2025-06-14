@@ -1,0 +1,1049 @@
+yata@sdmdev3:~$ sudo dpkg --add-architecture arm64
+[sudo] password for yata: 
+yata@sdmdev3:~$ sudo apt update
+Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
+Hit:2 https://packages.microsoft.com/repos/code stable InRelease  
+Get:3 https://dl.google.com/linux/chrome/deb stable InRelease [1,825 B]
+Hit:4 http://security.ubuntu.com/ubuntu noble-security InRelease  
+Hit:5 https://repo.zabbix.com/zabbix/7.2/release/ubuntu noble InRelease
+Hit:6 https://repo.zabbix.com/zabbix-tools/debian-ubuntu noble InRelease
+Hit:7 http://jp.archive.ubuntu.com/ubuntu noble InRelease         
+Get:8 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,218 B]
+Hit:9 https://repo.zabbix.com/zabbix/7.2/stable/ubuntu noble InRelease
+Get:10 https://pkgs.tailscale.com/stable/ubuntu focal InRelease   
+Ign:11 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages
+Get:12 http://jp.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Ign:13 http://security.ubuntu.com/ubuntu noble-security/restricted arm64 Packages
+Ign:14 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages
+Ign:15 http://security.ubuntu.com/ubuntu noble-security/multiverse arm64 Packages
+Ign:11 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages
+Ign:13 http://security.ubuntu.com/ubuntu noble-security/restricted arm64 Packages
+Ign:14 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages
+Get:16 https://repo.zabbix.com/zabbix/7.2/stable/ubuntu noble/main arm64 Packages [20.0 kB]
+Get:17 https://pkgs.tailscale.com/stable/ubuntu focal/main arm64 Packages [12.4 kB]
+Ign:15 http://security.ubuntu.com/ubuntu noble-security/multiverse arm64 Packages
+Ign:11 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages
+Ign:13 http://security.ubuntu.com/ubuntu noble-security/restricted arm64 Packages
+Hit:18 http://jp.archive.ubuntu.com/ubuntu noble-backports InRelease
+Ign:14 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages
+Ign:15 http://security.ubuntu.com/ubuntu noble-security/multiverse arm64 Packages
+Ign:11 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages
+Ign:19 http://jp.archive.ubuntu.com/ubuntu noble/main arm64 Packages
+Ign:20 http://jp.archive.ubuntu.com/ubuntu noble/restricted arm64 Packages
+Ign:21 http://jp.archive.ubuntu.com/ubuntu noble/universe arm64 Packages
+Ign:22 http://jp.archive.ubuntu.com/ubuntu noble/multiverse arm64 Packages
+Ign:23 http://jp.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages
+Ign:24 http://jp.archive.ubuntu.com/ubuntu noble-updates/restricted arm64 Packages
+Ign:25 http://jp.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages
+Ign:26 http://jp.archive.ubuntu.com/ubuntu noble-updates/multiverse arm64 Packages
+Ign:13 http://security.ubuntu.com/ubuntu noble-security/restricted arm64 Packages
+Ign:14 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages
+Ign:15 http://security.ubuntu.com/ubuntu noble-security/multiverse arm64 Packages
+Ign:27 http://jp.archive.ubuntu.com/ubuntu noble-backports/main arm64 Packages
+Ign:28 http://jp.archive.ubuntu.com/ubuntu noble-backports/universe arm64 Packages
+Ign:19 http://jp.archive.ubuntu.com/ubuntu noble/main arm64 Packages
+Ign:20 http://jp.archive.ubuntu.com/ubuntu noble/restricted arm64 Packages
+Ign:21 http://jp.archive.ubuntu.com/ubuntu noble/universe arm64 Packages
+Ign:22 http://jp.archive.ubuntu.com/ubuntu noble/multiverse arm64 Packages
+Ign:23 http://jp.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages
+Ign:24 http://jp.archive.ubuntu.com/ubuntu noble-updates/restricted arm64 Packages
+Ign:25 http://jp.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages
+Ign:11 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages
+Ign:13 http://security.ubuntu.com/ubuntu noble-security/restricted arm64 Packages
+Ign:14 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages
+Ign:26 http://jp.archive.ubuntu.com/ubuntu noble-updates/multiverse arm64 Packages
+Ign:27 http://jp.archive.ubuntu.com/ubuntu noble-backports/main arm64 Packages
+Ign:28 http://jp.archive.ubuntu.com/ubuntu noble-backports/universe arm64 Packages
+Ign:19 http://jp.archive.ubuntu.com/ubuntu noble/main arm64 Packages
+Ign:20 http://jp.archive.ubuntu.com/ubuntu noble/restricted arm64 Packages
+Ign:21 http://jp.archive.ubuntu.com/ubuntu noble/universe arm64 Packages
+Ign:22 http://jp.archive.ubuntu.com/ubuntu noble/multiverse arm64 Packages
+Ign:23 http://jp.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages
+Ign:24 http://jp.archive.ubuntu.com/ubuntu noble-updates/restricted arm64 Packages
+Ign:15 http://security.ubuntu.com/ubuntu noble-security/multiverse arm64 Packages
+Err:11 http://security.ubuntu.com/ubuntu noble-security/main arm64 Packages
+  404  Not Found [IP: 185.125.190.82 80]
+Ign:13 http://security.ubuntu.com/ubuntu noble-security/restricted arm64 Packages
+Ign:25 http://jp.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages
+Ign:26 http://jp.archive.ubuntu.com/ubuntu noble-updates/multiverse arm64 Packages
+Ign:27 http://jp.archive.ubuntu.com/ubuntu noble-backports/main arm64 Packages
+Ign:28 http://jp.archive.ubuntu.com/ubuntu noble-backports/universe arm64 Packages
+Ign:19 http://jp.archive.ubuntu.com/ubuntu noble/main arm64 Packages
+Ign:14 http://security.ubuntu.com/ubuntu noble-security/universe arm64 Packages
+Ign:15 http://security.ubuntu.com/ubuntu noble-security/multiverse arm64 Packages
+Ign:20 http://jp.archive.ubuntu.com/ubuntu noble/restricted arm64 Packages
+Ign:21 http://jp.archive.ubuntu.com/ubuntu noble/universe arm64 Packages
+Ign:22 http://jp.archive.ubuntu.com/ubuntu noble/multiverse arm64 Packages
+Ign:23 http://jp.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages
+Ign:24 http://jp.archive.ubuntu.com/ubuntu noble-updates/restricted arm64 Packages
+Ign:25 http://jp.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages
+Ign:26 http://jp.archive.ubuntu.com/ubuntu noble-updates/multiverse arm64 Packages
+Ign:27 http://jp.archive.ubuntu.com/ubuntu noble-backports/main arm64 Packages
+Ign:28 http://jp.archive.ubuntu.com/ubuntu noble-backports/universe arm64 Packages
+Ign:19 http://jp.archive.ubuntu.com/ubuntu noble/main arm64 Packages
+Ign:20 http://jp.archive.ubuntu.com/ubuntu noble/restricted arm64 Packages
+Ign:21 http://jp.archive.ubuntu.com/ubuntu noble/universe arm64 Packages
+Ign:22 http://jp.archive.ubuntu.com/ubuntu noble/multiverse arm64 Packages
+Ign:23 http://jp.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages
+Ign:24 http://jp.archive.ubuntu.com/ubuntu noble-updates/restricted arm64 Packages
+Ign:25 http://jp.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages
+Ign:26 http://jp.archive.ubuntu.com/ubuntu noble-updates/multiverse arm64 Packages
+Ign:27 http://jp.archive.ubuntu.com/ubuntu noble-backports/main arm64 Packages
+Ign:28 http://jp.archive.ubuntu.com/ubuntu noble-backports/universe arm64 Packages
+Err:19 http://jp.archive.ubuntu.com/ubuntu noble/main arm64 Packages
+  404  Not Found [IP: 91.189.91.82 80]
+Ign:20 http://jp.archive.ubuntu.com/ubuntu noble/restricted arm64 Packages
+Ign:21 http://jp.archive.ubuntu.com/ubuntu noble/universe arm64 Packages
+Ign:22 http://jp.archive.ubuntu.com/ubuntu noble/multiverse arm64 Packages
+Err:23 http://jp.archive.ubuntu.com/ubuntu noble-updates/main arm64 Packages
+  404  Not Found [IP: 91.189.91.82 80]
+Ign:24 http://jp.archive.ubuntu.com/ubuntu noble-updates/restricted arm64 Packages
+Ign:25 http://jp.archive.ubuntu.com/ubuntu noble-updates/universe arm64 Packages
+Ign:26 http://jp.archive.ubuntu.com/ubuntu noble-updates/multiverse arm64 Packages
+Err:27 http://jp.archive.ubuntu.com/ubuntu noble-backports/main arm64 Packages
+  404  Not Found [IP: 91.189.91.82 80]
+Ign:28 http://jp.archive.ubuntu.com/ubuntu noble-backports/universe arm64 Packages
+Fetched 168 kB in 5s (36.8 kB/s)
+Reading package lists... Done
+E: Failed to fetch http://security.ubuntu.com/ubuntu/dists/noble-security/main/binary-arm64/Packages  404  Not Found [IP: 185.125.190.82 80]
+E: Failed to fetch http://jp.archive.ubuntu.com/ubuntu/dists/noble/main/binary-arm64/Packages  404  Not Found [IP: 91.189.91.82 80]
+E: Failed to fetch http://jp.archive.ubuntu.com/ubuntu/dists/noble-updates/main/binary-arm64/Packages  404  Not Found [IP: 91.189.91.82 80]
+E: Failed to fetch http://jp.archive.ubuntu.com/ubuntu/dists/noble-backports/main/binary-arm64/Packages  404  Not Found [IP: 91.189.91.82 80]
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+yata@sdmdev3:~$ history
+    1  sudo apt update
+    2  sudo apt install -y     build-essential     git     autoconf     automake     libtool     pkg-config     libudev-dev     gcc-aarch64-linux-gnu     g++-aarch64-linux-gnu
+    3  mkdir -p ~/build-libgpiod-aarch64
+    4  cd ~/build-libgpiod-aarch64
+    5  git clone https://github.com/brgl/libgpiod.git
+    6  cd libgpiod
+    7  ls
+    8  ./autogen.sh
+    9  git log -i
+   10  git log -1
+   11  git describe --tags
+   12  git tag --contains HEAD
+   13  sudo apt update
+   14  sudo apt install autoconf-archive
+   15  sudo apt install build-essential crossbuild-essential-arm64
+   16  sudo apt install pkg-config libtool autoconf automake
+   17  cd
+   18  ls
+   19  rm -fr build-libgpiod-aarch64/
+   20  mkdir -p ~/build-libgpiod-aarch64
+   21  cd build-libgpiod-aarch64/
+   22  git clone https://github.com/brgl/libgpiod.git
+   23  cd libgpiod/
+   24  ls
+   25  ./autogen.sh
+   26  export CC=aarch64-linux-gnu-gcc
+   27  export CXX=aarch64-linux-gnu-g++
+   28  export PKG_CONFIG_PATH=/usr/aarch64-linux-gnu/lib/pkgconfig
+   29  export CFLAGS="-static"
+   30  export LDFLAGS="-static"
+   31  ./configure   --host=aarch64-linux-gnu   --enable-tools   --disable-shared   --enable-static
+   32  make -j$(nproc)
+   33  sudo make DESTDIR=$(pwd)/out install
+   34  ls
+   35  cd out
+   36  ls
+   37  cd usr
+   38  ls
+   39  cd local
+   40  ls
+   41  cd bin
+   42  ls
+   43  file gpiodetect
+   44  cd ..
+   45  ls
+   46  cd ..
+   47  ls
+   48  cd ..
+   49  ls
+   50  cd ..
+   51  ls
+   52  cd tools
+   53  ls
+   54  cd
+   55  cd build-libgpiod-aarch64/
+   56  ls
+   57  cd libgpiod/
+   58  ls
+   59  sudo make clean
+   60  ls
+   61  export CFLAGS="-static -no-pie"
+   62  export LDFLAGS="-static -no-pie"
+   63  history
+   64  cd ..
+   65  ls
+   66  rm -fr libgpiod
+   67  sudo rm -fr libgpiod
+   68  git clone https://github.com/brgl/libgpiod.git
+   69  cd libgpiod/
+   70  echo CFLAG
+   71  echo $CFLAG
+   72  export CC=aarch64-linux-gnu-gcc
+   73  export CFLAGS="-static -no-pie"
+   74  export LDFLAGS="-static -no-pie"
+   75  ./autogen.sh
+   76  export CC=aarch64-linux-gnu-gcc
+   77  export CXX=aarch64-linux-gnu-g++
+   78  export PKG_CONFIG_PATH=/usr/aarch64-linux-gnu/lib/pkgconfig
+   79  # 完全静的リンク & PIE無効化
+   80  export CFLAGS="-static -no-pie"
+   81  export LDFLAGS="-static -no-pie"
+   82  export CC=aarch64-linux-gnu-gcc
+   83  export CXX=aarch64-linux-gnu-g++
+   84  export PKG_CONFIG_PATH=/usr/aarch64-linux-gnu/lib/pkgconfig
+   85  # 完全静的リンク & PIE無効化
+   86  export CFLAGS="-static -no-pie"
+   87  export LDFLAGS="-static -no-pie"
+   88  ./autogen.sh
+   89  ./configure   --host=aarch64-linux-gnu   --enable-tools   --disable-shared   --enable-static
+   90  $CFLAG
+   91  export CFLAGS="-static -no-pie"
+   92  export LDFLAGS="-static -no-pie"
+   93  make -j$(nproc)
+   94  history
+   95  sudo make DESTDIR=$(pwd)/out install
+   96  ls
+   97  cd out
+   98  ls
+   99  cd usr
+  100  ls
+  101  cd local
+  102  ls
+  103  cd bin
+  104  ls
+  105  file gpioget
+  106  ldd gpioget
+  107  echo $CFLAG
+  108  echo $CFLAGS
+  109  readelf -a gpioget | grep 'NEEDED'
+  110  env | grep -E 'CC=|CXX=|CFLAGS=|LDFLAGS=|PKG_CONFIG_PATH='
+  111  env
+  112  nm ./gpioget
+  113  cd ../../../..
+  114  ls
+  115  cd tools
+  116  ls
+  117  aarch64-linux-gnu-gcc -static -no-pie -o gpioset gpioset.o tools-common.o ../lib/.libs/libgpiod.a
+  118  ls
+  119  file gpioset
+  120  readelf -a gpioset | grep 'NEEDED'
+  121  aarch64-linux-gnu-gcc -static -no-pie -o gpioget gpioget.o tools-common.o ../lib/.libs/libgpiod.a
+  122  file gpioget
+  123  file gpiodetect
+  124  aarch64-linux-gnu-gcc -static -no-pie -o gpiodetect gpiodetect.o tools-common.o ../lib/.libs/libgpiod.a
+  125  aarch64-linux-gnu-gcc -static -no-pie -o gpioinfo gpioinfo.o tools-common.o ../lib/.libs/libgpiod.a
+  126  aarch64-linux-gnu-gcc -static -no-pie -o gpiomon gpiomon.o tools-common.o ../lib/.libs/libgpiod.a
+  127  aarch64-linux-gnu-gcc -static -no-pie -o gpionotify gpionotify.o tools-common.o ../lib/.libs/libgpiod.a
+  128  cp gpio* ~/
+  129  ls ~
+  130  aarch64-linux-gnu-gcc -static -no-pie   -I../include   -o gpioinfo gpioinfo.o tools-common.o   ../lib/.libs/libgpiod.a   -lrt -lpthread
+  131  file gpioinfo
+  132  cd 
+  133  mkdir -p ~/build-alsa-aarch64
+  134  cd ~/build-alsa-aarch64
+  135  export CC=aarch64-linux-gnu-gcc
+  136  export PKG_CONFIG_PATH=/opt/alsa-lib-aarch64/lib/pkgconfig
+  137  export CFLAGS="-static -O2 -fPIC"
+  138  export LDFLAGS="-static"
+  139  ./configure   --host=aarch64-linux-gnu   --enable-static   --disable-shared   --prefix=/opt/alsa-lib-aarch64
+  140  ls
+  141  git clone https://github.com/alsa-project/alsa-lib.git
+  142  cd alsa-lib
+  143  ls
+  144  ./gitcompile
+  145  ls
+  146  ./configure   --host=aarch64-linux-gnu   --enable-static   --disable-shared   --prefix=/opt/alsa-lib-aarch64
+  147  make -j$(nproc)
+  148  ls
+  149  history
+  150  make DESTDIR=$(pwd)/out install
+  151  cd out
+  152  ls
+  153  cd opt
+  154  ls
+  155  cd alsa-lib-aarch64/
+  156  ls
+  157  cd bin
+  158  ls
+  159  cd ..
+  160  cd lib
+  161  ls
+  162  mkdir -p ~/build-alsa-utils-aarch64
+  163  cd ~/build-alsa-utils-aarch64
+  164  git clone https://github.com/alsa-project/alsa-utils.git
+  165  cd alsa-utils
+  166  export CC=aarch64-linux-gnu-gcc
+  167  export PKG_CONFIG_PATH=/home/yata/build-alsa-aarch64/alsa-lib/out/opt/alsa-lib-aarch64/lib/pkgconfig
+  168  export CFLAGS="-static -O2 -fPIC"
+  169  export LDFLAGS="-static"
+  170  export CPPFLAGS="-I/home/yata/build-alsa-aarch64/alsa-lib/out/opt/alsa-lib-aarch64/include"
+  171  export LIBS="-lrt -lpthread"
+  172  ./gitcompile || ./autogen.sh
+  173  sudo apt update
+  174  sudo apt install -y   autopoint   gettext   libtool   m4   autoconf   automake   pkg-config
+  175  export ACLOCAL_PATH=/home/yata/build-alsa-aarch64/alsa-lib/out/opt/alsa-lib-aarch64/share/aclocal
+  176  aclocal -I $ACLOCAL_PATH
+  177  cp /home/yata/build-alsa-aarch64/alsa-lib/out/opt/alsa-lib-aarch64/share/aclocal/alsa.m4 m4/alsa.m4
+  178  autoreconf -i -f
+  179  ls
+  180  sudo apt update
+  181  sudo apt install -y build-essential autoconf automake libtool m4
+  182  cd ~
+  183  wget https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.gz
+  184  tar xf gettext-0.22.5.tar.gz
+  185  cd gettext-0.22.5
+  186  ./configure --prefix=$HOME/.local
+  187  make -j$(nproc)
+  188  make install
+  189  sudo apt-get source usbutils
+  190  sudo apt-get install libusb-1.0-0-dev
+  191  history
+  192  cd ..
+  193  ls
+  194  git clone https://github.com/gregkh/usbutils.git
+  195  cd usbutils
+  196  export CC=aarch64-linux-gnu-gcc
+  197  export CFLAGS="-static -O2"
+  198  export LDFLAGS="-static"
+  199  export PKG_CONFIG_PATH=/usr/aarch64-linux-gnu/lib/pkgconfig
+  200  ls
+  201  ./autogen.sh
+  202  sudo apt update
+  203  sudo apt install -y meson ninja-build
+  204  vim ~/cross-aarch64.txt
+  205  mkdir -p build-aarch64
+  206  meson setup build-aarch64 --cross-file ~/cross-aarch64.txt
+  207  ninja -C build-aarch64
+  208  ls
+  209  cd ..
+  210  ls
+  211  mkdir -p ~/build-libusb-aarch64 && cd $_
+  212  git clone https://github.com/libusb/libusb.git
+  213  cd libusb
+  214  export CC=aarch64-linux-gnu-gcc
+  215  export CFLAGS="-static -O2"
+  216  export LDFLAGS="-static"
+  217  ls
+  218  ./bootstrap.sh   # autogen.shの代わり
+  219  ./configure --host=aarch64-linux-gnu   --enable-static   --disable-shared   --prefix=/opt/libusb-aarch64
+  220  ls
+  221  ./configure   --host=aarch64-linux-gnu   --enable-static   --disable-shared   --disable-udev   --prefix=/opt/libusb-aarch64
+  222  make -j$(nproc)
+  223  make DESTDIR=$PWD/out install
+  224  cd ~
+  225  ls
+  226  vim cross-aarch64.txt 
+  227  export PKG_CONFIG_PATH=/home/yata/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/lib/pkgconfig
+  228  export CC=aarch64-linux-gnu-gcc
+  229  export CFLAGS="-static -O2"
+  230  export LDFLAGS="-static"
+  231  history
+  232  ls
+  233  cd usbutils
+  234  ls
+  235  cd ..
+  236  cd build-aarch64
+  237  ls
+  238  cd usbutils/build-aarch64/
+  239  ls
+  240  meson setup build-aarch64 --cross-file ~/cross-aarch64.txt
+  241  cd ~/usbutils  # meson.build のあるソースルートへ移動
+  242  meson setup build-aarch64 --cross-file ~/cross-aarch64.txt
+  243  rm -fr build-aarch64
+  244  meson setup build-aarch64 --cross-file ~/cross-aarch64.txt
+  245  mkdir -p ./build-aarch64
+  246  meson setup build-aarch64 --cross-file ~/cross-aarch64.txt
+  247  vim ~/cross-aarch64.txt 
+  248  meson setup build-aarch64 --cross-file ~/cross-aarch64.txt
+  249  ninja -C build-aarch64
+  250  export PKG_CONFIG_PATH=$HOME/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/lib/pkgconfig
+  251  cd ~/usbutils
+  252  rm -rf build-aarch64
+  253  meson setup build-aarch64   --cross-file ~/cross-aarch64.txt   --prefix=/opt/usbutils-aarch64
+  254  ninja -C build-aarch64
+  255  $ ls ~/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/include/libusb-1.0/libusb.h
+  256  $ ls ~/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/include/libusb-1.0
+  257  $ ls ~/build-libusb-aarch64/libusb/out
+  258  ls ~/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/include/libusb-1.0/
+  259  cat ~/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/lib/pkgconfig/libusb-1.0.pc
+  260  sudo mkdir -p /opt/libusb-aarch64/include
+  261  sudo ln -s ~/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/include/libusb-1.0 /opt/libusb-aarch64/include/libusb-1.0
+  262  cd ~/usbutils
+  263  ninja -C build-aarch64 -j$(nproc)
+  264  ls ~/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/lib/libusb-1.0.a
+  265  sudo mkdir -p /opt/libusb-aarch64/lib
+  266  sudo ln -s ~/build-libusb-aarch64/libusb/out/opt/libusb-aarch64/lib/libusb-1.0.a /opt/libusb-aarch64/lib/libusb-1.0.a
+  267  ninja -C build-aarch64 -j$(nproc)
+  268  rm -rf build-aarch64
+  269  meson setup build-aarch64   --cross-file ~/cross-aarch64.txt   --prefix=/opt/usbutils-aarch64   -Dudev=false
+  270  mkdir -p build-aarch64
+  271  meson setup build-aarch64   --cross-file ~/cross-aarch64.txt   --prefix=/opt/usbutils-aarch64   -Dudev=false
+  272  ls
+  273  cd build-aarch64/
+  274  ls
+  275  vim meson.build
+  276  rm meson.build
+  277  ls ~
+  278  cd ..
+  279  l
+  280  vim meson.build
+  281  ls
+  282  rm -rf build-aarch64
+  283  midir -p build-aarch64
+  284  mkdir -p build-aarch64
+  285  meson setup build-aarch64   --cross-file ~/cross-aarch64.txt   --prefix=/opt/usbutils-aarch64
+  286  ninja -C build-aarch64 -j$(nproc)
+  287  vim meson.build 
+  288  ls
+  289  vim lsusb.c
+  290  vim meson.build 
+  291  ls
+  292  aarch64-linux-gnu-gcc   -static -O2   usbreset.c   -o usbreset
+  293  file usbreset.c
+  294  file usbreset
+  295  aarch64-linux-gnu-gcc   -static -O2   lsusb.c desc-defs.c desc-dump.c lsusb-t.c usbmisc.c sysfs.c   -I/opt/libusb-aarch64/include/libusb-1.0   /opt/libusb-aarch64/lib/libusb-1.0.a   -o lsusb-static
+  296  micro libusb.c
+  297  nano libusb.c
+  298  nano lsusb.c
+  299  ls
+  300  ./autogen.sh
+  301  ls
+  302  aarch64-linux-gnu-gcc   -static -O2   -DVERSION=\"1.0.0\"   -DPACKAGE_NAME=\"usbutils\"   lsusb.c desc-defs.c desc-dump.c lsusb-t.c usbmisc.c sysfs.c   -I/opt/libusb-aarch64/include/libusb-1.0   /opt/libusb-aarch64/lib/libusb-1.0.a   -o lsusb-static
+  303  ls
+  304  aarch64-linux-gnu-gcc   -static -O2   usbhid-dump/dev.c usbhid-dump/dev_list.c   usbhid-dump/iface.c usbhid-dump/iface_list.c   usbhid-dump/usbhid-dump.c   -Iusbhid-dump   -I/opt/libusb-aarch64/include/libusb-1.0   /opt/libusb-aarch64/lib/libusb-1.0.a   -o usbhid-dump-static
+  305  aarch64-linux-gnu-gcc -static -O2   -DVERSION=\"1.0.0\"   -DPACKAGE_NAME=\"usbutils\"   lsusb.c desc-defs.c desc-dump.c lsusb-t.c usbmisc.c sysfs.c names.c   -I/opt/libusb-aarch64/include/libusb-1.0   /opt/libusb-aarch64/lib/libusb-1.0.a   -o lsusb-static
+  306  sudo apt source libudev-dev
+  307  cd systemd-*/src/libudev
+  308  meson setup builddir --buildtype=release --default-library=static
+  309  ninja -C builddir
+  310  aarch64-linux-gnu-gcc -static -O2   -DVERSION=\"1.0.0\"   -DPACKAGE_NAME=\"usbutils\"   lsusb.c desc-defs.c desc-dump.c lsusb-t.c usbmisc.c sysfs.c   -I/opt/libusb-aarch64/include/libusb-1.0   /opt/libusb-aarch64/lib/libusb-1.0.a   -o lsusb-static-nonames
+  311  aarch64-linux-gnu-gcc -O2   -DVERSION=\"1.0.0\"   -DPACKAGE_NAME=\"usbutils\"   lsusb.c desc-defs.c desc-dump.c lsusb-t.c usbmisc.c sysfs.c names.c   -I/opt/libusb-aarch64/include/libusb-1.0   -L/opt/libusb-aarch64/lib -lusb-1.0 -ludev   -o lsusb-dynamic
+  312  aarch64-linux-gnu-gcc -O2   -DVERSION=\"1.0.0\"   -DPACKAGE_NAME=\"usbutils\"   lsusb.c desc-defs.c desc-dump.c lsusb-t.c usbmisc.c sysfs.c names.c   -I/opt/libusb-aarch64/include/libusb-1.0   /opt/libusb-aarch64/lib/libusb-1.0.a   -ludev   -o lsusb-mixed
+  313  ls /usr/aarch64-linux-gnu/lib/libudev.so*
+  314  sudo apt install libudev1:arm64 libudev-dev:arm64
+  315  ls
+  316  scp gpio*.o yata@100.65.202.85:/tmp/
+  317  scp gpio*.o mspdev@100.65.202.85:/tmp/
+  318  scp gpio* mspdev@100.65.202.85:/tmp/
+  319  ls
+  320  sudo dpkg --add-architecture arm64
+  321  sudo apt update
+  322  history
+yata@sdmdev3:~$ sudo apt install libudev1:arm64 libudev-dev:arm64
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package libudev1:arm64 is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+E: Package 'libudev1:arm64' has no installation candidate
+E: Unable to locate package libudev-dev:arm64
+yata@sdmdev3:~$ sudo dpkg --add-architecture arm64
+yata@sdmdev3:~$ ls /usr/aarch64-linux-gnu/lib/lib
+libanl.a                libm.so
+libanl.so               libm.so.6
+libanl.so.1             libmvec.a
+libasan.so.8            libmvec.so
+libasan.so.8.0.0        libmvec.so.1
+libatomic.so.1          libnsl.so.1
+libatomic.so.1.2.0      libnss_compat.so
+libBrokenLocale.a       libnss_compat.so.2
+libBrokenLocale.so      libnss_dns.so.2
+libBrokenLocale.so.1    libnss_files.so.2
+libc.a                  libnss_hesiod.so
+libc_malloc_debug.so    libnss_hesiod.so.2
+libc_malloc_debug.so.0  libpcprofile.so
+libc_nonshared.a        libpthread.a
+libc.so                 libpthread_nonshared.a
+libc.so.6               libpthread.so.0
+libdl.a                 libresolv.a
+libdl.so.2              libresolv.so
+libg.a                  libresolv.so.2
+libgcc_s.so.1           librt.a
+libgomp.so.1            librt.so.1
+libgomp.so.1.0.0        libstdc++.so.6
+libhwasan.so.0          libstdc++.so.6.0.33
+libhwasan.so.0.0.0      libthread_db.so
+libitm.so.1             libthread_db.so.1
+libitm.so.1.0.0         libtsan.so.2
+liblsan.so.0            libtsan.so.2.0.0
+liblsan.so.0.0.0        libubsan.so.1
+libm-2.39.a             libubsan.so.1.0.0
+libm.a                  libutil.a
+libmcheck.a             libutil.so.1
+libmemusage.so          
+yata@sdmdev3:~$ ls /usr/aarch64-linux-gnu/lib/libudev.so*
+ls: cannot access '/usr/aarch64-linux-gnu/lib/libudev.so*': No such file or directory
+yata@sdmdev3:~$ 
+yata@sdmdev3:~$ ssh ispdev@172.16.1.37
+The authenticity of host '172.16.1.37 (172.16.1.37)' can't be established.
+ED25519 key fingerprint is SHA256:4NKpwSE/kyb7yncnERTT+2GaD19vKPqGnKDeewQhkko.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '172.16.1.37' (ED25519) to the list of known hosts.
+ispdev@172.16.1.37's password: 
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ 
+main:~$ 
+main:~$ exit
+logout
+Connection to 172.16.1.37 closed.
+yata@sdmdev3:~$ ls
+build-alsa-aarch64        gpiodetect.o  gpiomon.o
+build-alsa-utils-aarch64  gpioget       gpionotify
+build-libgpiod-aarch64    gpioget.c     gpionotify.c
+build-libusb-aarch64      gpioget.o     gpionotify.o
+cross-aarch64.txt         gpioinfo      gpioset
+gettext-0.22.5            gpioinfo.c    gpioset.c
+gettext-0.22.5.tar.gz     gpioinfo.o    gpioset.o
+gpiodetect                gpiomon       gpio-tools-test.bash
+gpiodetect.c              gpiomon.c     usbutils
+yata@sdmdev3:~$ 
+Broadcast message from goro@sdmdev3 (Tue 2025-04-22 08:59:58 JST):
+
+The system will reboot now!
+
+client_loop: send disconnect: Broken pipe
+yata@sdmdev2:~$ ls /sys/class/net
+docker0  enp0s31f6  enp4s0  lo  tailscale0
+yata@sdmdev2:~$ tailscale status
+100.116.131.99  sdmdev2              scsksdm@     linux   -
+100.117.109.31  gorobookair          goro.kikuchi@ macOS   offline
+100.77.3.19     lenovo-tb520fu       scsksdm@     android offline
+100.90.187.121  masazhang-1          scsksdm@     linux   offline
+100.112.150.50  masazhang            scsksdm@     windows offline
+100.97.96.27    matsuzaki-note-ubuntu scsksdm@     linux   offline
+100.74.114.81   matsuzaki-note-windows scsksdm@     windows -
+100.68.245.122  msi                  scsksdm@     windows -
+100.65.202.85   mspdev01             tagged-devices linux   active; direct 172.16.1.35:34534, tx 34733728 rx 23851456
+100.81.26.4     mspdev02             scsksdm@     linux   active; direct 172.16.1.37:44321, tx 1675180 rx 2491220
+100.100.147.98  mywindows            scsksdm@     windows offline
+100.93.168.97   s-114032             scsksdm@     linux   offline
+100.118.30.80   s-818351             scsksdm@     windows -
+100.119.236.109 sdmawsim             scsksdm@     linux   -
+100.124.216.95  sdmdev1              scsksdm@     linux   offline
+100.109.54.64   sdmdev10             scsksdm@     linux   -
+100.119.151.116 sdmdev11             scsksdm@     linux   offline
+100.82.182.121  sdmdev3              scsksdm@     linux   -
+100.127.21.120  sdmdev4              scsksdm@     linux   offline
+100.120.11.18   sdmdev5              scsksdm@     linux   offline
+100.103.88.15   sdmdev6              scsksdm@     linux   -
+100.115.23.8    sdmdev7              scsksdm@     linux   offline
+100.93.0.80     sdmdev8              scsksdm@     linux   -
+100.122.97.58   sdmdev9              scsksdm@     linux   -
+100.102.252.44  sdmdevawsim          scsksdm@     linux   -
+100.80.244.14   taiwan               goro.kikuchi@ windows -
+
+# Health check:
+#     - Tailscale failed to set the DNS configuration of your device: setLinkDNS: context deadline exceeded
+#     - setLinkDNS: context deadline exceeded
+yata@sdmdev2:~$ ssh mspdev@100.65.202.85
+mspdev@100.65.202.85's password: 
+Last login: Mon Apr 21 02:02:58 2025 from 127.0.0.1
+
+WARNING: Poky is a reference Yocto Project distribution that should be used for
+testing and development purposes only. It is recommended that you create your
+own distribution for production use.
+
+main:~$ 
+main:~$ 
+main:~$ sudo -i
+Password: 
+root@main:~# 
+root@main:~# 
+root@main:~# ls /sys/class/net
+br-sp8b2ebc9f  eth0  lo  vethb2968c72  vlan-171a63d7  xenbr0
+root@main:~# 
+root@main:~# 
+root@main:~# ls /proc/net/wireless
+/proc/net/wireless
+root@main:~# cat /proc/net/wireless
+Inter-| sta-|   Quality        |   Discarded packets               | Missed | WE
+ face | tus | link level noise |  nwid  crypt   frag  retry   misc | beacon | 22
+root@main:~# ls /proc/asound
+cards  devices	oss  pcm  seq  timers  version
+root@main:~# ls /var/aos/vis/vin
+/var/aos/vis/vin
+root@main:~# cat /var/aos/vis/vin
+T923AXW704S3FMYSWroot@main:~# tree
+-sh: tree: command not found
+root@main:~# ncdu
+-sh: ncdu: command not found
+root@main:~# ls --color=auto
+root@main:~# ls /var/--color=auto
+ls: cannot access '/var/--color=auto': No such file or directory
+root@main:~# ls /var/ --color=auto
+alsa-utils-static      local       run
+aos                    lock        spool
+backups                log         ssh
+cache                  lost+found  tailscale-static
+lib                    lvm         tmp
+libgpiod-arm64-static  machine-id  volatile
+root@main:~# bash
+root@main:~# zsh
+bash: zsh: command not found
+root@main:~# bash
+root@main:~# busybox
+BusyBox v1.36.1 () multi-call binary.
+BusyBox is copyrighted by many authors between 1998-2015.
+Licensed under GPLv2. See source distribution for detailed
+copyright notices.
+
+Usage: busybox [function [arguments]...]
+   or: busybox --list
+   or: function [arguments]...
+
+	BusyBox is a multi-call binary that combines many common Unix
+	utilities into a single executable.  Most people will create a
+	link to busybox for each function they wish to use and BusyBox
+	will act like whatever it was invoked as.
+
+Currently defined functions:
+	[, [[, addgroup, adduser, ascii, ash, awk, base32,
+	basename, blkid, bunzip2, bzcat, bzip2, cat, chattr,
+	chgrp, chmod, chown, chroot, chvt, clear, cmp, cp, cpio,
+	crc32, cut, date, dc, dd, deallocvt, delgroup, deluser,
+	depmod, df, diff, dirname, dmesg, dnsdomainname, du,
+	dumpkmap, dumpleases, echo, egrep, env, expr, false,
+	fbset, fdisk, fgrep, find, flock, free, fsck, fstrim,
+	fuser, getopt, getty, grep, groups, gunzip, gzip, head,
+	hexdump, hostname, hwclock, id, ifconfig, ifdown, ifup,
+	insmod, ip, kill, killall, klogd, less, ln, loadfont,
+	loadkmap, logger, logname, logread, losetup, ls, lsmod,
+	lzcat, md5sum, mesg, microcom, mkdir, mkfifo, mknod,
+	mkswap, mktemp, modprobe, more, mount, mountpoint, mv, nc,
+	netstat, nohup, nproc, nslookup, od, openvt, patch, pgrep,
+	pidof, pivot_root, printf, ps, pwd, rdate, readlink,
+	realpath, reboot, renice, reset, resize, rev, rfkill, rm,
+	rmdir, rmmod, route, run-parts, sed, seq, setconsole,
+	setsid, sh, sha1sum, sha256sum, shuf, sleep, sort,
+	start-stop-daemon, stat, strings, stty, sulogin, swapoff,
+	swapon, switch_root, sync, sysctl, syslogd, tail, tar,
+	tee, telnet, test, tftp, time, top, touch, tr, true, ts,
+	tty, udhcpc, udhcpd, umount, uname, uniq, unlink, unzip,
+	uptime, users, usleep, vi, watch, wc, wget, which, who,
+	whoami, xargs, xzcat, yes, zcat
+root@main:~# rfkill
+BusyBox v1.36.1 () multi-call binary.
+
+Usage: rfkill COMMAND [INDEX|TYPE]
+root@main:~# hostname
+main
+root@main:~# bash   
+root@main:~# ls /var/aos/vis/vin -l --color=auto
+-rw------- 1 root root 17 Feb 27  2024 /var/aos/vis/vin
+root@main:~# help
+GNU bash, version 5.2.21(1)-release (aarch64-poky-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                     history [-c] [-d offset] [n] >
+ (( expression ))                 if COMMANDS; then COMMANDS; [>
+ . filename [arguments]           jobs [-lnprs] [jobspec ...] o>
+ :                                kill [-s sigspec | -n signum >
+ [ arg... ]                       let arg [arg ...]
+ [[ expression ]]                 local [option] name[=value] .>
+ alias [-p] [name[=value] ... ]>  logout [n]
+ bg [job_spec ...]                mapfile [-d delim] [-n count]>
+ bind [-lpsvPSVX] [-m keymap] [>  popd [-n] [+N | -N]
+ break [n]                        printf [-v var] format [argum>
+ builtin [shell-builtin [arg ..>  pushd [-n] [+N | -N | dir]
+ caller [expr]                    pwd [-LP]
+ case WORD in [PATTERN [| PATTE>  read [-ers] [-a array] [-d de>
+ cd [-L|[-P [-e]] [-@]] [dir]     readarray [-d delim] [-n coun>
+ command [-pVv] command [arg ..>  readonly [-aAf] [name[=value]>
+ compgen [-abcdefgjksuv] [-o op>  return [n]
+ complete [-abcdefgjksuv] [-pr]>  select NAME [in WORDS ... ;] >
+ compopt [-o|+o option] [-DEI] >  set [-abefhkmnptuvxBCEHPT] [->
+ continue [n]                     shift [n]
+ coproc [NAME] command [redirec>  shopt [-pqsu] [-o] [optname .>
+ declare [-aAfFgiIlnrtux] [name>  source filename [arguments]
+ dirs [-clpv] [+N] [-N]           suspend [-f]
+ disown [-h] [-ar] [jobspec ...>  test [expr]
+ echo [-neE] [arg ...]            time [-p] pipeline
+ enable [-a] [-dnps] [-f filena>  times
+ eval [arg ...]                   trap [-lp] [[arg] signal_spec>
+ exec [-cl] [-a name] [command >  true
+ exit [n]                         type [-afptP] name [name ...]>
+ export [-fn] [name[=value] ...>  typeset [-aAfFgiIlnrtux] name>
+ false                            ulimit [-SHabcdefiklmnpqrstuv>
+ fc [-e ename] [-lnr] [first] [>  umask [-p] [-S] [mode]
+ fg [job_spec]                    unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do >  unset [-f] [-v] [-n] [name ..>
+ for (( exp1; exp2; exp3 )); do>  until COMMANDS; do COMMANDS-2>
+ function name { COMMANDS ; } o>  variables - Names and meaning>
+ getopts optstring name [arg ..>  wait [-fn] [-p var] [id ...]
+ hash [-lr] [-p pathname] [-dt]>  while COMMANDS; do COMMANDS-2>
+ help [-dms] [pattern ...]        { COMMANDS ; }
+root@main:~# ls
+root@main:~# ash
+root@main:~# help
+Built-in commands:
+------------------
+	. : [ [[ alias bg break cd chdir command continue echo eval exec
+	exit export false fg getopts hash help history jobs kill let
+	local printf pwd read readonly return set shift sleep source
+	test times trap true type ulimit umask unalias unset wait
+root@main:~# dash
+ash: dash: not found
+root@main:~# sh
+root@main:~# help
+GNU bash, version 5.2.21(1)-release (aarch64-poky-linux-gnu)
+These shell commands are defined internally.  Type `help' to see this list.
+Type `help name' to find out more about the function `name'.
+Use `info bash' to find out more about the shell in general.
+Use `man -k' or `info' to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&]                     history [-c] [-d offset] [n] >
+ (( expression ))                 if COMMANDS; then COMMANDS; [>
+ . filename [arguments]           jobs [-lnprs] [jobspec ...] o>
+ :                                kill [-s sigspec | -n signum >
+ [ arg... ]                       let arg [arg ...]
+ [[ expression ]]                 local [option] name[=value] .>
+ alias [-p] [name[=value] ... ]>  logout [n]
+ bg [job_spec ...]                mapfile [-d delim] [-n count]>
+ bind [-lpsvPSVX] [-m keymap] [>  popd [-n] [+N | -N]
+ break [n]                        printf [-v var] format [argum>
+ builtin [shell-builtin [arg ..>  pushd [-n] [+N | -N | dir]
+ caller [expr]                    pwd [-LP]
+ case WORD in [PATTERN [| PATTE>  read [-ers] [-a array] [-d de>
+ cd [-L|[-P [-e]] [-@]] [dir]     readarray [-d delim] [-n coun>
+ command [-pVv] command [arg ..>  readonly [-aAf] [name[=value]>
+ compgen [-abcdefgjksuv] [-o op>  return [n]
+ complete [-abcdefgjksuv] [-pr]>  select NAME [in WORDS ... ;] >
+ compopt [-o|+o option] [-DEI] >  set [-abefhkmnptuvxBCEHPT] [->
+ continue [n]                     shift [n]
+ coproc [NAME] command [redirec>  shopt [-pqsu] [-o] [optname .>
+ declare [-aAfFgiIlnrtux] [name>  source filename [arguments]
+ dirs [-clpv] [+N] [-N]           suspend [-f]
+ disown [-h] [-ar] [jobspec ...>  test [expr]
+ echo [-neE] [arg ...]            time [-p] pipeline
+ enable [-a] [-dnps] [-f filena>  times
+ eval [arg ...]                   trap [-lp] [[arg] signal_spec>
+ exec [-cl] [-a name] [command >  true
+ exit [n]                         type [-afptP] name [name ...]>
+ export [-fn] [name[=value] ...>  typeset [-aAfFgiIlnrtux] name>
+ false                            ulimit [-SHabcdefiklmnpqrstuv>
+ fc [-e ename] [-lnr] [first] [>  umask [-p] [-S] [mode]
+ fg [job_spec]                    unalias [-a] name [name ...]
+ for NAME [in WORDS ... ] ; do >  unset [-f] [-v] [-n] [name ..>
+ for (( exp1; exp2; exp3 )); do>  until COMMANDS; do COMMANDS-2>
+ function name { COMMANDS ; } o>  variables - Names and meaning>
+ getopts optstring name [arg ..>  wait [-fn] [-p var] [id ...]
+ hash [-lr] [-p pathname] [-dt]>  while COMMANDS; do COMMANDS-2>
+ help [-dms] [pattern ...]        { COMMANDS ; }
+root@main:~# tcsh
+sh: tcsh: command not found
+root@main:~# csh
+sh: csh: command not found
+root@main:~# ksh
+sh: ksh: command not found
+root@main:~# mksh
+sh: mksh: command not found
+root@main:~# oil
+sh: oil: command not found
+root@main:~# echo $SHELL
+/bin/sh
+root@main:~# bash
+root@main:~# echo $SHELL
+/bin/sh
+root@main:~# ls -l $SHELL
+lrwxrwxrwx 1 root root 18 Mar  9  2018 /bin/sh -> /usr/bin/bash.bash
+root@main:~# busybox
+BusyBox v1.36.1 () multi-call binary.
+BusyBox is copyrighted by many authors between 1998-2015.
+Licensed under GPLv2. See source distribution for detailed
+copyright notices.
+
+Usage: busybox [function [arguments]...]
+   or: busybox --list
+   or: function [arguments]...
+
+	BusyBox is a multi-call binary that combines many common Unix
+	utilities into a single executable.  Most people will create a
+	link to busybox for each function they wish to use and BusyBox
+	will act like whatever it was invoked as.
+
+Currently defined functions:
+	[, [[, addgroup, adduser, ascii, ash, awk, base32,
+	basename, blkid, bunzip2, bzcat, bzip2, cat, chattr,
+	chgrp, chmod, chown, chroot, chvt, clear, cmp, cp, cpio,
+	crc32, cut, date, dc, dd, deallocvt, delgroup, deluser,
+	depmod, df, diff, dirname, dmesg, dnsdomainname, du,
+	dumpkmap, dumpleases, echo, egrep, env, expr, false,
+	fbset, fdisk, fgrep, find, flock, free, fsck, fstrim,
+	fuser, getopt, getty, grep, groups, gunzip, gzip, head,
+	hexdump, hostname, hwclock, id, ifconfig, ifdown, ifup,
+	insmod, ip, kill, killall, klogd, less, ln, loadfont,
+	loadkmap, logger, logname, logread, losetup, ls, lsmod,
+	lzcat, md5sum, mesg, microcom, mkdir, mkfifo, mknod,
+	mkswap, mktemp, modprobe, more, mount, mountpoint, mv, nc,
+	netstat, nohup, nproc, nslookup, od, openvt, patch, pgrep,
+	pidof, pivot_root, printf, ps, pwd, rdate, readlink,
+	realpath, reboot, renice, reset, resize, rev, rfkill, rm,
+	rmdir, rmmod, route, run-parts, sed, seq, setconsole,
+	setsid, sh, sha1sum, sha256sum, shuf, sleep, sort,
+	start-stop-daemon, stat, strings, stty, sulogin, swapoff,
+	swapon, switch_root, sync, sysctl, syslogd, tail, tar,
+	tee, telnet, test, tftp, time, top, touch, tr, true, ts,
+	tty, udhcpc, udhcpd, umount, uname, uniq, unlink, unzip,
+	uptime, users, usleep, vi, watch, wc, wget, which, who,
+	whoami, xargs, xzcat, yes, zcat
+root@main:~# ls -l $SHELL
+lrwxrwxrwx 1 root root 18 Mar  9  2018 /bin/sh -> /usr/bin/bash.bash
+root@main:~# ls -l /bin/sh
+lrwxrwxrwx 1 root root 18 Mar  9  2018 /bin/sh -> /usr/bin/bash.bash
+root@main:~# cd /var/aos
+root@main:/var/aos# ls -l 
+total 21
+drwxr-xr-x 3 root root 4096 Apr 16 02:31 downloads
+drwxr-xr-x 3 root root 4096 Apr 18 12:38 iam
+drwxr-xr-x 3 root root 1024 Apr 15 06:30 states
+drwxr-xr-x 4 root root 4096 Apr 16 00:38 storages
+drwxr-xr-x 2 root root 4096 Feb 27  2024 vis
+drwxr-xr-x 7 root root 4096 Apr 15 06:30 workdirs
+root@main:/var/aos# ls vis -l
+total 4
+-rw------- 1 root root 17 Feb 27  2024 vin
+root@main:/var/aos# vim wireless_controll_check.txt
+bash: vim: command not found
+root@main:/var/aos# vi wireless_controll_check.txt
+root@main:/var/aos# scp wireless_controll_check.txt yata@100.116.131.99
+root@main:/var/aos# scp wireless_controll_check.txt yata@100.116.131.99:~/
+^Croot@main:/var/aos# ls
+downloads  storages			workdirs
+iam	   vis				yata@100.116.131.99
+states	   wireless_controll_check.txt
+root@main:/var/aos# rm wireless_controll_check.txt yata@100.116.131.99 
+root@main:/var/aos# ls
+downloads  iam	states	storages  vis  workdirs
+root@main:/var/aos# ls /dev -l
+total 0
+drwxr-xr-x 2 root   root      120 Jan  1  1970 aosvg
+crw-r--r-- 1 root   root  10, 235 Apr 18 12:38 autofs
+drwxr-xr-x 2 root   root      700 Apr 18 12:38 block
+crw------- 1 root   root  10, 126 Apr 18 12:38 cachefiles
+drwxr-xr-x 2 root   root     2540 Apr 18 12:38 char
+crw------- 1 root   root   5,   1 Apr 18 12:38 console
+crw------- 1 root   root  10, 119 Apr 18 12:38 cpu_dma_latency
+drwxr-xr-x 8 root   root      160 Jan  1  1970 disk
+brw-rw---- 1 root   disk 254,   0 Feb 27  2024 dm-0
+brw-rw---- 1 root   disk 254,   1 Feb 27  2024 dm-1
+brw-rw---- 1 root   disk 254,   2 Feb 27  2024 dm-2
+brw-rw---- 1 root   disk 254,   3 Feb 27  2024 dm-3
+brw-rw---- 1 root   disk 254,   4 Feb 27  2024 dm-4
+drwxr-xr-x 2 root   root       80 Jan  1  1970 dma_heap
+lrwxrwxrwx 1 root   root       13 Feb 27  2024 fd -> /proc/self/fd
+crw-rw-rw- 1 root   root   1,   7 Apr 18 12:38 full
+crw------- 1 root   root 254,   0 Apr 18 12:38 gpiochip0
+crw------- 1 root   root  10, 183 Apr 18 12:38 hwrng
+lrwxrwxrwx 1 root   root       12 Feb 27  2024 initctl -> /run/initctl
+drwxr-xr-x 2 root   root       60 Jan  1  1970 input
+crw-r--r-- 1 root   root   1,  11 Apr 18 12:38 kmsg
+lrwxrwxrwx 1 root   root       28 Feb 27  2024 log -> /run/systemd/journal/dev-log
+crw-rw---- 1 root   disk  10, 237 Apr 18 12:38 loop-control
+brw-rw---- 1 root   disk   7,   0 Feb 27  2024 loop0
+brw-rw---- 1 root   disk   7,   1 Feb 27  2024 loop1
+brw-rw---- 1 root   disk   7,   2 Feb 27  2024 loop2
+brw-rw---- 1 root   disk   7,   3 Feb 27  2024 loop3
+brw-rw---- 1 root   disk   7,   4 Feb 27  2024 loop4
+brw-rw---- 1 root   disk   7,   5 Feb 27  2024 loop5
+brw-rw---- 1 root   disk   7,   6 Feb 27  2024 loop6
+brw-rw---- 1 root   disk   7,   7 Feb 27  2024 loop7
+drwxr-xr-x 2 root   root      160 Jan  1  1970 mapper
+crw-r----- 1 root   kmem   1,   1 Apr 18 12:38 mem
+drwxrwxrwt 2 root   root       40 Jan  1  1970 mqueue
+crw------- 1 root   root 242,   0 Apr 18 12:38 ng0n1
+crw-rw-rw- 1 root   root   1,   3 Apr 18 12:38 null
+crw------- 1 root   root 243,   0 Feb 27  2024 nvme0
+brw-rw---- 1 root   disk 259,   0 Feb 27  2024 nvme0n1
+brw-rw---- 1 root   disk 259,   1 Feb 27  2024 nvme0n1p1
+brw-rw---- 1 root   disk 259,   2 Feb 27  2024 nvme0n1p2
+brw-rw---- 1 root   disk 259,   3 Feb 27  2024 nvme0n1p3
+crw-r----- 1 root   kmem   1,   4 Apr 18 12:38 port
+crw------- 1 root   root 249,   0 Apr 18 12:38 pps0
+crw-rw-rw- 1 root   tty    5,   2 Apr 22 08:10 ptmx
+crw------- 1 root   root 248,   0 Apr 18 12:38 ptp0
+drwxr-xr-x 2 root   root        0 Feb 27  2024 pts
+brw-rw---- 1 root   disk   1,   0 Feb 27  2024 ram0
+brw-rw---- 1 root   disk   1,   1 Feb 27  2024 ram1
+brw-rw---- 1 root   disk   1,  10 Feb 27  2024 ram10
+brw-rw---- 1 root   disk   1,  11 Feb 27  2024 ram11
+brw-rw---- 1 root   disk   1,  12 Feb 27  2024 ram12
+brw-rw---- 1 root   disk   1,  13 Feb 27  2024 ram13
+brw-rw---- 1 root   disk   1,  14 Feb 27  2024 ram14
+brw-rw---- 1 root   disk   1,  15 Feb 27  2024 ram15
+brw-rw---- 1 root   disk   1,   2 Feb 27  2024 ram2
+brw-rw---- 1 root   disk   1,   3 Feb 27  2024 ram3
+brw-rw---- 1 root   disk   1,   4 Feb 27  2024 ram4
+brw-rw---- 1 root   disk   1,   5 Feb 27  2024 ram5
+brw-rw---- 1 root   disk   1,   6 Feb 27  2024 ram6
+brw-rw---- 1 root   disk   1,   7 Feb 27  2024 ram7
+brw-rw---- 1 root   disk   1,   8 Feb 27  2024 ram8
+brw-rw---- 1 root   disk   1,   9 Feb 27  2024 ram9
+crw-rw-rw- 1 root   root   1,   8 Apr 18 12:38 random
+drwxrwxrwt 2 root   root       40 Feb 27  2024 shm
+crw------- 1 root   root  10, 231 Apr 18 12:38 snapshot
+drwxr-xr-x 2 root   root       60 Jan  1  1970 snd
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stderr -> /proc/self/fd/2
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stdin -> /proc/self/fd/0
+lrwxrwxrwx 1 root   root       15 Feb 27  2024 stdout -> /proc/self/fd/1
+crw------- 1 root   root 247,   0 Apr 18 12:38 tee0
+crw------- 1 root   root 247,  16 Apr 18 12:38 teepriv0
+crw-rw-rw- 1 root   tty    5,   0 Apr 22 08:10 tty
+crw--w---- 1 root   tty    4,   0 Feb 27  2024 tty0
+crw--w---- 1 root   tty    4,   1 Apr 18 12:38 tty1
+crw--w---- 1 root   tty    4,  10 Feb 27  2024 tty10
+crw--w---- 1 root   tty    4,  11 Feb 27  2024 tty11
+crw--w---- 1 root   tty    4,  12 Feb 27  2024 tty12
+crw--w---- 1 root   tty    4,  13 Feb 27  2024 tty13
+crw--w---- 1 root   tty    4,  14 Feb 27  2024 tty14
+crw--w---- 1 root   tty    4,  15 Feb 27  2024 tty15
+crw--w---- 1 root   tty    4,  16 Feb 27  2024 tty16
+crw--w---- 1 root   tty    4,  17 Feb 27  2024 tty17
+crw--w---- 1 root   tty    4,  18 Feb 27  2024 tty18
+crw--w---- 1 root   tty    4,  19 Feb 27  2024 tty19
+crw--w---- 1 root   tty    4,   2 Apr 18 12:38 tty2
+crw--w---- 1 root   tty    4,  20 Feb 27  2024 tty20
+crw--w---- 1 root   tty    4,  21 Feb 27  2024 tty21
+crw--w---- 1 root   tty    4,  22 Feb 27  2024 tty22
+crw--w---- 1 root   tty    4,  23 Feb 27  2024 tty23
+crw--w---- 1 root   tty    4,  24 Feb 27  2024 tty24
+crw--w---- 1 root   tty    4,  25 Feb 27  2024 tty25
+crw--w---- 1 root   tty    4,  26 Feb 27  2024 tty26
+crw--w---- 1 root   tty    4,  27 Feb 27  2024 tty27
+crw--w---- 1 root   tty    4,  28 Feb 27  2024 tty28
+crw--w---- 1 root   tty    4,  29 Feb 27  2024 tty29
+crw--w---- 1 root   tty    4,   3 Apr 18 12:38 tty3
+crw--w---- 1 root   tty    4,  30 Feb 27  2024 tty30
+crw--w---- 1 root   tty    4,  31 Feb 27  2024 tty31
+crw--w---- 1 root   tty    4,  32 Feb 27  2024 tty32
+crw--w---- 1 root   tty    4,  33 Feb 27  2024 tty33
+crw--w---- 1 root   tty    4,  34 Feb 27  2024 tty34
+crw--w---- 1 root   tty    4,  35 Feb 27  2024 tty35
+crw--w---- 1 root   tty    4,  36 Feb 27  2024 tty36
+crw--w---- 1 root   tty    4,  37 Feb 27  2024 tty37
+crw--w---- 1 root   tty    4,  38 Feb 27  2024 tty38
+crw--w---- 1 root   tty    4,  39 Feb 27  2024 tty39
+crw--w---- 1 root   tty    4,   4 Apr 18 12:38 tty4
+crw--w---- 1 root   tty    4,  40 Feb 27  2024 tty40
+crw--w---- 1 root   tty    4,  41 Feb 27  2024 tty41
+crw--w---- 1 root   tty    4,  42 Feb 27  2024 tty42
+crw--w---- 1 root   tty    4,  43 Feb 27  2024 tty43
+crw--w---- 1 root   tty    4,  44 Feb 27  2024 tty44
+crw--w---- 1 root   tty    4,  45 Feb 27  2024 tty45
+crw--w---- 1 root   tty    4,  46 Feb 27  2024 tty46
+crw--w---- 1 root   tty    4,  47 Apr 18 12:38 tty47
+crw--w---- 1 root   tty    4,  48 Apr 18 12:38 tty48
+crw--w---- 1 root   tty    4,  49 Feb 27  2024 tty49
+crw--w---- 1 root   tty    4,   5 Apr 18 12:38 tty5
+crw--w---- 1 root   tty    4,  50 Apr 18 12:38 tty50
+crw--w---- 1 root   tty    4,  51 Feb 27  2024 tty51
+crw--w---- 1 root   tty    4,  52 Apr 18 12:38 tty52
+crw--w---- 1 root   tty    4,  53 Apr 18 12:38 tty53
+crw--w---- 1 root   tty    4,  54 Apr 18 12:38 tty54
+crw--w---- 1 root   tty    4,  55 Apr 18 12:38 tty55
+crw--w---- 1 root   tty    4,  56 Apr 18 12:38 tty56
+crw--w---- 1 root   tty    4,  57 Apr 18 12:38 tty57
+crw--w---- 1 root   tty    4,  58 Apr 18 12:38 tty58
+crw--w---- 1 root   tty    4,  59 Apr 18 12:38 tty59
+crw--w---- 1 root   tty    4,   6 Apr 18 12:38 tty6
+crw--w---- 1 root   tty    4,  60 Apr 18 12:38 tty60
+crw--w---- 1 root   tty    4,  61 Apr 18 12:38 tty61
+crw--w---- 1 root   tty    4,  62 Apr 18 12:38 tty62
+crw--w---- 1 root   tty    4,  63 Apr 18 12:38 tty63
+crw--w---- 1 root   tty    4,   7 Apr 18 12:38 tty7
+crw--w---- 1 root   tty    4,   8 Apr 18 12:38 tty8
+crw--w---- 1 root   tty    4,   9 Apr 18 12:38 tty9
+crw------- 1 mspdev tty  204,  64 Apr 22 04:04 ttyAMA0
+crw------- 1 root   root   5,   3 Apr 18 12:38 ttyprintk
+crw------- 1 root   root  10, 118 Apr 18 12:38 ubi_ctrl
+crw-rw-rw- 1 root   root   1,   9 Apr 18 12:38 urandom
+crw------- 1 root   root 244,   0 Apr 18 12:38 vc-mem
+crw-rw---- 1 root   tty    7,   0 Apr 18 12:38 vcs
+crw-rw---- 1 root   tty    7,   1 Apr 18 12:38 vcs1
+crw-rw---- 1 root   tty    7,   2 Apr 18 12:38 vcs2
+crw-rw---- 1 root   tty    7,   3 Apr 18 12:38 vcs3
+crw-rw---- 1 root   tty    7,   4 Apr 18 12:38 vcs4
+crw-rw---- 1 root   tty    7,   5 Apr 18 12:38 vcs5
+crw-rw---- 1 root   tty    7,   6 Apr 18 12:38 vcs6
+crw-rw---- 1 root   tty    7, 128 Apr 18 12:38 vcsa
+crw-rw---- 1 root   tty    7, 129 Apr 18 12:38 vcsa1
+crw-rw---- 1 root   tty    7, 130 Apr 18 12:38 vcsa2
+crw-rw---- 1 root   tty    7, 131 Apr 18 12:38 vcsa3
+crw-rw---- 1 root   tty    7, 132 Apr 18 12:38 vcsa4
+crw-rw---- 1 root   tty    7, 133 Apr 18 12:38 vcsa5
+crw-rw---- 1 root   tty    7, 134 Apr 18 12:38 vcsa6
+crw-rw---- 1 root   tty    7,  64 Apr 18 12:38 vcsu
+crw-rw---- 1 root   tty    7,  65 Apr 18 12:38 vcsu1
+crw-rw---- 1 root   tty    7,  66 Apr 18 12:38 vcsu2
+crw-rw---- 1 root   tty    7,  67 Apr 18 12:38 vcsu3
+crw-rw---- 1 root   tty    7,  68 Apr 18 12:38 vcsu4
+crw-rw---- 1 root   tty    7,  69 Apr 18 12:38 vcsu5
+crw-rw---- 1 root   tty    7,  70 Apr 18 12:38 vcsu6
+crw------- 1 root   root  10, 127 Apr 18 12:38 vga_arbiter
+drwxr-xr-x 2 root   root      160 Jan  1  1970 xen
+crw-rw-rw- 1 root   root   1,   5 Apr 18 12:38 zero
+root@main:/var/aos# rfkill list
+rfkill: /dev/rfkill: No such file or directory
+root@main:/var/aos# list       
+bash: list: command not found
+root@main:/var/aos# busybox
+BusyBox v1.36.1 () multi-call binary.
+BusyBox is copyrighted by many authors between 1998-2015.
+Licensed under GPLv2. See source distribution for detailed
+copyright notices.
+
+Usage: busybox [function [arguments]...]
+   or: busybox --list
+   or: function [arguments]...
+
+	BusyBox is a multi-call binary that combines many common Unix
+	utilities into a single executable.  Most people will create a
+	link to busybox for each function they wish to use and BusyBox
+	will act like whatever it was invoked as.
+
+Currently defined functions:
+	[, [[, addgroup, adduser, ascii, ash, awk, base32,
+	basename, blkid, bunzip2, bzcat, bzip2, cat, chattr,
+	chgrp, chmod, chown, chroot, chvt, clear, cmp, cp, cpio,
+	crc32, cut, date, dc, dd, deallocvt, delgroup, deluser,
+	depmod, df, diff, dirname, dmesg, dnsdomainname, du,
+	dumpkmap, dumpleases, echo, egrep, env, expr, false,
+	fbset, fdisk, fgrep, find, flock, free, fsck, fstrim,
+	fuser, getopt, getty, grep, groups, gunzip, gzip, head,
+	hexdump, hostname, hwclock, id, ifconfig, ifdown, ifup,
+	insmod, ip, kill, killall, klogd, less, ln, loadfont,
+	loadkmap, logger, logname, logread, losetup, ls, lsmod,
+	lzcat, md5sum, mesg, microcom, mkdir, mkfifo, mknod,
+	mkswap, mktemp, modprobe, more, mount, mountpoint, mv, nc,
+	netstat, nohup, nproc, nslookup, od, openvt, patch, pgrep,
+	pidof, pivot_root, printf, ps, pwd, rdate, readlink,
+	realpath, reboot, renice, reset, resize, rev, rfkill, rm,
+	rmdir, rmmod, route, run-parts, sed, seq, setconsole,
+	setsid, sh, sha1sum, sha256sum, shuf, sleep, sort,
+	start-stop-daemon, stat, strings, stty, sulogin, swapoff,
+	swapon, switch_root, sync, sysctl, syslogd, tail, tar,
+	tee, telnet, test, tftp, time, top, touch, tr, true, ts,
+	tty, udhcpc, udhcpd, umount, uname, uniq, unlink, unzip,
+	uptime, users, usleep, vi, watch, wc, wget, which, who,
+	whoami, xargs, xzcat, yes, zcat
+root@main:/var/aos# rfkill list
+rfkill: /dev/rfkill: No such file or directory
+root@main:/var/aos# busybox --list
+

@@ -1,0 +1,27 @@
+class BubbleSort {
+	
+	public static void main(String[] args) {
+
+		// ソート前の配列データです
+		int a[] = {10,3,1,4,2};
+		
+		// 調べる範囲の開始位置を１つずつ後ろへ移動していくくり返し
+		for (int i=0; i<a.length-1; i++) {
+			// 後ろから前に向かって小さい値を浮かび上がらせるくり返し
+			for (int j=a.length-1; j>i; j--) {
+				// 隣り合う２つの、後ろの方の値が小さかったら
+				if (a[j] < a[j-1]) {
+					// 交換して、前に移動します
+					int tmp = a[j];
+					a[j] = a[j-1];
+					a[j-1] = tmp;
+				}
+			}
+		}
+
+		// ソート後の配列を表示します
+		for (int i: a) {
+			System.out.println(i);
+		}
+	}
+}

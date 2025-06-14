@@ -1,3 +1,9 @@
+__pycache__/
+*.pyc
+build/
+data/output/
+
+
 # Prerequisites
 *.d
 
@@ -50,3 +56,4 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+

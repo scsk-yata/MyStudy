@@ -1,0 +1,12 @@
+[submodule "pico-sdk"]
+	path = pico-sdk
+	url = https://github.com/raspberrypi/pico-sdk.git
+[submodule "third_party/paho.mqtt.c"]
+	path = third_party/paho.mqtt.c
+	url = https://github.com/eclipse/paho.mqtt.c.git
+[submodule "lib/paho.mqtt.c"]
+	path = lib/paho.mqtt.c
+	url = https://github.com/eclipse/paho.mqtt.c.git
+[submodule "lib/openssl"]
+	path = lib/openssl
+	url = https://github.com/openssl/openssl.git

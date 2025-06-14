@@ -1,0 +1,1223 @@
+
+root@main:/# history
+    1  cd /
+    2  ls
+    3  cd run
+    4  ls
+    5  cd ..
+    6  cd var/
+    7  ls
+    8  cd tailscale
+    9  ls
+   10  ./tailscaled --tun=userspace-networking --socks5-server=localhost:1055 &
+   11  ./tailscale status
+   12  ls /sys/
+   13  ls /sys/class/
+   14  ls /sys/class/gpio
+   15  pinctrl
+   16  lsmod
+   17  cd /
+   18  cd /dev/
+   19  ls
+   20  ls /sys/class/gpio
+   21  ls /sys/class
+   22  cd ..
+   23  which gpiod
+   24  gpiodetect
+   25  gpioinfo
+   26  echo 17 > /sys/class/gpio/export
+   27  ls /sys/class/gpio/export
+   28  cat /sys/class/gpio/export
+   29  sudo /sys/class/gpio/export
+   30  sudo cat /sys/class/gpio/export
+   31  i2cdetect -y 1
+   32  ls /dev/spidev*
+   33  cd var
+   34  ls
+   35  ls -a
+   36  mkdir libgpiod-static_bin
+   37  ls
+   38  mv /tmp/gpio* /var/libgpiod-static_bin
+   39  ls /var/libgpiod-static_bin
+   40  chmod +x /var/gpio*
+   41  chmod +x /var/libgpiod-static_bin/gpio*
+   42  cd libgpiod-static_bin
+   43  ls
+   44  ./gpiodetect
+   45  ./gpioinfo
+   46  cd ..
+   47  ls
+   48  rm -fr libgpiod-static_bin
+   49  mkdir libgpiod-arm64-static
+   50  mv /tmp/gpio* /var/libgpiod-arm64-static
+   51  ls /var/libgpiod-arm64-static
+   52  chmod +x /var/libgpiod-arm64-static/gpio*
+   53  cd libgpiod-arm64-static/
+   54  ./gpiodetect
+   55  ./gpioget
+   56  ./gpioinfo
+   57  ls
+   58  ./gpiomon
+   59  ./gpionotify
+   60  ./gpioset
+   61  ./gpioinfo gpiochip0
+   62  ./gpioinfo gpiochip512
+   63  ./gpioinfo
+   64  ./gpiodetect
+   65  ./gpioinfo gpiochip0
+   66  ./gpioinfo gpiochip0 [pinctrl-rp1]
+   67  ./gpioinfo gpiochip0 17
+   68  ./gpioinfo ./gpiochip0 17
+   69  ./gpioinfo /dev/gpiochip0
+   70  ./gpiodetect
+   71  ./gpioinfo gpiochip0
+   72  ./gpioset gpiochip0 17=1
+   73  ./gpioset gpiochip0 17=0
+   74  ldd
+   75  ./gpioinfo
+   76  ./gpioinfo GPIO17
+   77  ./gpioset GPIO17=1
+   78  ./gpioset GPIO17=0
+   79  ./gpioinfo GPIO17
+   80  ./gpioinfo
+   81  ./gpioset GPIO17=1
+   82  ls /sys/class/gpio
+   83  ./gpioset GPIO17=0
+   84  ./gpioinfo GPIO17
+   85  ./gpioinfo
+   86  ./gpioset --mode=exit GPIO17
+   87  ./gpioset --mode=exit GPIO17=1
+   88  ./gpioset GPIO17=1 &
+   89  kill 84437
+   90  ps
+   91  ./gpioset GPIO17=1
+   92  ./gpioset GPIO17=0
+   93  ./gpioset GPIO17=1
+   94  ./gpioinfo
+   95  ./gpioset GPIO17=1
+   96  ./gpioset GPIO17=1
+   97  history
+   98  ls /sys/class/gpio
+   99  ls /sys/class/gpio/gpiochip512
+  100  ls /sys/class/gpio/gpiochip512/ngpio
+  101  cat /sys/class/gpio/gpiochip512/ngpio
+  102  cat /sys/class/gpio/gpiochip512/device
+  103  ls /sys/class/gpio/gpiochip512/device
+  104  ls /sys/class/gpio/gpiochip512/device/gpio
+  105  cat /sys/class/gpio/gpiochip512/device/gpio/gpiochip512
+  106  ks /sys/class/gpio/gpiochip512/device/gpio/gpiochip512
+  107  ls /sys/class/gpio/gpiochip512/device/gpio/gpiochip512
+  108  ls
+  109  ./gpioinfo
+  110  ./gpioset GPIO27=1
+  111  ./gpioinfo
+  112  ls
+  113  ./gpioinfo
+  114  ./gpioset GPIO27=1
+  115  ./gpioset GPIO17=1 &
+  116* 
+  117  ./gpioset GPIO27=1
+  118  ls /dev
+  119  .gpioget
+  120  ./gpioget
+  121  ./gpioget GPIO17
+  122  ./gpioinfo
+  123  ./gpioget GPIO27
+  124  ./gpioget GPIO01
+  125  ./gpioget GPIO1
+  126  ./gpioget GPIO2
+  127  ./gpioget GPIO*
+  128  ls sys/class/gpio/gpioX/value
+  129  ls sys/class/gpio/gpioX/
+  130  ls sys/class/gpio/
+  131  ls /sys/class/gpio/
+  132  dmesg
+  133  dmesg | grep /dev/input/eventX
+  134  dmesg | grep /dev/input
+  135  dmesg | grep /dev
+  136  sudo evtest
+  137  lsblk
+  138  mount
+  139  dd
+  140  aplay -l
+  141  which alsa-utils
+  142  dmesg | grep -i usb
+  143  lsusb
+  144  cd /
+  145  lsusb
+  146  dmesg
+  147  ls /dev
+  148  ls /dev
+  149  ls/dev/gpiochip0
+  150  ls /dev/gpiochip0
+  151  cat /dev/gpiochip0 
+  152  dmesg | grep dev
+  153  dmesg | grep USB
+  154  dmesg | grep tty
+  155  ls /dev
+  156  ls /dev/initctl
+  157  cat /dev/initctl
+  158  i2cdetect -y 1
+  159  ls /dev | grep spidev
+  160  ls /sys/class/leds
+  161  ls /sys/class/leds/default-on
+  162  ls /sys/class/leds/default-on/brightness 
+  163  cat /sys/class/leds/default-on/brightness 
+  164  cat /sys/class/leds/default-on/uevent
+  165  cat /sys/class/leds/default-on/trigger
+  166  which pulseaudio
+  167  which ls
+  168  script -t -a logs.log
+  169  history
+root@main:/# 
+root@main:/var/tailscale# ls /sys/
+block  class  devices	fs	    kernel  power
+bus    dev    firmware	hypervisor  module
+root@main:/var/tailscale# ls /sys/class/
+bdi	     hwmon	       mdio_bus        pps	    tee
+block	     i2c-adapter       mem	       ptp	    thermal
+bsg	     input	       misc	       pwm	    tty
+devcoredump  iommu	       mmc_host        rc	    ubi
+devlink      iscsi_connection  mtd	       regulator    udc
+dma	     iscsi_endpoint    net	       rtc	    usb_role
+dma_heap     iscsi_host        nvme	       scsi_device  usbmisc
+drm	     iscsi_iface       nvme-generic    scsi_disk    vc
+extcon	     iscsi_session     nvme-subsystem  scsi_host    vc-mem
+gpio	     iscsi_transport   pci_bus	       sound	    vtconsole
+graphics     leds	       phy	       spi_master   wakeup
+hidraw	     lirc	       power_supply    spi_slave    watchdog
+root@main:/var/tailscale# ls
+ls                lsattr            lsblk             lsmod.kmod
+ls.coreutils      lsattr.e2fsprogs  lsmod             
+root@main:/var/tailscale# ls /sys/class/gpio
+export	gpiochip512  unexport
+root@main:/var/tailscale# pinctrl
+-sh: pinctrl: command not found
+root@main:/var/tailscale# lsmod
+Module                  Size  Used by
+xt_conntrack           49152  1
+xt_MASQUERADE          49152  1
+xt_comment             49152  3
+iptable_nat            49152  1
+nf_nat                 98304  2 iptable_nat,xt_MASQUERADE
+nf_conntrack          196608  3 xt_conntrack,nf_nat,xt_MASQUERADE
+nf_defrag_ipv6         49152  1 nf_conntrack
+nf_defrag_ipv4         49152  1 nf_conntrack
+veth                   81920  0
+8021q                  49152  0
+garp                   49152  1 8021q
+xt_tcpudp              49152  11
+bridge                245760  0
+stp                    49152  2 bridge,garp
+llc                    49152  3 bridge,stp,garp
+iptable_filter         49152  1
+quota_v2               49152  4
+quota_tree             49152  1 quota_v2
+sch_fq_codel           49152  2
+nfsd                  688128  3
+nfnetlink              49152  2
+ip_tables              65536  2 iptable_filter,iptable_nat
+x_tables               81920  7 xt_conntrack,iptable_filter,xt_tcpudp,xt_comment,ip_tables,iptable_nat,xt_MASQUERADE
+ipv6                  622592  113 bridge
+aes_generic            65536  2
+libaes                 49152  1 aes_generic
+dm_crypt               65536  1
+dm_mod                180224  18 dm_crypt
+root@main:/var/tailscale# cd /
+root@main:/# cd /dev/        
+root@main:/dev# ls
+aosvg		 loop1	    ram10     tty0   tty30  tty52      vcs3
+autofs		 loop2	    ram11     tty1   tty31  tty53      vcs4
+block		 loop3	    ram12     tty10  tty32  tty54      vcs5
+cachefiles	 loop4	    ram13     tty11  tty33  tty55      vcs6
+char		 loop5	    ram14     tty12  tty34  tty56      vcsa
+console		 loop6	    ram15     tty13  tty35  tty57      vcsa1
+cpu_dma_latency  loop7	    ram2      tty14  tty36  tty58      vcsa2
+disk		 mapper     ram3      tty15  tty37  tty59      vcsa3
+dm-0		 mem	    ram4      tty16  tty38  tty6       vcsa4
+dm-1		 mqueue     ram5      tty17  tty39  tty60      vcsa5
+dm-2		 ng0n1	    ram6      tty18  tty4   tty61      vcsa6
+dm-3		 null	    ram7      tty19  tty40  tty62      vcsu
+dm-4		 nvme0	    ram8      tty2   tty41  tty63      vcsu1
+dma_heap	 nvme0n1    ram9      tty20  tty42  tty7       vcsu2
+fd		 nvme0n1p1  random    tty21  tty43  tty8       vcsu3
+full		 nvme0n1p2  shm       tty22  tty44  tty9       vcsu4
+gpiochip0	 nvme0n1p3  snapshot  tty23  tty45  ttyAMA0    vcsu5
+hwrng		 port	    snd       tty24  tty46  ttyprintk  vcsu6
+initctl		 pps0	    stderr    tty25  tty47  ubi_ctrl   vga_arbiter
+input		 ptmx	    stdin     tty26  tty48  urandom    xen
+kmsg		 ptp0	    stdout    tty27  tty49  vc-mem     zero
+log		 pts	    tee0      tty28  tty5   vcs
+loop-control	 ram0	    teepriv0  tty29  tty50  vcs1
+loop0		 ram1	    tty       tty3   tty51  vcs2
+root@main:/dev# ls /sys/class/gpio
+export	gpiochip512  unexport
+root@main:/dev# ls /sys/class
+bdi	     hwmon	       mdio_bus        pps	    tee
+block	     i2c-adapter       mem	       ptp	    thermal
+bsg	     input	       misc	       pwm	    tty
+devcoredump  iommu	       mmc_host        rc	    ubi
+devlink      iscsi_connection  mtd	       regulator    udc
+dma	     iscsi_endpoint    net	       rtc	    usb_role
+dma_heap     iscsi_host        nvme	       scsi_device  usbmisc
+drm	     iscsi_iface       nvme-generic    scsi_disk    vc
+extcon	     iscsi_session     nvme-subsystem  scsi_host    vc-mem
+gpio	     iscsi_transport   pci_bus	       sound	    vtconsole
+graphics     leds	       phy	       spi_master   wakeup
+hidraw	     lirc	       power_supply    spi_slave    watchdog
+root@main:/dev# cd ..
+root@main:/# which gpiod
+root@main:/# gpiodetect
+-sh: gpiodetect: command not found
+root@main:/# gpioinfo
+-sh: gpioinfo: command not found
+root@main:/# echo 17 > /sys/class/gpio/export
+-sh: echo: write error: Invalid argument
+root@main:/# ls /sys/class/gpio/export
+/sys/class/gpio/export
+root@main:/# cat /sys/class/gpio/export
+cat: /sys/class/gpio/export: Permission denied
+root@main:/# sudo /sys/class/gpio/export
+sudo: /sys/class/gpio/export: command not found
+root@main:/# sudo cat /sys/class/gpio/export
+cat: /sys/class/gpio/export: Permission denied
+root@main:/# i2cdetect -y 1
+-sh: i2cdetect: command not found
+root@main:/# ls /dev/spidev*
+ls: cannot access '/dev/spidev*': No such file or directory
+root@main:/# cd var    
+root@main:/var# ls
+aos	 cache	local  log	   lvm	       run    ssh	 tmp
+backups  lib	lock   lost+found  machine-id  spool  tailscale  volatile
+root@main:/var# ls -a
+.	  aos	   lib	  log	      machine-id  ssh	     volatile
+..	  backups  local  lost+found  run	  tailscale
+.updated  cache    lock   lvm	      spool	  tmp
+root@main:/var# mkdir libgpiod-static_bin
+root@main:/var# ls
+aos	 lib		      lock	  lvm	      spool	 tmp
+backups  libgpiod-static_bin  log	  machine-id  ssh	 volatile
+cache	 local		      lost+found  run	      tailscale
+root@main:/var# mv /tmp/gpio* /var/libgpiod-static_bin
+root@main:/var# ls /var/libgpiod-static_bin
+gpiodetect  gpioget  gpioinfo  gpiomon	gpionotify  gpioset
+root@main:/var# chmod +x /var/gpio*
+chmod: cannot access '/var/gpio*': No such file or directory
+root@main:/var# chmod +x /var/libgpiod-static_bin/gpio*
+root@main:/var# cd lib
+lib/                 libgpiod-static_bin/ 
+root@main:/var# cd libgpiod-static_bin
+root@main:/var/libgpiod-static_bin# ls
+gpiodetect  gpioget  gpioinfo  gpiomon	gpionotify  gpioset
+root@main:/var/libgpiod-static_bin# ./gpiodetect
+-sh: ./gpiodetect: cannot execute binary file: Exec format error
+root@main:/var/libgpiod-static_bin# ./gpioinfo
+-sh: ./gpioinfo: cannot execute binary file: Exec format error
+root@main:/var/libgpiod-static_bin# cd ..
+root@main:/var# ls
+aos	 lib		      lock	  lvm	      spool	 tmp
+backups  libgpiod-static_bin  log	  machine-id  ssh	 volatile
+cache	 local		      lost+found  run	      tailscale
+root@main:/var# rm -fr libgpiod-static_bin 
+root@main:/var# mkdir libgpiod-arm64-static
+root@main:/var# mv /tmp/gpio* /var/libgpiod-arm64-static    
+root@main:/var# ls /var/libgpiod-arm64-static
+gpiodetect  gpioget  gpioinfo  gpiomon	gpionotify  gpioset
+root@main:/var# chmod +x /var/libgpiod-arm64-static/gpio*
+root@main:/var# cd libgpiod-arm64-static/
+root@main:/var/libgpiod-arm64-static# ./gpiodetect
+gpiochip0 [pinctrl-rp1] (54 lines)
+root@main:/var/libgpiod-arm64-static# ./gpioget   
+./gpioget: at least one GPIO line must be specified
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	input
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ls          
+gpiodetect  gpioget  gpioinfo  gpiomon	gpionotify  gpioset
+root@main:/var/libgpiod-arm64-static# ./gpiomon
+./gpiomon: at least one GPIO line must be specified
+root@main:/var/libgpiod-arm64-static# ./gpionotify
+./gpionotify: at least one GPIO line must be specified
+root@main:/var/libgpiod-arm64-static# ./gpioset   
+./gpioset: at least one GPIO line value must be specified
+root@main:/var/libgpiod-arm64-static# ./gpioinfo gpiochip0
+./gpioinfo: cannot find line 'gpiochip0'
+root@main:/var/libgpiod-arm64-static# ./gpioinfo gpiochip512
+./gpioinfo: cannot find line 'gpiochip512'
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	input
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ./gpiodetect
+gpiochip0 [pinctrl-rp1] (54 lines)
+root@main:/var/libgpiod-arm64-static# ./gpioinfo gpiochip0
+./gpioinfo: cannot find line 'gpiochip0'
+root@main:/var/libgpiod-arm64-static# ./gpioinfo gpiochip0 [pinctrl-rp1]
+./gpioinfo: cannot find line 'gpiochip0'
+./gpioinfo: cannot find line '[pinctrl-rp1]'
+root@main:/var/libgpiod-arm64-static# ./gpioinfo gpiochip0 17
+./gpioinfo: cannot find line 'gpiochip0'
+./gpioinfo: cannot find line '17'
+root@main:/var/libgpiod-arm64-static# ./gpioinfo ./gpiochip0 17
+./gpioinfo: cannot find line './gpiochip0'
+./gpioinfo: cannot find line '17'
+root@main:/var/libgpiod-arm64-static# ./gpioinfo /dev/gpiochip0   
+./gpioinfo: cannot find line '/dev/gpiochip0'
+root@main:/var/libgpiod-arm64-static# ./gpiodetect
+gpiochip0 [pinctrl-rp1] (54 lines)
+root@main:/var/libgpiod-arm64-static# ./gpioinfo gpiochip0
+./gpioinfo: cannot find line 'gpiochip0'
+root@main:/var/libgpiod-arm64-static# ./gpioset gpiochip0 17=1
+./gpioset: invalid line value: 'gpiochip0'
+root@main:/var/libgpiod-arm64-static# ./gpioset gpiochip0 17=0
+./gpioset: invalid line value: 'gpiochip0'
+root@main:/var/libgpiod-arm64-static# ldd
+-sh: ldd: command not found
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	input
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ./gpioinfo GPIO17
+gpiochip0 17	"GPIO17"        	input
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1
+^C
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=0
+^C
+root@main:/var/libgpiod-arm64-static# ./gpioinfo GPIO17
+gpiochip0 17	"GPIO17"        	output
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	output
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1
+^C
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio
+export	gpiochip512  unexport
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=0
+        
+^C
+root@main:/var/libgpiod-arm64-static# ./gpioinfo GPIO17  
+gpiochip0 17	"GPIO17"        	output
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	output
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# 
+root@main:/var/libgpiod-arm64-static# ./gpioset --mode=exit GPIO17
+./gpioset: unrecognized option '--mode=exit'
+./gpioset: try ./gpioset --help
+root@main:/var/libgpiod-arm64-static# ./gpioset --mode=exit GPIO17=1
+./gpioset: unrecognized option '--mode=exit'
+./gpioset: try ./gpioset --help
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1 &
+[2] 84437
+root@main:/var/libgpiod-arm64-static# kill 84437
+root@main:/var/libgpiod-arm64-static# ps
+  PID USER       VSZ STAT COMMAND
+    1 root     19104 S    {systemd} /sbin/init
+    2 root         0 SW   [kthreadd]
+    3 root         0 SW   [pool_workqueue_]
+    4 root         0 IW<  [kworker/R-rcu_g]
+    5 root         0 IW<  [kworker/R-rcu_p]
+    6 root         0 IW<  [kworker/R-slub_]
+    7 root         0 IW<  [kworker/R-netns]
+    9 root         0 IW<  [kworker/0:0H-ev]
+   12 root         0 IW<  [kworker/R-mm_pe]
+   13 root         0 IW   [rcu_tasks_kthre]
+   14 root         0 IW   [rcu_tasks_rude_]
+   15 root         0 IW   [rcu_tasks_trace]
+   16 root         0 SW   [ksoftirqd/0]
+   17 root         0 IW   [rcu_preempt]
+   18 root         0 SW   [migration/0]
+   19 root         0 SW   [cpuhp/0]
+   20 root         0 SW   [kdevtmpfs]
+   21 root         0 IW<  [kworker/R-inet_]
+   23 root         0 SW   [kauditd]
+   24 root         0 SW   [khungtaskd]
+   25 root         0 SW   [oom_reaper]
+   26 root         0 IW<  [kworker/R-write]
+   27 root         0 SW   [kcompactd0]
+   28 root         0 IW<  [kworker/R-kinte]
+   29 root         0 IW<  [kworker/R-kbloc]
+   30 root         0 IW<  [kworker/R-blkcg]
+   31 root         0 SW   [xen-balloon]
+   32 root         0 SW   [watchdogd]
+   34 root         0 IW<  [kworker/R-rpcio]
+   35 root         0 IW<  [kworker/R-xprti]
+   36 root         0 IW<  [kworker/0:1H-kb]
+   38 root         0 SW   [kswapd0]
+   39 root         0 IW<  [kworker/R-nfsio]
+   40 root         0 IW<  [kworker/R-kthro]
+   42 root         0 IW<  [kworker/R-iscsi]
+   43 root         0 IW<  [kworker/R-nvme-]
+   44 root         0 IW<  [kworker/R-nvme-]
+   45 root         0 IW<  [kworker/R-nvme-]
+   46 root         0 IW<  [kworker/R-DWC N]
+   47 root         0 IW<  [kworker/R-uas]
+   48 root         0 IW<  [kworker/u3:0]
+   49 root         0 SW   [irq/15-aerdrv]
+   50 root         0 SW   [irq/18-aerdrv]
+  358 root         0 SW   [xenbus]
+  359 root         0 SW   [xenwatch]
+  360 root         0 SW   [jbd2/nvme0n1p2-]
+  361 root         0 IW<  [kworker/R-ext4-]
+  399 root         0 IW<  [kworker/R-kdmfl]
+  409 root         0 IW<  [kworker/R-kcryp]
+  410 root         0 IW<  [kworker/R-kcryp]
+  411 root         0 SW   [dmcrypt_write/2]
+  427 root         0 IW<  [kworker/R-kdmfl]
+  428 root         0 IW<  [kworker/R-kdmfl]
+  429 root         0 IW<  [kworker/R-kdmfl]
+  430 root         0 IW<  [kworker/R-kdmfl]
+  472 root         0 SW   [jbd2/nvme0n1p1-]
+  473 root         0 IW<  [kworker/R-ext4-]
+  519 root         0 IW<  [kworker/R-mld]
+  520 root         0 IW<  [kworker/R-ipv6_]
+  548 rpc       4832 S    /usr/sbin/rpcbind -w -f
+  549 root     48544 S    /usr/lib/systemd/systemd-journald
+  584 root     26816 S    /usr/lib/systemd/systemd-udevd
+  628 root         0 SW   [jbd2/dm-1-8]
+  630 root         0 IW<  [kworker/R-ext4-]
+  631 root         0 SW   [jbd2/dm-4-8]
+  632 root         0 IW<  [kworker/R-ext4-]
+  634 root         0 SW   [jbd2/dm-2-8]
+  635 root         0 IW<  [kworker/R-ext4-]
+  646 root         0 SW   [jbd2/dm-3-8]
+  647 root         0 IW<  [kworker/R-ext4-]
+  664 systemd- 15568 S    /usr/lib/systemd/systemd-resolved
+  665 systemd- 89056 S    /usr/lib/systemd/systemd-timesyncd
+  671 root     14896 S    /usr/lib/systemd/systemd-userdbd
+  691 root      3632 S    /usr/sbin/klogd -n
+  692 root      3632 S    /usr/sbin/syslogd -n
+  693 messageb  7408 S    /usr/bin/dbus-daemon --system --address=systemd: --n
+  694 root      2368 S    /sbin/agetty -o -p -- \u --noclear - linux
+  697 mspdev    4352 S    -sh
+  698 root     15152 S    /usr/lib/systemd/systemd-logind
+  699 root      146m S    /usr/sbin/tee-supplicant
+  706 systemd- 16704 S    /usr/lib/systemd/systemd-networkd
+  714 root     74400 S    /usr/sbin/xl devd
+  722 root      3760 S    /usr/sbin/rpc.mountd -F
+  724 rpcuser   3152 S    /usr/sbin/rpc.statd -F
+  730 root         0 IW   [lockd]
+  733 root         0 IW   [nfsd]
+  734 root         0 IW   [nfsd]
+  735 root         0 IW   [nfsd]
+  736 root         0 IW   [nfsd]
+  737 root         0 IW   [nfsd]
+  738 root         0 IW   [nfsd]
+  739 root         0 IW   [nfsd]
+  740 root         0 IW   [nfsd]
+  745 root     1569m S    /usr/bin/aos_vis -c /etc/aos/aos_vis.cfg -j
+  770 nobody    2816 S    /usr/bin/dnsmasq -x /run/dnsmasq.pid -7 /etc/dnsmasq
+  776 root      800m S    /usr/bin/aos_iamanager -c /etc/aos/aos_iamanager.cfg
+  794 root     1722m S    /usr/bin/aos_communicationmanager -c /etc/aos/aos_co
+  805 root      2816 S    /usr/bin/dnsmasq -u root --conf-file=/var/aos/workdi
+  806 root      820m S    /usr/bin/aos_messageproxy -c /etc/aos/aos_messagepro
+  807 root     1867m S    /usr/bin/aos_servicemanager -c /etc/aos/aos_servicem
+  808 root     1574m S    /usr/bin/aos_updatemanager -c /etc/aos/aos_updateman
+  971 root      2816 S    /usr/bin/dnsmasq -u root --conf-file=/run/containers
+ 3616 root     11424 S    sshd: mspdev [priv]
+ 3636 mspdev   11584 S    sshd: mspdev@pts/0
+ 3637 mspdev    4352 S    -sh
+ 3670 root      5568 S    sudo -i
+ 3689 root      5568 S    sudo -i
+ 3690 root      4352 S    -sh
+ 5287 root     1222m S    ./tailscaled --tun=userspace-networking --socks5-ser
+71441 root         0 IW   [kworker/u2:3-ev]
+76397 root         0 IW   [kworker/0:2-eve]
+78088 root         0 IW   [kworker/u2:0-ev]
+82339 root         0 IW   [kworker/u2:1-fl]
+83497 root         0 IW   [kworker/0:0-cgr]
+84215 root         0 IW   [kworker/u2:2-kc]
+84294 root     15440 S    systemd-userwork: waiting...
+84295 root         0 IW   [kworker/0:1-eve]
+84351 root     15440 S    systemd-userwork: waiting...
+84379 root     15440 S    systemd-userwork: waiting...
+84825 5000     11424 R    /usr/bin/python3 -u /home/yata/MyAosRasp/hello-world
+84827 root      4752 R    ps
+[2]+  Terminated              ./gpioset GPIO17=1
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1  
+^C
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=0
+^C
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1
+^C      
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	output
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1
+^C
+root@main:/var/libgpiod-arm64-static# 
+root@main:/var/libgpiod-arm64-static# 
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio
+export	gpiochip512  unexport
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio/gpiochip512
+base  device  label  ngpio  power  subsystem  uevent
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio/gpiochip512/ngpio
+/sys/class/gpio/gpiochip512/ngpio
+root@main:/var/libgpiod-arm64-static# cat /sys/class/gpio/gpiochip512/ngpio
+54
+root@main:/var/libgpiod-arm64-static# cat /sys/class/gpio/gpiochip512/device
+cat: /sys/class/gpio/gpiochip512/device: Is a directory
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio/gpiochip512/device
+driver		 gpio	    modalias  power	 uevent
+driver_override  gpiochip0  of_node   subsystem
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio/gpiochip512/device/gpio
+gpiochip512
+root@main:/var/libgpiod-arm64-static# cat /sys/class/gpio/gpiochip512/device/gpio/gpiochip512
+cat: /sys/class/gpio/gpiochip512/device/gpio/gpiochip512: Is a directory
+root@main:/var/libgpiod-arm64-static# ks /sys/class/gpio/gpiochip512/device/gpio/gpiochip512
+-sh: ks: command not found
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio/gpiochip512/device/gpio/gpiochip512
+base  device  label  ngpio  power  subsystem  uevent
+root@main:/var/libgpiod-arm64-static# ls
+gpiodetect  gpioget  gpioinfo  gpiomon	gpionotify  gpioset
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	output
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	input
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO27=1
+^C
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	output
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	output
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ls
+gpiodetect  gpioget  gpioinfo  gpiomon	gpionotify  gpioset
+root@main:/var/libgpiod-arm64-static# ./gpioinfo
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	output
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	output
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO27=1
+^C
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO17=1 &
+[2] 96886
+root@main:/var/libgpiod-arm64-static# kill 96886
+root@main:/var/libgpiod-arm64-static# ./gpioset GPIO27=1
+^C
+[2]+  Terminated              ./gpioset GPIO17=1
+root@main:/var/libgpiod-arm64-static# ls /dev
+aosvg		 loop1	    ram10     tty0   tty30  tty52      vcs3
+autofs		 loop2	    ram11     tty1   tty31  tty53      vcs4
+block		 loop3	    ram12     tty10  tty32  tty54      vcs5
+cachefiles	 loop4	    ram13     tty11  tty33  tty55      vcs6
+char		 loop5	    ram14     tty12  tty34  tty56      vcsa
+console		 loop6	    ram15     tty13  tty35  tty57      vcsa1
+cpu_dma_latency  loop7	    ram2      tty14  tty36  tty58      vcsa2
+disk		 mapper     ram3      tty15  tty37  tty59      vcsa3
+dm-0		 mem	    ram4      tty16  tty38  tty6       vcsa4
+dm-1		 mqueue     ram5      tty17  tty39  tty60      vcsa5
+dm-2		 ng0n1	    ram6      tty18  tty4   tty61      vcsa6
+dm-3		 null	    ram7      tty19  tty40  tty62      vcsu
+dm-4		 nvme0	    ram8      tty2   tty41  tty63      vcsu1
+dma_heap	 nvme0n1    ram9      tty20  tty42  tty7       vcsu2
+fd		 nvme0n1p1  random    tty21  tty43  tty8       vcsu3
+full		 nvme0n1p2  shm       tty22  tty44  tty9       vcsu4
+gpiochip0	 nvme0n1p3  snapshot  tty23  tty45  ttyAMA0    vcsu5
+hwrng		 port	    snd       tty24  tty46  ttyprintk  vcsu6
+initctl		 pps0	    stderr    tty25  tty47  ubi_ctrl   vga_arbiter
+input		 ptmx	    stdin     tty26  tty48  urandom    xen
+kmsg		 ptp0	    stdout    tty27  tty49  vc-mem     zero
+log		 pts	    tee0      tty28  tty5   vcs
+loop-control	 ram0	    teepriv0  tty29  tty50  vcs1
+loop0		 ram1	    tty       tty3   tty51  vcs2
+root@main:/var/libgpiod-arm64-static# .gpioget
+-sh: .gpioget: command not found
+root@main:/var/libgpiod-arm64-static# ./gpioget
+./gpioget: at least one GPIO line must be specified
+root@main:/var/libgpiod-arm64-static# ./gpioget GPIO17
+"GPIO17"=inactive
+root@main:/var/libgpiod-arm64-static# ./gpioinfo      
+gpiochip0 - 54 lines:
+	line   0:	"ID_SDA"        	input
+	line   1:	"ID_SCL"        	input
+	line   2:	"GPIO2"         	input
+	line   3:	"GPIO3"         	input
+	line   4:	"GPIO4"         	input
+	line   5:	"GPIO5"         	input
+	line   6:	"GPIO6"         	input
+	line   7:	"GPIO7"         	input
+	line   8:	"GPIO8"         	input
+	line   9:	"GPIO9"         	input
+	line  10:	"GPIO10"        	input
+	line  11:	"GPIO11"        	input
+	line  12:	"GPIO12"        	input
+	line  13:	"GPIO13"        	input
+	line  14:	"GPIO14"        	input
+	line  15:	"GPIO15"        	input
+	line  16:	"GPIO16"        	input
+	line  17:	"GPIO17"        	input
+	line  18:	"GPIO18"        	input
+	line  19:	"GPIO19"        	input
+	line  20:	"GPIO20"        	input
+	line  21:	"GPIO21"        	input
+	line  22:	"GPIO22"        	input
+	line  23:	"GPIO23"        	input
+	line  24:	"GPIO24"        	input
+	line  25:	"GPIO25"        	input
+	line  26:	"GPIO26"        	input
+	line  27:	"GPIO27"        	output
+	line  28:	"PCIE_RP1_WAKE" 	output
+	line  29:	"FAN_TACH"      	input
+	line  30:	"HOST_SDA"      	input
+	line  31:	"HOST_SCL"      	input
+	line  32:	"ETH_RST_N"     	output active-low consumer="phy-reset"
+	line  33:	"-"             	input
+	line  34:	"CD0_IO0_MICCLK"	output
+	line  35:	"CD0_IO0_MICDAT0"	input
+	line  36:	"RP1_PCIE_CLKREQ_N"	input
+	line  37:	"-"             	input
+	line  38:	"CD0_SDA"       	input
+	line  39:	"CD0_SCL"       	input
+	line  40:	"CD1_SDA"       	input
+	line  41:	"CD1_SCL"       	input
+	line  42:	"USB_VBUS_EN"   	output
+	line  43:	"USB_OC_N"      	input
+	line  44:	"RP1_STAT_LED"  	output
+	line  45:	"FAN_PWM"       	input
+	line  46:	"CD1_IO0_MICCLK"	output
+	line  47:	"2712_WAKE"     	input
+	line  48:	"CD1_IO1_MICDAT1"	input
+	line  49:	"EN_MAX_USB_CUR"	output
+	line  50:	"-"             	input
+	line  51:	"-"             	input
+	line  52:	"-"             	input
+	line  53:	"-"             	input
+root@main:/var/libgpiod-arm64-static# ./gpioget GPIO27
+"GPIO27"=inactive
+root@main:/var/libgpiod-arm64-static# ./gpioget GPIO01
+./gpioget: cannot find line 'GPIO01'
+root@main:/var/libgpiod-arm64-static# ./gpioget GPIO1 
+./gpioget: cannot find line 'GPIO1'
+root@main:/var/libgpiod-arm64-static# ./gpioget GPIO2
+"GPIO2"=active
+root@main:/var/libgpiod-arm64-static# ./gpioget GPIO*
+./gpioget: cannot find line 'GPIO*'
+root@main:/var/libgpiod-arm64-static# ls sys/class/gpio/gpioX/value
+ls: cannot access 'sys/class/gpio/gpioX/value': No such file or directory
+root@main:/var/libgpiod-arm64-static# ls sys/class/gpio/gpioX/     
+ls: cannot access 'sys/class/gpio/gpioX/': No such file or directory
+root@main:/var/libgpiod-arm64-static# ls sys/class/gpio/      
+ls: cannot access 'sys/class/gpio/': No such file or directory
+root@main:/var/libgpiod-arm64-static# ls /sys/class/gpio/
+export	gpiochip512  unexport
+root@main:/var/libgpiod-arm64-static# dmesg   
+[39396.969898] audit: type=1334 audit(1744969971.984:22313): prog-id=11142 op=LOAD
+[39396.970072] audit: type=1300 audit(1744969971.984:22313): arch=c00000b7 syscall=280 success=yes exit=5 a0=5 a1=7fffc7aa18d8 a2=90 a3=7fffc7aa18f0 items=0 ppid=1 pid=102773 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="crun" exe="/usr/bin/crun" key=(null)
+/bin/crun" key=(null)
+root@main:/# 
+root@main:/# 
+root@main:/# ls /dev
+aosvg		 input	       nvme0n1p1  ram5	    tty12  tty3   tty47  tty7	    vcsa4
+autofs		 kmsg	       nvme0n1p2  ram6	    tty13  tty30  tty48  tty8	    vcsa5
+block		 log	       nvme0n1p3  ram7	    tty14  tty31  tty49  tty9	    vcsa6
+cachefiles	 loop-control  port	  ram8	    tty15  tty32  tty5	 ttyAMA0    vcsu
+char		 loop0	       pps0	  ram9	    tty16  tty33  tty50  ttyprintk  vcsu1
+console		 loop1	       ptmx	  random    tty17  tty34  tty51  ubi_ctrl   vcsu2
+cpu_dma_latency  loop2	       ptp0	  shm	    tty18  tty35  tty52  urandom    vcsu3
+disk		 loop3	       pts	  snapshot  tty19  tty36  tty53  vc-mem     vcsu4
+dm-0		 loop4	       ram0	  snd	    tty2   tty37  tty54  vcs	    vcsu5
+dm-1		 loop5	       ram1	  stderr    tty20  tty38  tty55  vcs1	    vcsu6
+dm-2		 loop6	       ram10	  stdin     tty21  tty39  tty56  vcs2	    vga_arbiter
+dm-3		 loop7	       ram11	  stdout    tty22  tty4   tty57  vcs3	    xen
+dm-4		 mapper        ram12	  tee0	    tty23  tty40  tty58  vcs4	    zero
+dma_heap	 mem	       ram13	  teepriv0  tty24  tty41  tty59  vcs5
+fd		 mqueue        ram14	  tty	    tty25  tty42  tty6	 vcs6
+full		 ng0n1	       ram15	  tty0	    tty26  tty43  tty60  vcsa
+gpiochip0	 null	       ram2	  tty1	    tty27  tty44  tty61  vcsa1
+hwrng		 nvme0	       ram3	  tty10     tty28  tty45  tty62  vcsa2
+initctl		 nvme0n1       ram4	  tty11     tty29  tty46  tty63  vcsa3
+root@main:/# ls /dev/initctl
+/dev/initctl
+root@main:/# cat /dev/initctl
+^C
+root@main:/# i2cdetect -y 1
+-sh: i2cdetect: command not found
+root@main:/# ls /dev | grep spidev
+root@main:/# ls /sys/class/leds
+default-on  mmc0
+root@main:/# ls /sys/class/leds/default-on
+brightness  max_brightness  power  subsystem  trigger  uevent
+root@main:/# ls /sys/class/leds/default-on/brightness 
+/sys/class/leds/default-on/brightness
+root@main:/# cat /sys/class/leds/default-on/brightness 
+255
+root@main:/# cat /sys/class/leds/default-on/uevent     
+root@main:/# cat /sys/class/leds/default-on/trigger
+none rc-feedback kbd-scrolllock kbd-numlock kbd-capslock kbd-kanalock kbd-shiftlock kbd-altgrlock kbd-ctrllock kbd-altlock kbd-shiftllock kbd-shiftrlock kbd-ctrlllock kbd-ctrlrlock timer oneshot heartbeat backlight cpu cpu0 [default-on] input panic actpwr
+root@main:/# which pulseaudio
+root@main:/# which ls
+/usr/bin/ls
+root@main:/# script -t -a logs.log
+-sh: script: command not found

@@ -1,0 +1,8 @@
+body {
+    margin: 0px 10px;
+}
+
+h1 {
+    border-left: 1em solid #ff00ff;
+    border-bottom: 1px solid #ff00ff;
+}

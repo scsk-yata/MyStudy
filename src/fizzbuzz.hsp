@@ -1,0 +1,22 @@
+// コンソール版のHSPを使う --- (*1)
+#runtime "hsp3cl"
+    // 100回繰り返す --- (*2)
+    repeat 100, 1
+        gosub *fizzbuzz
+    loop
+    end
+
+*fizzbuzz
+    // 次々と条件を判定する --- (*3)
+    if cnt \ 15 = 0 {
+        msg = "FizzBuzz"
+    } else : if cnt\3 = 0 {
+        msg = "Fizz" 
+    } else : if cnt\5 = 0 {
+        msg += "Buzz"
+    } else {
+        msg = cnt 
+    }
+    mes msg
+    return
+

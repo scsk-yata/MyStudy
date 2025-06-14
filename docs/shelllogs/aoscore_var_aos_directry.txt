@@ -1,0 +1,508 @@
+root@main:/var# cd aos
+root@main:/var/aos# ls
+downloads  iam	states	storages  vis  workdirs
+root@main:/var/aos# ls -al
+total 33
+drwxr-xr-x  8 root root 4096 May  9 03:23 .
+drwxr-xr-x 13 root root 4096 May  9 03:23 ..
+-rw-r--r--  1 root root   11 May  9 03:23 .provisionstate
+drwxr-xr-x  3 root root 4096 May  9 22:46 downloads
+drwxr-xr-x  3 root root 4096 May  9 03:23 iam
+drwxr-xr-x  3 root root 1024 May  9 03:23 states
+drwxr-xr-x  7 root root 4096 May  9 22:36 storages
+drwxr-xr-x  2 root root 4096 Feb 27  2024 vis
+drwxr-xr-x  7 root root 4096 May  9 03:23 workdirs
+root@main:/var/aos# vim .provisionstate
+-sh: vim: command not found
+root@main:/var/aos# vi .provisionstate
+root@main:/var/aos# cd downloads/
+root@main:/var/aos/downloads# ls
+'438RH_z7oeKMSnd5t50ee6oEcdcGwHaw-KIWcGaFL8A=.enc'  'a3tBlvgz41qLTx8xsyQPc-Bu9X6ZPAhK_fRS2f2xGuE=.enc'
+'9uORoCq97TKUd9QnaPtFIlz6f-2bwOkb8RnzN-ypsv0=.enc'   lost+found
+'Bl3pTed7nmX46pF61c6vlT-7lcfwsfQ2Puhiq_zVejo=.enc'  'sE7YIdYXTcIeyMnWEMtr7gOaj6L6yGK7V0ljrIhR240=.enc'
+'Gpgq_PWKY76zYY7_QeDiCN287BnuFfkodC3CQBOjiuU=.enc'  'yAJs1ZldK-FTtm5DYtf4nta-mFCiEiI3gucAaim0bK0=.enc'
+'Xsik8eXQQHOIZhvUOaBKJpfzULHs7U5aFcvXhJlNRpU=.enc'
+root@main:/var/aos/downloads# mount | grep cgroup
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+root@main:/var/aos/downloads# ls -l /run/aos/        
+total 0
+drwxr-xr-x 3 root root 60 May  9 22:58 runtime
+root@main:/var/aos/downloads# ls -l /run/aos/runtime/
+total 0
+drwxr-xr-x 4 root root 100 May  9 22:58 6a04ccda-9328-4156-a485-eb39d1a82c98
+root@main:/var/aos/downloads# cat /proc/cmdline
+console=ttyAMA0 earlycon=xen earlyprintk=xen clk_ignore_unused root=/dev/nvme0n1p1 rootfstype=ext4 rootwait quiet ro rootwait pci=pcie_bus_perf cgroup_no_v1=all systemd.unified_cgroup_hierarchy=1 cgroup_enable=memory  vardir.disk=/dev/nvme0n1p2 opendisk.target=/dev/nvme0n1p3 opendisk.pkcs11=optee aosupdate.disk=/dev/aosvg/workdirs aosupdate.path=um/update_rootfs 
+root@main:/var/aos/downloads# vi /proc/cmdline
+root@main:/var/aos/downloads# cat /proc/cmdline
+console=ttyAMA0 earlycon=xen earlyprintk=xen clk_ignore_unused root=/dev/nvme0n1p1 rootfstype=ext4 rootwait quiet ro rootwait pci=pcie_bus_perf cgroup_no_v1=all systemd.unified_cgroup_hierarchy=1 cgroup_enable=memory  vardir.disk=/dev/nvme0n1p2 opendisk.target=/dev/nvme0n1p3 opendisk.pkcs11=optee aosupdate.disk=/dev/aosvg/workdirs aosupdate.path=um/update_rootfs 
+root@main:/var/aos/downloads# sudo vi /boot/extlinux/extlinux.conf
+root@main:/var/aos/downloads# cd ..
+root@main:/var/aos# ls -al
+total 33
+drwxr-xr-x  8 root root 4096 May  9 03:23 .
+drwxr-xr-x 13 root root 4096 May  9 03:23 ..
+-rw-r--r--  1 root root   11 May  9 03:23 .provisionstate
+drwxr-xr-x  3 root root 4096 May  9 22:46 downloads
+drwxr-xr-x  3 root root 4096 May  9 03:23 iam
+drwxr-xr-x  3 root root 1024 May  9 03:23 states
+drwxr-xr-x  4 root root 4096 May 10 03:23 storages
+drwxr-xr-x  2 root root 4096 Feb 27  2024 vis
+drwxr-xr-x  7 root root 4096 May  9 03:23 workdirs
+root@main:/var/aos# ls downloads/ -al
+total 68
+drwxr-xr-x 3 root root  4096 May  9 22:46  .
+drwxr-xr-x 8 root root  4096 May  9 03:23  ..
+-rw-r--r-- 1 root root  3072 May  9 22:32 '438RH_z7oeKMSnd5t50ee6oEcdcGwHaw-KIWcGaFL8A=.enc'
+-rw-r--r-- 1 root root  5040 May  9 07:59 '9uORoCq97TKUd9QnaPtFIlz6f-2bwOkb8RnzN-ypsv0=.enc'
+-rw-r--r-- 1 root root  2320 May  9 08:37 'Bl3pTed7nmX46pF61c6vlT-7lcfwsfQ2Puhiq_zVejo=.enc'
+-rw-r--r-- 1 root root  5024 May  9 07:47 'Gpgq_PWKY76zYY7_QeDiCN287BnuFfkodC3CQBOjiuU=.enc'
+-rw-r--r-- 1 root root  2320 May  9 08:46 'Xsik8eXQQHOIZhvUOaBKJpfzULHs7U5aFcvXhJlNRpU=.enc'
+-rw-r--r-- 1 root root  2304 May  9 22:12 'a3tBlvgz41qLTx8xsyQPc-Bu9X6ZPAhK_fRS2f2xGuE=.enc'
+drwx------ 2 root root 16384 May  9 03:23  lost+found
+-rw-r--r-- 1 root root  3072 May  9 22:46 'sE7YIdYXTcIeyMnWEMtr7gOaj6L6yGK7V0ljrIhR240=.enc'
+-rw-r--r-- 1 root root  5008 May  9 03:41 'yAJs1ZldK-FTtm5DYtf4nta-mFCiEiI3gucAaim0bK0=.enc'
+root@main:/var/aos# file downloads/'yAJs1ZldK-FTtm5DYtf4nta-mFCiEiI3gucAaim0bK0=.enc'
+downloads/yAJs1ZldK-FTtm5DYtf4nta-mFCiEiI3gucAaim0bK0=.enc: data
+root@main:/var/aos# vi downloads/'yAJs1ZldK-FTtm5DYtf4nta-mFCiEiI3gucAaim0bK0=.enc'
+root@main:/var/aos# ls -al iam
+total 36
+drwxr-xr-x 3 root root  4096 May  9 03:23 .
+drwxr-xr-x 8 root root  4096 May  9 03:23 ..
+-rw-r--r-- 1 root root 24576 May  9 03:23 iamanager.db
+drwxr-xr-x 2 root root  4096 Feb 27  2024 migration
+root@main:/var/aos# vi iam/iamanager.db 
+root@main:/var/aos# cat iam/iamanager.db 
+���c�R''etableSchemaVersionSchemaVersionCREATE TABLE SchemaVersion (version INTEGER)`�tablenodeinfonodeinfoCREATE TABLE nodeinfo (id TEXT NOT NULL,info TEXT,PRIMARY KEY (id))/Cindexsqlite_autoindex_nodeinfo_1nodeinfo�F%%�OtablecertificatescertificatesCREATE TABLE certificates (type TEXT NOT NULL,issuer BLOB NOT NULL,serial BLOB NOT NULL,certURL TEXT,keyURL TEXT,notAfter TIMESTAMP,PRIMARY KEY (issuer, serial))7K%i9�exsqlite_autoindex_certificates_1certificates
+ �
+g      �J�\
+��cm0<10
+0       Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1z�pkcs11:token=aoscore;object=cm;id=%5A%84%51%5C%5C%31%A5%3B%D3%0F%75%41%23%36%71%00?module-path=/usr/lib/libckteec.so.0&pin-value=pkcs11:token=aoscore;object=cm;id=%5A%84%51%5C%5C%31%A5%3B%D3%0F%75%41%23%36%71%00?module-path=/usr/lib/libckteec.so.0&pin-value=� !�P��\
+��um0<10
+0       Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1x�pkcs11:token=aoscore;object=um;id=%6E%7E%58%0B%F5%13%E1%01%A7%12%D5%10%38%B8%FC%34?module-path=/usr/lib/libckteec.so.0&pin-value=pkcs11:token=aoscore;object=um;id=%6E%7E%58%0B%F5%13%E1%01%A7%12%D5%10%38%B8%FC%34?module-path=/usr/lib/libckteec.so.0&pin-value=� !�P��\
+��sm0<10
+0       Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1v�pkcs11:token=aoscore;object=sm;id=%0A%37%C2%6D%EA%07%1E%1C%6D%95%0D%2B%83%1D%2E%7A?module-path=/usr/lib/libckteec.so.0&pin-value=pkcs11:token=aoscore;object=sm;id=%0A%37%C2%6D%EA%07%1E%1C%6D%95%0D%2B%83%1D%2E%7A?module-path=/usr/lib/libckteec.so.0&pin-value=� !�P��_
+��iam0<10
+0        Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1upkcs11:token=aoscore;object=iam;id=%1B%36%5A%50%78%73%BA%59%CD%3E%DC%2A%9F%74%2B%61?module-path=/usr/lib/libckteec.so.0&pin-value=pkcs11:token=aoscore;object=iam;id=%1B%36%5A%50%78%73%BA%59%CD%3E%DC%2A%9F%74%2B%61?module-path=/usr/lib/libckteec.so.0&pin-value=� !�P��m
+�ffline0<10
+0          Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1p�pkcs11:token=aoscloud;object=offline;id=%9C%BF%08%36%B8%45%9A%39%60%2D%61%37%81%19%F1%49?module-path=/usr/lib/libckteec.so.0&pin-value=pkcs11:token=aoscloud;object=offline;id=%9C%BF%08%36%B8%45%9A%39%60%2D%61%37%81%19%F1%49?module-path=/usr/lib/libckteec.so.0&pin-value=� !�P��j
+��online0<10
+0           Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1r�pkcs11:token=aoscloud;object=online;id=%10%20%D7%46%2E%E7%92%3A%BC%BA%1C%75%B7%17%85%39?module-path=/usr/lib/libckteec.so.0&pin-value=pkcs11:token=aoscloud;object=online;id=%10%20%D7%46%2E%E7%92%3A%BC%BA%1C%75%B7%17%85%39?module-path=/usr/lib/libckteec.so.0&pin-value=� !�P��W	)6�'�'diskencryption010U
+                                                                                                      Aos Core��M޽=pkcs11:token=aoscore;object=diskencryption;id=%94%87%4C%09%C2%36%61%01%D6%45%20%1B%36%70%EA%5A?module-path=/usr/lib/libckteec.so.0&pin-value=pkcs11:token=aoscore;object=diskencryption;id=%94%87%4C%09%C2%36%61%01%D6%45%20%1B%36%70%EA%5A?module-path=/usr/lib/libckteec.so.0&pin-value=D	��/
+�C���\L0<10
+0          Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1z�L0<10
+0             Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1x�L0<10
+0             Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1v�L0<10
+0             Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1uL0<10
+0            Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1p�L0<10
+0             Aos units Issuing CA1
+ U
+
+EPAM1
+     0
+U
+
+ Aoshu1r�"6	010U
+                   Aos Core��M޽=
+N
+�>M�Ae12a5d7499a34505a478de2599609aad{"attrs":[{"name":"NodeRunners","value":"crun"},{"name":"MainNode","value":""},{"name":"AosComponents","value":"cm,iam,sm,um"}],"cpuInfo":[{"arch":"","archFamily":"","maxDMIPS":140732714223456,"modelName":"","numCores":140732714223456,"numThreads":140736606739904}],"maxDMIPS":10000,"name":"main","osType":"","partitions":[{"name":"storages","path":"/var/aos/storages","totalSize":819617792,"types":["storages"],"usedSize":0},{"name":"states","path":"/var/aos/states","totalSize":386299904,"types":["states"],"usedSize":0},{"name":"workdirs","path":"/var/aos/workdirs","totalSize":1221853184,"types":["services","layers","generic"],"usedSize":0},{"name":"var","path":"/var","totalSize":510873600,"types":["generic"],"usedSize":0}],"status":1,"totalRAM":508870656,"type":"aos-rpi-1.0-main-domd"}�/U�0000000-2df4-5158-cf8c-b14046f6b54b{"attrs":[{"name":"AosComponents","value":"iam,sm"},{"name":"NodeRunners","value":"xrun"}],"cpuInfo":[{"arch":"","archFamily":"","maxDMIPS":0,"modelName":"","numCores":0,"numThreads":0}],"maxDMIPS":10000,"name":"zephyr","osType":"","partitions":[{"name":"aos","path":"/1:","totalSize":535801856,"types":["services","layers"],"usedSize":0}],"status":1,"totalRAM":8585740288,"type":"rpi-dom0"}
+
+root@main:/var/aos# ls 
+downloads  iam	states	storages  vis  workdirs
+root@main:/var/aos# ls states -al
+total 17
+drwxr-xr-x 3 root root  1024 May  9 03:23 .
+drwxr-xr-x 8 root root  4096 May  9 03:23 ..
+drwx------ 2 root root 12288 May  9 03:23 lost+found
+root@main:/var/aos# ls states/lost+found/ -al
+total 13
+drwx------ 2 root root 12288 May  9 03:23 .
+drwxr-xr-x 3 root root  1024 May  9 03:23 ..
+root@main:/var/aos# ls storages/ -al
+total 28
+drwxr-xr-x 4 root root  4096 May 10 03:23 .
+drwxr-xr-x 8 root root  4096 May  9 03:23 ..
+drwxr-xr-x 2 5003 5002  4096 May  9 22:36 e4fa6c80-555e-4e39-aa5b-489db031181f
+drwx------ 2 root root 16384 May  9 03:23 lost+found
+root@main:/var/aos# ls storages/e4fa6c80-555e-4e39-aa5b-489db031181f/ -al
+total 8
+drwxr-xr-x 2 5003 5002 4096 May  9 22:36 .
+drwxr-xr-x 4 root root 4096 May 10 03:23 ..
+root@main:/var/aos# ls storages/lost+found/ -al
+total 20
+drwx------ 2 root root 16384 May  9 03:23 .
+drwxr-xr-x 4 root root  4096 May 10 03:23 ..
+
+workdirs/cm/communicationmanager.db
+root@main:/var/aos# ls -al
+total 33
+drwxr-xr-x  8 root root 4096 May  9 03:23 .
+drwxr-xr-x 13 root root 4096 May  9 03:23 ..
+-rw-r--r--  1 root root   11 May  9 03:23 .provisionstate
+drwxr-xr-x  3 root root 4096 May  9 22:46 downloads
+drwxr-xr-x  3 root root 4096 May  9 03:23 iam
+drwxr-xr-x  3 root root 1024 May  9 03:23 states
+drwxr-xr-x  4 root root 4096 May 10 03:23 storages
+drwxr-xr-x  2 root root 4096 Feb 27  2024 vis
+drwxr-xr-x  7 root root 4096 May  9 03:23 workdirs
+
+root@main:/var/aos# cat vis/vin && echo "" && file vis/vin
+LN4409EXY2YHGWREA
+vis/vin: ASCII text, with no line terminators
+root@main:/var/aos# ls workdirs/ -al
+total 40
+drwxr-xr-x 7 root root  4096 May  9 03:23 .
+drwxr-xr-x 8 root root  4096 May  9 03:23 ..
+drwxr-xr-x 6 root root  4096 May  9 03:23 cm
+drwx------ 2 root root 16384 May  9 03:23 lost+found
+drwxr-xr-x 4 root root  4096 May  9 03:23 mp
+drwxr-xr-x 9 root root  4096 May  9 03:46 sm
+drwxr-xr-x 3 root root  4096 May  9 03:23 um
+root@main:/var/aos# ls workdirs/cm/ -al
+total 2672
+drwxr-xr-x 6 root root    4096 May  9 03:23 .
+drwxr-xr-x 7 root root    4096 May  9 03:23 ..
+-rw-r--r-- 1 root root    4096 May  9 03:23 communicationmanager.db
+-rw-r--r-- 1 root root   32768 May 10 03:23 communicationmanager.db-shm
+-rw-r--r-- 1 root root 2673912 May 10 03:23 communicationmanager.db-wal
+drwxr-xr-x 2 root root    4096 May  9 03:23 components
+drwxr-xr-x 5 root root    4096 May  9 03:23 imagestore
+drwxr-xr-x 2 root root    4096 May  9 03:23 migration
+drwxr-xr-x 2 root root    4096 May  9 03:46 network
+root@main:/var/aos# file workdirs/cm/communicationmanager.db-shm
+workdirs/cm/communicationmanager.db-shm: SQLite Write-Ahead Log shared memory, counter 277, page size 4096, 649 frames, 26 pages, frame checksum 0x298a43ee, salt 0x8d3c815048204a35, header checksum 0x331ec229, read-mark[1] 0x287
+root@main:/var/aos# file workdirs/cm/communicationmanager.db-wal
+workdirs/cm/communicationmanager.db-wal: SQLite Write-Ahead Log, version 3007000
+root@main:/var/aos# ls -a migration                             
+ls: cannot access 'migration': No such file or directory
+root@main:/var/aos# ls -al workdirs/cm/migration/
+total 32
+drwxr-xr-x 2 root root 4096 May  9 03:23 .
+drwxr-xr-x 6 root root 4096 May  9 03:23 ..
+-rw-r--r-- 1 root root    0 May  9 03:23 0_update.up.sql
+-rw-r--r-- 1 root root   18 May  9 03:23 1_update.down.sql
+-rw-r--r-- 1 root root   81 May  9 03:23 1_update.up.sql
+-rw-r--r-- 1 root root  543 May  9 03:23 2_update.down.sql
+-rw-r--r-- 1 root root  285 May  9 03:23 2_update.up.sql
+-rw-r--r-- 1 root root  273 May  9 03:23 3_update.down.sql
+-rw-r--r-- 1 root root  271 May  9 03:23 3_update.up.sql
+root@main:/var/aos# ls -al workdirs/cm/imagestore/
+total 20
+drwxr-xr-x 5 root root 4096 May  9 03:23 .
+drwxr-xr-x 6 root root 4096 May  9 03:23 ..
+drwxr-xr-x 2 root root 4096 May  9 03:23 layers
+drwxr-xr-x 2 root root 4096 May 10 03:23 services
+drwxr-xr-x 2 root root 4096 May  9 22:46 tmp
+root@main:/var/aos# ls -al workdirs/cm/network/   
+total 20
+drwxr-xr-x 2 root root 4096 May  9 03:46 .
+drwxr-xr-x 6 root root 4096 May  9 03:23 ..
+-rw-r--r-- 1 root root  161 May  9 22:58 addnhosts
+-rw------- 1 root root  328 May  9 03:23 dnsmasq.conf
+-rw-r--r-- 1 root root    5 May  9 03:23 pidfile
+root@main:/var/aos# ls -al workdirs/cm/imagestore/services/
+total 12
+drwxr-xr-x 2 root root 4096 May 10 03:23  .
+drwxr-xr-x 5 root root 4096 May  9 03:23  ..
+-rw------- 1 root root 3067 May  9 22:46 'sE7YIdYXTcIeyMnWEMtr7gOaj6L6yGK7V0ljrIhR240='
+root@main:/var/aos# file -al workdirs/cm/imagestore/services/'sE7YIdYXTcIeyMnWEMtr7gOaj6L6yGK7V0ljrIhR240='
+file: invalid option -- 'a'
+Usage: file [-bcCdEhikLlNnprsSvzZ0] [--apple] [--extension] [--mime-encoding]
+            [--mime-type] [-e <testname>] [-F <separator>]  [-f <namefile>]
+            [-m <magicfiles>] [-P <parameter=value>] [--exclude-quiet]
+            <file> ...
+       file -C [-m <magicfiles>]
+       file [--help]
+root@main:/var/aos# file workdirs/cm/imagestore/services/'sE7YIdYXTcIeyMnWEMtr7gOaj6L6yGK7V0ljrIhR240='
+workdirs/cm/imagestore/services/sE7YIdYXTcIeyMnWEMtr7gOaj6L6yGK7V0ljrIhR240=: gzip compressed data, was "tmpztq3n6p7", last modified: Fri May  9 22:46:37 2025, max compression, original size modulo 2^32 10240
+root@main:/var/aos# ls -al workdirs/cm/network/addnhosts 
+-rw-r--r-- 1 root root 161 May  9 22:58 workdirs/cm/network/addnhosts
+root@main:/var/aos# cat -al workdirs/cm/network/addnhosts 
+cat: invalid option -- 'a'
+Try 'cat --help' for more information.
+root@main:/var/aos# cat workdirs/cm/network/addnhosts 
+172.24.0.2	0.02eca266-51cd-44a6-b7eb-ee3f1812b6ab.eb8f0be3-e9d3-4db8-9672-19f9a8678f12	02eca266-51cd-44a6-b7eb-ee3f1812b6ab.eb8f0be3-e9d3-4db8-9672-19f9a8678f12
+root@main:/var/aos# ls workdirs/ -al
+total 40
+drwxr-xr-x 7 root root  4096 May  9 03:23 .
+drwxr-xr-x 8 root root  4096 May  9 03:23 ..
+drwxr-xr-x 6 root root  4096 May  9 03:23 cm
+drwx------ 2 root root 16384 May  9 03:23 lost+found
+drwxr-xr-x 4 root root  4096 May  9 03:23 mp
+drwxr-xr-x 9 root root  4096 May  9 03:46 sm
+drwxr-xr-x 3 root root  4096 May  9 03:23 um
+root@main:/var/aos# ls workdirs/mp -al
+total 16
+drwxr-xr-x 4 root root 4096 May  9 03:23 .
+drwxr-xr-x 7 root root 4096 May  9 03:23 ..
+drwxr-xr-x 2 root root 4096 May  9 03:23 downloads
+drwxr-xr-x 2 root root 4096 May  9 03:23 images
+root@main:/var/aos# ls workdirs/sm -al
+total 4152
+drwxr-xr-x  9 root root    4096 May  9 03:46 .
+drwxr-xr-x  7 root root    4096 May  9 03:23 ..
+drwxr-xr-x  4 root root    4096 May  9 03:46 cni
+drwxr-xr-x  2 root root    4096 May  9 03:23 download
+drwxr-xr-x  2 root root    4096 May  9 03:23 extract
+drwxr-xr-x  3 root root    4096 May  9 03:23 hostfs
+drwxr-xr-x  2 root root    4096 May  9 03:23 layers
+drwxr-xr-x  2 root root    4096 May  9 03:23 migration
+-rw-r--r--  1 root root   57344 May 10 19:32 servicemanager.db
+-rw-r--r--  1 root root   32768 May 10 20:23 servicemanager.db-shm
+-rw-r--r--  1 root root 4120032 May 10 20:23 servicemanager.db-wal
+drwxr-xr-x 10 root root    4096 May  9 22:46 services
+root@main:/var/aos# ls workdirs/sm/cni/
+networks  results
+root@main:/var/aos# cat workdirs/sm/servicemanager.db
+h�&ite format 3@ .zq
+  �
+   &
+    �
+=
+�
+��]
+CREATE TABLE instances (instanceID TEXT NOT NULL PRIMARY KEY,
+													serviceID TEXT,
+													subjectID TEXT,
+													instance INTEGER,
+													uid INTEGER,
+													priority INTEGER,
+													storagePath TEXT,
+													statePath TEXT,
+													nEindexsqlite_autoindex_instances_1instances�)
+�-tablelayerslayers
+                   CREATE TABLE layers (digest TEXT NOT NULL PRIMARY KEY,
+													 layerId TEXT,
+													 path TEXT,
+													 osVersion TEXT,
+													 version TEXT,
+													 timestamp TIMESTAMP,
+													 cached INTEGER,
+													 size INTEGER)+
+              ?indexsqlite_autoindex_layers_1layers
+tabletrafficmonitortrafficmonitor       CREATE TABLE trafficmonitor (chain TEXT NOT NULL PRIMARY KEY,
+													 time TIMESTAMP,
+													 value INTEGER);	O)indexsqlite_autoindex_trafficmonitor_1trafficmonitor
+��_tableservicesservicesCREATE TABLE services (id TEXT NOT NULL ,
+													   version TEXT,
+													   providerID TEXT,
+													   imagePath TEXT,
+													   manifestDigest BLOB,
+													   cached INTEGER,
+													   timestamp TIMESTAMP,
+													   size INTEGER,
+													   GID INTEGER,
+													   PRIMARY KEY(id, version))/Cindexsqlite_autoindex_services_1service��etableconfigconfigCREATE TABLE config (
+			operationVersion INTEGER,
+			cursor TEXT,
+			envvars TEXT,
+			onlineTime TIMESTAMP)�_tablenetworknetworkCREATE TABLE network (networkID TEXT NOT NULL PRIMARY KEY,
+                                                              ip TEXT,
+                                                              subnet TEXT,
+                                                              vlanID INTEGER,
+                                                              vlanIfName TEXT)-Andexsqlite_autoindex_network_1networm)/�indexversion_uniqueschema_migrationsCREATE UNIQUE INDEX version_unique ON schema_migrations (version)i//�tableschema_migrationsschema_migrationsCREATE TABLE schema_migrations (version uint64,d��ty bool)
+��6!!''sp2ca09190172.24.0.1172.24.0.0/16vlan-2310e683
+SV�'�   s=af9aa56828bb46f3b51f100e2a0d1d24;i=36ea9;b=5f40ce8a030944ec83c9aadd5c9e2bff;m=3562f1b33d;t=634cd23ce9024;x=73a2c100d3f7b5252025-05-10 19:23:33.990662452+00:00
+EQ�
+ �
+  �
+   9
+��+
+U!]Qeb8f0be3-e9d3-4db8-9672-19f9a8678f121.0.1sp2ca09190/var/aos/workdirs/sm/services/2674859235�ai�<L��������.�:ܸ2025-05-09 22:46:40.29785933+00:00,��,
+U!]L	Seb8f0be3-e9d3-4db8-9672-19f9a8678f121.0.0sp2ca09190/var/aos/workdirs/sm/services/1266364546Eep����I�B^�k���q��8�+�2�2025-05-09 22:34:43.521394883+00:00,��+
+U![L	S0f0c8689-ebc2-44bf-bd59-a3021a48c9ff1.1.4sp2ca09190/var/aos/workdirs/sm/services/271977992�K��*��g
+   h4S�H�hZ�O��6� ]֝Op2025-05-09 22:12:02.232632994+00:00#*��,
+U!]L	S0f0c8689-ebc2-44bf-bd59-a3021a48c9ff1.1.1sp2ca09190/var/aos/workdirs/sm/services/1821454054)�2����FVBE������t~y��/�����2025-05-09 08:46:30.486036424+00:00#K��,
+U!]L	S0f0c8689-ebc2-44bf-bd59-a3021a48c9ff1.0.0sp2ca09190/var/aos/workdirs/sm/services/1374650664\H�<'�oRy�?���xN1��:�$��N<�K��2025-05-09 08:39:44.149550347+00:00#B��+
+U![L	S022fafe1-46e3-4190-b188-dbe58a9a02431.0.2sp2ca09190/var/aos/workdirs/sm/services/353624651f�2�0���9z+]#�@�(^<�4�I��%D2025-05-09 07:59:40.523858573+00:00r-��,
+U!]L	S022fafe1-46e3-4190-b188-dbe58a9a02431.0.1sp2ca09190/var/aos/workdirs/sm/services/2545617259����N�(��(<���C���m�"
+                 ���
+��q2025-05-09 07:47:05.689670214+00:00q���,
+U!]L	S022fafe1-46e3-4190-b188-dbe58a9a02431.0.0sp2ca09190/var/aos/workdirs/sm/services/3744463844�!��n�� k5F�� ���=
+              ��^Y ��2025-05-09 03:46:57.562093935+00:00q��
+���tE���.Ueb8f0be3-e9d3-4db8-9672-19f9a8678f121.0..Ueb8f0be3-e9d3-4db8-9672-19f9a8678f121.0.0.U0f0c8689-ebc2-44bf-bd59-a3021a48c9ff1.1.4.U0f0c8689-ebc2-44bf-bd59-a3021a48c9ff1.1.1.U0f0c8689-ebc2-44bf-bd59-a3021a48c9ff1.0.0.U022fafe1-46e3-4190-b188-dbe58a9a02431.0.2.U022fafe1-46e3-4190-b188-dbe58a9a02431.0.1-U	0���=�e1-46e3-4190-b188-dbe58a9a02431.0.0
+ �
+  k
+   �
+    *
+     �
+      S
+/
+ 	�
+o
+�	�	o	<7'SAOS_SYSTEM_IN2025-05-10 14:26:33.934927=;AOS_7eb784a0a2c1aa6_OUT2025-05-10 15:36:33.93416281+00:0>;A9=;AOS_77'SAOS_SYSTEM_IN2025-05-10 18:33:33.9=9AOS7'SAOS_SYSTEM_IN2025-05-10 19:32:33.934807874+00:006��=;AOS_7eb784a0a2c1aa6_OUT2025-05-10 19:31:33.93396104+00:00
+�;QAOS_SYSTEM_OUT2025-05-10 19:31:33.93396104+00:00��
+9)SAOS_SYSTEM_OUT2025-05-10 19:32:33.934807874+00:00�H�<9AOS_7eb784a0a2c1aa6_IN2025-05-10 19:31:33.93396104+00:00>;AOS_f482bc9e8d64bff9_IN2025-05-09 22:52:33.934082809+00:00>;AOS_3c8f3fdcc3ae250_OUT2025-05-09 22:54:33.934332249+00:00=9AOS_3c8f3fdcc3ae250_IN2025-05-09 22:54:33.934332249+00:00?=AOS_507713952a7f76b3_OUT2025-05-09 22:50:33.934950699+00:00>;AOS_507713952a7f76b3_IN2025-05-09 22:50:33.934950699+00:00?AOS_4aebeac620faf3e5_OUT2025-05-09 22:50:33.934950699+00:00
+                                                         �"AOS_507713952a7f76b3_OUT0001?=AOS_f482bc9e8d64bff9_OUT2025-05-09 22:52:33.934082809+00:00>;AOS_4aebeac620faf3e5_IN2025-05-09 22:50:33.934950699+00:009AOS_6ef41850f8aa6fa_IN0001-01-01 00:00:00+00:00>03
+                                                 ;AOS_44439a2ebaca4030_IN2025-05-09 22:36:33.934692592+00:00
+    �,AOS_44439a2ebaca4030_OUT0001-01-01 00:?
+                                             =AOS_44439a2ebaca4030_OUT2025-05-09 22:36:33.934692592+00:005
+=AOS_5f2b6d818676c6ec_OUT0001-01-01 00:00:00+00:004	;AOS_5f2b6d818676c6ec_IN0001-01-01 00:00:00+00:0�@AOS_7eb784a0a2c1aa6_OUT2025-05-10 19:30:33.934013198+00:000G�3?T1QAOS_SYSTEM_IN2025-05-09 16:31:33.93499598+0=AOS_d0013b5713509e82_OUT2025-05-09 22:33:33.934772635+00:00} Z0�0���0N�00000�x00[?=AOS_1dee7475c6a6dc5a_OUT2025-05-09 08:38:33.935045852+00:007OAOS_SYSTEM_IN2025-05-09 14:28:33.9345944+00:00"h��/�O�0'�W%3�>�020?=AOS_c1799030161a82cd_OUT2025-05-09 03:47:33.934211606+00:00>;AOS_c1799030161a82cd_IN2025-05-09 03:47:33.934211606+00:00}AOS_c1799030161a8?=AO>;AOS_1dee7475c6a6dc5a_IN2025-05-09 08:38:33.935045852+00:008978)QAOS_SYSTEM_OUT2025-05-09 17:21:33.93474707+0>;AOS_d0013b5713509e82_IN2025-05-09 22:33:33.934772635+00:0000�#000Q�0l
+�AOS_7eb784a0a2c1aa6_OUT�9AOS_7eb784a0a2c1aa6_INAOS_f482bc9e8d64bff9_INAOS_3c8f3fdcc3ae250_OUT�9AOS_3c8f3fdcc3ae250_IN=AOS_f482bc9e8d64bff9_OUT=AOS_4aebeac620faf3e5_OUT=AOS_507713952a7f76b3_OUTAOS_4aebeac620f=AOS_44439a2ebaca4030_OUT6b3_INAOS_6ef41850f8aa6fa_OUT�9AOS_6ef41850f8aa6fa_IN
+                         AOS_44439a2ebaca4030_IN
+                                                =AOS_5f2b6d818676c6ec_OUT
+AOS_5f2b6d818676c6ec_IN	=AOS_d0013b5713509e82_OUAOS_d0013b5713509e82_IN=AOS_1dee7475c6a6dc5a_OUTAOS_1dee7475c6a6dc5a_IN=AOS_c1799030161a82cd_OUTAOS_c1799030161a82cd_IN)AOS_SYSTEM_OUT'	AOS_SYSTEM_IN
+��
+�xcf9c59e6-e9b7-46a3-a3c9-d81526892690eb8f0be3-e9d3-4db8-9672-19f9a8678f1292f45ea9-1cb6-4c26-bd1a-938e0e897242�3519ced5-8f19-4b1e-ad25-7c1b1709753b{"networkId":"","subnet":"172.23.0.0/16","ip":"172.23.0.3","vlanId":0,"dnsServers":["172.16.1.47"],"firewallRules":[]}�
+�x6a04ccda-9328-4156-a485-eb39d1a82c98eb8f0be3-e9d3-4db8-9672-19f9a8678f1202eca266-51cd-44a6-b7eb-ee3f1812b6ab�e4fa6c80-555e-4e39-aa5b-489db031181f{"networkId":"","subnet":"172.24.0.0/16","ip":"172.24.0.2","vlanId":0,"dnsServers":["172.16.1.47"],"firewallRules":[]}
+���(Ucf9c59e6-e9b7-46a3-a3c9-d81526892690'U	6a04ccda-9328-4156-a485-eb39d1a82c98root@main:/var/aos# 
+root@main:/var/aos# ls workdirs/sm -al
+total 4152
+drwxr-xr-x  9 root root    4096 May  9 03:46 .
+drwxr-xr-x  7 root root    4096 May  9 03:23 ..
+drwxr-xr-x  4 root root    4096 May  9 03:46 cni
+drwxr-xr-x  2 root root    4096 May  9 03:23 download
+drwxr-xr-x  2 root root    4096 May  9 03:23 extract
+drwxr-xr-x  3 root root    4096 May  9 03:23 hostfs
+drwxr-xr-x  2 root root    4096 May  9 03:23 layers
+drwxr-xr-x  2 root root    4096 May  9 03:23 migration
+-rw-r--r--  1 root root   57344 May 10 19:32 servicemanager.db
+-rw-r--r--  1 root root   32768 May 10 20:28 servicemanager.db-shm
+-rw-r--r--  1 root root 4120032 May 10 20:28 servicemanager.db-wal
+drwxr-xr-x 10 root root    4096 May  9 22:46 services
+root@main:/var/aos# ls workdirs/sm/hostfs/ -al
+total 12
+drwxr-xr-x 3 root root 4096 May  9 03:23 .
+drwxr-xr-x 9 root root 4096 May  9 03:46 ..
+drwxr-xr-x 2 root root 4096 May  9 03:23 whiteouts
+root@main:/var/aos# ls workdirs/ -al
+total 40
+drwxr-xr-x 7 root root  4096 May  9 03:23 .
+drwxr-xr-x 8 root root  4096 May  9 03:23 ..
+drwxr-xr-x 6 root root  4096 May  9 03:23 cm
+drwx------ 2 root root 16384 May  9 03:23 lost+found
+drwxr-xr-x 4 root root  4096 May  9 03:23 mp
+drwxr-xr-x 9 root root  4096 May  9 03:46 sm
+drwxr-xr-x 3 root root  4096 May  9 03:23 um
+root@main:/var/aos# ls workdirs/um -al
+total 100
+drwxr-xr-x 3 root root  4096 May  9 03:23 .
+drwxr-xr-x 7 root root  4096 May  9 03:23 ..
+drwxr-xr-x 2 root root  4096 May  9 03:23 migration
+-rw-r--r-- 1 root root  4096 May  9 03:23 updatemanager.db
+-rw-r--r-- 1 root root 32768 May  9 03:23 updatemanager.db-shm
+-rw-r--r-- 1 root root 49472 May  9 03:23 updatemanager.db-wal
+root@main:/var/aos# ls workdirs/sm/service/ -al
+ls: cannot access 'workdirs/sm/service/': No such file or directory
+root@main:/var/aos# cat workdirs/sm/service    
+cat: workdirs/sm/service: No such file or directory
+root@main:/var/aos# ls workdirs/sm/       
+cni	  extract  layers     servicemanager.db      servicemanager.db-wal
+download  hostfs   migration  servicemanager.db-shm  services
+root@main:/var/aos# ls workdirs/sm/services/ -al
+total 40
+drwxr-xr-x 10 root root 4096 May  9 22:46 .
+drwxr-xr-x  9 root root 4096 May  9 03:46 ..
+drwx------  3 root root 4096 May  9 22:34 1266364546
+drwx------  3 root root 4096 May  9 08:39 1374650664
+drwx------  3 root root 4096 May  9 08:46 1821454054
+drwx------  3 root root 4096 May  9 07:47 2545617259
+drwx------  3 root root 4096 May  9 22:46 2674859235
+drwx------  3 root root 4096 May  9 22:12 271977992
+drwx------  3 root root 4096 May  9 07:59 353624651
+drwx------  3 root root 4096 May  9 03:46 3744463844
+root@main:/var/aos# ls workdirs/sm/services/2674859235/ -al
+total 16
+drwx------  3 root root 4096 May  9 22:46 .
+drwxr-xr-x 10 root root 4096 May  9 22:46 ..
+drwxr-xr-x  3 root root 4096 May  9 22:46 blobs
+-rw-r--r--  1 root root  511 May  9 22:46 manifest.json
+root@main:/var/aos# ls workdirs/sm/services/2674859235/blobs/ -al
+total 12
+drwxr-xr-x 3 root root 4096 May  9 22:46 .
+drwx------ 3 root root 4096 May  9 22:46 ..
+drwxr-xr-x 3 root root 4096 May  9 22:46 sha256
+root@main:/var/aos# cat workdirs/sm/services/2674859235/manifest  
+cat: workdirs/sm/services/2674859235/manifest: No such file or directory
+root@main:/var/aos# cat workdirs/sm/services/2674859235/manifest.json
+{"schemaVersion":2,"config":{"mediaType":"application/vnd.oci.image.config.v1+json","digest":"sha256:75e7f085daf6024fedd4910c06ac1ba3214ccfa3debd8c64abe14fe7b775698f","size":351},"layers":[{"mediaType":"application/vnd.oci.image.layer.v1.tar+gzip","digest":"sha256:ec4c7b39a31aa4e7ef81bc366787ed4ef467d082988a12d6ac653b46f1ccbc8a","size":2131}],"aosService":{"mediaType":"application/vnd.aos.service.config.v1+json","digest":"sha256:b52dd78b7edfbc06fbff3d02d1e1f1263cf99f0e12457d7e806621732ee9d191","size":322}}root@mainroot@main:/var/aos# ls workdirs/sm/services/1821454054/ -al
+total 16
+drwx------  3 root root 4096 May  9 08:46 .
+drwxr-xr-x 10 root root 4096 May  9 22:46 ..
+drwxr-xr-x  3 root root 4096 May  9 08:46 blobs
+-rw-r--r--  1 root root  511 May  9 08:46 manifest.json
+root@main:/var/aos# ls workdirs/sm/services/1821454054/blobs/ -al
+total 12
+drwxr-xr-x 3 root root 4096 May  9 08:46 .
+drwx------ 3 root root 4096 May  9 08:46 ..
+drwxr-xr-x 3 root root 4096 May  9 08:46 sha256
+root@main:/var/aos# cat workdirs/sm/services/1821454054/manifest.json
+{"schemaVersion":2,"config":{"mediaType":"application/vnd.oci.image.config.v1+json","digest":"sha256:e50d7eed08591b4f611429b640aa9e463105e6dd8f14089de859530935e3896e","size":343},"layers":[{"mediaType":"application/vnd.oci.image.layer.v1.tar+gzip","digest":"sha256:db45261f1fd9102b7d75aab9e337aa7ece4a82ee00cbe2c0a07ccaaf3e5be058","size":1393}],"aosService":{"mediaType":"application/vnd.aos.service.config.v1+json","digest":"sha256:fcce7aae977719efb58c48b594cd2c06e4426d21c1ffba848ab1a93ddb1b7bcc","size":323}}root@main:/var/aos# 
+root@main:/var/aos# 
+root@main:/var/aos# 
