@@ -1,10 +1,10 @@
-// ヘッダファイルの取り込み ---(*1)
+// ヘッダファイルの取り込み
 #include<stdio.h> 
 
 // 最初に実行されるmain関数
 int main(void) {
-  int i;
-  for(i = 1; i <= 100; ++i) { // --- (*2)
+  int i; // i++と++i 前置後置インクリメント
+  for(i = 1; i <= 100; ++i) {
     if (i % 3 == 0 && i % 5 == 0) { 
       printf("FizzBuzz");
     } else if (i % 3 == 0) {
@@ -18,4 +18,3 @@ int main(void) {
   }
   return 0;
 }
-

@@ -7,6 +7,7 @@ import os, sys
 
 SYS_openat = 257
 
+# /usr/include/linux/ptrace.h
 PTRACE_TRACEME  = 0
 PTRACE_PEEKDATA = 2
 PTRACE_POKEDATA = 5
@@ -47,15 +48,37 @@ class user_regs_struct(ctypes.Structure):
 libc = ctypes.CDLL(None)
 ptrace = libc.ptrace
 
-def main():
-    tracee_file = sys.argv[1]
+def run(cmds):
+    commands = [cmds]
+    for x in [';', '&', '|']:
+        if len(cmds.split(x)) > 1:
+            commands = cmds.split(x)
+
+    ret = ''
+    for cmd in commands:
+        ret += trace(cmd).decode()
+
+    return ret
+
+def trace(cmd):
+    print('cmd (in sandbox): ' + cmd)
+    log_file = '/tmp/result.txt'
+    fd = os.open(log_file, os.O_RDWR|os.O_CREAT)
+    os.dup2(fd, 1)
+    os.dup2(fd, 2)
+    data = b''
+
     child = os.fork()
     if child == 0:
         ptrace(PTRACE_TRACEME, 0, 0, 0)
-        os.execl('/usr/bin/python', 'python', tracee_file)
+        os.execl('/bin/bash', 'bash', '-c', cmd)
     else:
         while 1:
-            pid, status = os.wait()
+            try:
+                pid, status = os.wait()
+            except ChildProcessError:
+                data = b"Failed to traceroute"
+                break
             if status != 0:
                 regs = user_regs_struct()
                 ptrace(PTRACE_GETREGS, pid, 0, ctypes.pointer(regs))
@@ -65,7 +88,19 @@ def main():
 
                 ptrace(PTRACE_SYSCALL, pid, 0, 0)
             else:
-                os._exit(0)
+                break
+                #os._exit(0)
+
+    os.close(fd)
+    with open(log_file, 'rb') as f:
+        data = f.read()
+
+    os.remove(log_file)
+
+    if type(data) == str:
+        data = bytes(data)
+    return data
+
 
 def hook(regs, pid):
     path = b''
@@ -79,10 +114,7 @@ def hook(regs, pid):
         i += 4
     path = path[:path.find(b'\x00')].decode()
 
-    if path.startswith('/etc/'):
+    if os.path.basename(path) == 'flag.txt':
         addr = ctypes.c_ulonglong(regs.rsi)
-        data = struct.unpack('<l', b'dum\x00')[0]
+        data = struct.unpack('<l', b'.du\x00')[0]
         ptrace(PTRACE_POKEDATA, pid, addr, data)
-
-if __name__=='__main__':
-    main()
